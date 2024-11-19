@@ -8,6 +8,8 @@ What is Restricted Access Sequence Processing (RASP)? It is a language that can 
 
 The code for the project that this paper describes the results of is available MIT-licensed in the https://github.com/willy-b/learning-rasp repository ( recogs_examples_in_rasp.py and word-level-pos-tokens-recogs-style-decoder-loop.rasp , specifically, see also the README, noting that some other RASP programs are also there ).
 
+![](sentences_and_lfs_and_lf_graph.png)
+
 ### Full Abstract
 
 Humans rapidly generalize from a few observed examples and understand new combinations of words encountered if they are combinations of words recognized from different contexts, an ability called Compositional Generalization. Some observations contradict that Transformers learn systematic, compositional solutions to problems that generalize. The COGS benchmark (Kim and Linzen 2020) reports zero percent accuracy for Transformer models on some structural generalization tasks.
