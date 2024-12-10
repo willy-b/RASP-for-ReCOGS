@@ -57,7 +57,7 @@ Deeper Transformers (as used in Large Language Models like GPT) may be a differe
 } Encoder-Decoder Transformers not being able to leverage the grammar rule `np\_det pp np -> np\_pp -> np` during learning and which requires them to instead actually observe more of the various prepositional phrase substitutions to learn them.
 
 \section{Prior Literature}
-\cite{Wu2023} discuss the COGS benchmark which so far has stumped state of the art models with literally 0\% accuracy on structural generalization splits, including length generalizations which seem analogous to \cite{Clark2020} depth generalizations (perhaps surprising as for the simpler logical inferences problem in \cite{Clark2020} they observed successful depth generalization), but \cite{Wu2023} are able to get traction for the models in a modified form of the task they call ReCOGS by removing redundant symbols and using Semantic Exact Match instead of Exact Match to avoid forcing the model to predict arbitrary variable labeling in logical forms.\footnote{Note, the COGS/ReCOGS task is important because it is converting sentences to a representation of their meaning (in logical form where syntactically different but semantically identically sentences like "a boy painted the girl" or "the girl was painted by a boy" are written the same), and we want these models to be able to understand entirely the new sentences they will be encountering (probably immediately given the diversity of language) based on being familiar having observed pieces of them in different combinations in the past.}
+\cite{Wu2023} discuss the COGS benchmark which so far has stumped state of the art models with literally 0\% accuracy on structural generalization splits, including length generalizations perhaps surprising as for the simpler logical inferences problem in \cite{Clark2020} they observed successful depth generalization, but \cite{Wu2023} are able to get traction for the models in a modified form of the task they call ReCOGS by removing redundant symbols and using Semantic Exact Match instead of Exact Match to avoid forcing the model to predict arbitrary variable labeling in logical forms.\footnote{Note, the COGS/ReCOGS task is important because it is converting sentences to a representation of their meaning (in logical form where syntactically different but semantically identically sentences like "a boy painted the girl" or "the girl was painted by a boy" are written the same), and we want these models to be able to understand entirely the new sentences they will be encountering (probably immediately given the diversity of language) based on being familiar having observed pieces of them in different combinations in the past.}
 
 %Ideally we would like a framework which can take our task at hand and analyze it to predict whether a Transformer in general will do well at it (without being sensitive to any particular data examples we have on hand), with some course of action provided for how a difficult task may be modified to make it more amenable to a Transformer, with the framework also telling us how many attention heads and layers will be needed for tasks which are learnable by Transformers.
 
@@ -81,11 +81,11 @@ Thus we apply techniques similar to \cite{Zhou2024} and \cite{Weiss2021} to ReCO
 %
 \section{Data}
 
-COGS \cite{KimLinzen2020} and ReCOGS \cite{Wu2023} datasets were used as provided by the repository  associated with \cite{Wu2023}\footnote{
+COGS \cite{KimLinzen2020} and ReCOGS \cite{Wu2023} datasets were used as provided by the repository associated with \cite{Wu2023}\footnote{
 \begin{tiny}
 https://github.com/frankaging/ReCOGS
-\end{tiny}}.
-The structural generalization splits (especially prepositional phrase Object-to-Subject modification) will be a focus.
+\end{tiny}},
+with special attention on the structural generalization splits (especially prepositional phrase Object-to-Subject modification).
 
 The full grammar and vocabulary for COGS/ReCOGS English input sentences provided in the utilities associated with the IBM CPG project \cite{klinger2024compositionalprogramgenerationfewshot}\footnote{
 \begin{tiny}
@@ -94,10 +94,11 @@ c3626b4e03bfc681be2c2a5b23da0b48abe6f570
 /src/model/cogs\_data.py\#L523
 \end{tiny}}
 were used in designing RASP solution and analyzing the ways in which this task could be learned.
-See Figure 0
+See Figure 0 .
 
 \section{Model}
 We used the RASP interpreter of \cite{Weiss2021} to run our program. For RASP model design and details see Appendix 5.
+
 We use word-level tokens for all results in this paper.\footnote{We believe any solution at the word-level can be converted to a character-level token solution and that is not the focus of our investigation here (see Appendix 6 for proof of concept details on a character level solution not used here).}
 Consistent with \cite{Zhou2024} we use \cite{Weiss2021}'s RASP originally used for modeling Transformer encoders to model an encoder-decoder in a causal way by feeding the autoregressive output back into the program. We only have aggregations with non-causal masks when that aggregation (or without loss of generality just before the aggregation product is used to avoid multiplying everywhere) is masked by an input mask restricting it to the sequence corresponding to the input.\footnote{An example the author has prepared of this is available at 
 \begin{tiny}
@@ -120,7 +121,7 @@ https://github.com/frankaging/ReCOGS/blob/
 
 See Appendix 8 - Model Detail.
 \section{Methods}
-We use the RASP \cite{Weiss2021} intepreter\footnote{
+We use the RASP \cite{Weiss2021} interpreter\footnote{
 \begin{tiny}
 provided at https://github.com/tech-srl/RASP/
 \end{tiny}
@@ -148,9 +149,6 @@ https://github.com/frankaging/ReCOGS/blob/
 \end{tiny}
 } against ground truth.
 
-For the RASP solution, due to time constraints, complement phrase examples e.g. "Emma noticed that ..." which it appears can be implemented in RASP,
-were excluded so the author could focus on full coverage of the remaining grammar within the two weeks\footnote{ Complement phrase support has been added in https://github.com/willy-b/learning-rasp/pull/7 , and the model scores 100\% semantic exact match (95\% confidence interval: 99.88\% to 100.00\%) on the full ReCOGS\_pos Test set, and 100\% exact string match (same confidence interval) on the dev set (test set results pending).}.
-
 We also measure grammar coverage of input examples supported by our RASP model against the full grammar of COGS/ReCOGS input sentences provided in the utilities of the IBM CPG project \cite{klinger2024compositionalprogramgenerationfewshot}\footnote{ 
 \begin{tiny}
 https://github.com/IBM/cpg/blob/
@@ -162,20 +160,22 @@ See Appendix 9 - Methods Detail.
 \section{Results}
 \textbf{Restricted Access Sequence Processing - grammar coverage using a flat pattern matching approach (not tree-based and not recursive) and autoregressive decoder loop}
 Given the COGS input sentences were generated as a probablistic context free grammar per \cite{KimLinzen2020} 
-using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot} 
-and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer} (See Appendix 7 - Computing Grammar Coverage) , we use their TrackingGrammarCoverageFuzzer to generate the set of all expansions of the COGS grammar. 
+using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot}
+and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer} (See Appendix 7 - Computing Grammar Coverage) , we use their TrackingGrammarCoverageFuzzer to generate the set of all expansions of the COGS grammar.
 
-Before 75 examples of the ReCOGS training set, 100\% grammar coverage is reached (lexical differences ignored and complement phrases omitted) \cite{fuzzingbook2023:GrammarCoverageFuzzer} (noting that if the model is not capable of learning certain expansions in the grammar such as `np\_det pp np -> np\_pp -> np`, it may need to see more variations to memorize individual cases instead ):
+By the first 55 examples of the ReCOGS training set (unshuffled), 100\% grammar coverage is reached (lexical differences ignored) \cite{fuzzingbook2023:GrammarCoverageFuzzer} (noting that if the model is not capable of learning certain expansions in the grammar such as `np\_det pp np -> np\_pp -> np`, it may need to see more variations to memorize individual cases instead ):
 \includegraphics[scale=0.40]{grammar_coverage_by_number_of_recogs_training_examples_lexical_differences_ignored.png}
 
 That shows if one already knows parts of speech and verb types for words one needs much less data.
 
 Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand (in real world pretraining or a GloVe embedding would be used to solve this step)\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a pre-trained Transformer model in wide use, has part-of-speech information available at the earliest layers.}
- since we our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
-We generated 20 sentences which cover 100\% of the grammar under those constraints (under the context free grammar, tree based assumption which turns out to be incorrect for prepositional phrases) per \cite{fuzzingbook2023:GrammarCoverageFuzzer}:
+ since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
+
+We generated 21 sentences which cover 100\% of the COGS input grammar under those constraints (under the context free grammar, tree based assumption which turns out to be incorrect for prepositional phrases) per \cite{fuzzingbook2023:GrammarCoverageFuzzer}:
 
 \begin{tiny}
 \begin{verbatim}
+# 19 examples for non-recursive grammar rules
 "the girl was painted", 
 "a boy painted",
 "a boy painted the girl",
@@ -196,7 +196,11 @@ We generated 20 sentences which cover 100\% of the grammar under those constrain
 "the car was sold to the customer by ella",
 "the car was sold to the customer",
 
-"a boy painted the girl in a house"
+# 2 examples for recursive grammar rules
+# (1 prepositional phrase example)
+"a boy painted the girl in a house",
+# (1 complement phrase example)
+"the girl noticed that a boy painted the girl"
 \end{verbatim}
 \end{tiny}
 
@@ -204,11 +208,11 @@ The first 19 of those sentences are present in our RASP program code\footnote{
 \begin{tiny}
 https://github.com/willy-b/learning-rasp/blob/
 dca0bc6689b0454b75e5a46e77ffe66566ca7661/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L568\end{tiny}}
-and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{see also "Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design"}. Those 19 examples reflect the only rules for handling non-prepositional grammar rules\footnote{To handle prepositional phrases in a flat solution, we find it necessary even on the training data to add a rule that ignores noun phrases preceded by a prepositonal phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted (this was not done in every possible case manually within 2 weeks which is why we do not get 100\% in that one split, see next results section). We shall see encountering this issue in RASP and the grammar analysis suggesting a non-tree solution leads us to be able to predict 100\% of a certain category of errors a baseline Wu et al 2023 Encoder-Decoder Transformer makes in an upcoming results section.} present in our RASP solution (which gets approximately 100\% on the \cite{Wu2023} ReCOGS\_pos test set, see next results section).
+and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{see also "Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design"}. Those 19 examples reflect the only rules for handling non-prepositional/non-complement phrase grammar rules\footnote{To handle prepositional phrases in a flat solution, we find it necessary even on the training data to add a rule that ignores noun phrases preceded by a prepositonal phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted. We shall see encountering this issue in RASP and the grammar analysis suggesting a non-tree solution leads us to be able to predict 100\% of a certain category of errors a baseline Wu et al 2023 Encoder-Decoder Transformer makes in an upcoming results section.} present in our RASP solution (which gets 100\% semantic exact match and string exact match on the \cite{Wu2023} ReCOGS\_pos test set, see next results section). Note that those 19 sentences could be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens).
 
 \textbf{ Restricted Access Sequence Processing - semantic exact match}
 
-The \textit{Restricted Access Sequence Processing program scored 100\% Semantic Exact Match (no missed examples) (95\% confidence interval by Beta distribution of 99.9\% to 100\%, n=2720) on the ReCOGS\_pos test set}\footnote{ https://raw.githubusercontent.com/frankaging/ReCOGS/
+The \textit{Restricted Access Sequence Processing program scored 100\% Semantic Exact Match and String Exact Match (no missed examples) (95\% confidence interval (Beta dist / Clopper-Pearson) of 99.88\% to 100\%, n=3000) on the ReCOGS\_pos test set}\footnote{ https://raw.githubusercontent.com/frankaging/ReCOGS/
 
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb
 
@@ -216,13 +220,12 @@ The \textit{Restricted Access Sequence Processing program scored 100\% Semantic 
 
 see https://colab.research.google.com/drive/
 
-1vsuY6YW3F-DigpH2bCdU1b5vRPouyig- 
+1N7F-nc9GVnoC\_9dBVdNT02SBiBcMbgy-
 
-}  (excluding complement phrase examples).\footnote{ Complement phrase support has been added since this paper was drafted in https://github.com/willy-b/learning-rasp/pull/7 , and the model scores 100\% semantic exact match (95\% confidence interval: 99.88\% to 100.00\%) on the full ReCOGS\_pos Test set, and 100\% exact string match (same confidence interval) on the dev set (test set results pending), see PR for details }.
+Includes complement phrase support added in https://github.com/willy-b/learning-rasp/pull/7 }
 
-\textit{The RASP model scored 99.3\% Semantic Exact Match accuracy (95\% confidence interval: 98.7\% to 99.6\%)}\footnote{\textit{The only missed examples were in the obj\_pp\_to\_subj\_pp split, which scored 89.9\% (95\% confidence interval: 82.7\% to 94.9\%)}, due to two week time constraint and limitations on the author's ability to input all the grammar defined prepositional phrase rules in within that time (should not be taken as an indicator this is an upper bound for a similar RASP program, I expect 100\% is feasible like the other splits).} \textit{on the first 1,521 examples of the ReCOGS\_pos generalization set}\footnote{ 
-
-https://raw.githubusercontent.com/frankaging/ReCOGS/
+The RASP model scored 99.59\% semantic exact match on all non-recursive out-of-distribution generalization splits (18922 out of 19000 (95\% confidence interval: 99.49\% to 99.68\%))\footnote{\textit{The only missed examples by semantic exact match were in the obj\_pp\_to\_subj\_pp split, whose semantic exact match score was 92.20\% (95.00\% confidence interval: 90.36\% to 93.79\% (922 out of 1000))}. Note that the test set was unseen examples but in-distribution; these generalization splits are out-of-distribution, different grammatical forms than present in train/dev/test splits.}
+\footnote{https://raw.githubusercontent.com/frankaging/ReCOGS/
 
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb
 
@@ -230,30 +233,36 @@ https://raw.githubusercontent.com/frankaging/ReCOGS/
 
 https://colab.research.google.com/drive/
 
-1Uw3gn9PXpAs6rOurL5\_fLvo4o6\_ewMeT .
+1hLH9hFwPT\_3HZUteUTBY4tYvdiZN0O0M . See "Appendix 0 - Full RASP Program ReCOGS gen set Semantic Exact Match results by split" for all splits. }
 
-The RASP interpreter is not that fast and our program is not optimized, so we could not evaluate on the entire 21K example gen set within this short project.
+Recursion splits are reported separately below.
 
-Thus we report on the first 1,521 examples here.
-
- } (excluding complement phrase examples and with prepositional phrase recursion split analyzed separately below).
-
-See "Appendix 0 - Full RASP Program ReCOGS gen set Semantic Exact Match results by split" for all splits.
-
-\textbf{Restricted Access Sequence Processing - prepositional phrase recursion (tail recursive) with a non-tree, non-recursive approach using the decoder loop}\footnote{
-The grammar includes two (tail) recursive aspects, prepositional phrase recursion, covered here, and complement phrase recursion (I argue can be handled identically to prepositional phrase recursion so just covered one within this 2 week project).
+\textbf{Restricted Access Sequence Processing - prepositional phrase and complement phrase recursion (tail recursive) with a non-tree, non-recursive approach using the decoder loop}\footnote{
+The grammar includes two (tail) recursive aspects, prepositional phrase recursion, and complement phrase recursion.
 
 The prepositional phrase recursion comes from the following COGS input grammar rules: `np -> np\_det | np\_prop | np\_pp` and `np\_pp -> np\_det pp np`.
 
 Thus np can be expanded in an unbounded way as follows: `np -> (np\_det pp np) -> np\_det pp (np\_det pp np) -> np\_det pp np\_det pp (np\_det pp np)` and so on.
 
-However, one sees this is tail recursion and can be handled by a loop that just appends `np\_det pp` until the final `np` is not `np\_pp`.}
+However, one sees this is tail recursion and can be handled by a loop that just appends `np\_det pp` until the final `np` is not `np\_pp`.
 
-\textit{RASP model ReCOGS pp\_recursion gen split scores on first 83 examples were 100\% (95\% confidence interval: 95.7\% to 100.0\%; no missed examples have yet been observed in n=83)}\footnote{ 
+Complement phrase recursion comes from the following COGS input grammar rules: `np v\_cp\_taking that start`, where the form supports being recursively expanded like `np v\_cp\_taking that start -> np v\_cp\_taking that (np v\_cp\_taking that start)`, and so on until the nonterminal start expands to some other non complement phrase related nonterminal.
+}
+
+\textit{RASP model ReCOGS pp\_recursion gen split scores on first 475 examples were 100\% (95\% confidence interval (Beta dist/Clopper-Pearson): 99.23\% to 100.0\%; no missed examples have yet been observed in n=475)}\footnote{
 \begin{tiny}
-Notebook: https://colab.research.google.com/drive/19mpX9kNbJoH-70rsbaXK2pWD19CbexDW 
-\end{tiny}
+Old Notebook: https://colab.research.google.com/drive/19mpX9kNbJoH-70rsbaXK2pWD19CbexDW 
 
+New Notebook (pending): 
+
+https://colab.research.google.com/drive/1hLH9hFwPT\_3HZUteUTBY4tYvdiZN0O0M
+\end{tiny}
+} (out of date, expect to replace this with 1000 out of 1000 shortly, from new notebook).
+
+\textit{RASP model ReCOGS cp\_recursion gen split scores are 100\% (95\% confidence interval (Beta dist/Clopper-Pearson): 90.51\% to 100.0\%; no missed examples have yet been observed at n=37, waiting for n=1000 run to complete)}\footnote{ 
+\begin{tiny}
+Notebook: (link will be posted when evaluation is complete; no errors yet but has not completed and Colab interface is glitchy while evaluation is in progress) 
+\end{tiny}
 }
 
 \textbf{Wu et al 2023 Encoder-Decoder Transformer from scratch baselines (ReCOGS\_pos)}
@@ -267,6 +276,8 @@ Notebook: https://colab.research.google.com/drive/19mpX9kNbJoH-70rsbaXK2pWD19Cbe
 3-layer Wu et al 2023 Encoder-Decoder: 16.1\% +/- 1.7\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=8) of 14.9\% to 17.3\%.
 
 4-layer Wu et al 2023 Encoder-Decoder: 19.2\% +/- 4.4\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=5) of 15.4\% to 23.1\%.
+
+% should increase N on these two experiments for consistency
 
 \textbf{Error Analysis for Wu et al 2023 baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split}
 
@@ -283,23 +294,20 @@ https://colab.research.google.com/drive/
 For the difficult obj\_pp\_to\_subj\_pp split, considering only single verb cases (except v\_inf\_taking to v\_inf which was included) and ignoring sentences with complement phrases, of the sentences with a logical form failing Semantic Exact Match, 30.4\% of the errors were single relationship errors in one of the agent, theme, or recipient relationships.\footnote{Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. Based on the motivation discussed in the analysis section, we focused on the case where the agent was on the left and the theme was in any position.}
 
 For the 30.4\% of errors in this split which were single relationship errors, 75.4\% of these single relationship errors had the agent on the left side.
-\textit{Critically, 100\% (95\% confidence interval by Beta distribution: 98.6\% to 100\%) of the single relationship errors with the agent on the left side were in the agent part of the logical form and 100\% (95\% confidence interval: 98.6\% to 100\%) of those single relationship errors in the agent (258 examples) were that the agent index was accidentally assigned to the modifying prepositional phrase noun instead of the original agent noun (as predicted by the RASP analysis).}
+\textit{Critically, 100\% (95\% confidence interval (Beta dist / Clopper-Pearson): 98.6\% to 100\%) of the single relationship errors with the agent on the left side were in the agent part of the logical form and 100\% (95\% confidence interval: 98.6\% to 100\%) of those single relationship errors in the agent (258 examples) were that the agent index was accidentally assigned to the modifying prepositional phrase noun instead of the original agent noun (as predicted by the RASP analysis).}
 
 \textbf{Wu et al 2023 Encoder-Decoder Transformer on new v\_dat\_p2 pp moved to recipient (from theme) split - as hard as hardest previous generalization split}
 
 As the Restricted Access Sequence Processing program predicted the `np v\_dat\_p2 np pp np np`\footnote{Strictly speaking we only do `np v\_dat\_p2 np\_det pp np np` as per the grammar `np\_prop` cannot precede a prepositional phrase} prepositional phrase modification (which involves the recipient instead of the subject so is a distinct check of our hypothesis) would require learning to ignore the distractor "pp np" same as required for the obj\_pp\_to\_subj\_pp split, we predicted that a new split we introduce "v\_dat\_p2\_pp\_moved\_to\_recipient" would also be difficult for the Transformer. To test this, Wu et al 2023's baseline Encoder-Decoder Transformer was trained with default data (ReCOGS\_pos train.tsv) and tested on modified v\_dat\_p2 pp training examples where only the word order was changed to move the prepositional phrase from the theme to the recipient (logical form properly updated see Appendix 4 for all examples). \textit{The baseline Wu et al 2023 Encoder-Decoder Transformer was only able to achieve a Semantic Exact Match (sample mean +/- sample std) of 13\% +/- 15.6\% (n=10 samples) with a 95\% confidence interval for the sample mean when n=10 of 4\% to 23\%}. Thus, this new split we introduce here as v\_dat\_p2\_pp\_moved\_to\_recipient is as difficult or perhaps more difficult than the previous reported "hardest split" obj\_pp\_to\_subj\_pp.
 
+% Note, I want to explicitly test the RASP model on this split as well
+
 \textbf{Wu et al 2023 Encoder-Decoder Transformer trained with data augmented with v\_dat\_p2 pp moved to recipient (from theme) does NOT improve obj\_pp\_to\_subj\_pp performance}
 
 Wu et al 2023's baseline Encoder-Decoder Transformer was trained with default data (ReCOGS\_pos train.tsv) but with additionally the same modified v\_dat\_p2 pp training examples used for the "v\_dat\_p2\_pp\_moved\_to\_recipient" split (non-subject recipient modified with prepositional phrase, so nonoverlapping with subj\_pp) above on which it performed poorly, then tested on the standard prepositional modification generalization split "obj\_pp\_to\_subj\_pp", after which it achieved 22\% +/- 6.7\% Semantic Exact Match (sample mean +/- std, n=10) with 95\% confidence interval for sample mean n=10 of 17.9\% to 26.1\% (not significantly different than Wu et al 2023's baseline by one-tailed Welch's unequal variances t-test).
 
-
 \section{Analysis} 
-% Discussion of what the results mean, what they don’t mean, where they can be improved, etc. These sections vary a lot depending on the nature of the paper. (For papers reporting on experiments with multiple datasets, it can be good to repeats Methods/Results/Analysis in separate (sub)sections for each dataset.)
-
-Our RASP model of a Transformer Encoder Decoder, without tree-based or recursive aspects scored 100\% in semantic exact match accuracy on the \cite{Wu2023} test set (n=2720), and on the generalization data scored 100\% in all but one category (see above) without explicit rules in the RASP program to handle them. This includes 100\% accuracy on the prepositional phrase recursion generalization split up to depth 12 (n=83 examples), without any hardcoded prepositional phrase expansion shortcuts added\footnote{a single rule applies to all depths; the only limit on length generalization is the RASP interpreter and a simple to extend positional encoding which only handles sentences up to 50 words due to a map that only covers numbers up to 50 but can be easily expanded by literally adding dummy entries like "'51':0,'52':0" and so on to a map in one place}. The RASP program only made a significant number of errors on obj\_pp\_to\_subj\_pp which scored only 89.9\% (95\% confidence interval: 82.7\% to 94.9\%) Semantic Exact Match accuracy\footnote{and only less than 100\% on this split because within the 2 week project time the author could not cover all the prepositional grammar expansion rules in coding the rule-based RASP solution by hand} much better than \cite{Wu2023} baseline Encoder-Decoder Transformers which only scored 19.7\% +/- 6.1\% with 95\% confidence interval for the sample mean with n=20 of 17.0\% to 22.4\% .
-
-Note that complement phrase recursion was considered redundant with prepositional phrase recursion as they are both tail recursion cases that can be handled by the decoder loop and omitted to fit the project within 2 weeks (will be done as follow up).
+Our RASP model of a Transformer Encoder Decoder, without tree-based or recursive aspects scored 100\% in semantic exact match accuracy on the \cite{Wu2023} test set (n=3000), and on the generalization data scored 100\% in all but one category (see above) without explicit rules in the RASP program to handle them. This includes 100\% semantic exact match accuracy on the prepositional phrase recursion and complement phrase recursion generalization splits up to depth 12 (n=1000 examples each), without any hardcoded prepositional phrase or complement phrase expansion shortcuts added\footnote{a single rule applies to all depths; the only limit on length generalization is the RASP interpreter and a simple to extend positional encoding which only handles sentences up to a limit due to a map that only covers numbers up to a limit but can be easily expanded by literally adding dummy entries like "'121':0,'122':0" and so on to a map in one place}. The RASP program only made a significant number of errors on obj\_pp\_to\_subj\_pp which scored only 92.20\% Semantic Exact Match (95\% confidence interval (Beta dist / Clopper-Pearson): 90.36\% to 93.79\%) Semantic Exact Match accuracy, much better than \cite{Wu2023} baseline Encoder-Decoder Transformers which only scored 19.7\% +/- 6.1\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for the sample mean with n=20 of 17.0\% to 22.4\% (n=20 separately trained models with different random seeds for weight initialization and training data ordering; n=1000 examples used to test each of the n=20 models).
 
 \textbf{Thus, we demonstrated by construction using the Restricted Access Sequence Processing language which can be compiled to concrete Transformer weights that theoretically a Transformer Encoder-Decoder can solve the COGS input to ReCOGS\_pos logical form translation in a systematic, compositional, and length generalizing way.}
 
@@ -330,9 +338,6 @@ Implementing our task in Restricted Access Sequence Processing immediately helpe
 
 \section*{Known Project Limitations}
 
-% For this section, imagine that your reader is a well-intentioned NLP practitioner who is seeking to make use of your data, models, or findings as part of a separate scholarly project, deployed system, or some other kind of real-world intervention. What should such a person know about your work? Especially important here are limitations and biases that might affect this person, their findings, their experiment participants, or the users of their product or service. The idea is that what you say here will be taken into consideration but this well-intentioned user, leading to better outcomes for everyone.
-
-
 The Restricted Access Sequence Processing code is not optimized. Cannot yet predict attention heads and layers required from the select and aggregate operations performed like the RASP authors \cite{Weiss2021} were able to do with their problems.
 
 Our RASP evaluation is slow.
@@ -356,58 +361,34 @@ No AI tools were used by the author in the preparation of this manuscript with t
 
 \clearpage
 \section{Appendix 0 - RASP Program ReCOGS gen set Semantic Exact Match results by split }
-Only 1521 rows are shown as the RASP program does not run quickly and the entire gen set was not able to be evaluated yet.
 \begin{tiny}
 \begin{verbatim}
-99.27679158448389% or 1510.0 out of 1521 (95% confidence interval: 98.7\% to 99.6\%)
+Semantic exact match score on first 19000 of ReCOGS_pos gen (non-recursive splits)
+99.59% or 18922.0 out of 19000 (95% confidence interval: 99.49% to 99.68%)
 
-Semantic Exact Match % by category:                                                     Semantic Exact Match
-Category                                                                
-active_to_passive                                             100.000000
-do_dative_to_pp_dative                                        100.000000
-obj_omitted_transitive_to_transitive                          100.000000
-obj_pp_to_subj_pp                                              89.908257 (95% confidence interval: 82.7% to 94.9%)
-obj_to_subj_common                                            100.000000
-obj_to_subj_proper                                            100.000000
-only_seen_as_transitive_subj_as_unacc_subj                    100.000000
-only_seen_as_unacc_subj_as_obj_omitted_transiti...            100.000000
-only_seen_as_unacc_subj_as_unerg_subj                         100.000000
-passive_to_active                                             100.000000
-pp_dative_to_do_dative                                        100.000000
-prim_to_inf_arg                                               100.000000
-prim_to_obj_common                                            100.000000
-prim_to_obj_proper                                            100.000000
-prim_to_subj_common                                           100.000000
-prim_to_subj_proper                                           100.000000
-subj_to_obj_common                                            100.000000
-subj_to_obj_proper                                            100.000000
-unacc_to_transitive                                           100.000000
-
-Counts by category:
-Category                                                                
-active_to_passive                                                     77
-do_dative_to_pp_dative                                                88
-obj_omitted_transitive_to_transitive                                 100
-obj_pp_to_subj_pp                                                    109
-obj_to_subj_common                                                   113
-obj_to_subj_proper                                                   100
-only_seen_as_transitive_subj_as_unacc_subj                             5
-only_seen_as_unacc_subj_as_obj_omitted_transiti...                     5
-only_seen_as_unacc_subj_as_unerg_subj                                  1
-passive_to_active                                                     95
-pp_dative_to_do_dative                                               107
-prim_to_inf_arg                                                       81
-prim_to_obj_common                                                   109
-prim_to_obj_proper                                                    83
-prim_to_subj_common                                                   86
-prim_to_subj_proper                                                   98
-subj_to_obj_common                                                    74
-subj_to_obj_proper                                                    94
-unacc_to_transitive                                                   96
+Semantic Exact Match % by category:
+active_to_passive: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+do_dative_to_pp_dative: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+obj_omitted_transitive_to_transitive: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+obj_pp_to_subj_pp: 92.20% (95.00% confidence interval: 90.36% to 93.79% (922.0 out of 1000))
+obj_to_subj_common: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+obj_to_subj_proper: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+only_seen_as_transitive_subj_as_unacc_subj: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+only_seen_as_unacc_subj_as_obj_omitted_transitive_subj: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+only_seen_as_unacc_subj_as_unerg_subj: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+passive_to_active: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+pp_dative_to_do_dative: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+prim_to_inf_arg: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+prim_to_obj_common: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+prim_to_obj_proper: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+prim_to_subj_common: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+prim_to_subj_proper: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+subj_to_obj_common: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+subj_to_obj_proper: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
+unacc_to_transitive: 100.00% (95.00% confidence interval: 99.63% to 100.00% (1000.0 out of 1000))
 \end{verbatim}
 \end{tiny}
 \clearpage
-
 \clearpage
 
 \section{Appendix 1 - Vocabulary and Grammar}
@@ -719,7 +700,7 @@ python recogs_examples_in_rasp.py
 
 The script will show performance on Wu et al 2023 ReCOGS\_pos data by default, run with "--use\_dev\_split", "--use\_gen\_split" , or "--use\_test\_split" to see it run on those and give a running score every 10 rows.
 
-For ReCOGS, intending to perform well on Semantic Exact Match, we took a simple, flat, non-tree, non-recursive approach which was able to get approximately 100\% on the full test set, and of a sample of 3000 rows of the generalization sets of the real ReCOGS dataset\footnote{ word-level token Restricted Access Sequence Processing solution: https://github.com/willy-b/learning-rasp/blob/
+For ReCOGS, intending to perform well on Semantic Exact Match, we took a simple, flat, non-tree, non-recursive approach which was able to get approximately 100\% semantic exact match (and string exact match) on the full test set, and 99.6\% semantic exact match on the out-of-distribution generalization set of the real ReCOGS dataset\footnote{ word-level token Restricted Access Sequence Processing solution: https://github.com/willy-b/learning-rasp/blob/
 e97282e18b07004bf714b5c9bb5883090a2ff8e3/word-level-pos-tokens-recogs-style-decoder-loop.rasp }
 
 We took the RASP native sequence tokens, and first did a Transformer learned-embedding compatible operation and created 1 part-of-speech and 4 extra verb-type sequences (because each word in the COGS vocabulary may actually serve multiple POS roles; up to four different verb types as in the case of "liked" 
@@ -788,7 +769,9 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 
 Also, the author thinks many of these RASP steps could be consolidated. The goal here was to first prove by construction that a non-recursive, flat RASP program could get approximately 100\% Semantic Exact Match on all the ReCOGS generalization splits (we only missed one split by a little due to two week time constraint, insufficient time to add all rules).
 
-Introduction of variables at the beginning of the ReCOGS logical form (e.g. in the logical form for "a boy painted the girl", we have "boy ( 1 ) ; * girl ( 4 ) ; painted ( 2 ) AND agent ( 2 , 1 ) AND theme ( 2 , 4 )" , the variable introduction is "boy ( 1 ) ; * girl ( 4 ) ; painted ( 2 )" before the "AND"). A more complete solution that handles not just prepositional phrase recursion (we score approximately 100\% with the solution we are describing here) but complement phrases and complement phrase recursion was omitted to fit within the 2 week project, but is believed by the author to be able to be easily done using the same technique (will be done in follow up work). In that approach one would need to loop over the verbs and output the related relationships. Here we simplified and just sorted the input sequence with nouns before verbs and determiners, fillers last (with determiners and fillers not having any corresponding entry in the output sequence). We then count nouns and verbs in the input and count nouns and verbs in the output and determine if we have introduced all the nouns and verbs.
+Introduction of variables at the beginning of the ReCOGS logical form (e.g. in the logical form for "a boy painted the girl", we have "boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 ) AND agent ( 2 , 1 ) AND theme ( 2 , 4 )" , the variable introduction is "boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 )" before the "AND"). We took a simple approach and sorted the input sequence with nouns before verbs and determiners, fillers last (with determiners and fillers not having any corresponding entry in the output sequence). We then count nouns and verbs in the input and count nouns and verbs in the output and determine if we have introduced all the nouns and verbs.
+
+(The sections below must be updated for PR\#7 which adds complement phrase support and complicated the approach somewhat) 
 
 Example counting how many nouns and verbs we have output (introduced as variables) so far (to determine what we need to output for next token):
 \begin{tiny}
@@ -1173,21 +1156,28 @@ Those values could then be looked up in a dictionary like in the completed word-
 
 \section{Appendix 7 - Computing Grammar Coverage}
 
-First we use the grammar as it was generated as a probablistic context free grammar per \cite{KimLinzen2020} 
-using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot} 
+First we use the grammar as it was generated as a probablistic context free grammar per \cite{KimLinzen2020}
+using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot}
 and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer}.
 
 Note this starting point is not the grammar we claim the our Restricted Access Sequence Processing model implements or the Transformer actually learns as we argue the Transformer is learning a flat, non-tree solution to this simple grammar (not actually learning to collapse "np\_det pp np" into "np" for example). First we compute grammar coverage relative to the PCFG approach that generated it, which mostly aligns with our RASP model. We also ignore terminals in this assessment of coverage, as stated earlier, when computing grammar coverage, we will report the grammar coverage over expansions that collapse all vocabulary leaves to a single leaf (for example not requiring that every particular proper noun or common noun be observed in a particular pattern, so long as one has and we can confirm the code treats them as equivalent; e.g. having tested "Liam drew the cat" and proven that "Liam" and "Noah" are treated as interchangeable proper nouns, and that "cat" and "dog" are treated as interchangeable common nouns by the RASP solution -- not something one can assume for neural network solutions in general -- means that confirming our solution produces the correct logical form for "Liam drew the cat" suffices to prove the RASP solution can handle "Noah drew the dog", which saves us a lot of work so long as we make sure to write our RASP solution such that noah/liam and cat/dog are indeed treated identically).
 
 \begin{tiny}
 \begin{verbatim}
+# Non-terminals only version of
+# https://github.com/IBM/cpg/blame/
+# c3626b4e03bfc681be2c2a5b23da0b48abe6f570
+# /src/model/cogs_data.py#L529
+# NOTE WE DO NOT ACTUALLY USE THIS GRAMMAR IN OUR MODEL,
+# IT IS FOR UNDERSTANDING THE GRAMMAR WE ARE TRYING TO LEARN/MODEL
+
 COGS_INPUT_GRAMMAR_NO_TERMINALS = {
 "<start>": ["<s1>", "<s2>", "<s3>", "<s4>", "<vp_internal>"],
 "<s1>": ["<np> <vp_external>"],
 "<s2>": ["<np> <vp_passive>"],
 "<s3>": ["<np> <vp_passive_dat>"],
 "<s4>": ["<np> <vp_external4>"],
-"<vp_external>": ["<v_unerg>", "<v_trans_omissible_p1>", "<vp_external1>", "<vp_external2>", "<vp_external3>", "<vp_external4>","<vp_external5>", "<vp_external6>", "<vp_external7>"],
+"<vp_external>": ["<v_unerg>", "<v_trans_omissible_p1>", "<vp_external1>", "<vp_external2>", "<vp_external3>","<vp_external5>", "<vp_external6>", "<vp_external7>"],
 "<vp_external1>": ["<v_unacc_p1> <np>"],
 "<vp_external2>": ["<v_trans_omissible_p2> <np>"],
 "<vp_external3>": ["<v_trans_not_omissible> <np>"],
@@ -1271,14 +1261,13 @@ def generate_set_of_expansion_keys_for_lark_parse_tree(tree):
 
 For example, for the sentence "the girl noticed that a boy painted the girl",
 
-(note we otherwise exclude such complement phrases in this paper\footnote{ Complement phrase support has been added in https://github.com/willy-b/learning-rasp/pull/7 , and the model scores 100\% semantic exact match (95\% confidence interval: 99.88\% to 100.00\%) on the full ReCOGS\_pos Test set, and 100\% exact string match (same confidence interval) on the dev set (test set results pending).}, which you can see as " <v\_cp\_taking> <that>" below)
-
 we get
 \begin{tiny}
 \begin{verbatim}
 sentence = "the girl noticed that a boy painted the girl"
 tree = parser.parse(sentence)
-expansions_observed = generate_set_of_expansion_keys_for_lark_parse_tree(tree)
+expansions_observed = \
+generate_set_of_expansion_keys_for_lark_parse_tree(tree)
 # <start> -> <s1>
 # <s1> -> <np> <vp_external>
 # <np> -> <np_det>
@@ -1313,9 +1302,11 @@ and what examples need to be seen at a minimum for any model to learn the task f
 Note for a Transformer model learning word embeddings / mapping to part-of-speech for each word, one would need to use the grammar with terminals to compute coverage. Here we want to argue something about our RASP model where we can ensure via implementation that all terminals in a category are treated identically (and we observe 100\% semantic exact match for the related generalization splits for swapping words within a part of speech).
 
 
-We can ask what \% of the grammar without terminals is covered by the first 20 sentences from COGS?
+We can ask what \% of the grammar without terminals is covered by the first 21 sentences from the COGS training set?
 \begin{tiny}
 \begin{verbatim}
+# https://raw.githubusercontent.com/frankaging/ReCOGS/
+# 1b6eca8ff4dca5fd2fb284a7d470998af5083beb/cogs/train.tsv
 nonsense_example_sentences = [
 "A rose was helped by a dog",
 "The sailor dusted a boy",
@@ -1337,21 +1328,27 @@ nonsense_example_sentences = [
 "Isabella forwarded a box on a tree to Emma",
 "A cake was stabbed by Scarlett",
 "A pencil was fed to Liam by the deer",
+"The cake was eaten by Olivia"
 ]
 
 all_expansions_observed_across_examples = set()
 
 for sentence in nonsense_example_sentences:
-  single_example_expansions = generate_set_of_expansion_keys_for_lark_parse_tree(parser.parse(sentence.lower()))
-  all_expansions_observed_across_examples = all_expansions_observed_across_examples.union(single_example_expansions)
+  single_example_expansions = \
+  generate_set_of_expansion_keys_for_lark_parse_tree\
+  (parser.parse(sentence.lower()))
+  all_expansions_observed_across_examples = \
+  all_expansions_observed_across_examples.union\
+  (single_example_expansions)
 
-1 - len(set(expansions_expected) - all_expansions_observed_across_examples) / len(expansions_expected)
-# 0.6603773584905661
+1 - len(set(expansions_expected) \
+- all_expansions_observed_across_examples) / len(expansions_expected)
+# 0.7115384615384616
 \end{verbatim}
 \end{tiny}
-Those 20 sentences cover 66\% of the grammar. (Continued on next page.)
+Those 21 COGS input sentences cover 71\% of the grammar. (Continued on next page.)
 
-We can compare the first 20 sentences of COGS that to the 19 sentences used in developing the RASP program plus one to cover basic prepositional phrases:\footnote{(see 
+We can compare the first 21 sentences of COGS that to the 19 sentences used in developing the RASP program (then add one to cover basic prepositional phrases, and one more to cover complement phrases):\footnote{(see 
 
 https://github.com/willy-b/learning-rasp/blob/
 
@@ -1363,8 +1360,12 @@ for the full list and associated rules in the code as the RASP does not learn fr
 
 \begin{tiny}
 \begin{verbatim}
-handpicked_example_sentences = [ # missing complement phrase (cp_taking) examples (successfully added in PR 7 on public repo)
-"the girl was painted", # see link above all these examples each correspond to distinct rules in the code
+handpicked_example_sentences = [ 
+# non-recursive grammar rule examples only
+# no prepositional phrases or complement phrases
+# see link above all these examples 
+# each correspond to distinct rules in the code
+"the girl was painted",
 "a boy painted",
 "a boy painted the girl",
 "the girl was painted by a boy",
@@ -1388,32 +1389,44 @@ handpicked_example_sentences = [ # missing complement phrase (cp_taking) example
 all_expansions_observed_across_examples = set()
 
 for sentence in handpicked_example_sentences:
-  single_example_expansions = generate_set_of_expansion_keys_for_lark_parse_tree(parser.parse(sentence.lower()))
-  all_expansions_observed_across_examples = all_expansions_observed_across_examples.union(single_example_expansions)
+  single_example_expansions = \
+  generate_set_of_expansion_keys_for_lark_parse_tree(parser.parse(sentence.lower()))
+  all_expansions_observed_across_examples = \
+  all_expansions_observed_across_examples.union(single_example_expansions)
 
-1 - len(set(expansions_expected) - all_expansions_observed_across_examples) / len(expansions_expected)
-# 0.9056603773584906
+1 - len(set(expansions_expected) \
+- all_expansions_observed_across_examples) / len(expansions_expected)
+# 0.9230769230769231
+
+# Those 19 rules cover 92.3% of the COGS input grammar
+# (not necessarily 92.3% of examples as the examples 
+# are not evenly distributed across grammar rules).
+# Let's see what rules are still missing:
 
 set(expansions_expected) - all_expansions_observed_across_examples
-#{'<np> -> <np_pp>', # tells us we need a prepositional phrase example!
-# '<np_pp> -> <np_det> <pp> <np>', # tell us we need prepositional phrase examples
-# '<vp_external5> -> <v_cp_taking> <that> <start>',# we know we skipped complement phrases in this example
-# '<vp_external> -> <vp_external4>', # appears redundant path to get here in grammar description from IBM?
-# '<vp_external> -> <vp_external5>'} # complement phrase related, skipped in this example (successfully added in PR 7 on public repo)
+# tells us we need a prepositional phrase example!
+#{'<np> -> <np_pp>',
+# tell us we need prepositional phrase examples
+# '<np_pp> -> <np_det> <pp> <np>',
+# tells us we need complement phrase examples
+# '<vp_external5> -> <v_cp_taking> <that> <start>',
+# tells us we need complement phrase examples
+# '<vp_external> -> <vp_external5>'}
 \end{verbatim}
 \end{tiny}
 
 \clearpage
-We got to 90.5\% grammar coverage in our 19 examples (higher if we ignore the 2 CP related entries and redundant vp\_external4) instead of COGS 66\% in 20 examples.
+We got to 92.3\% grammar coverage in our 19 examples instead of COGS 71\% in 21 examples.
 
-And, it is telling us we are missing an example with prepositional phrases (see next example).
+And, it is telling us we are missing an example with prepositional phrases and complement phrases (see next examples)
 
-Let us add a simple prepositional phrase example:
+Let us add a simple prepositional phrase example and complement phrase example:
 \begin{tiny}
 \begin{verbatim}
 handpicked_example_sentences = \
 handpicked_example_sentences + \
-["a boy painted the girl in a house"]
+["a boy painted the girl in a house"] + \
+["the girl noticed that a boy painted the girl"]
 
 handpicked_example_sentences
 # ['the girl was painted',
@@ -1435,7 +1448,9 @@ handpicked_example_sentences
 #  'the customer was sold a car by ella',
 #  'the car was sold to the customer by ella',
 #  'the car was sold to the customer',
-#  'a boy painted the girl in a house']
+#  'a boy painted the girl in a house',
+#  'the girl noticed that a boy painted the girl'
+#]
 all_expansions_observed_across_examples = set()
 
 for sentence in handpicked_example_sentences:
@@ -1443,21 +1458,19 @@ for sentence in handpicked_example_sentences:
   all_expansions_observed_across_examples = all_expansions_observed_across_examples.union(single_example_expansions)
 
 1 - len(set(expansions_expected) - all_expansions_observed_across_examples) / len(expansions_expected)
-# 0.9433962264150944
+# 1.0
 
 set(expansions_expected) - all_expansions_observed_across_examples
-#{'<vp_external5> -> <v_cp_taking> <that> <start>', # complement phrase related
-# '<vp_external> -> <vp_external4>', # redundant
-# '<vp_external> -> <vp_external5>'} # complement phrase related
+# set()
 \end{verbatim}
 \end{tiny}
 (continued below)
 \clearpage
 
-Thus we saw what we did not cover yet and in 19 intentionally crafted sentences (each is in the RASP code with a corresponding rule) cover 90\% of the grammar, we add one sentence to fill the reported gap and get to 94\% and possibly 100\% of what we need
- (I wrote the RASP program primarily on these examples derived from the grammar with complement phrases excluded and after including minimal prepositional phrase handling (by skipping "pp np" when choosing nouns for relationships and setting up an nmod output loop) I indeed scored ~ 95\% on the first hundred examples from the training set, after which I made small modifications and got >99\% on the test and gen sets -- I knew there were prepositional patterns not yet covered but it is a two week project and time to measure).
+Thus in 19 intentionally crafted sentences (each is in the RASP code with a corresponding rule) cover 92.3\% of the grammar, 
+using the coverage we can what we did not cover yet, and thus add two sentences to fill the reported gap and get to 100\% .
 
-However these coverage metrics are misleading when it comes to prepositional phrases as it would not suggest to include prepositional phrases in all positions, assuming they could be collapsed by the model back to `np` using `np -> np\_pp -> np\_det pp np` while experiments suggest it is necessary to train with prepositional phrases explicitly in the different positions in the different verb patterns (see below).
+However these coverage metrics are misleading when it comes to prepositional phrases as it would not suggest to include prepositional phrases in all positions, assuming they could be collapsed by the model back to `np` using `np -> np\_pp -> np\_det pp np` while Wu et al 2023 and our experiments suggest it is necessary to train with prepositional phrases explicitly in the different positions in the different verb patterns (see below).
 
 Based on the finding earlier we believe that the only recursion learned is tail recursion in the decoder loop and that `np -> np\_det | np\_prop | np\_pp` and `np\_pp -> np\_det pp np` is not actually performed as if the Encoder-Decoder Transformer were to learn a tree-based or recursive representation. If the Transformer had a tree based representation, it is predicted that the "v\_dat\_p2\_pp\_moved\_to\_recipient" would not be any harder than when the pp modification is on the theme, as `np v\_dat\_p2 np\_det pp np np` can be transformed by the recursive grammar rule `np\_det pp np -> np\_pp -> np` to `np v\_dat\_p2 np np` on which it is already trained and has good performance, but instead it fails completely, and see also "Error Analysis for Wu et al 2023 baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split" where we observe that prepositional modification of a noun to the left of a verb it is the agent of causes the new prepositional phrase noun that becomes the closest noun to be mistaken for the agent, which is in contradiction to the model collapsing `np\_det pp np` to `np` before matching the overall grammar pattern.
 
@@ -1475,9 +1488,9 @@ https://github.com/willy-b/learning-rasp/blob/
 \end{tiny}
 .}
 
-We used RASP maps to map word level tokens to part-of-speech and verb-type which is consistent with what can be learned in embeddings or the earliest layer of a Transformer \cite{tenney2019bertrediscoversclassicalnlp} and then did 19 different attention-head based template matches on a flat sequence\footnote{A flat/non-tree solution was pursued because it was simple and given the failure documented in \cite{Wu2023} of the baseline Encoder-Decoder to generalize from obj\_pp\_to\_subj\_pp and other evidence we give below we shall see it is hard to argue a tree-based solution which includes the rule `np\_det pp np -> np\_pp -> np` is learned by \cite{Wu2023}'s baseline Encoder-Decoder Transformer.} (no tree-based parsing, no recursive combination of terminals/non-terminals) to match the sentence to a template in the grammar (see "Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design" and  "Appendix 1: Vocabulary and Grammar"). The 19 types were based on \cite{fuzzingbook2023:GrammarCoverageFuzzer} grammar coverage of the COGS grammar (see Methods and "Appendix 7 - Computing Grammar Coverage").\footnote{To handle prepositional phrases in a flat solution, we find it necessary to add a rule that ignores noun phrases preceded by a prepositional phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted (this was not done in every possible case manually within 2 weeks which is why we do not get 100\% in that one split, see next results section).}
+We used RASP maps to map word level tokens to part-of-speech and verb-type which is consistent with what can be learned in embeddings or the earliest layer of a Transformer \cite{tenney2019bertrediscoversclassicalnlp} and then did 19 different attention-head based template matches on a flat sequence\footnote{A flat/non-tree solution was pursued because it was simple and given the failure documented in \cite{Wu2023} of the baseline Encoder-Decoder to generalize from obj\_pp\_to\_subj\_pp and other evidence we give below we shall see it is hard to argue a tree-based solution which includes the rule `np\_det pp np -> np\_pp -> np` is learned by \cite{Wu2023}'s baseline Encoder-Decoder Transformer.} (no tree-based parsing, no recursive combination of terminals/non-terminals) to match the sentence to a template in the grammar (see "Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design" and  "Appendix 1: Vocabulary and Grammar"). The 19 types were based on \cite{fuzzingbook2023:GrammarCoverageFuzzer} grammar coverage of the COGS grammar (see Methods and "Appendix 7 - Computing Grammar Coverage").\footnote{To handle prepositional phrases in a flat solution, we find it necessary to add a rule that ignores noun phrases preceded by a prepositional phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted.}
 
-We also ensure that the mapping from words to part-of-speech and verb type is complete based on a published list of such mappings and put that into our hardcoded word embedding\footnote{It is reported that pretrained transformers seem to have learned POS information at their earliest layers, \cite{tenney2019bertrediscoversclassicalnlp}}
+We also ensure that the mapping from words to part-of-speech and verb type is complete based on a published list of such mappings and put that into our hardcoded word embedding\footnote{It is reported that pretrained transformers seem to have learned POS information at their earliest layers, e.g. BERT in \cite{tenney2019bertrediscoversclassicalnlp}}
 
 For training Transformers from scratch with randomly initialized weights using gradient descent for comparison with RASP predictions, we use scripts derived from those provided by \cite{Wu2023}\footnote{
 \begin{tiny}
@@ -1493,7 +1506,7 @@ https://github.com/frankaging/ReCOGS/blob/
 
 \section{Appendix 9 - Methods Detail}
 
-We use the RASP \cite{Weiss2021} intepreter\footnote{
+We use the RASP \cite{Weiss2021} interpreter\footnote{
 \begin{tiny}
 provided at https://github.com/tech-srl/RASP/
 \end{tiny}
@@ -1537,9 +1550,6 @@ https://github.com/frankaging/ReCOGS/blob/
 
 In the training data only, any ReCOGS training augmentations like preposing or "um" sprinkles are excluded when evaluating the RASP model on the train data (it does not learn directly from the examples and these augmentations are outside of the grammar). 
 
-For the RASP solution, due to time constraints, complement phrase examples e.g. "Emma noticed that ..." which it appears can be implemented in RASP,
-were excluded so the author could focus on full coverage of the remaining grammar within the two weeks.\footnote{ Complement phrase support has been added in https://github.com/willy-b/learning-rasp/pull/7 , and the model scores 100\% semantic exact match (95\% confidence interval: 99.88\% to 100.00\%) on the full ReCOGS\_pos Test set, and 100\% exact string match (same confidence interval) on the dev set (test set results pending).}.
-
 We also measure grammar coverage of input examples supported by our RASP model against the full grammar of COGS/ReCOGS input sentences provided in the utilities of the IBM CPG project \cite{klinger2024compositionalprogramgenerationfewshot}\footnote{ 
 \begin{tiny}
 https://github.com/IBM/cpg/blob/
@@ -1552,8 +1562,17 @@ When computing grammar coverage \cite{fuzzingbook2023:GrammarCoverageFuzzer}, we
 The overall Semantic Exact Match performance is reported as well as the performance on the specific structural generalization splits where Transformers are reported to struggle, even in ReCOGS, specifically Object Prepositional Phrase to Subject Prepositional Phrase (obj\_pp\_to\_subj\_pp), 
 Prepositional Phrase (pp\_recursion) will be highlighted and discussed in depth for all models. 
 
-For the RASP program's Semantic Exact Match results which is based on the outcome of a deterministic program (so cannot randomly reinitialize weights and retrain, rerun),
-we can use the Beta distribution to model the uncertainty and generate confidence intervals (Clopper-Pearson intervals) as each Semantic Exact Match is a binary outcome (0 or 1 for each example), and unlike bootstrapping this also supports the common case for our RASP program of 100\% accuracy, which occurs in all but one split for our model, where resampling will not help us estimate uncertainty in bootstrapping, but the Beta distribution will still give us confidence bounds that depend on the sample size.
+For the RASP program's Semantic Exact Match results which are based on the outcome of a deterministic program (so cannot randomly reinitialize weights and retrain, rerun),
+we can use the Beta distribution to model the uncertainty and generate confidence intervals (Clopper-Pearson intervals\footnote{
+\begin{tiny}
+see e.g. 
+https://en.wikipedia.org/w/index.php
+
+?title=Binomial\_proportion\_confidence\_interval\&oldid=1252517214\#Clopper\%E2\%80\%93Pearson\_interval
+
+and https://arxiv.org/abs/1303.1288 
+\end{tiny}
+}) as each Semantic Exact Match is a binary outcome (0 or 1 for each example). Unlike bootstrapping this also supports the common case for our RASP program of 100\% accuracy, which occurs in all but one split, where resampling would not help us estimate uncertainty in bootstrapping, but using the Beta distribution will give us confidence bounds that depend on the sample size.
 
 In developing our RASP program\footnote{\begin{tiny}
 https://github.com/willy-b/learning-rasp/blob/
