@@ -79,6 +79,13 @@ Thus we apply techniques similar to \cite{Zhou2024} and \cite{Weiss2021} to ReCO
 %
 %"What Algorithms can Transformers Learn? A Study in Length Generalization" \cite{Zhou2024} then apply \cite{Weiss2021}'s RASP language to return to the inconsistent findings regarding generalization and use RASP to predict exactly which cases of generalization come easily to Transformers and which not. \textbf{\cite{Zhou2024} turn \cite{Weiss2021} into the framework we seek by demonstrating how to apply RASP to Transformer decoders with intermediate steps, and showing how to modify tasks like Parity and long addition in seemingly incidental ways based on RASP analysis to make them readily learnable by Transformers in a compositional, length generalizing way!} Specifically they add index hints to the addition task based on a RASP-grounded analysis of what is preventing the Transformer from learning it. They also observe that if multi-digit carries are not part of the training set one can still get generalization by making the carry causal for the causal autoregressive Transformer decoder mode by reversing the digits (least significant digit first), and prove this resolves the issue.
 %
+\begin{figure}
+\includegraphics[scale=0.45]{sentences_and_lfs_and_lf_graph.png}
+\caption{\begin{small}Introducing parse trees, logical form, and semantic graphs. Two semantically identical but syntactically distinct sentences "a boy painted the girl" and "the girl was painted by a boy" are shown with their distinct parse tree (parsed into COGS input grammar), the string form of their semantics (ReCOGS logical form; differs in indices and ordering), and the graph representation of their logical form (semantic graph, not different at all between the two examples). Note the logical forms (LFs) differ by String Exact Match but not \cite{Wu2023}'s Semantic Exact Match (order and indices do not match but nouns, normalized verbs, and relationships between nouns and verbs are same). Our RASP model would generate the relationships in "agent", "theme" order for both examples (to match ReCOGS\_pos) but that is not required for Semantic Exact Match.\end{small}}
+% Note, need to regenerate the image in vector graphics for higher quality
+% Also, since can only fit one figure showing parse trees, ReCOGS LFs, semantic graphs, may be better to replace this with a `np v_dat_p2 np np pp np` example compared with `np v_dat_p2 np pp np np` since that shows tree vs flat representation issue, but replacing this figure with that would miss an opportunity to distinguish syntax, logical form, semantic differences.
+% So will probably put that figure in appendix as it currently is, but just an improved version.
+\end{figure}
 \section{Data}
 
 COGS \cite{KimLinzen2020} and ReCOGS \cite{Wu2023} datasets were used as provided by the repository associated with \cite{Wu2023}\footnote{
@@ -95,7 +102,6 @@ c3626b4e03bfc681be2c2a5b23da0b48abe6f570
 \end{tiny}}
 were used in designing RASP solution and analyzing the ways in which this task could be learned.
 See Figure 1 .
-
 \section{Model}
 We used the RASP interpreter of \cite{Weiss2021} to run our program. For RASP model design and details see Appendix 5.
 
@@ -171,7 +177,7 @@ That shows if one already knows parts of speech and verb types for words one nee
 Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand (in real world pretraining or a GloVe embedding would be used to solve this step)\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a pre-trained Transformer model in wide use, has part-of-speech information available at the earliest layers.}
  since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
 
-We generated 21 sentences which cover 100\% of the COGS input grammar under those constraints (under the context free grammar, tree based assumption which turns out to be incorrect for prepositional phrases) per \cite{fuzzingbook2023:GrammarCoverageFuzzer}:
+We generated 21 sentences based on rules present in the training examples which cover 100\% of the COGS input grammar under those constraints (under the context free grammar, tree based assumption which turns out to be incorrect for prepositional phrases) per \cite{fuzzingbook2023:GrammarCoverageFuzzer}:
 
 \begin{tiny}
 \begin{verbatim}
@@ -208,7 +214,7 @@ The first 19 of those sentences are present in our RASP program code\footnote{
 \begin{tiny}
 https://github.com/willy-b/learning-rasp/blob/
 dca0bc6689b0454b75e5a46e77ffe66566ca7661/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L568\end{tiny}}
-and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{see also "Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design"}. Those 19 examples reflect the only rules for handling non-prepositional/non-complement phrase grammar rules\footnote{To handle prepositional phrases in a flat solution, we find it necessary even on the training data to add a rule that ignores noun phrases preceded by a prepositonal phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted. We shall see encountering this issue in RASP and the grammar analysis suggesting a non-tree solution leads us to be able to predict 100\% of a certain category of errors a baseline Wu et al 2023 Encoder-Decoder Transformer makes in an upcoming results section.} present in our RASP solution (which gets 100\% semantic exact match and string exact match on the \cite{Wu2023} ReCOGS\_pos test set, see next results section). Note that those 19 sentences could be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens).
+and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{see also "Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design"}. Those 19 examples reflect the only rules for handling non-prepositional/non-complement phrase grammar rules\footnote{To handle prepositional phrases in a flat solution, we find it necessary even on the training data to add a rule that ignores noun phrases preceded by a prepositonal phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted. We shall see encountering this issue in RASP and the grammar analysis suggesting a non-tree solution leads us to be able to predict 100\% of a certain category of errors a baseline Wu et al 2023 Encoder-Decoder Transformer makes in an upcoming results section.} present in our RASP solution (which gets 100\% semantic exact match and string exact match on the \cite{Wu2023} ReCOGS\_pos test set, see next results section). Note that those 19 sentences could be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens) (the last two example sentences above do not correspond to specific rules in the RASP code but could also be replaced by grammatically equivalent examples from COGS train.tsv).
 
 \textbf{ Restricted Access Sequence Processing - semantic exact match}
 
@@ -304,11 +310,11 @@ Notebook: (link will be posted when evaluation is complete; no errors yet but ha
 
 \textit{Their Semantic Exact Match score on the extremely difficult obj\_pp\_to\_subj\_pp split was 19.7\% +/- 6.1\% Semantic Exact Match accuracy (sample +/- std, n=20) with 95\% confidence interval for the sample mean with n=20 of 17.0\% to 22.4\% .}
 
-\textbf{Wu et al 2023 Encoder-Decoder baseline 2-layer Transformer does not improve when adding 1 or 2 additional layers}\footnote{This is consistent with the flat, non-tree solution we argue for in ths paper, that e.g. cannot learn to combine `np\_det pp np -> np\_pp -> np`, makes the predicted mistakes in the subj pp when the agent is left of the verb, and does poorly on our new v\_dat\_p2\_pp\_moved\_to\_recipient split  (see discussion).}\textbf{(even allowing parameter count to increase)}\footnote{Since no improvement was observed, we did not run the costly experiments to increase the layers while controlling the parameter count (which would be a follow up to distinguish if the improvement was from the layer increase or the parameter increase).}
+\textbf{Wu et al 2023 Encoder-Decoder baseline 2-layer Transformer does not improve on the obj\_pp\_to\_subj\_pp split when adding 1 or 2 additional layers}\footnote{This is consistent with the flat, non-tree solution we argue for in ths paper, that e.g. cannot learn to combine `np\_det pp np -> np\_pp -> np`, makes the predicted mistakes in the subj pp when the agent is left of the verb, and does poorly on our new v\_dat\_p2\_pp\_moved\_to\_recipient split  (see discussion).}\textbf{(even allowing parameter count to increase)}\footnote{Since no improvement was observed, we did not run the costly experiments to increase the layers while controlling the parameter count (which would be a follow up to distinguish if the improvement was from the layer increase or the parameter increase).}
 
-3-layer Wu et al 2023 Encoder-Decoder: 16.1\% +/- 1.7\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=8) of 14.9\% to 17.3\%.
+3-layer Wu et al 2023 Encoder-Decoder on ReCOGS\_pos obj\_pp\_to\_subj\_pp split: 16.1\% +/- 1.7\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=8) of 14.9\% to 17.3\%.
 
-4-layer Wu et al 2023 Encoder-Decoder: 19.2\% +/- 4.4\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=5) of 15.4\% to 23.1\%.
+4-layer Wu et al 2023 Encoder-Decoder on ReCOGS\_pos obj\_pp\_to\_subj\_pp split: 19.2\% +/- 4.4\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=5) of 15.4\% to 23.1\%.
 
 % Note: I should increase N on these two experiments for consistency.
 % However, I am confident in the result because I had already run many layer experiments on the ReCOGS dataset before re-running on ReCOGS_pos above for consistency in input with what the RASP model ended up being tested on. The RASP model I moved to ReCOGS_pos instead of ReCOGS because I wanted to show it could do String Exact Match not just Semantic Exact Match (and as in the original COGS dataset, the order of the output in the ground truth data for ReCOGS_pos is deterministic.) Since I had already done a large number of runs of 3,4 layer variants of Wu et al 2023's Transformer on the base ReCOGS dataset, once I had a pretty close 95% confidence interval as above showing no improvement for adding 1 to 2 layers (3,4 layer variants) when training Wu et al 2023's baseline Transformer on ReCOGS_pos as I saw in ReCOGS, I reported it as I had a deadline for initial communication. But for publication I will increase the N here as well though training Wu et al 2023's Transformer from scratch is not unfortunately not free.
@@ -388,9 +394,6 @@ Much deeper Transformer networks may be learning a tree-based grammar representa
 No AI tools were used by the author in the preparation of this manuscript with the exception of anything used in the backend by Google Scholar searches for literature and citations and Google searches for related material. AI writing aids were not used.
 
 \clearpage
-\section{Figure 1: Translating sentences to ReCOGS logical form, syntax vs semantics}
-\includegraphics[scale=0.25]{sentences_and_lfs_and_lf_graph.png}
-
 \section{Figure 2: Explaining Subj PP generalization difficulties in ReCOGS for Transformers as non-tree model struggling with PP NP distractors when modifying NPs with relationships to the right}
 \includegraphics[scale=0.25]{possible_issue_with_subj_pp_generalization_by_transformers_could_be_simple_nontree_pp_np_distractor_when_modifying_nps_with_related_nps_to_right.png}
 
