@@ -212,30 +212,64 @@ and each correspond to a set of RASP operations corresponding to attention opera
 
 \textbf{ Restricted Access Sequence Processing - semantic exact match}
 
-The \textit{Restricted Access Sequence Processing program scored 100\% Semantic Exact Match and String Exact Match (no missed examples) (95\% confidence interval (Beta dist / Clopper-Pearson) of 99.88\% to 100\%, n=3000) on the ReCOGS\_pos test set}\footnote{ https://raw.githubusercontent.com/frankaging/ReCOGS/
+The \textit{Restricted Access Sequence Processing program scored 100\% Semantic Exact Match and String Exact Match (no missed examples) (95\% confidence interval (Beta dist / Clopper-Pearson) of 99.88\% to 100\%, n=3000) on the ReCOGS\_pos test set}\footnote{ Data: https://raw.githubusercontent.com/frankaging/ReCOGS/
 
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb
 
-/recogs\_positional\_index/test.tsv  , 
-
-see https://colab.research.google.com/drive/
-
-1N7F-nc9GVnoC\_9dBVdNT02SBiBcMbgy-
-
-Includes complement phrase support added in https://github.com/willy-b/learning-rasp/pull/7 }
+/recogs\_positional\_index/test.tsv . Results: see Table 1 .} 
 
 The RASP model scored 99.59\% semantic exact match on all non-recursive out-of-distribution generalization splits (18922 out of 19000 (95\% confidence interval: 99.49\% to 99.68\%))\footnote{\textit{The only missed examples by semantic exact match were in the obj\_pp\_to\_subj\_pp split, whose semantic exact match score was 92.20\% (95.00\% confidence interval: 90.36\% to 93.79\% (922 out of 1000))}. Note that the test set was unseen examples but in-distribution; these generalization splits are out-of-distribution, different grammatical forms than present in train/dev/test splits.}
-\footnote{https://raw.githubusercontent.com/frankaging/ReCOGS/
+\footnote{Data: https://raw.githubusercontent.com/frankaging/ReCOGS/
 
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb
 
-/recogs\_positional\_index/gen.tsv  , see 
+/recogs\_positional\_index/gen.tsv , Results: see Table 1.
+}
 
+\begin{table}
+\centering
+\begin{tabular}{p{0.6\linewidth} p{0.3\linewidth}}
+\hline
+\begin{tiny}\textbf{ReCOGS\_pos Split}\end{tiny} & \begin{tiny}\textbf{Semantic Exact Match \% (95\% CI)}\end{tiny} \\
+\hline
+\begin{tiny}ReCOGS\_pos test set (held out, in-distribution)\end{tiny} & \begin{tiny} 100.00\% (99.88-100.00\%)\end{tiny} \\
+\hline
+\begin{tiny}Generalization splits (held out, out-of-distribution) (below)\end{tiny} & \\
+\hline
+\begin{tiny}active\_to\_passive\end{tiny} & \begin{tiny}100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}do\_dative\_to\_pp\_dative\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}obj\_omitted\_transitive\_to\_transitive\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}obj\_pp\_to\_subj\_pp\end{tiny} & \begin{tiny} 92.20\% (90.36-93.79\%)\end{tiny} \\
+\begin{tiny}obj\_to\_subj\_common\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}obj\_to\_subj\_proper\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}only\_seen\_as\_transitive\_subj\_as\_unacc\_subj\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}only\_seen\_as\_unacc\_subj\_as\_obj\_omitted\_transitive\_subj\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}only\_seen\_as\_unacc\_subj\_as\_unerg\_subj\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}passive\_to\_active\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}pp\_dative\_to\_do\_dative\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}prim\_to\_inf\_arg\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}prim\_to\_obj\_common\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}prim\_to\_obj\_proper\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}prim\_to\_subj\_common\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}prim\_to\_subj\_proper\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}subj\_to\_obj\_common\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}subj\_to\_obj\_proper\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\begin{tiny}unacc\_to\_transitive\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
+\hline
+\begin{tiny}all gen splits (19K examples, aggregate)\end{tiny} & \begin{tiny} 99.59\% (99.49-99.68\%)\end{tiny} \\
+\hline
+\end{tabular}
+\caption{\begin{small}ReCOGS\_pos test set performance (n=3000) and non-recursive out-of-distribution generalization split performance for \textbf{Restricted Access Sequence Processing (RASP) Encoder-Decoder Transformer-compatible model}, Semantic Exact Match \%, with Beta/Clopper-Pearson confidence intervals. N=1000 examples for each generalization split. No examples excluded. \\
+This model gets 100\% Semantic Exact Match and String Exact Match on the in-distribution but unseen test set.
+ Model uses a part-of-speech and verb-type map for word-level embedding and just 19 Transformer attention-head compatible flat grammar pattern recognizers based on rules visible in training data plus decoder-loop compatible prepositional phrase, complement phrase unrolling. \\
+See https://colab.research.google.com/drive/1N7F-nc9GVnoC\_9dBVdNT02SBiBcMbgy- for steps to reproduce ReCOGS\_pos test results,\\
 https://colab.research.google.com/drive/
+1hLH9hFwPT\_3HZUteUTBY4tYvdiZN0O0M for steps to reproduce ReCOGS\_pos generalization split results. \\
+Includes complement phrase support added in https://github.com/willy-b/learning-rasp/pull/7 .\end{small}}
+\end{table}
 
-1hLH9hFwPT\_3HZUteUTBY4tYvdiZN0O0M . See Table 1 / "Appendix 0 - Full RASP Program ReCOGS gen set Semantic Exact Match results by split" for all splits. }
 
-Recursion splits are reported separately below.
+Recursion splits are reported below.
 
 \textbf{Restricted Access Sequence Processing - prepositional phrase and complement phrase recursion (tail recursive) with a non-tree, non-recursive approach using the decoder loop}\footnote{
 The grammar includes two (tail) recursive aspects, prepositional phrase recursion, and complement phrase recursion.
@@ -254,10 +288,9 @@ Complement phrase recursion comes from the following COGS input grammar rules: `
 Old Notebook: https://colab.research.google.com/drive/19mpX9kNbJoH-70rsbaXK2pWD19CbexDW 
 
 New Notebook (pending): 
-
 https://colab.research.google.com/drive/1hLH9hFwPT\_3HZUteUTBY4tYvdiZN0O0M
 \end{tiny}
-} (out of date, expect to replace this with 1000 out of 1000 shortly, from new notebook).
+} (out of date, expect to replace this with 1000 out of 1000 shortly when it finishes).
 
 \textit{RASP model ReCOGS cp\_recursion gen split scores are 100\% (95\% confidence interval (Beta dist/Clopper-Pearson): 90.51\% to 100.0\%; no missed examples have yet been observed at n=37, waiting for n=1000 run to complete)}\footnote{ 
 \begin{tiny}
@@ -352,51 +385,13 @@ Much deeper Transformer networks may be learning a tree-based grammar representa
 
 \section{Notes}
 No AI tools were used by the author in the preparation of this manuscript with the exception of anything used in the backend by Google Scholar searches for literature and citations and Google searches for related material. AI writing aids were not used.
+
 \clearpage
 \section{Figure 0: Translating sentences to ReCOGS logical form, syntax vs semantics}
 \includegraphics[scale=0.25]{sentences_and_lfs_and_lf_graph.png}
 
 \section{Figure 1: Explaining Subj PP generalization difficulties in ReCOGS for Transformers as non-tree model struggling with PP NP distractors when modifying NPs with relationships to the right}
 \includegraphics[scale=0.25]{possible_issue_with_subj_pp_generalization_by_transformers_could_be_simple_nontree_pp_np_distractor_when_modifying_nps_with_related_nps_to_right.png}
-
-\clearpage
-\section{Appendix 0 - RASP Program ReCOGS gen set Semantic Exact Match results by split }
-\begin{table}
-\centering
-\begin{tabular}{lc lc lc lc}
-\hline
-\textbf{ReCOGS\_pos Generalization Split} & \begin{small}\textbf{Semantic Exact Match \% }\end{small} & \begin{small}\textbf{95\% CI lower bound}\end{small} & \begin{small}\textbf{95\% CI upper bound}\end{small} \\
-\hline
-\begin{small}active\_to\_passive\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}do\_dative\_to\_pp\_dative\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}obj\_omitted\_transitive\_to\_transitive\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}obj\_pp\_to\_subj\_pp\end{small} & 92.20\% & 90.36\% & 93.79\% \\
-\begin{small}obj\_to\_subj\_common\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}obj\_to\_subj\_proper\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}only\_seen\_as\_transitive\_subj\_as\_unacc\_subj\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}only\_seen\_as\_unacc\_subj\_as\_obj\_omitted\_transitive\_subj\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}only\_seen\_as\_unacc\_subj\_as\_unerg\_subj\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}passive\_to\_active\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}pp\_dative\_to\_do\_dative\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}prim\_to\_inf\_arg\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}prim\_to\_obj\_common\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}prim\_to\_obj\_proper\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}prim\_to\_subj\_common\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}prim\_to\_subj\_proper\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}subj\_to\_obj\_common\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}subj\_to\_obj\_proper\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\begin{small}unacc\_to\_transitive\end{small} & 100.00\% & 99.63\% & 100.00\% \\
-\hline
-\begin{small}all splits (19K examples, aggregate)\end{small} & 99.59\% & 99.49\% & 99.68\% \\
-\hline
-\end{tabular}
-\onecolumn
-\caption{ReCOGS\_pos non-recursive out-of-distribution generalization split performance for Restricted Access Sequence Processing (RASP) Encoder-Decoder Transformer-compatible model, Semantic Exact Match \%, with Beta/Clopper-Pearson confidence intervals. N=1000 examples for all splits. No examples excluded. \\
-This model gets 100\% Semantic Exact Match and String Exact Match on the in-distribution but unseen test set. Model uses a part-of-speech and verb-type map for word-level embedding and just 19 Transformer attention-head compatible flat grammar pattern recognizers based on rules visible in training data plus decoder-loop compatible prepositional phrase, complement phrase unrolling.}
-\twocolumn
-\end{table}
-\clearpage
-\clearpage
 
 \section{Appendix 1 - Vocabulary and Grammar}
 
