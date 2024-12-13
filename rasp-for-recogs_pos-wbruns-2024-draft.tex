@@ -94,7 +94,7 @@ c3626b4e03bfc681be2c2a5b23da0b48abe6f570
 /src/model/cogs\_data.py\#L523
 \end{tiny}}
 were used in designing RASP solution and analyzing the ways in which this task could be learned.
-See Figure 0 .
+See Figure 1 .
 
 \section{Model}
 We used the RASP interpreter of \cite{Weiss2021} to run our program. For RASP model design and details see Appendix 5.
@@ -310,7 +310,8 @@ Notebook: (link will be posted when evaluation is complete; no errors yet but ha
 
 4-layer Wu et al 2023 Encoder-Decoder: 19.2\% +/- 4.4\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=5) of 15.4\% to 23.1\%.
 
-% should increase N on these two experiments for consistency
+% Note: I should increase N on these two experiments for consistency.
+% However, I am confident in the result because I had already run many layer experiments on the ReCOGS dataset before re-running on ReCOGS_pos above for consistency in input with what the RASP model ended up being tested on. The RASP model I moved to ReCOGS_pos instead of ReCOGS because I wanted to show it could do String Exact Match not just Semantic Exact Match (and as in the original COGS dataset, the order of the output in the ground truth data for ReCOGS_pos is deterministic.) Since I had already done a large number of runs of 3,4 layer variants of Wu et al 2023's Transformer on the base ReCOGS dataset, once I had a pretty close 95% confidence interval as above showing no improvement for adding 1 to 2 layers (3,4 layer variants) when training Wu et al 2023's baseline Transformer on ReCOGS_pos as I saw in ReCOGS, I reported it as I had a deadline for initial communication. But for publication I will increase the N here as well though training Wu et al 2023's Transformer from scratch is not unfortunately not free.
 
 \textbf{Error Analysis for Wu et al 2023 baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split}
 
@@ -345,7 +346,7 @@ Our RASP model of a Transformer Encoder Decoder, without tree-based or recursive
 \textbf{Thus, we demonstrated by construction using the Restricted Access Sequence Processing language which can be compiled to concrete Transformer weights that theoretically a Transformer Encoder-Decoder can solve the COGS input to ReCOGS\_pos logical form translation in a systematic, compositional, and length generalizing way.}
 
 To assess whether the mechanism of the errors in the obj\_pp\_to\_subj\_pp generalization split was what we expect from the Restricted Access Sequence Processing program, and were due to the Transformer naively matching the closest noun\footnote{
-See Figure 1 at the end.
+See Figure 2 at the end.
 } (now the prepositional phrase noun) instead of the original subject noun when the noun to the left of the verb was modified by a prepositional phrase, adding a prepositional phrase noun closer than the target noun, we analyzed the specific errors the Wu et al 2023's Transformer made. Thus we analyzed the case where the noun being modified to the left corresponded to the agent (the most common case, with active tense verbs in the subject pp modification split). In 100\% of the 258 cases where there was a single relationship error and the agent on the left the error was specifically in the agent relationship and the mistake was as predicted: the model mistook the inserted prepositional phrase noun to be the agent when it was inserted on the left of the verb closer than the actual agent noun (occurs when agent being modified by prepositional phrase is on left due to asymmetry of pp modifications adding on the right side expanding to the right).
 
 Our explanation could have been refuted by other single relationship errors occurring as frequently as the agent, indicating general model confusion (mixing up agent and theme, not just agent relationships) and/or when making an agent error, the model could have simply put nonsense indices or referred to any other position other than the closest noun position displaced by the pp noun to refute our hypothesis.
@@ -387,12 +388,13 @@ Much deeper Transformer networks may be learning a tree-based grammar representa
 No AI tools were used by the author in the preparation of this manuscript with the exception of anything used in the backend by Google Scholar searches for literature and citations and Google searches for related material. AI writing aids were not used.
 
 \clearpage
-\section{Figure 0: Translating sentences to ReCOGS logical form, syntax vs semantics}
+\section{Figure 1: Translating sentences to ReCOGS logical form, syntax vs semantics}
 \includegraphics[scale=0.25]{sentences_and_lfs_and_lf_graph.png}
 
-\section{Figure 1: Explaining Subj PP generalization difficulties in ReCOGS for Transformers as non-tree model struggling with PP NP distractors when modifying NPs with relationships to the right}
+\section{Figure 2: Explaining Subj PP generalization difficulties in ReCOGS for Transformers as non-tree model struggling with PP NP distractors when modifying NPs with relationships to the right}
 \includegraphics[scale=0.25]{possible_issue_with_subj_pp_generalization_by_transformers_could_be_simple_nontree_pp_np_distractor_when_modifying_nps_with_related_nps_to_right.png}
 
+\clearpage
 \section{Appendix 1 - Vocabulary and Grammar}
 
 \begin{tiny}
@@ -1071,7 +1073,7 @@ after_intro_num_tokens_in_output_excluding_asterisks - template_size(template_na
 \end{verbatim}
 \end{tiny}
 
-See code for full details. For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
+See code for full details (for simplicity this description was also written without discussing complement phrase handling). For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
 
 You can run a demo and see the autoregressive output 
 
@@ -1552,7 +1554,7 @@ https://github.com/frankaging/ReCOGS/blob/
 
 In the training data only, any ReCOGS training augmentations like preposing or "um" sprinkles are excluded when evaluating the RASP model on the train data (it does not learn directly from the examples and these augmentations are outside of the grammar). 
 
-We also measure grammar coverage of input examples supported by our RASP model against the full grammar of COGS/ReCOGS input sentences provided in the utilities of the IBM CPG project \cite{klinger2024compositionalprogramgenerationfewshot}\footnote{ 
+We also measure grammar coverage of input examples supported by our RASP model against the full grammar of COGS/ReCOGS input sentences provided in the utilities of the IBM CPG project \cite{klinger2024compositionalprogramgenerationfewshot}\footnote{
 \begin{tiny}
 https://github.com/IBM/cpg/blob/
 c3626b4e03bfc681be2c2a5b23da0b48abe6f570/src/model/cogs\_data.py\#L523 
@@ -1561,8 +1563,8 @@ c3626b4e03bfc681be2c2a5b23da0b48abe6f570/src/model/cogs\_data.py\#L523
 
 When computing grammar coverage \cite{fuzzingbook2023:GrammarCoverageFuzzer}, we collapse all vocabulary terminals (leaves) to a single terminal (leaf), ignoring purely lexical differences (see Appendix 7 for details and motivation).
 
-The overall Semantic Exact Match performance is reported as well as the performance on the specific structural generalization splits where Transformers are reported to struggle, even in ReCOGS, specifically Object Prepositional Phrase to Subject Prepositional Phrase (obj\_pp\_to\_subj\_pp), 
-Prepositional Phrase (pp\_recursion) will be highlighted and discussed in depth for all models. 
+The overall Semantic Exact Match performance is reported as well as the performance on the specific structural generalization splits where Transformers are reported to struggle, even in ReCOGS, specifically Object Prepositional Phrase to Subject Prepositional Phrase (obj\_pp\_to\_subj\_pp),
+Prepositional Phrase (pp\_recursion) will be highlighted and discussed in depth for all models.
 
 For the RASP program's Semantic Exact Match results which are based on the outcome of a deterministic program (so cannot randomly reinitialize weights and retrain, rerun),
 we can use the Beta distribution to model the uncertainty and generate confidence intervals (Clopper-Pearson intervals\footnote{
