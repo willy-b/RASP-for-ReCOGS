@@ -16,11 +16,13 @@ Humans rapidly generalize from a few observed examples and understand new combin
 
 We use (Weiss 2021)'s Restricted Access Sequence Processing (RASP), a Transformer-equivalent programming language, to prove by construction that a Transformer encoder-decoder can perform ReCOGS (Wu 2023) systematically and compositionally while being flat and non-recursive/non-tree. 
 
+Our RASP model attains 100% semantic exact match and 100% string exact match on the ReCOGS test set and 100% semantic exact match on all generalization set splits except obj\_pp\_to\_subj\_pp which gets 92%.
+
 Our RASP implementation suggests the reported "hardest split" obj-pp-to-subj-pp generalization in COGS may be a specific case of a general difficulty with ignoring prepositional-phrase-noun-phrases which are inserted in between two parts of speech with a relationship when the modified part-of-speech in the pair is on the left-side, predicting 100\% of a certain category of error (Wu 2023)'s baseline model makes on the split, and guides us to try testing the model on modifying recipient nouns on the right side of the verb in the v\_dat\_p2 form, on which the baseline Transformer performs similarly poorly on as predicted. 
 
 The difficulty with the `np v\_dat\_p2 np\_det pp np np` modification and the previously reported subj pp modification difficulty are claimed by us to be incompatible with the Transformer learning a tree-based approach (which combines nonterminals as in `np\_det pp np -> np\_pp -> np`), so we also check (Csordas 2022)'s hypothesis that the number of Transformer layers should be at least the depth of the parse tree for a tree based solution and find no performance benefit to a couple of additional layers (beyond baseline of 2). 
 
-Implementing our task in Restricted Access Sequence Processing immediately helped us discover additional related failure modes of the baseline Encoder-Decoder Transformer, predict the details of the errors in the logical forms (what the mismatched index in the agent when the agent is on the left of the verb would be, 100\% of the time) generated for the previously reported most difficult split, and may help us reason about why a model like (Wu 2023) works with 2 layers for the ReCOGS task (compared with e.g. use of 24-layer BERT for NLP tasks in (Tenney et al 2019)).
+Implementing our task in Restricted Access Sequence Processing immediately helped us discover additional related failure modes of the baseline Encoder-Decoder Transformer, predict the details of the errors in the logical forms (what the mismatched index in the agent when the agent is on the left of the verb would be, 96% of the time) generated for the previously reported most difficult split, and may help us reason about why a model like (Wu 2023) works with 2 layers for the ReCOGS task (compared with e.g. use of 24-layer BERT for NLP tasks in (Tenney et al 2019)).
 
 ### References
 
