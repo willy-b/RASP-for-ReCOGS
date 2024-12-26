@@ -217,7 +217,7 @@ The first 19 of those sentences are present in our RASP program code\footnote{
 \begin{tiny}
 https://github.com/willy-b/learning-rasp/blob/
 dca0bc6689b0454b75e5a46e77ffe66566ca7661/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L568\end{tiny}}
-and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{see also "Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design"}. Those 19 examples reflect the only rules for handling non-prepositional/non-complement phrase grammar rules\footnote{To handle prepositional phrases in a flat solution, we find it necessary even on the training data to add a rule that ignores noun phrases preceded by a prepositonal phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted. We shall see encountering this issue in RASP and the grammar analysis suggesting a non-tree solution leads us to be able to predict 100\% of a certain category of errors a baseline Wu et al 2023 Encoder-Decoder Transformer makes in an upcoming results section.} present in our RASP solution (which gets 100\% semantic exact match and string exact match on the \cite{Wu2023} ReCOGS\_pos test set, see next results section). Note that those 19 sentences could be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens) (the last two example sentences above do not correspond to specific rules in the RASP code but could also be replaced by grammatically equivalent examples from COGS train.tsv).
+and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{see also "Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design"}. Those 19 examples reflect the only rules for handling non-prepositional/non-complement phrase grammar rules\footnote{To handle prepositional phrases in a flat solution, we find it necessary even on the training data to add a rule that ignores noun phrases preceded by a prepositional phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted. We shall see encountering this issue in RASP and the grammar analysis suggesting a non-tree solution leads us to be able to predict 100\% of a certain category of errors a baseline Wu et al 2023 Encoder-Decoder Transformer makes in an upcoming results section.} present in our RASP solution (which gets 100\% semantic exact match and string exact match on the \cite{Wu2023} ReCOGS\_pos test set, see next results section). Note that those 19 sentences could be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens) (the last two example sentences above do not correspond to specific rules in the RASP code but could also be replaced by grammatically equivalent examples from COGS train.tsv).
 
 \textbf{ Restricted Access Sequence Processing - semantic exact match}
 
@@ -292,37 +292,34 @@ However, one sees this is tail recursion and can be handled by a loop that just 
 Complement phrase recursion comes from the following COGS input grammar rules: `np v\_cp\_taking that start`, where the form supports being recursively expanded like `np v\_cp\_taking that start -> np v\_cp\_taking that (np v\_cp\_taking that start)`, and so on until the nonterminal start expands to some other non complement phrase related nonterminal.
 }
 
-\textit{RASP model ReCOGS pp\_recursion gen split scores on first 475 examples were 100\% (95\% confidence interval (Beta dist/Clopper-Pearson): 99.23\% to 100.0\%; no missed examples have yet been observed in n=475)}\footnote{
+\textit{Our RASP model's ReCOGS pp\_recursion gen split score was 100\% semantic exact match AND string exact match (95\% confidence interval (Beta dist/Clopper-Pearson): 99.63\% to 100.0\%; n=1000)}\footnote{
 \begin{tiny}
-Old Notebook: https://colab.research.google.com/drive/19mpX9kNbJoH-70rsbaXK2pWD19CbexDW 
-
-New Notebook (pending): 
-https://colab.research.google.com/drive/1hLH9hFwPT\_3HZUteUTBY4tYvdiZN0O0M
+See last section of notebook https://colab.research.google.com/drive/1hLH9hFwPT\_3HZUteUTBY4tYvdiZN0O0M
 \end{tiny}
-} (out of date, expect to replace this with 1000 out of 1000 shortly when it finishes).
+}.
 
-\textit{RASP model ReCOGS cp\_recursion gen split scores are 100\% (95\% confidence interval (Beta dist/Clopper-Pearson): 90.51\% to 100.0\%; no missed examples have yet been observed at n=37, waiting for n=1000 run to complete)}\footnote{ 
+\textit{Our RASP model's ReCOGS cp\_recursion gen split score was 100\% semantic exact match (95\% confidence interval (Beta dist/Clopper-Pearson): 98.43\% to 100.0\%; no missed examples have yet been observed at n=233, waiting for n=1000 run to complete)}\footnote{ 
 \begin{tiny}
 Notebook: (link will be posted when evaluation is complete; no errors yet but has not completed and Colab interface is glitchy while evaluation is in progress) 
 \end{tiny}
 }
 
 \textbf{Wu et al 2023 Encoder-Decoder Transformer from scratch baselines (ReCOGS\_pos)}\footnote{
-See https://colab.research.google.com/drive/12mXX5L1I4rpwl1Jk8hCm-xyAkqiKJEo7 for analysis code.
+See https://colab.research.google.com/drive/12mXX5L1I4rpwl1Jk8hCm-xyAkqiKJEo7 for Wu et al 2023 script execution and analysis code.
 }
 
 \textit{Wu et al 2023's baseline Encoder-Decoder Transformer on ReCOGS\_pos had an overall score of  88.55\% +/- 1.87\% Semantic Exact Match accuracy (sample +/- std, n=20) with a 95\% confidence interval for the sample mean when n=20 of 87.73\% to 89.37\%.}
 
-\textit{Their Semantic Exact Match score on the extremely difficult obj\_pp\_to\_subj\_pp split was 19.7\% +/- 6.1\% Semantic Exact Match accuracy (sample +/- std, n=20) with 95\% confidence interval for the sample mean with n=20 of 17.0\% to 22.4\% .}
+\textit{Wu et al 2023's baseline Encoder-Decoder Transformer's Semantic Exact Match score on the extremely difficult obj\_pp\_to\_subj\_pp split of ReCOGS\_pos was 19.7\% +/- 6.1\% Semantic Exact Match accuracy (sample +/- std, n=20) with 95\% confidence interval for the sample mean with n=20 of 17.0\% to 22.4\% .}
 
-% Note PP/CP recursion for Wu et al 2023 baseline Encoder-Decoder Transformers trained from scratch is reported as pretty low performance and I currently just emphasize the RASP Transformer-equivalent model shows a flat model can theoretically use the Transformer decoder loop to solve these "recursive" generalizations perfectly without dwelling on specifically how bad the existing Transformer trained from scratch performance is (reported elsewhere) since we are not offering any insight into the mechanism of why PP/CP recursion is not successful in the baseline Transformer yet (just saying it should theoretically be able to do it if it could learn the appropriate approach), unlike how we are able to explain the issues with the other split. That said, it would not hurt to report the ReCOGS_pos PP / CP recursion numbers we see for the Wu et al 2023 baseline for comparison since I do have it in the notebooks already.
+\textit{Wu et al 2023's baseline Encoder-Decoder Transformer's Semantic Exact Match score on the pp\_recursion split of ReCOGS\_pos was 40.18\% +/- 2.07\% Semantic Exact Match accuracy (sample +/- std, n=20) with 95\% confidence interval for the sample mean with n=20 of 36.13 to 44.24\%.}
+
+\textit{Wu et al 2023's baseline Encoder-Decoder Transformer's Semantic Exact Match score on the cp\_recursion split of ReCOGS\_pos was 52.40\% +/- 1.38\% Semantic Exact Match accuracy (sample +/- std, n=20) with 95\% confidence interval for the sample mean with n=20 of 51.80 to 53.01\%.}
 
 \textbf{Wu et al 2023 Encoder-Decoder baseline 2-layer Transformer does not improve on the obj\_pp\_to\_subj\_pp split when adding 1 or 2 additional layers}\footnote{This is consistent with the flat, non-tree solution we argue for in ths paper, that e.g. cannot learn to combine `np\_det pp np -> np\_pp -> np`, makes the predicted mistakes in the subj pp when the agent is left of the verb, and does poorly on our new v\_dat\_p2\_pp\_moved\_to\_recipient split  (see discussion).}\textbf{(even allowing parameter count to increase)}\footnote{Since no improvement was observed, we did not run the costly experiments to increase the layers while controlling the parameter count (which would be a follow up to distinguish if the improvement was from the layer increase or the parameter increase).}
 
-%3-layer Wu et al 2023 Encoder-Decoder on ReCOGS\_pos obj\_pp\_to\_subj\_pp split: 16.1\% +/- 1.7\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=8) of 14.9\% to 17.3\%. (n=8, updated when additional 2 runs were available below; same notebook had been queued originally but completed after initial reporting deadline)
 3-layer Wu et al 2023 Encoder-Decoder on ReCOGS\_pos obj\_pp\_to\_subj\_pp split: 16.2\% +/- 2.7\% Semantic Exact Match (sample mean +/- std, n=10) with 95\% confidence interval for sample mean (n=10) of 14.6\% to 17.9\% .\footnote{ https://colab.research.google.com/drive/12mXX5L1I4rpwl1Jk8hCm-xyAkqiKJEo7 }
 
-%4-layer Wu et al 2023 Encoder-Decoder on ReCOGS\_pos obj\_pp\_to\_subj\_pp split: 19.2\% +/- 4.4\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for sample mean (n=5) of 15.4\% to 23.1\%. (n=5, updated when additional 5 runs were available below; same notebook had been queued originally but completed after initial reporting deadline)
 4-layer Wu et al 2023 Encoder-Decoder on ReCOGS\_pos obj\_pp\_to\_subj\_pp split: 19.3\% +/- 4.1\% Semantic Exact Match (sample mean +/- std, n=10) with 95\% confidence interval for sample mean (n=10) of 16.8\% to 21.8\%.\footnote{ https://colab.research.google.com/drive/12mXX5L1I4rpwl1Jk8hCm-xyAkqiKJEo7 and https://colab.research.google.com/drive/13FRQeAjyPOhBtTdrpW8caL25rNryLn5- }
 
 \textbf{Error Analysis for Wu et al 2023 baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split}\footnote{
