@@ -193,7 +193,7 @@ Given the COGS input sentences were generated as a probablistic context free gra
 using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot}
 and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer} (See Appendix 7 - Computing Grammar Coverage) , we use their TrackingGrammarCoverageFuzzer to generate the set of all expansions of the COGS grammar.
 
-By the first 55 examples of the ReCOGS training set (unshuffled), 100\% grammar coverage is reached (lexical differences ignored) \cite{fuzzingbook2023:GrammarCoverageFuzzer} (noting that if the model is not capable of learning certain expansions in the grammar such as `np\_det pp np -> np\_pp -> np`, it may need to see more variations to memorize individual cases instead ):
+By the first 55 examples of the ReCOGS training set (unshuffled, no augmentations) or 77 (median; 95\% confidence interval, n=1000 random shuffles: 39 to 161) examples of the ReCOGS training set (shuffled, no augmentations), 100\% grammar coverage is reached (lexical differences ignored) \cite{fuzzingbook2023:GrammarCoverageFuzzer} (noting that if the model is not capable of learning certain expansions in the grammar such as `np\_det pp np -> np\_pp -> np`, it may need to see more variations to memorize individual cases instead ):
 \includegraphics[scale=0.40]{grammar_coverage_by_number_of_recogs_training_examples_lexical_differences_ignored.png}
 
 That shows if one already knows parts of speech and verb types for words one needs much less data.
