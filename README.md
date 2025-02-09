@@ -1,8 +1,8 @@
 ## RASP-for-ReCOGS_pos 
 
-This repo contains a [paper in progress](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf)
+(You are viewing the blind-review version of this repo, expected to be accessed during paper review to retrieve supplemental materials, author-scrubbed versions of original code and results notebooks. The paper PDF and other items are missing from this version to avoid accidentally showing the reviewer the author's identity during the double blinded review.)
 
-describing a Restricted Access Sequence Processing language model which performs the ReCOGS_pos task (see Wu et al 2023, "ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation", https://arxiv.org/abs/2303.13716 for task description) of translating sentences in a limited subset of English grammar into logical forms (equivalent to a semantic graph, see ReCOGS and COGS papers). This work is an attempt to prove-by-construction that a Transformer can learn to perform the ReCOGS_pos task in a compositional, systematic, length generalizing way and try to understand why some of the specific errors discussed by Wu et al 2023 are observed. We achieve 100% test set Semantic Exact Match accuracy using a flat, non-tree Transformer compatible RASP model. It uses 19 Transformer attention-head compatible grammar pattern recognizers plus some general attention-head compatible prepositional phrase/complement phrase handling rules (which handle phrase recursion using the decoder loop), and also gets high scores on the generalization splits [(see paper)](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf). We predict some details of errors made by Wu et al 2023's Transformer on the previously reported most difficult split obj-pp-to-subj-pp, and successfully predict a new generalization split that is as hard as the obj-pp-to-subj-pp split.
+This repo contains a paper in progress describing a Restricted Access Sequence Processing language model which performs the ReCOGS_pos task (see Wu et al 2023, "ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation", https://arxiv.org/abs/2303.13716 for task description) of translating sentences in a limited subset of English grammar into logical forms (equivalent to a semantic graph, see ReCOGS and COGS papers). This work is an attempt to prove-by-construction that a Transformer can learn to perform the ReCOGS_pos task in a compositional, systematic, length generalizing way and try to understand why some of the specific errors discussed by Wu et al 2023 are observed. We achieve 100% test set Semantic Exact Match accuracy using a flat, non-tree Transformer compatible RASP model. It uses 19 Transformer attention-head compatible grammar pattern recognizers plus some general attention-head compatible prepositional phrase/complement phrase handling rules (which handle phrase recursion using the decoder loop), and also gets high scores on the generalization splits (see paper). We predict some details of errors made by Wu et al 2023's Transformer on the previously reported most difficult split obj-pp-to-subj-pp, and successfully predict a new generalization split that is as hard as the obj-pp-to-subj-pp split.
 
 What is Restricted Access Sequence Processing (RASP)? It is a language that can be compiled to Transformer weights, designed to help one in "Thinking Like Transformers" (title of Weiss et al 2021 paper, https://arxiv.org/abs/2106.06981 ,  which introduced it).
 
@@ -26,7 +26,7 @@ Implementing our task in Restricted Access Sequence Processing immediately helpe
 
 ### References
 
-[See paper](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf) for bibliography.
+See paper for bibliography.
 
 ### Background
 
