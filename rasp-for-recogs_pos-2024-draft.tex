@@ -374,8 +374,11 @@ See
 
 https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
 
-RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_
-to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)
+RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023
+\_transformer\_baselines\_
+to\_compare\_with
+\_Restricted\_Access\_Sequence\_Processing
+\_(\_use\_fixed\_positional\_indices)
 \_and\_or\_data\_augmentation.ipynb
 
 for \cite{Wu2023} script execution and analysis code.
@@ -404,9 +407,13 @@ Since no improvement was observed, we did not run the costly experiments to incr
 3-layer \cite{Wu2023} Encoder-Decoder on ReCOGS\_pos obj\_pp\_to\_subj\_pp split: 16.2\% +/- 2.7\% Semantic Exact Match (sample mean +/- std, n=10) with 95\% confidence interval for sample mean (n=10) of 14.6\% to 17.9\% .\footnote{ 
 \begin{tiny}
 https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
-RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines
-\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing
-\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb
+RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023
+\_transformer\_baselines
+\_to\_compare\_with
+\_Restricted\_Access\_Sequence\_Processing
+\_(\_use\_fixed
+\_positional\_indices)
+\_and\_or\_data\_augmentation.ipynb
 \end{tiny}
 }
 
@@ -860,14 +867,16 @@ theme_right_of_verb_verb_type_set = set([
     "v_trans_omissible_p2",
     "v_trans_not_omissible",
 ])
-theme_middle_of_dative_verb_type_set = set(["v_dat_pp_p4", "v_dat_p1"])
+theme_middle_of_dative_verb_type_set = set(["v_dat_pp_p4",
+"v_dat_p1"])
 
 # for enforcing during the check of our hypothesis
 # a stricter expectation that the closest prepositional noun
 # to the left of the verb is the misassigned agent
 # (not just any prepositional noun)
 def \
-get_verbs_with_pps_before_and_last_noun_before_first_verb_index(lark_tree_root):
+get_verbs_with_pps_before_and_\
+last_noun_before_first_verb_index(lark_tree_root):
   nodes = [lark_tree_root]
   verbs = []
   terminals_before_count = 0
@@ -885,21 +894,27 @@ get_verbs_with_pps_before_and_last_noun_before_first_verb_index(lark_tree_root):
     for child in node.children:
       # it is a tree, no need to check for revisits
       children.append(child)
-    # need to visit in a particular order to not just get verbs
-    # but pp before count and the last noun before the first verb
-    children.reverse() # in the one verb case this does not matter 
-    # but we may want to return verbs in the order they appear in the sentence
+# need to visit in a particular order to not just get verbs
+# but pp before count, 
+# and the last noun before the first verb
+# in the one verb case this does not matter 
+    children.reverse()
+    # but we may want to return verbs in the order
+    # they appear in the sentence
     for node in children:
       nodes.append(node)
-    if node_type[:] in ["common_noun", "proper_noun"] and len(verbs) == 0:
-      # no need to subtract 1 here as before incrementing below
-      last_noun_before_first_verb_index = terminals_before_count
-    # only increment on terminals
+    if node_type[:] in ["common_noun",
+    "proper_noun"] and len(verbs) == 0:
+# no need to subtract 1 here as before incrementing below
+      last_noun_before_first_verb_index = \
+        terminals_before_count
+# only increment on terminals
     if len(children) == 0:
       terminals_before_count += 1
     if node_type[:] == "pp":
       pps_before_count += 1
-  return verbs, pps_before_counts, last_noun_before_first_verb_index
+  return verbs, pps_before_counts,
+         last_noun_before_first_verb_index
 
 def get_theme_side(lark_tree_root):
     verb_type = get_verbs(lark_tree_root)[0]
@@ -913,7 +928,8 @@ def get_theme_side(lark_tree_root):
 
 def get_agent_side(lark_tree_root):
     verb_type = get_verbs(lark_tree_root)[0]
-    if verb_type != None and verb_type not in agent_left_of_verb_verb_type_set:
+    if verb_type != None and 
+      verb_type not in agent_left_of_verb_verb_type_set:
         return "right or middle"
     elif verb_type in agent_left_of_verb_verb_type_set:
         return "left"
@@ -1082,48 +1098,70 @@ Here are a couple of examples of patterns, to see how it looks if we support 1 v
 \begin{tiny}
 \begin{verbatim}
 # define the pattern
-# ... (just showing one example, np_prop_mask and np_before_mask are attention masks defined earlier)
+# ... \
+# (just showing one example, 
+#  np_prop_mask and 
+#  np_before_mask 
+#  are attention masks defined earlier)
 # np v_dat_p2 np np
 # e.g. [8,18,1,7,1,7]
 set example ["ella","sold","a","customer","a","car"]
-np_np_sequence = aggregate((np_prop_mask and np_before_mask) or (np_det_left_mask and np_two_before_mask), 1);
+np_np_sequence = \
+  aggregate((np_prop_mask and np_before_mask) or (np_det_left_mask and np_two_before_mask), 1);
 # would not support prepositional phrase modification on middle NP
-#np_np_before_mask = select(np_np_sequence, 1, ==) and select(indices-1, indices, ==);
-np_np_any_before_mask = select(np_np_sequence, 1, ==) and select(indices, indices, >); # acausal is ok \
-in INPUT sequence (encoder part, not decoder), \
-would mask further if we wanted to do multiple templates per input or \
-something outside the supported grammar (COGS without complement phrase \
-recursion is supported here)
-np_np_any_before_sequence = aggregate(np_np_any_before_mask, 1);
-np_np_any_before_mask = select(np_np_any_before_sequence, 1, ==) and select(indices, indices, ==);
-np_v_dat_p_np_np = aggregate(np_after_mask and v_dat_mask and np_before_mask and np_np_any_before_mask, 1);
-# Example: np_v_dat_p_np_np(['ella', 'sold', 'a', 'customer', 'a', 'car']) = [0, 1, 0, 0, 0, 0] (ints)
-# Example: np_v_dat_p_np_np([8, 18, 1, 7, 1, 7]) = [0, 1, 0, 0, 0, 0] (ints)
+#np_np_before_mask = \
+#  select(np_np_sequence, 1, ==) and select(indices-1, indices, ==);
+np_np_any_before_mask = \
+  select(np_np_sequence, 1, ==) and select(indices, indices, >); # acausal is ok \
+# in INPUT sequence (encoder part, not decoder), \
+# would mask further if we wanted to do multiple templates per input or \
+# something outside the supported grammar (COGS without complement phrase \
+# recursion is supported here)
+np_np_any_before_sequence = \
+  aggregate(np_np_any_before_mask, 1);
+np_np_any_before_mask = \
+  select(np_np_any_before_sequence, 1, ==) and select(indices, indices, ==);
+np_v_dat_p_np_np = \
+  aggregate(np_after_mask and v_dat_mask and np_before_mask and np_np_any_before_mask, 1);
+# Example: np_v_dat_p_np_np(\
+#  ['ella', 'sold', 'a', 'customer', 'a', 'car']) \
+#  = [0, 1, 0, 0, 0, 0] (ints)
+# Example: np_v_dat_p_np_np(\
+#  [8, 18, 1, 7, 1, 7]) \
+#  = [0, 1, 0, 0, 0, 0] (ints)
 
 # ...
 
 # check the pattern and set the template name
-any_np_v_trans_omissible = aggregate(select(np_v_trans_omissible, 1, ==), 1);
+any_np_v_trans_omissible = \
+  aggregate(select(np_v_trans_omissible, 1, ==), 1);
 template_name = "v_trans_omissible_p1" 
 if (any_np_v_trans_omissible == 1) else template_name;
 
 # ...
 
 any_v_dat_p2 = aggregate(select(np_v_dat_p_np_np, 1, ==), 1);
-template_name = "v_dat_p2" if (any_v_dat_p2 == 1) else template_name;
+template_name = \
+  "v_dat_p2" if (any_v_dat_p2 == 1) else template_name;
 
 # ...
 
-any_v_dat_pp_p4 = aggregate(select(np_was_v_dat_pp_np_by_np, 1, ==), 1);
-template_name = "v_dat_pp_p4" if (any_v_dat_pp_p4 == 1) else template_name;
+any_v_dat_pp_p4 = \
+  aggregate(select(np_was_v_dat_pp_np_by_np, 1, ==), 1);
+template_name = \
+  "v_dat_pp_p4" if (any_v_dat_pp_p4 == 1) else template_name;
 
 # must be checked after P4
-any_v_dat_pp_p2 = aggregate(select(np_was_v_dat_pp_to_np_by_np, 1, ==), 1);
-template_name = "v_dat_pp_p2" if (any_v_dat_pp_p2 == 1) else template_name;
+any_v_dat_pp_p2 = \
+  aggregate(select(np_was_v_dat_pp_to_np_by_np, 1, ==), 1);
+template_name = \
+  "v_dat_pp_p2" if (any_v_dat_pp_p2 == 1) else template_name;
 
-# template name is used to lookup the number of verb relationships to output
+# template name is used to lookup 
+# the number of verb relationships to output
 # and what they are for each index
-# e.g. ["theme", "agent"] vs. ["agent", "recipient", "theme"] etc
+# e.g. ["theme", "agent"] 
+# vs. ["agent", "recipient", "theme"] etc
 \end{verbatim}
 \end{tiny}
 \clearpage
@@ -1235,11 +1273,11 @@ np_prop_diag_mask = select(aggregate(np_prop_mask, 1), 1, ==) and select(indices
 no_pp_np_mask = 
 1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or 
 (pp_two_after_mask and np_det_diag_mask), 1);
-nps_without_pp_prefix_indices = \
-selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and \
+nps_without_pp_prefix_indices = 
+selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and
 select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 
-left_idx = aggregate(select(indices, \
+left_idx = aggregate(select(indices,
 left_idx_in_nps_zero_based, ==), input_indices_sorted);
 right_idx = aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices);
 
@@ -1254,22 +1292,27 @@ if (template_name == "v_inf_taking" and after_intro_idx == 3) else right_idx;
 # ...
 
 after_intro_target_token = left_idx 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2) else after_intro_target_token;
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2)
+else after_intro_target_token;
 
 after_intro_target_token = "," 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 3) else after_intro_target_token;
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 3)
+else after_intro_target_token;
 
 after_intro_target_token = right_idx 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4) 
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4)
 else after_intro_target_token;
 
 after_intro_target_token = ")" 
 if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5) 
 else after_intro_target_token;
 
-after_intro_target_token = "AND" 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6 
-and not (template_mapping_output == "")) else after_intro_target_token;
+after_intro_target_token = "AND"
+if 
+(after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6
+and
+not (template_mapping_output == ""))
+else after_intro_target_token;
 
 # ...
 \end{verbatim}
@@ -1285,19 +1328,24 @@ pps_in_input_sequence = INPUT_MASK*(indicator(pos_tokens == 2));
 pps_in_input_count = selector_width(select(pps_in_input_sequence, 1, ==));
 pps_index = pps_in_input_sequence*selector_width(select(pps_in_input_sequence, 1, ==) 
 and select(indices,indices, <=));
-nmods_and_pps_in_output_sequence = OUTPUT_MASK*(indicator(tokens == "nmod . in" or tokens == "nmod . beside" or tokens=="nmod . on"));
-nmods_and_pps_in_output_count = selector_width(select(nmods_and_pps_in_output_sequence, 1, ==));
+nmods_and_pps_in_output_sequence = 
+  OUTPUT_MASK*(indicator(tokens == "nmod . in" or tokens == "nmod . beside" or tokens=="nmod . on"));
+nmods_and_pps_in_output_count = 
+  selector_width(select(nmods_and_pps_in_output_sequence, 1, ==));
 \end{verbatim}
 \end{tiny}
 
 \begin{tiny}
 \begin{verbatim}
-current_pp = aggregate(select(pps_index, nmods_and_pps_in_output_count+1, ==), tokens) if pps_in_input_count > 0 else "";
+current_pp = 
+  aggregate(select(pps_index, nmods_and_pps_in_output_count+1, ==), tokens) 
+  if pps_in_input_count > 0 else "";
 current_pp = "" if current_pp == 0 else current_pp;
 current_nmod_token = 
 ("nmod . " + current_pp) if (pps_in_input_count > 0 and not (current_pp == 0) 
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 0) else "";
-current_nmod_token = "(" if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 1 else current_nmod_token;
+current_nmod_token = 
+  "(" if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 1 else current_nmod_token;
 current_nmod_token = 
 (aggregate(select(pps_index, nmods_and_pps_in_output_count, ==), indices)-1) if pps_in_input_count > 0 
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2 else current_nmod_token;
@@ -1307,7 +1355,9 @@ after_nmod_idx =
 aggregate(select(pps_index, nmods_and_pps_in_output_count, ==), indices)+1;
 token_at_after_nmod_idx = 
 aggregate(select(indices, after_nmod_idx, ==), tokens);
-after_nmod_idx = (after_nmod_idx + 1) if (token_at_after_nmod_idx == "the" or token_at_after_nmod_idx == "a") else after_nmod_idx;
+after_nmod_idx = 
+  (after_nmod_idx + 1) 
+  if (token_at_after_nmod_idx == "the" or token_at_after_nmod_idx == "a") else after_nmod_idx;
 current_nmod_token = (after_nmod_idx) 
 if pps_in_input_count > 0 
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4 else current_nmod_token;
@@ -1429,7 +1479,9 @@ COGS_INPUT_GRAMMAR_NO_TERMINALS = {
 "<s2>": ["<np> <vp_passive>"],
 "<s3>": ["<np> <vp_passive_dat>"],
 "<s4>": ["<np> <vp_external4>"],
-"<vp_external>": ["<v_unerg>", "<v_trans_omissible_p1>", "<vp_external1>", "<vp_external2>", "<vp_external3>","<vp_external5>", "<vp_external6>", "<vp_external7>"],
+"<vp_external>": ["<v_unerg>", "<v_trans_omissible_p1>", 
+"<vp_external1>", "<vp_external2>", "<vp_external3>",
+"<vp_external5>", "<vp_external6>", "<vp_external7>"],
 "<vp_external1>": ["<v_unacc_p1> <np>"],
 "<vp_external2>": ["<v_trans_omissible_p2> <np>"],
 "<vp_external3>": ["<v_trans_not_omissible> <np>"],
@@ -1438,18 +1490,24 @@ COGS_INPUT_GRAMMAR_NO_TERMINALS = {
 "<vp_external6>": ["<v_dat_p1> <np> <pp_iobj>"],
 "<vp_external7>": ["<v_dat_p2> <np> <np>"],
 "<vp_internal>": ["<np> <v_unacc_p2>"],
-"<vp_passive>": ["<vp_passive1>", "<vp_passive2>", "<vp_passive3>", "<vp_passive4>", "<vp_passive5>", "<vp_passive6>", "<vp_passive7>", "<vp_passive8>"],
+"<vp_passive>": ["<vp_passive1>", "<vp_passive2>", 
+"<vp_passive3>", "<vp_passive4>", "<vp_passive5>", 
+"<vp_passive6>", "<vp_passive7>", "<vp_passive8>"],
 "<vp_passive1>": ["<was> <v_trans_not_omissible_pp_p1>"],
- "<vp_passive2>": ["<was> <v_trans_not_omissible_pp_p2> <by> <np>"] ,
+"<vp_passive2>": 
+  ["<was> <v_trans_not_omissible_pp_p2> <by> <np>"],
 "<vp_passive3>": ["<was> <v_trans_omissible_pp_p1>"],
-"<vp_passive4>": ["<was> <v_trans_omissible_pp_p2> <by> <np>"],
+"<vp_passive4>": 
+  ["<was> <v_trans_omissible_pp_p2> <by> <np>"],
 "<vp_passive5>": ["<was> <v_unacc_pp_p1>"],
 "<vp_passive6>": ["<was> <v_unacc_pp_p2> <by> <np>"],
 "<vp_passive7>": ["<was> <v_dat_pp_p1> <pp_iobj>"],
 "<vp_passive8>": ["<was> <v_dat_pp_p2> <pp_iobj> <by> <np>"],
-"<vp_passive_dat>": ["<vp_passive_dat1>", "<vp_passive_dat2>"],
+"<vp_passive_dat>": 
+  ["<vp_passive_dat1>", "<vp_passive_dat2>"],
 "<vp_passive_dat1>": ["<was> <v_dat_pp_p3> <np>"],
-"<vp_passive_dat2>": ["<was> <v_dat_pp_p4> <np> <by> <np>"],
+"<vp_passive_dat2>": 
+  ["<was> <v_dat_pp_p4> <np> <by> <np>"],
 "<np>": ["<np_prop>","<np_det>", "<np_pp>"],
 "<np_prop>": ["<proper_noun>"],
 "<np_det>": ["<det> <common_noun>"],
@@ -1639,12 +1697,16 @@ all_expansions_observed_across_examples = set()
 
 for sentence in handpicked_example_sentences:
   single_example_expansions = \
-  generate_set_of_expansion_keys_for_lark_parse_tree(parser.parse(sentence.lower()))
+  generate_set_of_expansion_keys_for_lark_parse_tree(
+    parser.parse(sentence.lower())
+  )
   all_expansions_observed_across_examples = \
-  all_expansions_observed_across_examples.union(single_example_expansions)
+  all_expansions_observed_across_examples.union(
+    single_example_expansions)
 
 1 - len(set(expansions_expected) \
-- all_expansions_observed_across_examples) / len(expansions_expected)
+- all_expansions_observed_across_examples) 
+  / len(expansions_expected)
 # 0.9230769230769231
 
 # Those 19 rules cover 92.3% of the COGS input grammar
@@ -1652,7 +1714,8 @@ for sentence in handpicked_example_sentences:
 # are not evenly distributed across grammar rules).
 # Let's see what rules are still missing:
 
-set(expansions_expected) - all_expansions_observed_across_examples
+set(expansions_expected) - 
+  all_expansions_observed_across_examples
 # tells us we need a prepositional phrase example!
 #{'<np> -> <np_pp>',
 # tell us we need prepositional phrase examples
@@ -1703,10 +1766,13 @@ handpicked_example_sentences
 all_expansions_observed_across_examples = set()
 
 for sentence in handpicked_example_sentences:
-  single_example_expansions = generate_set_of_expansion_keys_for_lark_parse_tree(parser.parse(sentence.lower()))
-  all_expansions_observed_across_examples = all_expansions_observed_across_examples.union(single_example_expansions)
+  single_example_expansions = \
+    generate_set_of_expansion_keys_for_lark_parse_tree(parser.parse(sentence.lower()))
+  all_expansions_observed_across_examples = \
+    all_expansions_observed_across_examples.union(single_example_expansions)
 
-1 - len(set(expansions_expected) - all_expansions_observed_across_examples) / len(expansions_expected)
+1 - len(set(expansions_expected) - \
+  all_expansions_observed_across_examples) / len(expansions_expected)
 # 1.0
 
 set(expansions_expected) - all_expansions_observed_across_examples
@@ -1897,7 +1963,8 @@ EncoderDecoderModel(
      (LayerNorm): 
       LayerNorm((300,), eps=1e-12, elementwise_affine=True)
     )
-    (decoder): Linear(in_features=300, out_features=729, bias=True)
+    (decoder): Linear(in_features=300, out_features=729,
+      bias=True)
    )
   )
  )
@@ -1972,7 +2039,9 @@ we can use the Beta distribution to model the uncertainty and generate confidenc
 see e.g. 
 https://en.wikipedia.org/w/index.php
 
-?title=Binomial\_proportion\_confidence\_interval\&oldid=1252517214\#Clopper\%E2\%80\%93Pearson\_interval
+?title=Binomial\_proportion\_confidence\_interval
+
+\&oldid=1252517214\#Clopper\%E2\%80\%93Pearson\_interval
 
 and https://arxiv.org/abs/1303.1288 
 \end{tiny}
@@ -2047,7 +2116,7 @@ using the full details put in Lark format by \cite{klinger2024compositionalprogr
 and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer} (See Appendix 7 - Computing Grammar Coverage) , we use their TrackingGrammarCoverageFuzzer to generate the set of all expansions of the COGS grammar.
 \end{tiny}
 }(lexical differences ignored) \cite{fuzzingbook2023:GrammarCoverageFuzzer} (noting that if the model is not capable of learning certain expansions in the grammar such as `np\_det pp np -> np\_pp -> np`, it may need to see more variations to memorize individual cases instead ):
-\includegraphics[scale=0.40]{grammar_coverage_by_number_of_recogs_training_examples_lexical_differences_ignored.png}
+\includegraphics[scale=0.38]{grammar_coverage_by_number_of_recogs_training_examples_lexical_differences_ignored.png}
 
 That shows if one already knows parts of speech and verb types for words one needs much less data.
 
