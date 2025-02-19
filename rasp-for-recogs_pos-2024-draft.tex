@@ -548,7 +548,7 @@ After this paper was written we found our predicted split "v\_dat\_p2\_pp\_moved
 We tried one augmentation, see Resuls and Appendix 4, but there are many other possibilities.
 %We note we attempted in the course of this work one simple data augmentation (see Methods) which did not improve performance on the obj-pp-to-subj-pp split which was to attempt to teach the network to ignore the distracting "pp det common\_noun" and "pp proper\_noun" (a rule we had to add to the RASP, see Appendix 5 and Model sections) which along with templates with dynamic size gaps (match any occurrence of something in the future rather than a fixed length away) allows our RASP model to achieve high obj-pp-to-subj-pp scores despite being a non-tree solution. The author will continue to attempt to augment the data to get the model to learn to ignore "pp det common\_noun" and "pp proper\_noun" when looking for nouns to assign to right indices of relationships, as the initial attempt did not appear to get the trained-from-scratch Transformer to learn this rule, which means we cannot conclude anything about whether that rule is sufficient in the trained as it is in the RASP model, and is also not sufficient to say that the Transformer won't be able to learn the rule with a simple data augmentation (we only tried one).
 \end{footnotesize}
-}, curriculum learning, or other approaches.
+}, curriculum learning \cite{10.1145/1553374.1553380}, reinforcement learning \cite{Ranzato2015}, or other approaches.
 
 \clearpage
 \section*{Known Project Limitations}
