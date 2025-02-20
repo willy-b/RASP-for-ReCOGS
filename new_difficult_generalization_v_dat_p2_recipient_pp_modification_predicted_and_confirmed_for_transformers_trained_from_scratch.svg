@@ -4,9 +4,9 @@
 <svg
    version="1.1"
    id="svg1"
-   width="795"
+   width="1800"
    height="800"
-   viewBox="0 0 795 800"
+   viewBox="0 0 1800 800"
    sodipodi:docname="new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.svg"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -15,6 +15,79 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs1">
+    <rect
+       x="1062.8347"
+       y="606.5221"
+       width="727.17249"
+       height="64.685411"
+       id="rect53" />
+    <rect
+       x="1041.2141"
+       y="252.81226"
+       width="748.33971"
+       height="91.370333"
+       id="rect52" />
+    <rect
+       x="753.05579"
+       y="3.6864624"
+       width="740.61766"
+       height="52.790141"
+       id="rect51" />
+    <rect
+       x="754.4516"
+       y="417.97964"
+       width="478.29907"
+       height="37.355328"
+       id="rect50" />
+    <rect
+       x="756.32312"
+       y="416.5495"
+       width="308.95825"
+       height="61.044167"
+       id="rect49" />
+    <rect
+       x="782.30054"
+       y="408.76743"
+       width="246.24928"
+       height="63.524593"
+       id="rect48" />
+    <rect
+       x="667.64789"
+       y="99.507523"
+       width="381.66757"
+       height="55.454333"
+       id="rect46" />
+    <rect
+       x="700.40179"
+       y="108.8985"
+       width="221.44502"
+       height="52.999542"
+       id="rect44" />
+    <rect
+       x="703.39062"
+       y="119.9431"
+       width="188.909"
+       height="36.290192"
+       id="rect43" />
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="2.5"
+       markerHeight="2.5"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
     <rect
        x="216.3038"
        y="325.21115"
@@ -36,8 +109,8 @@
     <rect
        x="7.4479465"
        y="739.09058"
-       width="790.6637"
-       height="152.09225"
+       width="1564.7176"
+       height="97.186087"
        id="rect14" />
     <rect
        x="254.77153"
@@ -75,6 +148,25 @@
        width="671.55945"
        height="47.281288"
        id="rect1" />
+    <marker
+       style="overflow:visible"
+       id="Triangle-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="2.5"
+       markerHeight="2.5"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-5" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="namedview1"
@@ -86,9 +178,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
      showguides="true"
-     inkscape:zoom="0.98282002"
-     inkscape:cx="348.487"
-     inkscape:cy="371.38031"
+     inkscape:zoom="0.60556969"
+     inkscape:cx="1023.0036"
+     inkscape:cy="518.52"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -96,9 +188,34 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="g35">
     <sodipodi:guide
-       position="271.50856,637.45634"
+       position="271.50856,537.45634"
        orientation="1,0"
        id="guide35"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="23.402047,723.68898"
+       orientation="1,0"
+       id="guide38"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="360.18802,770.49307"
+       orientation="0,-1"
+       id="guide39"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="285.91196,458.12662"
+       orientation="0,-1"
+       id="guide40"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="430.15133,505.97251"
+       orientation="0,-1"
+       id="guide53"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="709.20521,172.4691"
+       orientation="0,-1"
+       id="guide54"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <g
@@ -1917,22 +2034,21 @@
       <text
          xml:space="preserve"
          id="text14"
-         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect14);display:inline;fill:#000000"><tspan
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect14);display:inline;fill:#000000"
+         transform="translate(16)"><tspan
            x="7.4472656"
            y="757.47421"
-           id="tspan4">Despite an identical intermediate representation in a recursive/tree-based model of </tspan><tspan
+           id="tspan4">Despite an identical intermediate representation in a recursive/tree-based model of grammar, 
+</tspan><tspan
            x="7.4472656"
            y="783.60758"
-           id="tspan5">grammar, baseline Encoder-Decoder Transformers (e.g. Wu et al baseline 2 layer) trained </tspan><tspan
+           id="tspan5">baseline Encoder-Decoder Transformers (e.g. Wu et al baseline 2 layer) trained from scratch on generating logical forms for a corpus including the first type of sentence (a)
+</tspan><tspan
            x="7.4472656"
            y="809.74094"
-           id="tspan6">from scratch on generating logical forms for a corpus including the first type of sentence </tspan><tspan
-           x="7.4472656"
-           y="835.8743"
-           id="tspan7">but not the second, cannot reliably generalize to doing so for the second type of sentence </tspan><tspan
-           x="7.4472656"
-           y="862.00766"
-           id="tspan8">(suggests cannot understand the second type of sentence after learning first).</tspan></text>
+           id="tspan7"><tspan
+             dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.00012016296"
+             id="tspan6">but not the second (b), cannot reliably generalize to doing so for the second type of sentence (suggests cannot understand the type (b) sentences after learning type (a)).</tspan></tspan></text>
       <rect
          style="fill:none;stroke:#f8ff00;stroke-width:5.5;stroke-dasharray:none;stroke-opacity:0.75"
          id="rect15"
@@ -1980,15 +2096,574 @@
          transform="translate(16,4)"><tspan
            x="254.77148"
            y="420.70312"
-           id="tspan9">Modified COGS training example:
+           id="tspan8">Modified COGS training example:
 </tspan><tspan
            x="254.77148"
            y="444.03649"
-           id="tspan10">&quot;A scientist lended a cat beside a computer a donut&quot;
+           id="tspan9">&quot;A scientist lended a cat beside a computer a donut&quot;
 </tspan><tspan
            x="254.77148"
            y="467.36987"
-           id="tspan11">Prepositional modification on recipient noun (not in tail).</tspan></text>
+           id="tspan10">Prepositional modification on recipient noun (not in tail).</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:48px;line-height:1.4;fill:none;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:0.75"
+         x="20.528105"
+         y="126.08738"
+         id="text37"><tspan
+           sodipodi:role="line"
+           id="tspan37"
+           x="20.528105"
+           y="126.08738" /></text>
+      <text
+         xml:space="preserve"
+         style="font-size:18.6667px;line-height:1.4;fill:none;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:0.75"
+         x="23.876358"
+         y="108.61519"
+         id="text38"><tspan
+           sodipodi:role="line"
+           id="tspan38"
+           x="23.876358"
+           y="108.61519"
+           style="font-size:18.6667px;fill:#000000;fill-opacity:1">a.</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:18.6667px;line-height:1.4;fill:none;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:0.75"
+         x="24.640976"
+         y="423.04016"
+         id="text38-3"><tspan
+           sodipodi:role="line"
+           id="tspan38-3"
+           x="24.640976"
+           y="423.04016"
+           style="font-size:18.6667px;fill:#000000;fill-opacity:1">b.</tspan></text>
+      <g
+         id="graph0-8"
+         class="graph"
+         transform="matrix(1.3186813,0,0,1.3186813,1059.6139,327.91563)">
+        <title
+           id="title1-88">G</title>
+        <!-- 1 -->
+        <g
+           id="node1-97"
+           class="node">
+          <title
+             id="title2-76">1</title>
+          <ellipse
+             fill="none"
+             stroke="#000000"
+             cx="39.650002"
+             cy="-45"
+             rx="39.790001"
+             ry="18"
+             id="ellipse2-4" />
+          <text
+             text-anchor="middle"
+             x="39.650002"
+             y="-41.299999"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text2">scientist</text>
+        </g>
+        <!-- 2 -->
+        <g
+           id="node5-3"
+           class="node">
+          <title
+             id="title3-0">2</title>
+          <ellipse
+             fill="none"
+             stroke="#000000"
+             cx="176.28999"
+             cy="-45"
+             rx="27"
+             ry="18"
+             id="ellipse3-3" />
+          <text
+             text-anchor="middle"
+             x="176.28999"
+             y="-41.299999"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text3-0">lend</text>
+        </g>
+        <!-- 1&#45;&gt;2 -->
+        <g
+           id="edge1-9"
+           class="edge">
+          <title
+             id="title4-2">1-&gt;2</title>
+          <path
+             fill="none"
+             stroke="#000000"
+             d="m 79.59,-45 c 18.79,0 41.18,0 59.58,0"
+             id="path4" />
+          <polygon
+             fill="#000000"
+             stroke="#000000"
+             points="139.21,-41.5 139.21,-48.5 149.21,-45 "
+             id="polygon4" />
+          <text
+             text-anchor="middle"
+             x="114.29"
+             y="-48.799999"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text4-5">agent</text>
+        </g>
+        <!-- 4 -->
+        <g
+           id="node2-4"
+           class="node">
+          <title
+             id="title5-0">4</title>
+          <ellipse
+             fill="none"
+             stroke="#000000"
+             cx="321.84"
+             cy="-72"
+             rx="27"
+             ry="18"
+             id="ellipse5" />
+          <text
+             text-anchor="middle"
+             x="321.84"
+             y="-68.300003"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text5-5">cat</text>
+        </g>
+        <!-- 6 -->
+        <g
+           id="node3-9"
+           class="node">
+          <title
+             id="title6-4">6</title>
+          <ellipse
+             fill="none"
+             stroke="#000000"
+             cx="321.84"
+             cy="-18"
+             rx="30.59"
+             ry="18"
+             id="ellipse6" />
+          <text
+             text-anchor="middle"
+             x="321.84"
+             y="-14.3"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text6-6">donut</text>
+        </g>
+        <!-- 9 -->
+        <g
+           id="node4-9"
+           class="node">
+          <title
+             id="title7-2">9</title>
+          <ellipse
+             fill="none"
+             stroke="#000000"
+             cx="514.58002"
+             cy="-18"
+             rx="44.389999"
+             ry="18"
+             id="ellipse7-24" />
+          <text
+             text-anchor="middle"
+             x="514.58002"
+             y="-14.3"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text7-7">computer</text>
+        </g>
+        <!-- 6&#45;&gt;9 -->
+        <g
+           id="edge4-7"
+           class="edge">
+          <title
+             id="title8-5">6-&gt;9</title>
+          <path
+             fill="none"
+             stroke="#000000"
+             d="m 352.64,-18 c 28.71,0 72.77,0 107.54,0"
+             id="path8-4" />
+          <polygon
+             fill="#000000"
+             stroke="#000000"
+             points="460.18,-14.5 460.18,-21.5 470.18,-18 "
+             id="polygon8-8" />
+          <text
+             text-anchor="middle"
+             x="411.39001"
+             y="-21.799999"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text8-1">nmod . beside</text>
+        </g>
+        <!-- 2&#45;&gt;4 -->
+        <g
+           id="edge2-2"
+           class="edge">
+          <title
+             id="title9-8">2-&gt;4</title>
+          <path
+             fill="none"
+             stroke="#000000"
+             d="m 202.63,-49.76 c 23.06,-4.34 57.33,-10.79 83.04,-15.63"
+             id="path9" />
+          <polygon
+             fill="#000000"
+             stroke="#000000"
+             points="286.58,-61.99 285.29,-68.87 295.76,-67.28 "
+             id="polygon9" />
+          <text
+             text-anchor="middle"
+             x="247.28999"
+             y="-65.800003"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text9-9">recipient</text>
+        </g>
+        <!-- 2&#45;&gt;6 -->
+        <g
+           id="edge3-3"
+           class="edge">
+          <title
+             id="title10-6">2-&gt;6</title>
+          <path
+             fill="none"
+             stroke="#000000"
+             d="m 201.88,-38.46 c 6.3,1.57 13.09,3.16 19.41,4.46 19.88,4.07 42.16,7.74 60.6,10.53"
+             id="path10" />
+          <polygon
+             fill="#000000"
+             stroke="#000000"
+             points="281.56,-19.98 282.59,-26.9 291.97,-21.97 "
+             id="polygon10" />
+          <text
+             text-anchor="middle"
+             x="247.28999"
+             y="-37.799999"
+             font-family="Times, serif"
+             font-size="14px"
+             id="text10-8">theme</text>
+        </g>
+      </g>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Triangle)"
+         d="m 783.2482,266.04265 156.30846,-2.53973"
+         id="path40"
+         inkscape:connector-type="polyline"
+         inkscape:connector-curvature="0" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Triangle-7)"
+         d="m 830.05206,605.99426 156.30846,-2.53973"
+         id="path40-8"
+         inkscape:connector-type="polyline"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g10"
+         transform="matrix(1.3186813,0,0,1.3186813,1052.6769,537.61172)">
+        <g
+           id="graph0-4"
+           class="graph"
+           transform="translate(4,94)">
+          <title
+             id="title1-6">G</title>
+          <!-- 1 -->
+          <g
+             id="node1-2"
+             class="node">
+            <title
+               id="title2-5">1</title>
+            <ellipse
+               fill="none"
+               stroke="#000000"
+               cx="39.650002"
+               cy="-37"
+               rx="39.790001"
+               ry="18"
+               id="ellipse2-8" />
+            <text
+               text-anchor="middle"
+               x="39.650002"
+               y="-33.299999"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text2-62">scientist</text>
+          </g>
+          <!-- 2 -->
+          <g
+             id="node5-8"
+             class="node">
+            <title
+               id="title3-4">2</title>
+            <ellipse
+               fill="none"
+               stroke="#000000"
+               cx="176.28999"
+               cy="-37"
+               rx="27"
+               ry="18"
+               id="ellipse3-7" />
+            <text
+               text-anchor="middle"
+               x="176.28999"
+               y="-33.299999"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text3-2">lend</text>
+          </g>
+          <!-- 1&#45;&gt;2 -->
+          <g
+             id="edge1-4"
+             class="edge">
+            <title
+               id="title4-0">1-&gt;2</title>
+            <path
+               fill="none"
+               stroke="#000000"
+               d="m 79.59,-37 c 18.79,0 41.18,0 59.58,0"
+               id="path4-6" />
+            <polygon
+               fill="#000000"
+               stroke="#000000"
+               points="139.21,-40.5 149.21,-37 139.21,-33.5 "
+               id="polygon4-2" />
+            <text
+               text-anchor="middle"
+               x="114.29"
+               y="-40.799999"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text4-9">agent</text>
+          </g>
+          <!-- 4 -->
+          <g
+             id="node2-9"
+             class="node">
+            <title
+               id="title5-08">4</title>
+            <ellipse
+               fill="none"
+               stroke="#000000"
+               cx="321.84"
+               cy="-72"
+               rx="27"
+               ry="18"
+               id="ellipse5-1" />
+            <text
+               text-anchor="middle"
+               x="321.84"
+               y="-68.300003"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text5-3">cat</text>
+          </g>
+          <!-- 7 -->
+          <g
+             id="node3-11"
+             class="node">
+            <title
+               id="title6-0">7</title>
+            <ellipse
+               fill="none"
+               stroke="#000000"
+               cx="514.58002"
+               cy="-72"
+               rx="44.389999"
+               ry="18"
+               id="ellipse6-3" />
+            <text
+               text-anchor="middle"
+               x="514.58002"
+               y="-68.300003"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text6-4">computer</text>
+          </g>
+          <!-- 4&#45;&gt;7 -->
+          <g
+             id="edge4-0"
+             class="edge">
+            <title
+               id="title7-39">4-&gt;7</title>
+            <path
+               fill="none"
+               stroke="#000000"
+               d="m 348.96,-72 c 28.42,0 74.63,0 110.87,0"
+               id="path7" />
+            <polygon
+               fill="#000000"
+               stroke="#000000"
+               points="460.24,-75.5 470.24,-72 460.24,-68.5 "
+               id="polygon7" />
+            <text
+               text-anchor="middle"
+               x="411.39001"
+               y="-75.800003"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text7-1">nmod . beside</text>
+          </g>
+          <!-- 9 -->
+          <g
+             id="node4-96"
+             class="node">
+            <title
+               id="title8-9">9</title>
+            <ellipse
+               fill="none"
+               stroke="#000000"
+               cx="321.84"
+               cy="-18"
+               rx="30.59"
+               ry="18"
+               id="ellipse8" />
+            <text
+               text-anchor="middle"
+               x="321.84"
+               y="-14.3"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text8-3">donut</text>
+          </g>
+          <!-- 2&#45;&gt;4 -->
+          <g
+             id="edge2-38"
+             class="edge">
+            <title
+               id="title9-0">2-&gt;4</title>
+            <path
+               fill="none"
+               stroke="#000000"
+               d="m 201.97,-43.02 c 23.21,-5.66 58.19,-14.18 84.2,-20.53"
+               id="path9-5" />
+            <polygon
+               fill="#000000"
+               stroke="#000000"
+               points="285.46,-66.98 296.01,-65.94 287.12,-60.18 "
+               id="polygon9-6" />
+            <text
+               text-anchor="middle"
+               x="247.28999"
+               y="-63.799999"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text9-6">recipient</text>
+          </g>
+          <!-- 2&#45;&gt;9 -->
+          <g
+             id="edge3-4"
+             class="edge">
+            <title
+               id="title10-0">2-&gt;9</title>
+            <path
+               fill="none"
+               stroke="#000000"
+               d="m 201.85,-30.81 c 6.3,1.42 13.1,2.81 19.44,3.81 19.58,3.1 41.5,5.22 59.78,6.62"
+               id="path10-0" />
+            <polygon
+               fill="#000000"
+               stroke="#000000"
+               points="281.37,-23.86 291.09,-19.65 280.87,-16.88 "
+               id="polygon10-4" />
+            <text
+               text-anchor="middle"
+               x="247.28999"
+               y="-30.799999"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text10-6">theme</text>
+          </g>
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         transform="translate(-3.5486e-4,69.366829)"
+         id="text43"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect43);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:0.75"><tspan
+           x="703.39062"
+           y="138.32773"
+           id="tspan11"> </tspan></text>
+      <text
+         xml:space="preserve"
+         transform="translate(-3.5486e-4,69.366829)"
+         id="text44"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect44);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:0.75" />
+      <text
+         xml:space="preserve"
+         transform="translate(26.731362,84.94229)"
+         id="text46"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect46);shape-padding:1.02234;display:inline;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.75"><tspan
+           x="668.66992"
+           y="118.91367"
+           id="tspan12">Train on extracting meaning of (a)
+</tspan><tspan
+           x="668.66992"
+           y="145.04704"
+           id="tspan13">and other grammar patterns excluding (b)</tspan></text>
+      <ellipse
+         style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:5;stroke-dasharray:none;stroke-opacity:0.75"
+         id="path47"
+         cx="918.10345"
+         cy="605.40131"
+         rx="111.36217"
+         ry="50.178341" />
+      <path
+         style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 848.08174,642.08816 137.82563,-77.8876"
+         id="path48"
+         inkscape:connector-type="polyline"
+         inkscape:connector-curvature="0" />
+      <text
+         xml:space="preserve"
+         transform="translate(-3.5486e-4,69.366829)"
+         id="text48"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect48);display:inline;fill:#1a1a1a;fill-opacity:1;stroke:#ff0000;stroke-width:5;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         transform="translate(-3.5486e-4,69.366829)"
+         id="text49"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect49);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         transform="translate(19.999645,89.36683)"
+         id="text50"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect50);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"><tspan
+           x="754.45117"
+           y="436.36484"
+           id="tspan14">Cannot generalize to extracting meaning of (b) reliably</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="translate(-3.5486e-4,69.366829)"
+         id="text51"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect51);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         transform="translate(23.999645,89.366829)"
+         id="text52"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect52);display:inline;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><tspan
+           x="1041.2148"
+           y="271.19687"
+           id="tspan15">scientist ( 1 ) ; cat ( 4 ) ; donut ( 6 ) ; computer ( 9 ) ; lend ( 2 ) AND 
+</tspan><tspan
+           x="1041.2148"
+           y="297.33026"
+           id="tspan16">agent ( 2 , 1 ) AND recipient ( 2 , 4 ) AND theme ( 2 , 6 ) AND nmod . beside ( 6 , 9 )</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="translate(-3.5486e-4,69.366829)"
+         id="text53"
+         style="font-size:18.6667px;line-height:1.4;white-space:pre;shape-inside:url(#rect53);display:inline;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><tspan
+           x="1062.834"
+           y="624.90585"
+           id="tspan17">scientist ( 1 ) ; cat ( 4 ) ; computer ( 7 ) ; donut ( 9 ) ; lend ( 2 ) AND 
+</tspan><tspan
+           x="1062.834"
+           y="651.03922"
+           id="tspan18">agent ( 2 , 1 ) AND recipient ( 2 , 4 ) AND theme ( 2 , 9 ) AND nmod . beside ( 4 , 7 )</tspan></text>
     </g>
   </g>
 </svg>
