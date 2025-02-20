@@ -5,9 +5,9 @@
    version="1.1"
    id="svg1"
    width="530"
-   height="400"
-   viewBox="0 0 530 400"
-   sodipodi:docname="sketching_vector_expanded_version_of_sentences_and_lfs_and_lf_graph_figure.svg"
+   height="410"
+   viewBox="0 0 530 410"
+   sodipodi:docname="expanded_version_of_sentences_and_lfs_and_lf_graph_figure.svg"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -16,6 +16,18 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs1">
+    <rect
+       x="8.6275358"
+       y="9.3598518"
+       width="26.152407"
+       height="30.779589"
+       id="rect39" />
+    <rect
+       x="189.02275"
+       y="4.3391247"
+       width="29.73893"
+       height="14.853236"
+       id="rect38" />
     <rect
        x="124.43372"
        y="382.02124"
@@ -136,9 +148,9 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      showguides="true"
-     inkscape:zoom="0.88699138"
-     inkscape:cx="241.26503"
-     inkscape:cy="145.43546"
+     inkscape:zoom="4.5494713"
+     inkscape:cx="71.107164"
+     inkscape:cy="108.36424"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -146,39 +158,84 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="g1">
     <sodipodi:guide
-       position="317.73382,306.34197"
+       position="28.780817,298.19958"
        orientation="0,-1"
        id="guide10"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="121.6859,401.16084"
+       position="121.6859,406.16084"
        orientation="1,0"
        id="guide11"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="397.04729,270.06624"
+       position="397.04729,275.06624"
        orientation="1,0"
        id="guide12"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="93.695007,644.13081"
+       position="93.695007,649.13081"
        orientation="0,-1"
        id="guide13"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="244.62629,502.1476"
+       position="244.62629,507.1476"
        orientation="0,-1"
        id="guide14"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="186.29233,485.21193"
+       position="186.29233,490.21193"
        orientation="0,-1"
        id="guide16"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="145.40023,404.43992"
+       position="145.40023,409.43992"
        orientation="1,0"
        id="guide32"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="38.429351,380.07285"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.8283645,388.3819"
+       orientation="1,0"
+       id="guide38"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="21.685435,398.11307"
+       orientation="0,-1"
+       id="guide40"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="43.103191,374.8797"
+       orientation="0,-1"
+       id="guide41"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="41.053793,352.69605"
+       orientation="0,-1"
+       id="guide42"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="2.7682637,238.40555"
+       orientation="0,-1"
+       id="guide43"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="70.376954,106.41081"
+       orientation="0,-1"
+       id="guide44"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="68.734183,245.16252"
+       orientation="0,-1"
+       id="guide45"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="73.134449,196.93114"
+       orientation="0,-1"
+       id="guide46"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <g
@@ -207,7 +264,7 @@
          id="tspan2"
          sodipodi:role="line"
          x="108.85706"
-         y="85.986938"></tspan></text>
+         y="85.986938" /></text>
     <text
        xml:space="preserve"
        style="fill:#000000"
@@ -251,88 +308,92 @@
          sodipodi:role="line"
          id="tspan22"
          x="669.19214"
-         y="128.06345"></tspan></text>
+         y="128.06345" /></text>
     <text
        xml:space="preserve"
        id="text27"
        style="white-space:pre;shape-inside:url(#rect27);display:inline;fill:#000000" />
     <g
        id="g34"
-       transform="translate(-112.95595,-130.65405)">
+       transform="translate(-112.95595,-123.9335)">
       <text
          xml:space="preserve"
          style="fill:#000000"
          x="112.40395"
-         y="138.39633"
+         y="130.4735"
          id="text3"><tspan
            sodipodi:role="line"
-           id="tspan3"
            x="112.40395"
-           y="138.39633">a.</tspan></text>
+           y="130.4735"
+           id="tspan28">a.</tspan><tspan
+           sodipodi:role="line"
+           x="112.40395"
+           y="145.4735"
+           id="tspan37" /></text>
       <text
          xml:space="preserve"
          style="fill:#000000"
          x="112.27861"
-         y="297.41116"
+         y="289.53549"
          id="text5"><tspan
            sodipodi:role="line"
            id="tspan5"
            x="112.27861"
-           y="297.41116">b.</tspan></text>
+           y="289.53549">b.</tspan></text>
       <text
          xml:space="preserve"
          style="fill:#000000"
          x="114.62312"
-         y="478.4949"
+         y="484.34515"
          id="text7"><tspan
            sodipodi:role="line"
            id="tspan7"
            x="114.62312"
-           y="478.4949">c.</tspan></text>
+           y="484.34515">c.</tspan></text>
       <text
          xml:space="preserve"
          style="fill:#000000"
          x="386.50922"
-         y="479.16174"
+         y="485.01199"
          id="text10"><tspan
            sodipodi:role="line"
            id="tspan10"
            x="386.50922"
-           y="479.16174">d.</tspan></text>
+           y="485.01199">d.</tspan></text>
       <text
          xml:space="preserve"
          id="text16"
          style="white-space:pre;shape-inside:url(#rect16);display:inline;fill:#000000"
-         transform="translate(0,14)"><tspan
+         transform="translate(0,19.85024)"><tspan
            x="140.08594"
            y="125.35405"
-           id="tspan1">  0       1                2      3       4</tspan></text>
+           id="tspan3">  0       1                2      3       4</tspan></text>
       <text
          xml:space="preserve"
          id="text16-5"
          style="white-space:pre;shape-inside:url(#rect16-7);display:inline;fill:#000000"
-         transform="translate(2.91406,174.34595)"><tspan
+         transform="translate(2.91406,180.19619)"><tspan
            x="140.08594"
            y="125.35405"
-           id="tspan6">  0     1       2                3     4 5       6</tspan></text>
+           id="tspan29">  0     1       2                3     4 5       6</tspan></text>
       <text
          xml:space="preserve"
          id="text17"
          style="font-size:14.6667px;white-space:pre;shape-inside:url(#rect17);display:inline;fill:#000000"
-         transform="translate(0,-138)"><tspan
+         transform="translate(0,-132.14976)"><tspan
            x="400.33008"
            y="628.57534"
-           id="tspan8">Logical forms describing the same </tspan><tspan
+           id="tspan30">Logical forms describing the same </tspan><tspan
            x="400.33008"
            y="646.90871"
-           id="tspan9">Semantic Graph are equivalent by </tspan><tspan
+           id="tspan31">Semantic Graph are equivalent by </tspan><tspan
            x="400.33008"
            y="665.24208"
-           id="tspan11">Semantic Exact Match.</tspan></text>
+           id="tspan32">Semantic Exact Match.</tspan></text>
       <g
          id="graph0"
          class="graph"
-         transform="matrix(0.55499319,0,0,0.55499319,127.42084,256.3373)">
+         transform="matrix(0.55499319,0,0,0.55499319,127.42084,262.18754)">
         <title
            id="title1">G</title>
         <!-- 0 -->
@@ -415,7 +476,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="521.91,-200.23 532.5,-199.77 523.94,-193.53 "
+             points="523.94,-193.53 521.91,-200.23 532.5,-199.77 "
              id="polygon5" />
         </g>
         <!-- 2&#45;&gt;1 -->
@@ -432,7 +493,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="482.9,-156.5 492.9,-153 482.9,-149.5 "
+             points="482.9,-149.5 482.9,-156.5 492.9,-153 "
              id="polygon6" />
         </g>
         <!-- 3 -->
@@ -471,7 +532,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="332.01,-156.5 342.01,-153 332.01,-149.5 "
+             points="332.01,-149.5 332.01,-156.5 342.01,-153 "
              id="polygon8" />
         </g>
         <!-- 4 -->
@@ -576,7 +637,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="814.57,-68.35 825.07,-66.91 815.97,-61.49 "
+             points="815.97,-61.49 814.57,-68.35 825.07,-66.91 "
              id="polygon13" />
         </g>
         <!-- 7&#45;&gt;6 -->
@@ -593,7 +654,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="789.52,-33.89 798.62,-28.47 788.12,-27.03 "
+             points="788.12,-27.03 789.52,-33.89 798.62,-28.47 "
              id="polygon14" />
         </g>
         <!-- 8 -->
@@ -632,7 +693,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="671.86,-48.5 681.86,-45 671.86,-41.5 "
+             points="671.86,-41.5 671.86,-48.5 681.86,-45 "
              id="polygon16" />
         </g>
         <!-- 9 -->
@@ -671,7 +732,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="459,-102.5 469,-99 459,-95.5 "
+             points="459,-95.5 459,-102.5 469,-99 "
              id="polygon18" />
         </g>
         <!-- 9&#45;&gt;8 -->
@@ -688,7 +749,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="523.95,-58.47 532.51,-52.23 521.93,-51.77 "
+             points="521.93,-51.77 523.95,-58.47 532.51,-52.23 "
              id="polygon19" />
         </g>
         <!-- 10 -->
@@ -727,7 +788,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="309.52,-102.5 319.52,-99 309.52,-95.5 "
+             points="309.52,-95.5 309.52,-102.5 319.52,-99 "
              id="polygon21" />
         </g>
         <!-- 11 -->
@@ -766,7 +827,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="195.72,-148.17 206.26,-147.09 197.34,-141.36 "
+             points="197.34,-141.36 195.72,-148.17 206.26,-147.09 "
              id="polygon23" />
         </g>
         <!-- 11&#45;&gt;10 -->
@@ -783,7 +844,7 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="179.57,-114.89 188.48,-109.16 177.94,-108.08 "
+             points="177.94,-108.08 179.57,-114.89 188.48,-109.16 "
              id="polygon24" />
         </g>
         <!-- 12 -->
@@ -822,13 +883,13 @@
           <polygon
              fill="#000000"
              stroke="#000000"
-             points="79.92,-129.5 89.92,-126 79.92,-122.5 "
+             points="79.92,-122.5 79.92,-129.5 89.92,-126 "
              id="polygon26" />
         </g>
       </g>
       <g
          id="g1-3"
-         transform="matrix(0.54689204,0,0,0.5515031,128.75172,285.92409)">
+         transform="matrix(0.54689204,0,0,0.5515031,128.75172,291.77433)">
         <g
            id="g30">
           <g
@@ -917,7 +978,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="525.41,-309.51 535.97,-308.67 527.19,-302.74 "
+                 points="527.19,-302.74 525.41,-309.51 535.97,-308.67 "
                  id="polygon5-6" />
             </g>
             <!-- 2&#45;&gt;1 -->
@@ -934,7 +995,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="486.96,-264.5 496.96,-261 486.96,-257.5 "
+                 points="486.96,-257.5 486.96,-264.5 496.96,-261 "
                  id="polygon6-6" />
             </g>
             <!-- 3 -->
@@ -973,7 +1034,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="325.59,-260.42 335.87,-257.88 326.24,-253.45 "
+                 points="326.24,-253.45 325.59,-260.42 335.87,-257.88 "
                  id="polygon8-6" />
             </g>
             <!-- 4 -->
@@ -1122,7 +1183,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="831.47,-68.35 841.97,-66.91 832.86,-61.49 "
+                 points="832.86,-61.49 831.47,-68.35 841.97,-66.91 "
                  id="polygon15" />
             </g>
             <!-- 9&#45;&gt;8 -->
@@ -1139,7 +1200,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="806.41,-33.89 815.52,-28.47 805.02,-27.03 "
+                 points="805.02,-27.03 806.41,-33.89 815.52,-28.47 "
                  id="polygon16-8" />
             </g>
             <!-- 10 -->
@@ -1178,7 +1239,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="688.71,-48.5 698.71,-45 688.71,-41.5 "
+                 points="688.71,-41.5 688.71,-48.5 698.71,-45 "
                  id="polygon18-0" />
             </g>
             <!-- 11 -->
@@ -1217,7 +1278,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="525.41,-201.51 535.97,-200.67 527.19,-194.74 "
+                 points="527.19,-194.74 525.41,-201.51 535.97,-200.67 "
                  id="polygon20" />
             </g>
             <!-- 11&#45;&gt;5 -->
@@ -1234,7 +1295,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="449.93,-156.5 459.93,-153 449.93,-149.5 "
+                 points="449.93,-149.5 449.93,-156.5 459.93,-153 "
                  id="polygon21-2" />
             </g>
             <!-- 11&#45;&gt;6 -->
@@ -1251,7 +1312,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="527.19,-111.26 535.97,-105.33 525.41,-104.49 "
+                 points="525.41,-104.49 527.19,-111.26 535.97,-105.33 "
                  id="polygon22" />
             </g>
             <!-- 11&#45;&gt;10 -->
@@ -1268,7 +1329,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="525.59,-53.71 534.78,-48.44 524.31,-46.83 "
+                 points="524.31,-46.83 525.59,-53.71 534.78,-48.44 "
                  id="polygon23-5" />
             </g>
             <!-- 12 -->
@@ -1307,7 +1368,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="313.9,-167.35 323.04,-162 312.56,-160.48 "
+                 points="312.56,-160.48 313.9,-167.35 323.04,-162 "
                  id="polygon25" />
             </g>
             <!-- 13 -->
@@ -1346,7 +1407,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="193.07,-246.99 203.43,-244.77 193.95,-240.05 "
+                 points="193.95,-240.05 193.07,-246.99 203.43,-244.77 "
                  id="polygon27" />
             </g>
             <!-- 13&#45;&gt;12 -->
@@ -1363,7 +1424,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="191.84,-201.98 199.31,-194.46 188.78,-195.69 "
+                 points="188.78,-195.69 191.84,-201.98 199.31,-194.46 "
                  id="polygon28" />
             </g>
             <!-- 14 -->
@@ -1402,7 +1463,7 @@
               <polygon
                  fill="#000000"
                  stroke="#000000"
-                 points="79.92,-237.5 89.92,-234 79.92,-230.5 "
+                 points="79.92,-230.5 79.92,-237.5 89.92,-234 "
                  id="polygon30" />
             </g>
           </g>
@@ -1412,67 +1473,67 @@
          xml:space="preserve"
          id="text28"
          style="white-space:pre;shape-inside:url(#rect28);display:inline;fill:#000000"
-         transform="translate(0,8)"><tspan
+         transform="translate(0,13.85024)"><tspan
            x="136.23438"
            y="145.27846"
-           id="tspan13">   <tspan
+           id="tspan34">   <tspan
    style="font-size:14.6667px"
-   id="tspan12">a boy painted the girl</tspan></tspan></text>
+   id="tspan33">a boy painted the girl</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text30"
          style="font-size:14.6667px;white-space:pre;shape-inside:url(#rect30);display:inline;fill:#000000"
-         transform="translate(2,14)"><tspan
+         transform="translate(2,19.85024)"><tspan
            x="127.01172"
            y="298.63198"
-           id="tspan14">the girl was painted by a boy</tspan></text>
+           id="tspan35">the girl was painted by a boy</tspan></text>
       <text
          xml:space="preserve"
          id="text31"
          style="font-size:12px;white-space:pre;shape-inside:url(#rect31);display:inline;fill:#000000"
-         transform="translate(20.903364,-2.3927168)"><tspan
+         transform="translate(20.903364,3.4575227)"><tspan
            x="124.00781"
            y="232.30742"
-           id="tspan16">                            <tspan
+           id="tspan41">                            <tspan
    style="font-size:13.3333px"
-   id="tspan15">LF
+   id="tspan36">LF
 </tspan></tspan><tspan
            x="124.00781"
            y="248.97405"
-           id="tspan18"><tspan
+           id="tspan43"><tspan
              style="font-size:13.3333px"
-             id="tspan17">boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 ) 
+             id="tspan42">boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 ) 
 </tspan></tspan><tspan
            x="124.00781"
            y="265.64067"
-           id="tspan20"><tspan
+           id="tspan45"><tspan
              style="font-size:13.3333px"
-             id="tspan19">AND agent ( 2 , 1 ) AND theme ( 2 , 4 )</tspan></tspan></text>
+             id="tspan44">AND agent ( 2 , 1 ) AND theme ( 2 , 4 )</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text32"
          style="font-size:12px;white-space:pre;shape-inside:url(#rect32);shape-padding:0;display:inline;fill:#000000"
-         transform="translate(21.016505,27.198228)"><tspan
+         transform="translate(21.016505,33.048468)"><tspan
            x="124.43359"
            y="394.15312"
-           id="tspan23">                           <tspan
+           id="tspan47">                           <tspan
    style="font-size:13.3333px"
-   id="tspan21">LF
+   id="tspan46">LF
 </tspan></tspan><tspan
            x="124.43359"
            y="410.81975"
-           id="tspan25"><tspan
+           id="tspan49"><tspan
              style="font-size:13.3333px"
-             id="tspan24">* girl ( 1 ) ; boy ( 6 ) ; paint ( 3 )
+             id="tspan48">* girl ( 1 ) ; boy ( 6 ) ; paint ( 3 )
 </tspan></tspan><tspan
            x="124.43359"
            y="427.48637"
-           id="tspan27"><tspan
+           id="tspan51"><tspan
              style="font-size:13.3333px"
-             id="tspan26">AND  theme ( 3 , 1 ) AND agent ( 3 , 6 )</tspan></tspan></text>
+             id="tspan50">AND  theme ( 3 , 1 ) AND agent ( 3 , 6 )</tspan></tspan></text>
       <g
          id="g6-3"
-         transform="matrix(0.81507282,0,0,0.81507282,118.73641,482.91733)">
+         transform="matrix(0.81507282,0,0,0.81507282,118.73641,488.76757)">
         <g
            id="graph0-8"
            class="graph"
@@ -1537,7 +1598,7 @@
             <polygon
                fill="#000000"
                stroke="#000000"
-               points="113.71,-14.5 113.71,-21.5 123.71,-18 "
+               points="123.71,-18 113.71,-14.5 113.71,-21.5 "
                id="polygon4-4" />
             <text
                text-anchor="middle"
@@ -1583,7 +1644,7 @@
             <polygon
                fill="#000000"
                stroke="#000000"
-               points="245.09,-14.5 245.09,-21.5 255.09,-18 "
+               points="255.09,-18 245.09,-14.5 245.09,-21.5 "
                id="polygon6-9" />
             <text
                text-anchor="middle"
@@ -1595,6 +1656,88 @@
           </g>
         </g>
       </g>
+    </g>
+    <text
+       xml:space="preserve"
+       id="text38"
+       style="white-space:pre;shape-inside:url(#rect38);display:inline;fill:#000000" />
+    <text
+       xml:space="preserve"
+       id="text39"
+       style="white-space:pre;shape-inside:url(#rect39);display:inline;fill:#000000" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;fill:#000000"
+       x="4.1253576"
+       y="20.542805"
+       id="text40"><tspan
+         sodipodi:role="line"
+         id="tspan40"
+         x="4.1253576"
+         y="20.542805"
+         style="font-size:10.6667px">(i)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;fill:#000000"
+       x="3.0297709"
+       y="57.795578"
+       id="text40-3"><tspan
+         sodipodi:role="line"
+         id="tspan40-5"
+         x="3.0297709"
+         y="57.795578"
+         style="font-size:10.6667px">(ii)</tspan></text>
+    <g
+       id="g1-1"
+       transform="translate(-7.470925,94.160835)">
+      <text
+         xml:space="preserve"
+         style="font-size:10.6667px;fill:#000000"
+         x="9.4445553"
+         y="17.563591"
+         id="text40-2"><tspan
+           sodipodi:role="line"
+           id="tspan40-7"
+           x="9.4445553"
+           y="17.563591"
+           style="font-size:10.6667px">(iii)</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;fill:#000000"
+       x="4.0320797"
+       y="180.3941"
+       id="text40-0"><tspan
+         sodipodi:role="line"
+         id="tspan40-6"
+         x="4.0320797"
+         y="180.3941"
+         style="font-size:10.6667px">(i)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.6667px;fill:#000000"
+       x="2.6666222"
+       y="214.20615"
+       id="text40-3-2"><tspan
+         sodipodi:role="line"
+         id="tspan40-5-6"
+         x="2.6666222"
+         y="214.20615"
+         style="font-size:10.6667px">(ii)</tspan></text>
+    <g
+       id="g1-1-1"
+       transform="translate(-8.10394,285.92804)">
+      <text
+         xml:space="preserve"
+         style="font-size:10.6667px;fill:#000000"
+         x="9.4445553"
+         y="17.563591"
+         id="text40-2-8"><tspan
+           sodipodi:role="line"
+           id="tspan40-7-7"
+           x="9.4445553"
+           y="17.563591"
+           style="font-size:10.6667px">(iii)</tspan></text>
     </g>
   </g>
 </svg>
