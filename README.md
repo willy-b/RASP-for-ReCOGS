@@ -29,6 +29,7 @@ Implementing our task in Restricted Access Sequence Processing immediately helpe
 
 ![](example_rasp_for_recogs_flat_pattern_match.svg)
 
+![](new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.svg)
 ### References
 
 [See paper](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf) for bibliography.
