@@ -8,7 +8,10 @@ What is Restricted Access Sequence Processing (RASP)? It is a language that can 
 
 The code for the project that this paper describes the results of is available MIT-licensed in the https://github.com/willy-b/learning-rasp repository ( recogs_examples_in_rasp.py and word-level-pos-tokens-recogs-style-decoder-loop.rasp , specifically, see also the README, noting that some other RASP programs are also there ).
 
-![](sentences_and_lfs_and_lf_graph.png)
+![](expanded_version_of_sentences_and_lfs_and_lf_graph_figure.png)
+
+Figue 1 from paper (vector graphics used in paper, raster above).
+The task we solve is to extract the meaning (c) written in format (iii) of sentences (i). Full description of Figure (in higher quality vector graphics as well) is in the paper.
 
 ### Full Abstract
 
