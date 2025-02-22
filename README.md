@@ -29,9 +29,15 @@ Implementing our task in Restricted Access Sequence Processing immediately helpe
 
 Example RASP model flat grammar pattern matching case:
 
+(noting that this is showing the Bidirectional Encoder of an Encoder-Decoder Transformer equivalent model, 
+so it is not causal, unlike the Decoder)
+
 ![](example_rasp_for_recogs_flat_pattern_match.svg)
 
 Example RASP model same flat grammar pattern non-matching case:
+
+(noting that this is showing the Bidirectional Encoder of an Encoder-Decoder Transformer equivalent model, 
+so it is not causal, unlike the Decoder)
 
 ![](example_rasp_for_recogs_flat_pattern_no_match.svg)
 
