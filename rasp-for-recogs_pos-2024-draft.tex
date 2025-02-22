@@ -82,7 +82,7 @@ We use \cite{Weiss2021}'s Restricted Access Sequence Processing (RASP) language 
 %This guides us to try testing the model on a very different non-subject vs object syntax also predicted to have "attraction" errors, modifying recipient nouns on the right side of verb in the v\_dat\_p2 form (despite being on the right side, the "(v\_dat\_p2 verb) (recipient noun) (theme noun)" form means this still places a distractor in between the verb and the theme noun for that verb), which the baseline model performs similarly poorly on as predicted by the RASP model. (However, trying to fix this by augmenting the data with these `np v\_dat\_p2 np\_det pp np np` examples does not yet show any crossover benefit to both splits.) Finally, inspired by \cite{Csordas2022}'s hypothesis about the number of layers required to compositionally model a parsing problem in terms of the depth of the parse tree (compositional operations at each level suggests depth must exceed the height of the parse tree), we check whether adding layers improves performance on the obj-pp-to-subj-pp split. We find no performance benefit to 3 or 4 layers instead of 2 on structural generalization, consistent with \cite{petty2024impactdepthcompositionalgeneralization} who explored up to 32 layers for COGS, further suggesting that a hierarchical or tree-structured, recursive solution is NOT learned by the \cite{Wu2023} baseline Encoder-Decoder Transformer for this simple grammar (our RASP model indicates a hierarchical, tree-structured solution is NOT needed for high accuracy and if the rule to ignore attractor/distractor nouns is not learned, predicts the aforementioned observed errors from a non-tree structured model). This explains the challenge of generalizing on unseen prepositional phrase related modification related splits as arising from the baseline 2 to 4 layer Encoder-Decoder Transformers not being able to leverage the recursive/tree-structured grammar rule `np\_det pp np -> np\_pp -> np` during learning and which requires them to instead actually observe more of the various prepositional phrase substitutions to learn them.
 
 \begin{figure}
-\includegraphics[scale=0.560]{expanded_version_of_sentences_and_lfs_and_lf_graph_figure.pdf}
+\includegraphics[scale=0.560]{./image_pdfs/expanded_version_of_sentences_and_lfs_and_lf_graph_figure.pdf}
 \caption{\begin{small}Introducing parse trees, logical form, and semantic graphs. Two semantically identical but syntactically distinct (i) sentences (a) "a boy painted the girl" and (b) "the girl was painted by a boy" are shown with (ii) their distinct parse tree (parsed into COGS input grammar), (iii) the string form of their semantics (ReCOGS logical form; differs in indices and ordering), and (c) the graph representation of their logical form (semantic graph\protect\footnotemark, not different at all between the two examples). Note the (iii) logical forms (LFs) differ by String Exact Match but not \cite{Wu2023}'s Semantic Exact Match (order and indices do not match but nouns, normalized verbs, and relationships between nouns and verbs are same). Note the "agent", "theme" order in the logical form string is not required to match for Semantic Exact Match.\end{small}}
 \end{figure}
 
@@ -577,7 +577,7 @@ No AI tools were used by the author in the preparation of this manuscript with t
 \section{Figure 2: New difficult generalization split v\_dat\_p2 pp moved to recipient from theme as hard as previously reported most difficult split}
 
 \begin{figure}
-\includegraphics[scale=0.33]{new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.pdf}
+\includegraphics[scale=0.33]{./image_pdfs/new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.pdf}
 \caption[\cite{Wu2023} Encoder-Decoder Transformer trained from scratch generalizing to new v\_dat\_p2 pp moved to recipient (from theme) split is as hard as the previously reported hardest generalization split as predicted by the flat/non-recursive/non-tree hypothesis by RASP modeling]{\begin{small}\cite{Wu2023} Encoder-Decoder Transformer trained from scratch generalizing to new v\_dat\_p2 pp moved to recipient (from theme) split is as hard as the previously reported hardest generalization split as predicted by the flat/non-recursive/non-tree hypothesis by RASP modeling. \textit{Actual COGS training example and modified version shown, which have different meanings but in a compositional solution are identical at a medium level of abstraction, as both are `np v\_dat\_p2 np np`\protect\footnotemark, so model should be able to translate both to their appropriate logical forms.}\end{small} \\
 }
 \end{figure}
@@ -952,7 +952,7 @@ python recogs_examples_in_rasp.py
 
 The script will show performance on \cite{Wu2023} ReCOGS\_pos data by default, run with "--use\_dev\_split", "--use\_gen\_split" , or "--use\_test\_split" to see it run on those and give a running score every 10 rows.
 
-For ReCOGS, intending to perform well on Semantic Exact Match, we took a simple, flat, non-tree, non-recursive approach which was able to get approximately 100\% semantic exact match (and string exact match) on the full test set, and 99.6\% semantic exact match on the out-of-distribution generalization set of the real ReCOGS dataset\footnote{\begin{footnotesize} word-level token Restricted Access Sequence Processing solution: https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recogs-style-decoder-loop.rasp \end{footnotesize}}
+For ReCOGS, intending to perform well on Semantic Exact Match, we took a simple, flat, non-tree, non-recursive approach which was able to get 100\% semantic exact match (and string exact match) on the full test set, and 99.6\% semantic exact match on the out-of-distribution generalization set of the real ReCOGS dataset\footnote{\begin{footnotesize} word-level token Restricted Access Sequence Processing solution: https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recogs-style-decoder-loop.rasp \end{footnotesize}}
 
 We took the RASP native sequence tokens, and first did a Transformer learned-embedding compatible operation and created 1 part-of-speech and 4 extra verb-type sequences (because each word in the COGS vocabulary may actually serve multiple POS roles; up to four different verb types as in the case of "liked" 
 
@@ -1016,6 +1016,27 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \end{verbatim}
 \end{tiny}
 
+\begin{figure}
+\includegraphics[scale=0.73]{./image_pdfs/example_rasp_for_recogs_flat_pattern_match.pdf}
+\caption{\begin{small}Example RASP model flat grammar pattern matching, for np v\_dat\_p2 np np, for a matching sentence.\end{small} \\
+}
+\end{figure}
+\clearpage
+
+\begin{figure}
+\includegraphics[scale=0.75]{./image_pdfs/example_rasp_for_recogs_flat_pattern_match_with_pp_modification.pdf}
+\caption{\begin{small}Example RASP model flat grammar pattern matching, for np v\_dat\_p2 np np, for a matching sentence, despite pp modification of middle recipient noun.\end{small} \\
+}
+\end{figure}
+\clearpage
+
+\begin{figure}
+\includegraphics[scale=0.75]{./image_pdfs/example_rasp_for_recogs_flat_pattern_no_match.pdf}
+\caption{\begin{small}Example RASP model flat grammar pattern matching, for the pattern np v\_dat\_p2 np np, for a non-matching sentence.\end{small} \\
+}
+\end{figure}
+\clearpage
+
 \textbf{These patterns are not causal because their use/input/output is masked to the input section of the sequence, so would take part in the Encoder of the Encoder-Decoder only}(\textbf{all operations outside the input mask in the word-level token RASP solution used in this paper are directly or indirectly causally masked} and we built symbol by symbol in a causal autoregressive way). \textbf{We could have added an explicit causal mask to each operation but for efficiency and simplicity of the code omitted it when we are doing it implicitly by taking only the last sequence position (we also acausally aggregate so that all sequence positions have the same value as the last sequence position to make it easier to read the output -- RASP interpreter will just print it as one position if they are all equal and we only take one position).}
 
 Also, the author thinks many of these RASP steps could be consolidated. The goal here was to first prove by construction that a non-recursive, flat RASP program could get approximately 100\% Semantic Exact Match on all the ReCOGS generalization splits (we only missed one split by a little due to two week time constraint, insufficient time to add all rules).
@@ -1046,26 +1067,67 @@ How variables are introduced with their index (omitted sorting of input and othe
 # introducing variables
 output = "";
 # definite article word handling
-before_target_word_index = aggregate(select(indices, nv_in_output_count, ==), input_indices_sorted)-1;
-has_star = aggregate(select(indices, before_target_word_index, ==), tokens) == "the";
-last_output_is_star = aggregate(select(indices, length-1, ==), tokens) == "*";
+before_target_word_index = 
+ aggregate(select(indices, nv_in_output_count, ==), 
+ input_indices_sorted)-1;
+has_star = 
+ aggregate(select(indices, before_target_word_index, ==), 
+ tokens) == "the";
+last_output_is_star = 
+ aggregate(select(indices, length-1, ==), 
+ tokens) == "*";
 
-input_nv_sorted_by_type = input_tokens_sorted_by_type * (input_noun_mask_sorted + input_verb_mask_sorted);
-target_word_token = aggregate(select(indices, nv_in_output_count, ==), normalize_nv(input_nv_sorted_by_type)) 
+input_nv_sorted_by_type = 
+ input_tokens_sorted_by_type * 
+ (input_noun_mask_sorted + input_verb_mask_sorted);
+target_word_token = 
+ aggregate(select(indices, nv_in_output_count, ==), 
+ normalize_nv(input_nv_sorted_by_type)) 
 if (not has_star or last_output_is_star) else "*";
-# subtract 1 when matching for producing the index because we just output the additional word by then
-target_word_index = aggregate(select(indices, nv_in_output_count-1, ==), input_indices_sorted);
+# subtract 1 when matching 
+# for producing the index 
+# because we just output the additional word by then
+target_word_index = 
+ aggregate(select(indices, nv_in_output_count-1, ==), 
+ input_indices_sorted);
 
-output = target_word_token if ((num_tokens_in_output_excluding_asterisks % 5) == 0) else output;
-output = "(" if ((num_tokens_in_output_excluding_asterisks % 5) == 1) else output;
-output = target_word_index if ((num_tokens_in_output_excluding_asterisks % 5) == 2) else output;
-output = ")" if ((num_tokens_in_output_excluding_asterisks % 5) == 3) else output;
-# note that when nv_in_output_count == nv_in_input_count, we will add AND instead of ";"
-output = (";" if (5 * nv_in_input_count - 1 > num_tokens_in_output_excluding_asterisks) else "AND") 
-if (num_tokens_in_output_excluding_asterisks % 5 == 4) else output;
+output = 
+ target_word_token 
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 0) 
+ else 
+ output;
+output = 
+ "(" 
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 1)
+ else output;
+output = 
+ target_word_index
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 2) 
+ else output;
+output = 
+ ")" 
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 3) 
+ else output;
+# note that 
+# when nv_in_output_count == nv_in_input_count, 
+# we will add AND instead of ";"
+output = 
+ (
+  ";" 
+  if 
+  (
+   5 * nv_in_input_count - 1 > 
+   num_tokens_in_output_excluding_asterisks
+  ) 
+  else "AND"
+ ) 
+if (num_tokens_in_output_excluding_asterisks % 5 == 4) 
+else output;
 
-# if we didn't have an input/output separator that needs to be output
-output = "|" if num_pipes_in_output == 0 else output;
+# if we didn't have an input/output separator 
+# that needs to be output
+output = 
+ "|" if num_pipes_in_output == 0 else output;
 \end{verbatim}
 \end{tiny}
 Note that "normalize\_nv" is a lookup into a map that has no effect unless the word is a verb in which case it normalizes it to a standard suffix ("ate" to "eat" , "painted" to "paint", etc).
