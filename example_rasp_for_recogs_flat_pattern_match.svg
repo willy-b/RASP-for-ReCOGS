@@ -28,7 +28,7 @@
      inkscape:document-units="mm"
      showguides="true"
      inkscape:zoom="1.3647421"
-     inkscape:cx="181.35295"
+     inkscape:cx="181.71932"
      inkscape:cy="209.5634"
      inkscape:window-width="1536"
      inkscape:window-height="888"
@@ -2927,27 +2927,27 @@
          y="123.07832">*COGS official training data uses &quot;lended&quot;, instead of &quot;lent&quot;</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-30.412496,73.572462)"
+       transform="matrix(0.26458333,0,0,0.26458333,-32.529164,73.572462)"
        id="text106"
-       style="white-space:pre;shape-inside:url(#rect106);display:inline;fill:#000000"><tspan
+       style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect106);display:inline;fill:#000000"><tspan
          x="471.28516"
-         y="12.701705"
+         y="11.488569"
          id="tspan238">In bidirectional Encoder
 </tspan><tspan
          x="471.28516"
-         y="27.701705"
+         y="24.821945"
          id="tspan239">of 
 </tspan><tspan
          x="471.28516"
-         y="42.701705"
+         y="38.155321"
          id="tspan240">Encoder-Decoder
 </tspan><tspan
          x="471.28516"
-         y="57.701705"
+         y="51.488699"
          id="tspan241">Transformer
 </tspan><tspan
          x="471.28516"
-         y="72.701705"
+         y="64.822073"
          id="tspan242">equivalent model</tspan></text>
   </g>
 </svg>
