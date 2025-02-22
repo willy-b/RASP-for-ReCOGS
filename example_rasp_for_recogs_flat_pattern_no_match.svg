@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.3926202"
-     inkscape:cx="292.25484"
-     inkscape:cy="179.51772"
+     inkscape:zoom="1.2183105"
+     inkscape:cx="257.73397"
+     inkscape:cy="161.69934"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -2798,22 +2798,22 @@
     <text
        xml:space="preserve"
        style="font-size:3.175px;fill:none;stroke:#000000;stroke-width:0.264999;stroke-dasharray:none;stroke-opacity:1"
-       x="103.06542"
+       x="102.53625"
        y="81.166695"
        id="text142"><tspan
          sodipodi:role="line"
          id="tspan142"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-opacity:1"
-         x="103.06542"
+         x="102.53625"
          y="81.166695">Inserting &quot;to&quot; causes </tspan><tspan
          sodipodi:role="line"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-opacity:1"
-         x="103.06542"
+         x="102.53625"
          y="85.135445"
          id="tspan143">np v_dat_p2 np np to no longer match</tspan><tspan
          sodipodi:role="line"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-opacity:1"
-         x="103.06542"
+         x="102.53625"
          y="89.104195"
          id="tspan106">(would match np v_dat_p1 np pp_iobj)</tspan></text>
     <rect
