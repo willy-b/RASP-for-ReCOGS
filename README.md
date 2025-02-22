@@ -27,6 +27,28 @@ The difficulty with the `np v\_dat\_p2 np\_det pp np np` modification and the pr
 
 Implementing our task in Restricted Access Sequence Processing immediately helped us discover additional related failure modes of the baseline Encoder-Decoder Transformer, predict the details of the errors in the logical forms (what the mismatched index in the agent when the agent is on the left of the verb would be, 96% of the time) generated for the previously reported most difficult split, and may help us reason about why a model like (Wu 2023) works with 2 layers for the ReCOGS task (compared with e.g. use of 24-layer BERT for NLP tasks in (Tenney et al 2019)).
 
+Example RASP model flat grammar pattern matching case (np v_dat_p2 np np):
+
+(noting that this is showing the Bidirectional Encoder of an Encoder-Decoder Transformer equivalent model, 
+so it is not causal, unlike the Decoder)
+
+![](example_rasp_for_recogs_flat_pattern_match.svg)
+
+Example RASP model flat grammar pattern matching case despite pp modification of middle recipient noun (np v_dat_p2 np np):
+
+![](example_rasp_for_recogs_flat_pattern_match_with_pp_modification.svg)
+
+Example RASP model same flat grammar pattern non-matching case:
+
+(noting that this is showing the Bidirectional Encoder of an Encoder-Decoder Transformer equivalent model, 
+so it is not causal, unlike the Decoder)
+
+![](example_rasp_for_recogs_flat_pattern_no_match.svg)
+
+New difficult generalization split v_dat_p2 recipient pp modification predicted and confirmed as difficult as previously reported most difficult generalization split for baseline Encoder-Decoder Transformers trained from scratch:
+
+![](new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.svg)
+
 ### References
 
 [See paper](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf) for bibliography.
