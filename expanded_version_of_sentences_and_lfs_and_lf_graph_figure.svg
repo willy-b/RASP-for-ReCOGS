@@ -144,13 +144,13 @@
      borderopacity="0.25"
      inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="true"
+     inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      showguides="true"
-     inkscape:zoom="4.5494713"
-     inkscape:cx="71.107164"
-     inkscape:cy="108.36424"
+     inkscape:zoom="1.2356746"
+     inkscape:cx="260.99105"
+     inkscape:cy="175.61258"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -242,6 +242,13 @@
      inkscape:groupmode="layer"
      inkscape:label="Image"
      id="g1">
+    <rect
+       style="fill:#ffffff"
+       id="rect2"
+       width="530"
+       height="410"
+       x="0"
+       y="0" />
     <image
        width="516.29797"
        height="498.91638"
@@ -367,7 +374,7 @@
          transform="translate(0,19.85024)"><tspan
            x="140.08594"
            y="125.35405"
-           id="tspan3">  0       1                2      3       4</tspan></text>
+           id="tspan1">  0       1                2      3       4</tspan></text>
       <text
          xml:space="preserve"
          id="text16-5"
@@ -375,7 +382,7 @@
          transform="translate(2.91406,180.19619)"><tspan
            x="140.08594"
            y="125.35405"
-           id="tspan29">  0     1       2                3     4 5       6</tspan></text>
+           id="tspan3">  0     1       2                3     4 5       6</tspan></text>
       <text
          xml:space="preserve"
          id="text17"
@@ -383,13 +390,13 @@
          transform="translate(0,-132.14976)"><tspan
            x="400.33008"
            y="628.57534"
-           id="tspan30">Logical forms describing the same </tspan><tspan
+           id="tspan6">Logical forms describing the same </tspan><tspan
            x="400.33008"
            y="646.90871"
-           id="tspan31">Semantic Graph are equivalent by </tspan><tspan
+           id="tspan8">Semantic Graph are equivalent by </tspan><tspan
            x="400.33008"
            y="665.24208"
-           id="tspan32">Semantic Exact Match.</tspan></text>
+           id="tspan9">Semantic Exact Match.</tspan></text>
       <g
          id="graph0"
          class="graph"
@@ -1476,9 +1483,9 @@
          transform="translate(0,13.85024)"><tspan
            x="136.23438"
            y="145.27846"
-           id="tspan34">   <tspan
+           id="tspan12">   <tspan
    style="font-size:14.6667px"
-   id="tspan33">a boy painted the girl</tspan></tspan></text>
+   id="tspan11">a boy painted the girl</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text30"
@@ -1486,7 +1493,7 @@
          transform="translate(2,19.85024)"><tspan
            x="127.01172"
            y="298.63198"
-           id="tspan35">the girl was painted by a boy</tspan></text>
+           id="tspan13">the girl was painted by a boy</tspan></text>
       <text
          xml:space="preserve"
          id="text31"
@@ -1494,21 +1501,21 @@
          transform="translate(20.903364,3.4575227)"><tspan
            x="124.00781"
            y="232.30742"
-           id="tspan41">                            <tspan
+           id="tspan15">                            <tspan
    style="font-size:13.3333px"
-   id="tspan36">LF
+   id="tspan14">LF
 </tspan></tspan><tspan
            x="124.00781"
            y="248.97405"
-           id="tspan43"><tspan
+           id="tspan17"><tspan
              style="font-size:13.3333px"
-             id="tspan42">boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 ) 
+             id="tspan16">boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 ) 
 </tspan></tspan><tspan
            x="124.00781"
            y="265.64067"
-           id="tspan45"><tspan
+           id="tspan19"><tspan
              style="font-size:13.3333px"
-             id="tspan44">AND agent ( 2 , 1 ) AND theme ( 2 , 4 )</tspan></tspan></text>
+             id="tspan18">AND agent ( 2 , 1 ) AND theme ( 2 , 4 )</tspan></tspan></text>
       <text
          xml:space="preserve"
          id="text32"
@@ -1516,21 +1523,21 @@
          transform="translate(21.016505,33.048468)"><tspan
            x="124.43359"
            y="394.15312"
-           id="tspan47">                           <tspan
+           id="tspan21">                           <tspan
    style="font-size:13.3333px"
-   id="tspan46">LF
+   id="tspan20">LF
 </tspan></tspan><tspan
            x="124.43359"
            y="410.81975"
-           id="tspan49"><tspan
+           id="tspan24"><tspan
              style="font-size:13.3333px"
-             id="tspan48">* girl ( 1 ) ; boy ( 6 ) ; paint ( 3 )
+             id="tspan23">* girl ( 1 ) ; boy ( 6 ) ; paint ( 3 )
 </tspan></tspan><tspan
            x="124.43359"
            y="427.48637"
-           id="tspan51"><tspan
+           id="tspan26"><tspan
              style="font-size:13.3333px"
-             id="tspan50">AND  theme ( 3 , 1 ) AND agent ( 3 , 6 )</tspan></tspan></text>
+             id="tspan25">AND  theme ( 3 , 1 ) AND agent ( 3 , 6 )</tspan></tspan></text>
       <g
          id="g6-3"
          transform="matrix(0.81507282,0,0,0.81507282,118.73641,488.76757)">
