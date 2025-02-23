@@ -22,14 +22,14 @@
      bordercolor="#000000"
      borderopacity="0.25"
      inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
+     inkscape:pageopacity="1.0"
+     inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showguides="true"
-     inkscape:zoom="1.6269921"
-     inkscape:cx="215.42821"
-     inkscape:cy="149.35537"
+     inkscape:zoom="1.2432405"
+     inkscape:cx="274.2832"
+     inkscape:cy="215.56569"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -1012,6 +1012,13 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
+       style="fill:#ffffff;stroke-width:0.264729"
+       id="rect1"
+       width="130"
+       height="150"
+       x="0"
+       y="0" />
+    <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-8-3"
        width="4.4269958"
@@ -1035,7 +1042,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-2-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan54">1</tspan></text>
+           id="tspan144">1</tspan></text>
     </g>
     <rect
        style="fill:none;fill-opacity:1;stroke:#ff00f3;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -1262,7 +1269,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan56">1</tspan></text>
+           id="tspan145">1</tspan></text>
     </g>
     <g
        id="g28-7"
@@ -1281,7 +1288,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan57">7</tspan></text>
+           id="tspan146">7</tspan></text>
     </g>
     <g
        id="g28-7-9"
