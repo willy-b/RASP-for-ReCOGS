@@ -1,0 +1,1921 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="170mm"
+   height="115mm"
+   viewBox="0 0 170 115"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="attraction_error_example.svg"
+   inkscape:export-filename="attraction_error_example.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="true"
+     inkscape:zoom="1.2392374"
+     inkscape:cx="342.1459"
+     inkscape:cy="349.40843"
+     inkscape:window-width="1536"
+     inkscape:window-height="888"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="false">
+    <sodipodi:guide
+       position="79.921334,233.12504"
+       orientation="0,-1"
+       id="guide19"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="170.7772,225.91349"
+       orientation="0,-1"
+       id="guide32"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="166.16117,219.244"
+       orientation="0,-1"
+       id="guide33"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="151.73809,216.85847"
+       orientation="0,-1"
+       id="guide34"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="208.82945,210.63582"
+       orientation="0,-1"
+       id="guide35"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="167.98019,208.6052"
+       orientation="0,-1"
+       id="guide36"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="161.84557,202.83145"
+       orientation="0,-1"
+       id="guide37"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="94.385278,178.78818"
+       orientation="0,-1"
+       id="guide55"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker42"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path42" />
+    </marker>
+    <rect
+       x="32.509697"
+       y="91.071136"
+       width="121.19981"
+       height="40.244865"
+       id="rect20" />
+    <rect
+       x="33.543732"
+       y="58.305576"
+       width="108.20566"
+       height="20.693373"
+       id="rect19" />
+    <rect
+       x="28.821913"
+       y="166.99426"
+       width="322.55704"
+       height="85.365883"
+       id="rect8" />
+    <rect
+       x="41.552162"
+       y="66.512878"
+       width="220.12666"
+       height="18.767757"
+       id="rect5" />
+    <rect
+       x="26.534445"
+       y="80.716621"
+       width="291.7215"
+       height="17.871161"
+       id="rect1" />
+    <rect
+       x="26.534445"
+       y="80.716621"
+       width="291.7215"
+       height="17.871161"
+       id="rect1-7" />
+    <rect
+       x="41.552162"
+       y="66.512878"
+       width="220.12666"
+       height="18.767757"
+       id="rect5-2" />
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-0-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-2-4-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-0-4-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-2-4-1-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-0-4-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-2-4-1-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker42-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path42-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-0-2-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-2-4-2-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-0-4-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-2-4-1-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-0-4-4-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-2-4-1-7-0" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.317224;stroke-opacity:1"
+       id="rect56"
+       width="170"
+       height="115"
+       x="0"
+       y="0" />
+    <text
+       text-anchor="middle"
+       x="132.59557"
+       y="44.413616"
+       font-family="Times, serif"
+       font-size="2.19374px"
+       id="text8-1-6"
+       style="stroke-width:0.156696">nmod . in</text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,30.027626,-6.5468548)"
+       id="text5"
+       style="white-space:pre;shape-inside:url(#rect5);display:inline;fill:#000000"><tspan
+         x="41.552734"
+         y="77.432174"
+         id="tspan16">A <tspan
+   style="fill:#0000ff"
+   id="tspan10">boy</tspan> <tspan
+   style="fill:#ff0000"
+   id="tspan11">painted</tspan> a <tspan
+   style="fill:#0000ff"
+   id="tspan15">girl</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="40.918594"
+       y="28.437368"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         style="stroke-width:0.264583"
+         x="40.918594"
+         y="28.437368">A <tspan
+   style="fill:#0000ff"
+   id="tspan13">boy</tspan> <tspan
+   style="fill:#ff0000"
+   id="tspan12">painted</tspan> a <tspan
+   style="fill:#0000ff"
+   id="tspan14">girl</tspan> in a <tspan
+   style="fill:#0000ff"
+   id="tspan24">room</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="40.808025"
+       y="41.763695"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="stroke-width:0.264583"
+         x="40.808025"
+         y="41.763695">A <tspan
+   style="fill:#0000ff"
+   id="tspan25">boy</tspan> in a <tspan
+   style="fill:#0000ff"
+   id="tspan26">room</tspan> <tspan
+   style="fill:#ff0000"
+   id="tspan27">painted</tspan> a <tspan
+   style="fill:#0000ff"
+   id="tspan28">girl</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text8"
+       style="white-space:pre;shape-inside:url(#rect8);display:inline;fill:#000000" />
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14"
+       width="6.3360491"
+       height="2.6474748"
+       x="43.314697"
+       y="7.52952" />
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14-7"
+       width="6.3360491"
+       height="2.6474748"
+       x="64.158882"
+       y="7.52952" />
+    <rect
+       style="fill:none;stroke:#ff0000;stroke-width:0.34896;stroke-opacity:1"
+       id="rect14-2"
+       width="11.02162"
+       height="2.6474748"
+       x="50.499279"
+       y="7.52952" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 49.683204,8.8849169 0.884161,0.03262"
+       id="path16"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 61.500629,8.9453349 2.796088,0.02233"
+       id="path17"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:1.89905px;fill:#ff0000;stroke-width:0.158254"
+       x="44.348984"
+       y="1.443278"
+       id="text17-0-8"><tspan
+         sodipodi:role="line"
+         id="tspan17-6-8"
+         style="fill:#000000;stroke-width:0.158254"
+         x="44.348984"
+         y="1.443278">np v_trans_omissible_p2 np</tspan><tspan
+         sodipodi:role="line"
+         style="fill:#000000;stroke-width:0.158254"
+         x="44.348984"
+         y="3.8170905"
+         id="tspan19-4"> attention head compatible</tspan><tspan
+         sodipodi:role="line"
+         style="fill:#000000;stroke-width:0.158254"
+         x="44.348984"
+         y="6.1909027"
+         id="tspan18-3-3">           linear matcher</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-9.1828853,-6.5468548)"
+       id="text19"
+       style="white-space:pre;shape-inside:url(#rect19);display:inline;fill:#000000"><tspan
+         x="33.542969"
+         y="69.22319"
+         id="tspan17">Base sentence</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-8.601542,-0.19685466)"
+       id="text20"
+       style="white-space:pre;shape-inside:url(#rect20);display:inline;fill:#000000"><tspan
+         x="32.509766"
+         y="101.98881"
+         id="tspan18">Tail pp modification
+</tspan><tspan
+         x="32.509766"
+         y="116.98881"
+         id="tspan19">          (ok)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="-0.12699999"
+       y="41.578037"
+       id="text22"><tspan
+         sodipodi:role="line"
+         id="tspan22"
+         style="stroke-width:0.264583"
+         x="-0.12699999"
+         y="41.578037">Middle pp modification</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-0.12699999"
+         y="45.546787"
+         id="tspan23">(attraction or other error)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="0.21043657"
+       y="63.464462"
+       id="text22-5"><tspan
+         sodipodi:role="line"
+         id="tspan22-9"
+         style="stroke-width:0.264583"
+         x="0.21043657"
+         y="63.464462">Double middle pp</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.21043657"
+         y="67.433212"
+         id="tspan23-4">(attraction to nearest </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.21043657"
+         y="71.401962"
+         id="tspan38">or </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.21043657"
+         y="75.370712"
+         id="tspan39">other non-attraction error)</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-0-4-3)"
+       d="m 86.585385,25.692287 6.575237,0.04649"
+       id="path23-6-7-9-1"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-0-4-6)"
+       d="m 86.585385,11.095814 6.575237,0.04649"
+       id="path23-6-7-9-3"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g2"
+       transform="matrix(0.20202918,0,0,0.20202918,94.693899,-51.196986)">
+      <g
+         id="g6-3-5"
+         transform="matrix(0.81507282,0,0,0.81507282,5.78046,364.83407)">
+        <g
+           id="graph0-8-9"
+           class="graph"
+           transform="translate(4,40)">
+          <title
+             id="title1-5-4">G</title>
+          <!-- 1 -->
+          <g
+             id="node1-6-9"
+             class="node">
+            <title
+               id="title2-1-0">1</title>
+            <ellipse
+               fill="none"
+               stroke="#000000"
+               cx="27"
+               cy="-18"
+               rx="27"
+               ry="18"
+               id="ellipse2-1-9" />
+            <text
+               text-anchor="middle"
+               x="27"
+               y="-14.3"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text2-5-1">boy</text>
+          </g>
+          <!-- 2 -->
+          <g
+             id="node3-9-7"
+             class="node">
+            <title
+               id="title3-8-7">2</title>
+            <ellipse
+               fill="none"
+               stroke="#000000"
+               cx="152.60001"
+               cy="-18"
+               rx="28.700001"
+               ry="18"
+               id="ellipse3-4-1" />
+            <text
+               text-anchor="middle"
+               x="152.60001"
+               y="-14.3"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text3-81-1">paint</text>
+          </g>
+          <!-- 1&#45;&gt;2 -->
+          <g
+             id="edge1-0-5"
+             class="edge">
+            <title
+               id="title4-3-9">1-&gt;2</title>
+            <path
+               fill="none"
+               stroke="#000000"
+               d="m 54.21,-18 c 17.22,0 40.03,0 59.25,0"
+               id="path4-0-7" />
+            <polygon
+               fill="#000000"
+               stroke="#000000"
+               points="113.71,-14.5 113.71,-21.5 123.71,-18 "
+               id="polygon4-4-7" />
+            <text
+               text-anchor="middle"
+               x="89"
+               y="-21.799999"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text4-4-6">agent</text>
+          </g>
+          <!-- 4 -->
+          <g
+             id="node2-4-7"
+             class="node">
+            <title
+               id="title5-4-3">4</title>
+            <ellipse
+               fill="none"
+               stroke="#000000"
+               cx="291.59"
+               cy="-18"
+               rx="36.290001"
+               ry="18"
+               id="ellipse5-7-6" />
+            <text
+               text-anchor="middle"
+               x="291.59"
+               y="-14.3"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text5-6-5">the girl</text>
+          </g>
+          <!-- 2&#45;&gt;4 -->
+          <g
+             id="edge2-31-6"
+             class="edge">
+            <title
+               id="title6-7-3">2-&gt;4</title>
+            <path
+               fill="none"
+               stroke="#000000"
+               d="m 181.32,-18 c 18.28,0 42.64,0 63.72,0"
+               id="path6-5-9" />
+            <polygon
+               fill="#000000"
+               stroke="#000000"
+               points="245.09,-14.5 245.09,-21.5 255.09,-18 "
+               id="polygon6-9-4" />
+            <text
+               text-anchor="middle"
+               x="218.19"
+               y="-21.799999"
+               font-family="Times, serif"
+               font-size="14px"
+               id="text6-6-8">theme</text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="node1-6-9-5"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,96.520329,41.668802)">
+      <title
+         id="title2-1-0-0">1</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="27"
+         cy="-18"
+         rx="27"
+         ry="18"
+         id="ellipse2-1-9-9" />
+      <text
+         text-anchor="middle"
+         x="27"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text2-5-1-6">room</text>
+    </g>
+    <g
+       id="node3-9-7-3"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,96.520329,41.668802)">
+      <title
+         id="title3-8-7-8">2</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="152.60001"
+         cy="-18"
+         rx="28.700001"
+         ry="18"
+         id="ellipse3-4-1-5" />
+      <text
+         text-anchor="middle"
+         x="152.60001"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text3-81-1-6">paint</text>
+    </g>
+    <path
+       fill="none"
+       stroke="#000000"
+       d="m 105.447,38.70477 c 2.83559,0 6.59168,0 9.75661,0"
+       id="path4-0-7-5"
+       style="stroke-width:0.164668" />
+    <polygon
+       fill="#000000"
+       stroke="#000000"
+       points="113.71,-14.5 113.71,-21.5 123.71,-18 "
+       id="polygon4-4-7-9"
+       transform="matrix(0.16466849,0,0,0.16466849,96.520329,41.668802)" />
+    <text
+       text-anchor="middle"
+       x="111.17582"
+       y="38.158756"
+       font-family="Times, serif"
+       font-size="2.30536px"
+       id="text4-4-6-8"
+       style="stroke-width:0.164668">agent</text>
+    <g
+       id="node2-4-7-4"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,96.657778,40.981557)">
+      <title
+         id="title5-4-3-8">4</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="291.59"
+         cy="-18"
+         rx="36.290001"
+         ry="18"
+         id="ellipse5-7-6-1" />
+      <text
+         text-anchor="middle"
+         x="291.59"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text5-6-5-0">the girl</text>
+    </g>
+    <g
+       id="edge2-31-6-3"
+       class="edge"
+       transform="matrix(0.16466849,0,0,0.16466849,96.657778,41.735513)">
+      <title
+         id="title6-7-3-0">2-&gt;4</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 181.32,-18 c 18.28,0 42.64,0 63.72,0"
+         id="path6-5-9-4" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="255.09,-18 245.09,-14.5 245.09,-21.5 "
+         id="polygon6-9-4-4" />
+      <text
+         text-anchor="middle"
+         x="218.19"
+         y="-21.799999"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text6-6-8-4">theme</text>
+    </g>
+    <g
+       id="g38"
+       transform="translate(-71.572379,5.9085151)">
+      <path
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-0-4)"
+         d="m 158.1578,32.754062 6.57524,0.04649"
+         id="path23-6-7-9"
+         inkscape:connector-type="polyline"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g37"
+         transform="matrix(0.20202918,0,0,0.20202918,166.4312,-55.196905)">
+        <ellipse
+           style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.87767;stroke-dasharray:none;stroke-opacity:0.75"
+           id="path47"
+           cx="-21.38184"
+           cy="435.54678"
+           rx="19.547928"
+           ry="8.8080416" />
+        <path
+           style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.87767;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="M -33.673065,441.98661 -9.4798704,428.31463"
+           id="path48"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       id="g56">
+      <text
+         text-anchor="middle"
+         x="60.220146"
+         y="45.323372"
+         font-family="Times, serif"
+         font-size="2.30536px"
+         id="text4-4-6-8-9"
+         style="stroke-width:0.164668">agent</text>
+      <g
+         id="g37-7"
+         transform="matrix(0.20202918,0,0,0.20202918,64.622689,-43.19479)">
+        <ellipse
+           style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.87767;stroke-dasharray:none;stroke-opacity:0.75"
+           id="path47-6"
+           cx="-21.38184"
+           cy="435.54678"
+           rx="19.547928"
+           ry="8.8080416" />
+        <path
+           style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.87767;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="M -33.673065,441.98661 -9.4798704,428.31463"
+           id="path48-4"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:1.90426px;fill:#ff0000;stroke-width:0.158688"
+       x="91.613464"
+       y="43.962318"
+       id="text40"><tspan
+         sodipodi:role="line"
+         id="tspan40"
+         style="stroke-width:0.158688"
+         x="91.613464"
+         y="43.962318">      Attraction error</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.158688"
+         x="91.613464"
+         y="46.342644"
+         id="tspan41">from linear processing</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker42)"
+       d="m 60.494654,51.392332 0.100904,-3.081171"
+       id="path41"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="40.152538"
+       y="50.45293"
+       id="text42"><tspan
+         sodipodi:role="line"
+         id="tspan42"
+         style="fill:#000000;stroke-width:0.264583"
+         x="40.152538"
+         y="50.45293">In middle pp </tspan><tspan
+         sodipodi:role="line"
+         style="fill:#000000;stroke-width:0.264583"
+         x="40.152538"
+         y="54.42168"
+         id="tspan43">pp noun is an attractor noun</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="40.625351"
+       y="63.743362"
+       id="text7-1"><tspan
+         sodipodi:role="line"
+         id="tspan7-2"
+         style="stroke-width:0.264583"
+         x="40.625351"
+         y="63.743362">A <tspan
+   style="fill:#0000ff"
+   id="tspan25-8">boy</tspan> in a <tspan
+   style="fill:#0000ff"
+   id="tspan26-9">room <tspan
+   style="fill:#1a1a1a"
+   id="tspan51">in a</tspan> house</tspan> <tspan
+   style="fill:#ff0000"
+   id="tspan27-3">painted</tspan> a <tspan
+   style="fill:#0000ff"
+   id="tspan28-6">girl</tspan></tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker42-7)"
+       d="m 76.186981,73.535785 0.100904,-3.081171"
+       id="path41-2"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="42.302414"
+       y="71.696808"
+       id="text42-6"><tspan
+         sodipodi:role="line"
+         id="tspan42-7"
+         style="fill:#000000;stroke-width:0.264583"
+         x="42.302414"
+         y="71.696808">In middle double pp </tspan><tspan
+         sodipodi:role="line"
+         style="fill:#000000;stroke-width:0.264583"
+         x="42.302414"
+         y="75.665558"
+         id="tspan43-5">2nd, nearest pp noun </tspan><tspan
+         sodipodi:role="line"
+         style="fill:#000000;stroke-width:0.264583"
+         x="42.302414"
+         y="79.634308"
+         id="tspan52">is the attractor noun</tspan></text>
+    <g
+       id="node1-6"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,96.520379,14.121188)">
+      <title
+         id="title2-1">1</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="27"
+         cy="-18"
+         rx="27"
+         ry="18"
+         id="ellipse2-1" />
+      <text
+         text-anchor="middle"
+         x="27"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text2-5">boy</text>
+    </g>
+    <ellipse
+       fill="none"
+       stroke="#000000"
+       cx="121.64878"
+       cy="11.157152"
+       rx="4.725986"
+       ry="2.9640329"
+       id="ellipse3-4"
+       style="stroke-width:0.164669" />
+    <text
+       text-anchor="middle"
+       x="121.64878"
+       y="11.766428"
+       font-family="Times, serif"
+       font-size="2.30536px"
+       id="text3-81"
+       style="stroke-width:0.164669">paint</text>
+    <g
+       id="edge1-0"
+       class="edge"
+       transform="matrix(0.16466849,0,0,0.16466849,96.520379,14.121188)">
+      <title
+         id="title4-3">1-&gt;2</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 54.21,-18 c 17.22,0 40.03,0 59.25,0"
+         id="path4-0" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="123.71,-18 113.71,-14.5 113.71,-21.5 "
+         id="polygon4-4" />
+      <text
+         text-anchor="middle"
+         x="89"
+         y="-21.799999"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text4-4">agent</text>
+    </g>
+    <g
+       id="node2-4"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,96.520379,14.121188)">
+      <title
+         id="title5-4">4</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="291.59"
+         cy="-18"
+         rx="36.290001"
+         ry="18"
+         id="ellipse5-7" />
+      <text
+         text-anchor="middle"
+         x="291.59"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text5-6">the girl</text>
+    </g>
+    <g
+       id="edge2-31"
+       class="edge"
+       transform="matrix(0.16466849,0,0,0.16466849,96.520379,14.121188)">
+      <title
+         id="title6-7">2-&gt;4</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 181.32,-18 c 18.28,0 42.64,0 63.72,0"
+         id="path6-5" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="255.09,-18 245.09,-14.5 245.09,-21.5 "
+         id="polygon6-9" />
+      <text
+         text-anchor="middle"
+         x="218.19"
+         y="-21.799999"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text6-6">theme</text>
+    </g>
+    <text
+       text-anchor="middle"
+       x="121.81322"
+       y="4.8807836"
+       font-family="Times, serif"
+       font-size="2.19374px"
+       id="text7-7-3"
+       style="stroke-width:0.156695">room</text>
+    <text
+       text-anchor="middle"
+       x="165.34727"
+       y="19.986862"
+       font-family="Times, serif"
+       font-size="2.10972px"
+       id="text7-7-3-6"
+       style="stroke-width:0.150694">room</text>
+    <g
+       id="g54-2"
+       transform="matrix(0.96170027,0,0,0.96170027,-20.636541,13.927402)">
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="193.19165"
+         cy="5.6921945"
+         rx="4.725986"
+         ry="2.9640329"
+         id="ellipse3-4-9-5"
+         style="stroke-width:0.164669" />
+      <text
+         text-anchor="middle"
+         x="177.74542"
+         y="7.5950875"
+         font-family="Times, serif"
+         font-size="2.19374px"
+         id="text8-1-6-4"
+         style="stroke-width:0.156696">nmod . in</text>
+      <path
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-0-2-1)"
+         d="m 176.22866,10.641329 11.0488,-3.8200321"
+         id="path54-4"
+         inkscape:connector-type="polyline"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g3">
+      <g
+         id="node1-6-1"
+         class="node"
+         transform="matrix(0.16466849,0,0,0.16466849,117.29278,48.32005)">
+        <title
+           id="title2-1-3">1</title>
+        <ellipse
+           fill="none"
+           stroke="#000000"
+           cx="27"
+           cy="-18"
+           rx="27"
+           ry="18"
+           id="ellipse2-1-7" />
+        <text
+           text-anchor="middle"
+           x="27"
+           y="-14.3"
+           font-family="Times, serif"
+           font-size="14px"
+           id="text2-5-7">boy</text>
+      </g>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="144.50827"
+         cy="45.185829"
+         rx="4.725986"
+         ry="2.9640329"
+         id="ellipse3-4-9"
+         style="stroke-width:0.164669" />
+      <g
+         id="g1">
+        <path
+           fill="none"
+           stroke="#000000"
+           d="m 126.70006,45.062804 c 3.01014,0 7.02147,0 10.49268,0"
+           id="path6-5-9-4-1"
+           style="stroke-width:0.164668" />
+        <polygon
+           fill="#000000"
+           stroke="#000000"
+           points="245.09,-14.5 245.09,-21.5 255.09,-18 "
+           id="polygon6-9-4-4-0"
+           transform="matrix(0.16466849,0,0,0.16466849,97.142312,48.026837)" />
+      </g>
+      <text
+         text-anchor="middle"
+         x="144.28906"
+         y="45.49118"
+         font-family="Times, serif"
+         font-size="2.10972px"
+         id="text7-7-3-6-9"
+         style="stroke-width:0.150694">room</text>
+    </g>
+    <text
+       text-anchor="middle"
+       x="151.11638"
+       y="66.303322"
+       font-family="Times, serif"
+       font-size="2.19374px"
+       id="text8-1-6-8"
+       style="stroke-width:0.156696">nmod . in</text>
+    <g
+       id="node1-6-1-3"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,135.60633,70.389243)">
+      <title
+         id="title2-1-3-3">1</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="27"
+         cy="-18"
+         rx="27"
+         ry="18"
+         id="ellipse2-1-7-8" />
+      <text
+         text-anchor="middle"
+         x="27"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text2-5-7-3">boy</text>
+    </g>
+    <g
+       id="node1-6-1-3-3"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,135.60633,78.241643)">
+      <title
+         id="title2-1-3-3-7">1</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="27"
+         cy="-18"
+         rx="27"
+         ry="18"
+         id="ellipse2-1-7-8-1" />
+      <text
+         text-anchor="middle"
+         x="27"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text2-5-7-3-2">house</text>
+    </g>
+    <ellipse
+       fill="none"
+       stroke="#000000"
+       cx="163.02907"
+       cy="67.425209"
+       rx="4.725986"
+       ry="2.9640329"
+       id="ellipse3-4-9-7"
+       style="stroke-width:0.164669" />
+    <path
+       fill="none"
+       stroke="#000000"
+       d="m 145.22086,67.42521 c 3.11546,0 7.26713,0 10.85979,0"
+       id="path6-5-9-4-1-3"
+       style="stroke-width:0.167524" />
+    <path
+       fill="none"
+       stroke="#000000"
+       d="m 146.45067,74.246511 c 3.66899,-1.523335 8.55831,-3.553333 12.78929,-5.309996"
+       id="path6-5-9-4-1-3-7"
+       style="stroke-width:0.2091" />
+    <polygon
+       fill="#000000"
+       stroke="#000000"
+       points="245.09,-21.5 255.09,-18 245.09,-14.5 "
+       id="polygon6-9-4-4-0-7"
+       transform="matrix(0.16466849,0,0,0.16466849,115.66311,70.445709)" />
+    <polygon
+       fill="#000000"
+       stroke="#000000"
+       points="245.09,-21.5 255.09,-18 245.09,-14.5 "
+       id="polygon6-9-4-4-0-7-1"
+       transform="matrix(-0.15785269,0.0468854,-0.0468854,-0.15785269,184.42964,59.920458)" />
+    <text
+       text-anchor="middle"
+       x="163.21552"
+       y="67.899895"
+       font-family="Times, serif"
+       font-size="2.10972px"
+       id="text7-7-3-6-9-8"
+       style="stroke-width:0.150694">room</text>
+    <g
+       id="node2-4-7-4-9"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,115.20194,63.499274)">
+      <title
+         id="title5-4-3-8-2">4</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="291.59"
+         cy="-18"
+         rx="36.290001"
+         ry="18"
+         id="ellipse5-7-6-1-8" />
+      <text
+         text-anchor="middle"
+         x="291.59"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text5-6-5-0-8">the girl</text>
+    </g>
+    <g
+       id="edge2-31-6-3-8"
+       class="edge"
+       transform="matrix(0.16466849,0,0,0.16466849,115.20194,64.25323)">
+      <title
+         id="title6-7-3-0-6">2-&gt;4</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 181.32,-18 c 18.28,0 42.64,0 63.72,0"
+         id="path6-5-9-4-8" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="255.09,-18 245.09,-14.5 245.09,-21.5 "
+         id="polygon6-9-4-4-3" />
+      <text
+         text-anchor="middle"
+         x="218.19"
+         y="-21.799999"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text6-6-8-4-8">theme</text>
+    </g>
+    <g
+       id="node1-6-9-5-8"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,114.92397,64.186519)">
+      <title
+         id="title2-1-0-0-6">1</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="27"
+         cy="-18"
+         rx="27"
+         ry="18"
+         id="ellipse2-1-9-9-2" />
+      <text
+         text-anchor="middle"
+         x="27"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text2-5-1-6-8">house</text>
+    </g>
+    <g
+       id="node3-9-7-3-4"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,114.92397,64.186519)">
+      <title
+         id="title3-8-7-8-7">2</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="152.60001"
+         cy="-18"
+         rx="28.700001"
+         ry="18"
+         id="ellipse3-4-1-5-2" />
+      <text
+         text-anchor="middle"
+         x="152.60001"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text3-81-1-6-4">paint</text>
+    </g>
+    <path
+       fill="none"
+       stroke="#000000"
+       d="m 123.85065,61.222486 c 2.83559,0 6.59168,0 9.75661,0"
+       id="path4-0-7-5-0"
+       style="stroke-width:0.164668" />
+    <polygon
+       fill="#000000"
+       stroke="#000000"
+       points="123.71,-18 113.71,-14.5 113.71,-21.5 "
+       id="polygon4-4-7-9-6"
+       transform="matrix(0.16466849,0,0,0.16466849,114.92397,64.186519)" />
+    <text
+       text-anchor="middle"
+       x="129.5793"
+       y="60.539024"
+       font-family="Times, serif"
+       font-size="2.30536px"
+       id="text4-4-6-8-2"
+       style="stroke-width:0.164668">agent</text>
+    <g
+       id="g38-4"
+       transform="translate(-53.168833,28.426232)">
+      <path
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-0-4-4)"
+         d="m 158.1578,32.754062 6.57524,0.04649"
+         id="path23-6-7-9-0"
+         inkscape:connector-type="polyline"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g37-3"
+         transform="matrix(0.20202918,0,0,0.20202918,166.4312,-55.196905)">
+        <ellipse
+           style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.87767;stroke-dasharray:none;stroke-opacity:0.75"
+           id="path47-9"
+           cx="-21.38184"
+           cy="435.54678"
+           rx="19.547928"
+           ry="8.8080416" />
+        <path
+           style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.87767;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="M -33.673065,441.98661 -9.4798704,428.31463"
+           id="path48-1"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:1.90426px;fill:#ff0000;stroke-width:0.158688"
+       x="109.48766"
+       y="66.480026"
+       id="text40-0"><tspan
+         sodipodi:role="line"
+         id="tspan40-4"
+         style="stroke-width:0.158688"
+         x="109.48766"
+         y="66.480026">      Attraction error</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.158688"
+         x="109.48766"
+         y="68.860352"
+         id="tspan54">to SECOND PP NOUN</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.158688"
+         x="109.48766"
+         y="71.240677"
+         id="tspan41-6">from linear processing</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="55.20364"
+       y="9.684164"
+       id="text55"><tspan
+         sodipodi:role="line"
+         id="tspan55"
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         x="55.20364"
+         y="9.684164">v</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="45.495296"
+       y="9.7000399"
+       id="text55-0"><tspan
+         sodipodi:role="line"
+         id="tspan55-3"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="45.495296"
+         y="9.7000399">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="66.186234"
+       y="9.7000399"
+       id="text55-0-3"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-2"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="66.186234"
+         y="9.7000399">n</tspan></text>
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14-24"
+       width="6.3360491"
+       height="2.6474748"
+       x="43.195587"
+       y="23.038095" />
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14-7-79"
+       width="6.3360491"
+       height="2.6474748"
+       x="64.039772"
+       y="23.038095" />
+    <rect
+       style="fill:none;stroke:#ff0000;stroke-width:0.34896;stroke-opacity:1"
+       id="rect14-2-3"
+       width="11.02162"
+       height="2.6474748"
+       x="50.380165"
+       y="23.038095" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 49.564008,24.393512 0.884161,0.03262"
+       id="path16-92"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 61.381433,24.45393 2.796088,0.02233"
+       id="path17-8"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="55.084526"
+       y="25.192739"
+       id="text55-3"><tspan
+         sodipodi:role="line"
+         id="tspan55-0"
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         x="55.084526"
+         y="25.192739">v</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="45.376186"
+       y="25.208616"
+       id="text55-0-1"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-7"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="45.376186"
+         y="25.208616">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="66.067123"
+       y="25.208616"
+       id="text55-0-3-8"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-2-9"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="66.067123"
+         y="25.208616">n</tspan></text>
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.292975;stroke-opacity:1"
+       id="rect14-24-9"
+       width="7.8530254"
+       height="2.6190832"
+       x="56.335541"
+       y="36.229866" />
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14-7-79-7"
+       width="6.3360491"
+       height="2.6474748"
+       x="78.710899"
+       y="36.215672" />
+    <rect
+       style="fill:none;stroke:#ff0000;stroke-width:0.34896;stroke-opacity:1"
+       id="rect14-2-3-8"
+       width="11.02162"
+       height="2.6474748"
+       x="65.051292"
+       y="36.215672" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 64.235157,37.571081 0.884161,0.03262"
+       id="path16-92-2"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 76.052582,37.631499 2.796088,0.02233"
+       id="path17-8-5"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="69.755653"
+       y="38.370316"
+       id="text55-3-3"><tspan
+         sodipodi:role="line"
+         id="tspan55-0-4"
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         x="69.755653"
+         y="38.370316">v</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="59.274628"
+       y="38.386192"
+       id="text55-0-1-9"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-7-0"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="59.274628"
+         y="38.386192">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="80.738251"
+       y="38.386192"
+       id="text55-0-3-8-2"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-2-9-0"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="80.738251"
+         y="38.386192">n</tspan></text>
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.306441;stroke-opacity:1"
+       id="rect14-24-9-2"
+       width="8.6359272"
+       height="2.605617"
+       x="71.423645"
+       y="58.203465" />
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14-7-79-7-1"
+       width="6.3360491"
+       height="2.6474748"
+       x="94.588638"
+       y="58.182537" />
+    <rect
+       style="fill:none;stroke:#ff0000;stroke-width:0.34896;stroke-opacity:1"
+       id="rect14-2-3-8-2"
+       width="11.02162"
+       height="2.6474748"
+       x="80.929031"
+       y="58.182537" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 80.112902,59.537956 0.884161,0.03262"
+       id="path16-92-2-0"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 91.930327,59.598374 2.796088,0.02233"
+       id="path17-8-5-7"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="85.633392"
+       y="60.337181"
+       id="text55-3-3-3"><tspan
+         sodipodi:role="line"
+         id="tspan55-0-4-1"
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         x="85.633392"
+         y="60.337181">v</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="75.152367"
+       y="60.353058"
+       id="text55-0-1-9-1"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-7-0-9"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="75.152367"
+         y="60.353058">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="96.61599"
+       y="60.353058"
+       id="text55-0-3-8-2-0"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-2-9-0-5"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="96.61599"
+         y="60.353058">n</tspan></text>
+    <g
+       id="g56-4"
+       transform="translate(15.701643,21.628103)">
+      <text
+         text-anchor="middle"
+         x="60.220146"
+         y="45.323372"
+         font-family="Times, serif"
+         font-size="2.30536px"
+         id="text4-4-6-8-9-6"
+         style="stroke-width:0.164668">agent</text>
+      <g
+         id="g37-7-2"
+         transform="matrix(0.20202918,0,0,0.20202918,64.622689,-43.19479)">
+        <ellipse
+           style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.87767;stroke-dasharray:none;stroke-opacity:0.75"
+           id="path47-6-8"
+           cx="-21.38184"
+           cy="435.54678"
+           rx="19.547928"
+           ry="8.8080416" />
+        <path
+           style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.87767;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="M -33.673065,441.98661 -9.4798704,428.31463"
+           id="path48-4-9"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <text
+       text-anchor="middle"
+       x="151.11642"
+       y="69.847206"
+       font-family="Times, serif"
+       font-size="2.10972px"
+       id="text8-1-6-4-7"
+       style="stroke-width:0.150695">nmod . in</text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="0.19785313"
+       y="90.113075"
+       id="text22-5-8"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.19785313"
+         y="90.113075"
+         id="tspan39-6">Our RASP model:</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.19785313"
+         y="94.081825"
+         id="tspan34">ignore </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.19785313"
+         y="98.050575"
+         id="tspan21">&quot;pp det common_noun&quot; </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.19785313"
+         y="102.01933"
+         id="tspan47">and &quot;pp proper_noun&quot; when matching agent/theme/recipient relationships.</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.19785313"
+         y="105.98808"
+         id="tspan46">Found via non-subj-pp examples in training, but fixes the obj-pp-to-subj-pp gen split.</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.19785313"
+         y="109.95683"
+         id="tspan32">We expect the baseline Wu et al. 2024 Transformer can learn this rule</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="0.19785313"
+         y="113.92558"
+         id="tspan33">but have not uncovered how to encourage it to learn such approaches yet.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="39.758747"
+       y="94.096146"
+       id="text7-1-2"><tspan
+         sodipodi:role="line"
+         id="tspan7-2-1"
+         style="stroke-width:0.264583"
+         x="39.758747"
+         y="94.096146">A <tspan
+   style="fill:#0000ff"
+   id="tspan25-8-9">boy</tspan> <tspan
+   style="fill:#b3b3b3"
+   id="tspan29">in a room in a house</tspan> <tspan
+   style="fill:#ff0000"
+   id="tspan27-3-8">painted</tspan> a <tspan
+   style="fill:#0000ff"
+   id="tspan28-6-0">girl</tspan></tspan></text>
+    <g
+       id="node2-4-7-4-9-0"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,114.33534,93.852061)">
+      <title
+         id="title5-4-3-8-2-8">4</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="291.59"
+         cy="-18"
+         rx="36.290001"
+         ry="18"
+         id="ellipse5-7-6-1-8-5" />
+      <text
+         text-anchor="middle"
+         x="291.59"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text5-6-5-0-8-3">the girl</text>
+    </g>
+    <g
+       id="edge2-31-6-3-8-9"
+       class="edge"
+       transform="matrix(0.16466849,0,0,0.16466849,114.33534,94.606017)">
+      <title
+         id="title6-7-3-0-6-4">2-&gt;4</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 181.32,-18 c 18.28,0 42.64,0 63.72,0"
+         id="path6-5-9-4-8-1" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="255.09,-18 245.09,-14.5 245.09,-21.5 "
+         id="polygon6-9-4-4-3-5" />
+      <text
+         text-anchor="middle"
+         x="218.19"
+         y="-21.799999"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text6-6-8-4-8-4">theme</text>
+    </g>
+    <g
+       id="node1-6-9-5-8-1"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,114.05737,94.539306)">
+      <title
+         id="title2-1-0-0-6-5">1</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="27"
+         cy="-18"
+         rx="27"
+         ry="18"
+         id="ellipse2-1-9-9-2-5" />
+      <text
+         text-anchor="middle"
+         x="27"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text2-5-1-6-8-4">boy</text>
+    </g>
+    <g
+       id="node3-9-7-3-4-9"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,114.05737,94.539306)">
+      <title
+         id="title3-8-7-8-7-8">2</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="152.60001"
+         cy="-18"
+         rx="28.700001"
+         ry="18"
+         id="ellipse3-4-1-5-2-3" />
+      <text
+         text-anchor="middle"
+         x="152.60001"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text3-81-1-6-4-8">paint</text>
+    </g>
+    <path
+       fill="none"
+       stroke="#000000"
+       d="m 122.98405,91.575273 c 2.83559,0 6.59168,0 9.75661,0"
+       id="path4-0-7-5-0-5"
+       style="stroke-width:0.164668" />
+    <path
+       fill="none"
+       stroke="#000000"
+       d="m 122.00264,93.432133 c 2.99729,1.956978 6.96758,4.549234 10.313,6.733507"
+       id="path4-0-7-5-0-5-1"
+       style="stroke-width:0.169343" />
+    <polygon
+       fill="#000000"
+       stroke="#000000"
+       points="123.71,-18 113.71,-14.5 113.71,-21.5 "
+       id="polygon4-4-7-9-6-2"
+       transform="matrix(0.16466849,0,0,0.16466849,114.05737,94.539306)" />
+    <text
+       text-anchor="middle"
+       x="128.71269"
+       y="90.891808"
+       font-family="Times, serif"
+       font-size="2.30536px"
+       id="text4-4-6-8-2-2"
+       style="stroke-width:0.164668">agent</text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-0-4-4-7)"
+       d="m 104.12236,91.533081 6.57524,0.04649"
+       id="path23-6-7-9-0-7"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.306441;stroke-opacity:1"
+       id="rect14-24-9-2-3"
+       width="8.6359272"
+       height="2.605617"
+       x="41.452873"
+       y="88.556244" />
+    <rect
+       style="fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       id="rect14-7-79-7-1-4"
+       width="6.3360491"
+       height="2.6474748"
+       x="93.722038"
+       y="88.535316" />
+    <rect
+       style="fill:none;stroke:#ff0000;stroke-width:0.34896;stroke-opacity:1"
+       id="rect14-2-3-8-2-4"
+       width="11.02162"
+       height="2.6474748"
+       x="80.062431"
+       y="88.535316" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.246863px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 50.282731,89.837701 29.593038,8.42e-4"
+       id="path16-92-2-0-3"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.232732px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 91.063597,89.935236 2.796342,0.01728"
+       id="path17-8-5-7-9"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="84.766792"
+       y="90.689964"
+       id="text55-3-3-3-7"><tspan
+         sodipodi:role="line"
+         id="tspan55-0-4-1-2"
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         x="84.766792"
+         y="90.689964">v</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="45.181595"
+       y="90.705841"
+       id="text55-0-1-9-1-5"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-7-0-9-8"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="45.181595"
+         y="90.705841">n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:none;stroke:#0008ff;stroke-width:0.264583;stroke-opacity:1"
+       x="95.74939"
+       y="90.705841"
+       id="text55-0-3-8-2-0-9"><tspan
+         sodipodi:role="line"
+         id="tspan55-3-2-9-0-5-0"
+         style="fill:#001eff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="95.74939"
+         y="90.705841">n</tspan></text>
+    <g
+       id="node2-4-7-4-9-0-3"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,113.92751,102.8479)">
+      <title
+         id="title5-4-3-8-2-8-4">4</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="291.59"
+         cy="-18"
+         rx="36.290001"
+         ry="18"
+         id="ellipse5-7-6-1-8-5-1" />
+      <text
+         text-anchor="middle"
+         x="291.59"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text5-6-5-0-8-3-5">house</text>
+    </g>
+    <g
+       id="edge2-31-6-3-8-9-0"
+       class="edge"
+       transform="matrix(0.16466849,0,0,0.16466849,113.92751,103.60186)">
+      <title
+         id="title6-7-3-0-6-4-8">2-&gt;4</title>
+      <path
+         fill="none"
+         stroke="#000000"
+         d="m 181.32,-18 c 18.28,0 42.64,0 63.72,0"
+         id="path6-5-9-4-8-1-3" />
+      <polygon
+         fill="#000000"
+         stroke="#000000"
+         points="255.09,-18 245.09,-14.5 245.09,-21.5 "
+         id="polygon6-9-4-4-3-5-5" />
+      <text
+         text-anchor="middle"
+         x="218.19"
+         y="-21.799999"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text6-6-8-4-8-4-6">nmod . in</text>
+    </g>
+    <text
+       text-anchor="middle"
+       x="124.07549"
+       y="99.999557"
+       font-family="Times, serif"
+       font-size="2.30536px"
+       id="text6-6-8-4-8-4-6-2"
+       style="stroke-width:0.164668">nmod . in</text>
+    <g
+       id="node3-9-7-3-4-9-5"
+       class="node"
+       transform="matrix(0.16466849,0,0,0.16466849,113.64954,103.53514)">
+      <title
+         id="title3-8-7-8-7-8-9">2</title>
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         cx="152.60001"
+         cy="-18"
+         rx="28.700001"
+         ry="18"
+         id="ellipse3-4-1-5-2-3-9" />
+      <text
+         text-anchor="middle"
+         x="152.60001"
+         y="-14.3"
+         font-family="Times, serif"
+         font-size="14px"
+         id="text3-81-1-6-4-8-0">room</text>
+    </g>
+    <polygon
+       fill="#000000"
+       stroke="#000000"
+       points="123.71,-18 113.71,-14.5 113.71,-21.5 "
+       id="polygon4-4-7-9-6-2-7"
+       transform="matrix(0.14853034,0.07109466,-0.07109466,0.14853034,114.29377,94.768982)" />
+  </g>
+</svg>
