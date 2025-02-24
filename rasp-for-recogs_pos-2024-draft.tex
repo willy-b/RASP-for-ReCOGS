@@ -492,7 +492,7 @@ Specifically, a non-agent noun which was part of the actual attention-head compa
 \end{footnotesize}
 } in its absence and found this predicted the exact error 
 (the nearest noun to the verb is mistaken for the agent of the verb) 
-in 96\% of the single relationship errors the \cite{Wu2023} baseline Transformers make on the obj-pp-to-subj-pp split\footnote{overall, their semantic exact match on the split is measured by us at 19.7\%, consistent with their Figure 5} when the agent is left of the verb in single verb sentences\footnote{\begin{footnotesize}See Figure 3 in Appendix.\end{footnotesize}}
+in 96\% of the single relationship errors the \cite{Wu2023} baseline Transformers make on the obj-pp-to-subj-pp split\footnote{overall, their semantic exact match on the split is measured by us at 19.7\%, consistent with their Figure 5} when the agent is left of the verb in single verb sentences\footnote{\begin{footnotesize}See Figure 6 in Appendix 10: Attraction Errors.\end{footnotesize}}
 %\footnote{\begin{footnotesize}
 %%we also predicted a new split "v\_dat\_p2\_pp\_moved\_to\_recipient" based on "attraction" errors expected of the flat non-hierarchical, non-tree model and experimentally confirm it is just as difficult for the baseline Transformer.
 %\end{footnotesize}} 
@@ -584,11 +584,7 @@ No AI tools were used by the author in the preparation of this manuscript with t
 \footnotetext{We want a model that generalizes from seeing a noun modified with a preposition in one position to others (e.g. by understanding the expansion `np -> np\_pp -> np\_det pp np` but the RASP program shows such a tree-based representation is not necessary)}
 
 \clearpage
-\section{Figure 3: Explaining Subj PP generalization difficulties in ReCOGS for Transformers as non-tree model struggling with PP NP distractors when modifying NPs with relationships to the right}
-\includegraphics[scale=0.25]{possible_issue_with_subj_pp_generalization_by_transformers_could_be_simple_nontree_pp_np_distractor_when_modifying_nps_with_related_nps_to_right.png}
-
-\clearpage
-\section{Appendix 1 - Vocabulary and Grammar}
+\section{Appendix 1: Vocabulary and Grammar}
 
 The description of the COGS \cite{KimLinzen2020} input vocab and grammar from the utilities of \cite{klinger2024compositionalprogramgenerationfewshot}'s CPG project\footnote{\begin{footnotesize}
 https://github.com/IBM/cpg/blob/
@@ -741,7 +737,7 @@ v_dat_pp_p4:
 
 \clearpage
 
-\section{Appendix 2 - RASP for relation right index ignoring distractor "pp np"}
+\section{Appendix 2: RASP for relation right index ignoring distractor "pp np"}
 
 \begin{tiny}
 \begin{verbatim}
@@ -791,7 +787,7 @@ aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); 
 \end{tiny}
 
 \clearpage
-\section{Appendix 3 - Error Analysis for \cite{Wu2023} baseline Transformer - parsing sentences with Lark and tagging sentences as agent left-of-verb or not  }
+\section{Appendix 3: Error Analysis for \cite{Wu2023} baseline Transformer - parsing sentences with Lark and tagging sentences as agent left-of-verb or not  }
 
 The errors from n=10 fresh training and evaluation runs of the baseline \cite{Wu2023} Encoder-Decoder Transformer on their ReCOGS\_pos train.tsv and tested on their unmodified gen.tsv were analyzed for the obj\_pp\_to\_subj\_pp split. All the input sentences and output logical forms as well as the ground truth logical forms were logged during the run. The input sentences were parsed by the Lark parser\footnote{\begin{footnotesize}https://github.com/lark-parser/lark\end{footnotesize}} against the COGS input grammar which allowed categorizing each sentence by its verb type \footnote{\begin{footnotesize}Code to analyze the errors is at: 
 
@@ -919,7 +915,7 @@ def get_agent_side(lark_tree_root):
 \end{tiny}
 
 \clearpage
-\section{Appendix 4 - v\_dat\_p2 recipient pp-modification for generalization assessment and data augmentation attempt}
+\section{Appendix 4: v\_dat\_p2 recipient pp-modification for generalization assessment and data augmentation attempt}
 
 We test generalization by the \cite{Wu2023}'s default Transformer which has been trained on `np v\_dat\_p2 np np pp np` but not `np v\_dat\_p2 np pp np np` prepositional modifications.
 The following 328 examples were derived\footnote{\begin{footnotesize} Notebook: (no 4open.science deidentified link available yet, available upon request \end{footnotesize}) 
@@ -937,7 +933,7 @@ So all the words and the grammar are otherwise familiar. This is similar to the 
 All modified rows available in the notebook link in the footnote.
 
 \clearpage
-\section{Appendix 5 - Restricted Access Sequence Processing word-level (post-embedding) token program/model design}
+\section{Appendix 5: Restricted Access Sequence Processing word-level (post-embedding) token program/model design}
 
 You can run a demo and see the autoregressive output 
 
@@ -1433,7 +1429,7 @@ python recogs_examples_in_rasp.py
 
 \clearpage
 
-\section{Appendix 6 - Note on a Restricted Access Sequence Processing character-level token program / model design (NOT what is used in this paper but feasible)}
+\section{Appendix 6: Note on a Restricted Access Sequence Processing character-level token program / model design (NOT what is used in this paper but feasible)}
 
 Note, a proof of concept character level Restricted Access Sequence Processing model was done with a decoder loop (unlike word-level solution above, it was a sketch so did not limit to strictly causal operations which just require more careful indexing -- using the value at the separator or the end of a word instead of pooling the same value to all letters in a word for example). Note that this one did not cover translating sentences in general into ReCOGS unlike the word-level solution as it is tedious and redundant but the core operations are possible and the author believes any solution at the word level can be mapped to a solution in character level tokens (out of scope for this paper to prove it).
 
@@ -1499,7 +1495,7 @@ as_num_for_letter_multiset_word_pooling(tokens))*word_lengths;
 \clearpage
 Those values could then be looked up in a dictionary like in the completed word-level token solution to get part-of-speech, verb-type, etc, to derive a separate sequence which can be used for template matching as we successfully did with word-level tokens (see Appendix 5).
 
-\section{Appendix 7 - Computing Grammar Coverage}
+\section{Appendix 7: Computing Grammar Coverage}
 
 First we use the grammar as it was generated as a probablistic context free grammar per \cite{KimLinzen2020}
 using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot}
@@ -1836,7 +1832,7 @@ That said with a couple of simple rules that were not tree we were able to get 1
 
 Modifying the grammar coverage to model this non-tree representation would be exciting to address in future work.
 
-\section{Appendix 8 - Model Detail}
+\section{Appendix 8: Model Detail}
 
 For our Restricted Access Sequence Processing ReCOGS program, we used the RASP interpreter of \cite{Weiss2021} to run our program. For RASP model design and details see Appendix 5. We use word-level tokens for all results in this paper.\footnote{\begin{footnotesize}We believe any solution at the word-level can be converted to a character-level token solution and that is not the focus of our investigation here (see Appendix 6 for proof of concept details on a character level solution not used here).\end{footnotesize}}
 Consistent with \cite{Zhou2024} we use \cite{Weiss2021}'s RASP originally used for modeling Transformer encoders to model an encoder-decoder in a causal way by feeding the autoregressive output back into the program. We only have aggregations with non-causal masks when that aggregation (or without loss of generality just before the aggregation product is used to avoid multiplying everywhere) is masked by an input mask restricting it to the sequence corresponding to the input.\footnote{\begin{footnotesize}An example the author has prepared of this is available at 
@@ -2023,7 +2019,7 @@ when we say e.g. 3 or 4 layers, we refer to 3 or 4 x BertLayer in the Encoder an
 (This is intended because only once per block, during cross/self-attention is information exchanged between sequence positions, and \cite{Csordas2022} hypothesize that the number of such blocks must be at least the depth of the parse tree in a compositional solution, as in a grammar parse tree at each level symbols are combined which requires transferring information between sequence positions).
 \clearpage
 
-\section{Appendix 9 - Methods Detail}
+\section{Appendix 9: Methods Detail}
 
 We use the RASP \cite{Weiss2021} interpreter\footnote{\begin{footnotesize}
 provided at https://github.com/tech-srl/RASP/
@@ -2060,8 +2056,6 @@ https://github.com/frankaging/ReCOGS/blob/
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/compgen.py
 \end{footnotesize}
 } against ground truth.
-
-%\includegraphics[scale=0.25]{sentences_and_lfs_and_lf_graph.png}
 
 In the training data only, any ReCOGS training augmentations like preposing or "um" sprinkles are excluded when evaluating the RASP model on the train data (it does not learn directly from the examples and these augmentations are outside of the grammar). 
 
@@ -2117,6 +2111,8 @@ For two, to see if augmenting the training data with v\_dat\_p2 recipient modifi
 
 \cite{Wu2023} baseline Encoder-Decoder Transformers trained from scratch are trained with random weight initialization multiple times with at least 10 different random seeds with all performance metrics averaged across runs with sample mean, sample size, and unbiased sample standard deviation reported. Statistical significance of comparisons between any Transformers performance sample means will be checked with Welch's unequal variance t-test with p-values greater than 0.05 definitely rejected, though stricter thresholds may be used where applicable. Confidence intervals will be reported using 1.96 standard errors of the sample mean as the 95\% confidence interval for sample means with that N unless specified otherwise.
 \section{Appendix 10: Attraction errors}
+
+
 In this paper we predict and confirm the existence of errors on prepositional modification splits where putting one or more new prepositional phrase nouns between a noun of interest and a verb it is related to causes the relation to inappropriately jump to one of the new nearer "attractor" nouns. 
 
 For lack of a better term I am referring to this as an "attraction" error following \cite{jespersen1913modernenglishgrammar1954reprint} section 6.72 "Attraction" in the context of subject-verb agreement (see below for quote) or \cite{FRANCK2006173} who in the context of subject-verb agreement, define attraction errors as "incorrect agreement with a word that is not the subject of the sentence". We are not investigating or explaining grammatical attraction in general here, just predicting and documenting a particular error the baseline Transformers make as a prediction of a non-hierarchical, non-tree structured approach without a rule for ignoring intervening prepositional phrase nouns. 
@@ -2141,6 +2137,17 @@ input: A girl on the stool on the table drew a frog .
 actual:   girl ( 1 ) ; * stool ( 4 ) ; * table ( 7 ) ; frog ( 10 ) ; nmod . on ( 1 , 4 ) AND nmod . on ( 4 , 7 ) AND draw ( 8 ) AND agent ( 8 , 7 ) AND theme ( 8 , 10 )
 
 expected: girl ( 1 ) ; * stool ( 4 ) ; * table ( 7 ) ; frog ( 10 ) ; nmod . on ( 1 , 4 ) AND nmod . on ( 4 , 7 ) AND draw ( 8 ) AND agent ( 8 , 1 ) AND theme ( 8 , 10 )
+
+
+See the Figure below (section continues after the figure page).
+
+\clearpage
+\begin{figure}
+\includegraphics[scale=1]{./image_pdfs/attraction_error_example.pdf}
+\caption{\begin{small}Non-hierarchical/non-tree structured linear grammar pattern matching without explicitly ignoring prepositional phrase nouns is expected to give rise to attraction errors, which we confirmed are contributing to the high error rate of the baseline \cite{Wu2023} Transformer on the obj-pp-to-subj-pp generalization split. Our RASP model avoids these errors by ignoring "pp det common\_noun" and "pp proper\_noun" when matching for agent/theme/recipient relationships (a behavior added based on non-subj-pp examples in training behavior but shown here to generalize to those examples). Note that we also predict such errors for the non-subj-pp case of pp-modifying the right-of-verb recipient noun in "np v\_dat\_p2 np np" and confirmed (see Figure 2) that such a generalization is as hard as the previously reported hardest obj-pp-to-subj-pp generalization.\end{small} \\
+}
+\end{figure}
+\clearpage
 
 We went looking for this hypothesizing that the \cite{Wu2023} Transformer may be using flat attention-head compatible verb-centered pattern matching as we are in our RASP model,
 and without learning the the single rule in our RASP program to ignore "pp det common\_noun" and "pp proper\_noun" were not learned by the Transformer (as our RASP model has "attraction" errors without it). Without the rule for avoiding "attraction" errors, we supposed the actual attention-head compatible verb-centered pattern matched noun (closer to the verb than the actual agent) for a grammar pattern would labeled the agent or theme instead of the appropriate one.
