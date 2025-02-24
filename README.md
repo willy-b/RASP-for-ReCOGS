@@ -10,7 +10,7 @@ The code for the project that this paper describes the results of is available M
 
 ![](expanded_version_of_sentences_and_lfs_and_lf_graph_figure.png)
 
-Figue 1 from paper (vector graphics used in paper, raster above).
+Figure 1 from paper (vector graphics used in paper, raster above).
 The task we solve is to extract the meaning (c) written in format (iii) of sentences (i). Full description of Figure (in higher quality vector graphics as well) is in the paper.
 
 ### Full Abstract
