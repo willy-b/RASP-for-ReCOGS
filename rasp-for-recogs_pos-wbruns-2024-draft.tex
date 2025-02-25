@@ -1006,7 +1006,7 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \end{tiny}
 
 \begin{figure}
-\includegraphics[scale=0.75]{./image_pdfs/example_rasp_for_recogs_flat_pattern_match.pdf}
+\includegraphics[scale=0.72]{./image_pdfs/example_rasp_for_recogs_flat_pattern_match.pdf}
 \caption{\begin{small}Example RASP model flat grammar pattern matching, for np v\_dat\_p2 np np, for a matching sentence.\end{small} \\
 }
 \end{figure}
@@ -1056,26 +1056,67 @@ How variables are introduced with their index (omitted sorting of input and othe
 # introducing variables
 output = "";
 # definite article word handling
-before_target_word_index = aggregate(select(indices, nv_in_output_count, ==), input_indices_sorted)-1;
-has_star = aggregate(select(indices, before_target_word_index, ==), tokens) == "the";
-last_output_is_star = aggregate(select(indices, length-1, ==), tokens) == "*";
+before_target_word_index = 
+ aggregate(select(indices, nv_in_output_count, ==), 
+ input_indices_sorted)-1;
+has_star = 
+ aggregate(select(indices, before_target_word_index, ==), 
+ tokens) == "the";
+last_output_is_star = 
+ aggregate(select(indices, length-1, ==), 
+ tokens) == "*";
 
-input_nv_sorted_by_type = input_tokens_sorted_by_type * (input_noun_mask_sorted + input_verb_mask_sorted);
-target_word_token = aggregate(select(indices, nv_in_output_count, ==), normalize_nv(input_nv_sorted_by_type)) 
+input_nv_sorted_by_type = 
+ input_tokens_sorted_by_type * 
+ (input_noun_mask_sorted + input_verb_mask_sorted);
+target_word_token = 
+ aggregate(select(indices, nv_in_output_count, ==), 
+ normalize_nv(input_nv_sorted_by_type)) 
 if (not has_star or last_output_is_star) else "*";
-# subtract 1 when matching for producing the index because we just output the additional word by then
-target_word_index = aggregate(select(indices, nv_in_output_count-1, ==), input_indices_sorted);
+# subtract 1 when matching 
+# for producing the index 
+# because we just output the additional word by then
+target_word_index = 
+ aggregate(select(indices, nv_in_output_count-1, ==), 
+ input_indices_sorted);
 
-output = target_word_token if ((num_tokens_in_output_excluding_asterisks % 5) == 0) else output;
-output = "(" if ((num_tokens_in_output_excluding_asterisks % 5) == 1) else output;
-output = target_word_index if ((num_tokens_in_output_excluding_asterisks % 5) == 2) else output;
-output = ")" if ((num_tokens_in_output_excluding_asterisks % 5) == 3) else output;
-# note that when nv_in_output_count == nv_in_input_count, we will add AND instead of ";"
-output = (";" if (5 * nv_in_input_count - 1 > num_tokens_in_output_excluding_asterisks) else "AND") 
-if (num_tokens_in_output_excluding_asterisks % 5 == 4) else output;
+output = 
+ target_word_token 
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 0) 
+ else 
+ output;
+output = 
+ "(" 
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 1)
+ else output;
+output = 
+ target_word_index
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 2) 
+ else output;
+output = 
+ ")" 
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 3) 
+ else output;
+# note that 
+# when nv_in_output_count == nv_in_input_count, 
+# we will add AND instead of ";"
+output = 
+ (
+  ";" 
+  if 
+  (
+   5 * nv_in_input_count - 1 > 
+   num_tokens_in_output_excluding_asterisks
+  ) 
+  else "AND"
+ ) 
+if (num_tokens_in_output_excluding_asterisks % 5 == 4) 
+else output;
 
-# if we didn't have an input/output separator that needs to be output
-output = "|" if num_pipes_in_output == 0 else output;
+# if we didn't have an input/output separator 
+# that needs to be output
+output = 
+ "|" if num_pipes_in_output == 0 else output;
 \end{verbatim}
 \end{tiny}
 Note that "normalize\_nv" is a lookup into a map that has no effect unless the word is a verb in which case it normalizes it to a standard suffix ("ate" to "eat" , "painted" to "paint", etc).
