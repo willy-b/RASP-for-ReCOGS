@@ -1928,7 +1928,8 @@ EncoderDecoderModel(
     (layer): ModuleList(
      # substitute N=2 for all baseline experiments
      # per Wu et al 2023 paper; 
-     # N can be 3 or 4 in our layer variation experiments only.
+     # N can be 3 or 4 in our layer variation
+     # experiments only.
      (0-(N-1)): N x BertLayer(
       (attention): BertAttention(
        (self): BertSdpaSelfAttention(
@@ -2173,7 +2174,7 @@ Thus, we can be more efficient than using the ReCOGS training set for our RASP m
 \onecolumn
 \begin{table}
 \centering
-\begin{tabular}{p{0.2\linewidth} p{0.6\linewidth} p{0.2\linewidth}}
+\begin{tabular}{p{0.2\linewidth} p{0.52\linewidth} p{0.2\linewidth}}
 \hline
 \begin{small}\textbf{RASP-for-ReCOGS grammar pattern example mentioned in paper}\end{small} & \begin{small}\textbf{Actual part-of-speech/verb-type sequence used in RASP model}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small}\\
 \hline
