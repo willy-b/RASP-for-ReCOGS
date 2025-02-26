@@ -258,7 +258,7 @@ see also "Appendix 5 - Restricted Access Sequence Processing word-level (post-em
 To handle prepositional phrases in a flat solution, we find it necessary even on the training data to add a rule that ignores noun phrases preceded by a prepositional phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted. We shall see encountering this issue in RASP and the grammar analysis suggesting a non-tree solution leads us to be able to predict 96\% (740 out of 767; n=10 trained-from-scratch Transformers, most runs 100\% of that category for the Transformer) of a certain category of errors a baseline \cite{Wu2023} Encoder-Decoder Transformer makes (see results).
 \end{tiny}
 } present in our RASP solution (which gets 100\% semantic exact match and string exact match on the \cite{Wu2023} ReCOGS\_pos test set, see next results section).\footnote{\begin{tiny}
-Note that those 19 sentences could be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens) (the last two example sentences above do not correspond to specific rules in the RASP code but could also be replaced by grammatically equivalent examples from COGS train.tsv).
+Note that those 19 sentences can be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens, see such examples at the end of Appendix 7: Grammar Coverage) (the last two example sentences above do not correspond to specific rules in the RASP code but could also be replaced by grammatically equivalent examples from COGS train.tsv).
 \end{tiny}}
 
 \textbf{ Restricted Access Sequence Processing - semantic exact match}
@@ -1812,9 +1812,11 @@ However these coverage metrics are misleading when it comes to prepositional phr
 
 Based on the finding earlier we believe that the only recursion learned is tail recursion in the decoder loop and that `np -> np\_det | np\_prop | np\_pp` and `np\_pp -> np\_det pp np` is not actually performed as if the Encoder-Decoder Transformer were to learn a tree-based or recursive representation. If the Transformer had a tree based representation, it is predicted that the "v\_dat\_p2\_pp\_moved\_to\_recipient" would not be any harder than when the pp modification is on the theme, as `np v\_dat\_p2 np\_det pp np np` can be transformed by the recursive grammar rule `np\_det pp np -> np\_pp -> np` to `np v\_dat\_p2 np np` on which it is already trained and has good performance, but instead it fails completely, and see also "Error Analysis for \cite{Wu2023} baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split" where we observe that prepositional modification of a noun to the left of a verb it is the agent of causes the new prepositional phrase noun that becomes the closest noun to be mistaken for the agent, which is in contradiction to the model collapsing `np\_det pp np` to `np` before matching the overall grammar pattern.
 
-That said with a couple of simple rules that were not tree we were able to get 100\% on the pp\_recursion split (up to depth 12) and approximately 90\% of the obj\_pp\_to\_subj\_pp split.
+That said with a couple of simple rules that were not tree we were able to get 100\% on the pp\_recursion split (up to depth 12) and 92.20\% (90.36-93.79\% 95\% CI) of the obj\_pp\_to\_subj\_pp split.
 
 Modifying the grammar coverage to model this non-tree representation would be exciting to address in future work.
+
+See also Appendix 11: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design .
 
 \section{Appendix 8: Model Detail}
 
@@ -1926,7 +1928,8 @@ EncoderDecoderModel(
     (layer): ModuleList(
      # substitute N=2 for all baseline experiments
      # per Wu et al 2023 paper; 
-     # N can be 3 or 4 in our layer variation experiments only.
+     # N can be 3 or 4 in our layer variation
+     # experiments only.
      (0-(N-1)): N x BertLayer(
       (attention): BertAttention(
        (self): BertSdpaSelfAttention(
@@ -2149,6 +2152,8 @@ Note that such "attraction" errors we report here where attractor/distractor pre
 
 \section{Appendix 11: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design}
 
+See Appendix 7: Computing Grammar Coverage for how the grammar coverage is computed.
+
 If we ignore lexical differences, by the first 55 examples of the ReCOGS training set (unshuffled, no augmentations) or 77 (median; 95\% confidence interval, n=1000 random shuffles: 39 to 161) examples of the ReCOGS training set (shuffled, no augmentations), 100\% grammar coverage is reached\footnote{
 \begin{tiny}
 Given the COGS input sentences were generated as a probablistic context free grammar per \cite{KimLinzen2020}
@@ -2162,6 +2167,48 @@ That shows if one already knows parts of speech and verb types for words one nee
 
 Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand (in real world pretraining or a GloVe embedding would be used to solve this step)\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a pre-trained Transformer model in wide use, has part-of-speech information available at the earliest layers.}
  since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
+
+\section{Table for Appendix 11: Matching 19+2 unofficial sentences mentioned to COGS/ReCOGS training examples (see next page)}
+
+\clearpage
+\onecolumn
+\begin{table}
+\centering
+\begin{tabular}{p{0.2\linewidth} p{0.52\linewidth} p{0.2\linewidth}}
+\hline
+\begin{small}\textbf{RASP-for-ReCOGS grammar pattern example mentioned in paper}\end{small} & \begin{small}\textbf{Actual part-of-speech/verb-type sequence used in RASP model}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small}\\
+\hline
+\begin{small}\end{small} & \begin{small}\end{small} & \begin{small}\end{small} \\
+\begin{small}the girl was painted\end{small} & \begin{small}det common\_noun was v\_trans\_omissible\_pp\_p1 \end{small} & \begin{small}The donut was studied .\end{small} \\
+\begin{small}a boy painted\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p1 \end{small} & \begin{small}The captain ate .\end{small} \\
+\begin{small}a boy painted the girl\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p2 det common\_noun \end{small} & \begin{small}The sailor dusted a boy .\end{small} \\
+\begin{small}the girl was painted by a boy\end{small} & \begin{small}det common\_noun was v\_trans\_omissible\_pp\_p2 by det common\_noun \end{small} & \begin{small}A drink was eaten by a child .\end{small} \\
+\begin{small}a boy respected the girl\end{small} & \begin{small}det common\_noun v\_trans\_not\_omissible det common\_noun \end{small} & \begin{small}A girl liked the raisin .\end{small} \\
+\begin{small}the girl was respected\end{small} & \begin{small}det common\_noun was v\_trans\_not\_omissible\_pp\_p1 \end{small} & \begin{small}The pen was helped .\end{small} \\
+\begin{small}the girl was respected by a boy\end{small} & \begin{small}det common\_noun was v\_trans\_not\_omissible\_pp\_p2 by det common\_noun \end{small} & \begin{small}A rose was helped by a dog .\end{small} \\
+\begin{small}the boy grew the flower\end{small} & \begin{small}det common\_noun v\_unacc\_p1 det common\_noun \end{small} & \begin{small}A cat disintegrated a girl .\end{small} \\
+\begin{small}the flower was grown\end{small} & \begin{small}det common\_noun was v\_unacc\_pp\_p1 \end{small} & \begin{small}A box was inflated .\end{small} \\
+\begin{small}the flower was grown by a boy\end{small} & \begin{small}det common\_noun was v\_unacc\_pp\_p2 by det common\_noun \end{small} & \begin{small}The cake was frozen by the giraffe .\end{small} \\
+\begin{small}the scientist wanted to read\end{small} & \begin{small}det common\_noun v\_inf\_taking to v\_inf \end{small} & \begin{small}The girl needed to cook .\end{small} \\
+\begin{small}the guest smiled\end{small} & \begin{small}det common\_noun v\_unerg \end{small} & \begin{small}The sailor laughed .\end{small} \\
+\begin{small}the flower grew\end{small} & \begin{small}det common\_noun v\_unacc\_p2 \end{small} & \begin{small}A cake rolled .\end{small} \\
+\begin{small}ella sold a car to the customer\end{small} & \begin{small}proper\_noun v\_dat\_p1 det common\_noun to det common\_noun \end{small} & \begin{small}Emma passed a cake to the girl .\end{small} \\
+\begin{small}ella sold a customer a car\end{small} & \begin{small}proper\_noun v\_dat\_p2 det common\_noun det common\_noun \end{small} & \begin{small}Liam forwarded the girl the donut .\end{small} \\
+\begin{small}the customer was sold a car\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p3 det common\_noun \end{small} & \begin{small}A girl was sold the cake .\end{small} \\
+\begin{small}the customer was sold a car by ella\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p4 det common\_noun by proper\_noun \end{small} & \begin{small}The girl was lended the balloon by Harper .\end{small} \\
+\begin{small}the car was sold to the customer by ella\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p2 to det common\_noun by proper\_noun \end{small} & \begin{small}The pen was offered to the girl by Emma .\end{small} \\
+\begin{small}the car was sold to the customer\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p1 to det common\_noun \end{small} & \begin{small}The melon was lended to a girl .\end{small} \\
+\hline
+\begin{small}\textbf{Prepositional phrase and complement phrase examples mentioned in paper}\end{small} & \begin{small}\textbf{part-of-speech/verb-type sequence (used example for development)}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small} \\
+\hline
+\begin{small}a boy painted the girl in a house\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p2 det common\_noun pp det common\_noun\end{small} & \begin{small}A frog ate a sweetcorn in a pile .\end{small} \\
+\begin{small}the girl noticed that a boy painted the girl\end{small} & \begin{small}det common\_noun v\_cp\_taking that det common\_noun v\_trans\_omissible\_p2 det common\_noun\end{small} & \begin{small}A girl said that a crocodile ate the rose .\end{small} \\
+\hline
+\end{tabular}
+\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to COGS/ReCOGS training examples. Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see Appendix 7) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific complement phrase example we gave by modifying one of our existing examples with a complement phrase ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes complement phrase examples are demonstrated earlier, e.g. within 55 examples in default ordering). Note the prepositional phrase and complement phrase examples are not actually pattern matched (the 19 pattern matches plus a general cp/pp rule are used) and so do not exist in the RASP code, but are just given for reference.\end{small}}
+\end{table}
+\twocolumn
+\clearpage
 
 \section{Appendix 12: Zhou et al 2024 relevance of their long addition experiment to language modeling and note on the Parity task and Transformers}
 \cite{Zhou2024} adds index hints to the long addition task based on a RASP-grounded analysis of what is preventing the Transformer from learning it, allowing the model to learn to pair digits from each number being added more easily. They also observe that if multi-digit carries are not part of the training set one can still get generalization by making the carry causal for the causal autoregressive Transformer decoder mode by reversing the digits (least significant digit first), and prove this resolves the issue. Causality issues like trying to output a long addition digit by digit starting with the most significant digit in a long addition before computing the sums of the less significant digits that come later, and failing if there is a carry at any point, are not limited to math, nor limited to language models, for just one example from English grammar concerning human language processing, \cite{jespersen1913modernenglishgrammar1954reprint} explains "Concord of the verb" errors made by humans especially in speech when the verb is on the left due to needing to agree with a noun not explicitly selected yet: "The general rule, which needs no exemplification, is for the verb to be in the singular with a singular subject, and in the plural with a plural subject. Occasionally, however, the verb will be put in the [singular], even if the subject is plural; this will especially happen when the verb precedes the subject, because the speaker has not yet made up his mind, when pronouncing the verb, what words are to follow."
