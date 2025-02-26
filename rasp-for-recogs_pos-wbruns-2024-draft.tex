@@ -212,7 +212,7 @@ See Appendix 9 - Methods Detail.
 
 See "Appendix 11: Grammar Coverage Analysis for Design of Restricted Access Sequence Processing Model" for more details.
 
-We generated 21 sentences based on rules present in the training examples which cover 100\% of the COGS input grammar under those constraints (under the context free grammar, tree based assumption which turns out to be incorrect for prepositional phrases) per \cite{fuzzingbook2023:GrammarCoverageFuzzer}:
+We generated 21 sentences based on rules present in the training examples which cover 100\% of the COGS input grammar under those constraints (lexical/terminal differences ignored, under the context free grammar, tree based assumption which turns out to be incorrect for prepositional phrases) per \cite{fuzzingbook2023:GrammarCoverageFuzzer}:
 
 \begin{tiny}
 \begin{verbatim}
@@ -258,7 +258,7 @@ see also "Appendix 5 - Restricted Access Sequence Processing word-level (post-em
 To handle prepositional phrases in a flat solution, we find it necessary even on the training data to add a rule that ignores noun phrases preceded by a prepositional phrase (ignore "pp np") when searching for noun indexes to report in relationships (agent, theme, recipient, etc), and we loosen verb type templates to allow a gap for any prepositional phrase to be inserted. We shall see encountering this issue in RASP and the grammar analysis suggesting a non-tree solution leads us to be able to predict 96\% (740 out of 767; n=10 trained-from-scratch Transformers, most runs 100\% of that category for the Transformer) of a certain category of errors a baseline \cite{Wu2023} Encoder-Decoder Transformer makes (see results).
 \end{tiny}
 } present in our RASP solution (which gets 100\% semantic exact match and string exact match on the \cite{Wu2023} ReCOGS\_pos test set, see next results section).\footnote{\begin{tiny}
-Note that those 19 sentences can be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens, see such examples at the end of Appendix 7: Grammar Coverage) (the last two example sentences above do not correspond to specific rules in the RASP code but could also be replaced by grammatically equivalent examples from COGS train.tsv).
+Note that those 19 sentences can be replaced by cherry-picked equivalent official COGS training examples without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens, see such examples at the end of Appendix 11: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design (builds on Appendix 7: Computing Grammar Coverage)) (the last two example sentences above do not correspond to specific rules in the RASP code but could also be replaced by grammatically equivalent examples from COGS train.tsv).
 \end{tiny}}
 
 \textbf{ Restricted Access Sequence Processing - semantic exact match}
