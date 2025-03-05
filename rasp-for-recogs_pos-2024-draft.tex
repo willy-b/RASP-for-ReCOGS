@@ -249,7 +249,7 @@ present in our RASP solution (which gets 100\% semantic exact match and string e
 The 19+2 sentences could be replaced by cherry-picked equivalent official COGS training examples (from their train.tsv) without any effect on the actual RASP code (they are just comments next to the rules entered as part of speech tokens), see the equivalent ReCOGS examples at the end of Appendix 11: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design.
 \end{footnotesize}}
 
-\textbf{ Restricted Access Sequence Processing - semantic exact match}
+\textbf{ Restricted Access Sequence Processing - test set and generalization set performance}
 
 The \textit{Restricted Access Sequence Processing program scored 100\% Semantic Exact Match and String Exact Match (no missed examples) (95\% confidence interval (Beta dist / Clopper-Pearson) of 99.88\% to 100\%, n=3000) on the ReCOGS\_pos test set}\footnote{ 
 \begin{footnotesize}
@@ -344,8 +344,10 @@ which can recursively expand as `np v\_cp\_taking that start -> np v\_cp\_taking
 \end{footnotesize}
 }
 
-\textit{Our RASP model's ReCOGS pp\_recursion gen split score was 100\% semantic exact match AND string exact match (95\% confidence interval (Beta dist/Clopper-Pearson): 99.63\% to 100.0\%; n=1000)}\footnote{\begin{footnotesize}
-See last section of notebook
+\textit{Our RASP model's ReCOGS pp\_recursion gen split score was 100\% semantic exact match AND string exact match (95\% confidence interval (Beta dist/Clopper-Pearson): 99.63\% to 100.0\%; n=1000)}.
+
+\textit{Our RASP model's ReCOGS cp\_recursion gen split score was 100\% semantic exact match and string exact match (95\% confidence interval (Beta dist/Clopper-Pearson): 99.63\% to 100.0\%; n=1000)}.\footnote{\begin{footnotesize}
+See last two sections of notebook
 
 https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
 
@@ -356,10 +358,10 @@ RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_
 \_(PR\_7\_contents\_on\_GEN\_set\_incl
 
 \_complement\_phrase\_support)\_(public).ipynb
+
+for pp/cp recursion results.
 \end{footnotesize}
 }.
-
-\textit{Our RASP model's ReCOGS cp\_recursion gen split score was 100\% semantic exact match (95\% confidence interval (Beta dist/Clopper-Pearson): 99.56\% to 100.0\%; no missed examples have yet been observed at n=840, waiting for n=1000 run to complete)}
 
 \textbf{\cite{Wu2023} Encoder-Decoder Transformer from scratch baselines (ReCOGS\_pos)}\footnote{\begin{footnotesize}
 See 
