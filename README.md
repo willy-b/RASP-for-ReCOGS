@@ -8,7 +8,10 @@ What is Restricted Access Sequence Processing (RASP)? It is a language that can 
 
 The code for the project that this paper describes the results of is available MIT-licensed in the https://github.com/willy-b/learning-rasp repository ( recogs_examples_in_rasp.py and word-level-pos-tokens-recogs-style-decoder-loop.rasp , specifically, see also the README, noting that some other RASP programs are also there ).
 
-![](sentences_and_lfs_and_lf_graph.png)
+![](expanded_version_of_sentences_and_lfs_and_lf_graph_figure.png)
+
+Figure 1 from paper (vector graphics used in paper, raster above).
+The task we solve is to extract the meaning (c) written in format (iii) of sentences (i). Full description of Figure (in higher quality vector graphics as well) is in the paper.
 
 ### Full Abstract
 
@@ -23,6 +26,28 @@ Our RASP implementation suggests the reported "hardest split" obj-pp-to-subj-pp 
 The difficulty with the `np v\_dat\_p2 np\_det pp np np` modification and the previously reported subj pp modification difficulty are claimed by us to be incompatible with the Transformer learning a tree-based approach (which combines nonterminals as in `np\_det pp np -> np\_pp -> np`), so we also check (Csordas 2022)'s hypothesis that the number of Transformer layers should be at least the depth of the parse tree for a tree based solution and find no performance benefit to a couple of additional layers (beyond baseline of 2). 
 
 Implementing our task in Restricted Access Sequence Processing immediately helped us discover additional related failure modes of the baseline Encoder-Decoder Transformer, predict the details of the errors in the logical forms (what the mismatched index in the agent when the agent is on the left of the verb would be, 96% of the time) generated for the previously reported most difficult split, and may help us reason about why a model like (Wu 2023) works with 2 layers for the ReCOGS task (compared with e.g. use of 24-layer BERT for NLP tasks in (Tenney et al 2019)).
+
+Example RASP model flat grammar pattern matching case (np v_dat_p2 np np):
+
+(noting that this is showing the Bidirectional Encoder of an Encoder-Decoder Transformer equivalent model, 
+so it is not causal, unlike the Decoder)
+
+![](example_rasp_for_recogs_flat_pattern_match.svg)
+
+Example RASP model flat grammar pattern matching case despite pp modification of middle recipient noun (np v_dat_p2 np np):
+
+![](example_rasp_for_recogs_flat_pattern_match_with_pp_modification.svg)
+
+Example RASP model same flat grammar pattern non-matching case:
+
+(noting that this is showing the Bidirectional Encoder of an Encoder-Decoder Transformer equivalent model, 
+so it is not causal, unlike the Decoder)
+
+![](example_rasp_for_recogs_flat_pattern_no_match.svg)
+
+New difficult generalization split v_dat_p2 recipient pp modification predicted and confirmed as difficult as previously reported most difficult generalization split for baseline Encoder-Decoder Transformers trained from scratch:
+
+![](new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.svg)
 
 ### References
 
