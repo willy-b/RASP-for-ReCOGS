@@ -200,7 +200,7 @@ https://github.com/IBM/cpg/blob/
 c3626b4e03bfc681be2c2a5b23da0b48abe6f570
 /src/model/cogs\_data.py\#L523 
 \end{footnotesize}
-}. See "Appendix: Methods Detail" (\ref{methods_detail}).
+}. See "Appendix: Methods Detail" (\ref{methods_detail}). See also "Appendix: Results Notebook links by section" (\ref{results_notebook_links_by_section}) for notebooks documenting results and giving steps to reproduce.
 \section{Results}
 \textbf{Restricted Access Sequence Processing - grammar coverage using a flat pattern matching approach (not tree-based and not recursive) and autoregressive decoder loop}
 
@@ -408,12 +408,12 @@ a single rule applies to all depths; the only limit on length generalization is 
 
 Recall we found a single flat pattern matching rule we originally added to fit training examples, to ignore "pp det common\_noun" and "pp proper\_noun" when matching nouns for the agent, theme, recipient right indices, was sufficient to avoid structural generalization errors due to pp modification in novel positions. 
 
-Interestingly, we imagined ablating that single rule and hypothesized attraction to the nearest noun\footnote{\begin{footnotesize}
+Interestingly, we imagined ablating that single rule and hypothesized attraction to the nearest noun (Figure \ref{attraction_errors_figure} and "Appendix: Attraction Errors" (\ref{attraction_errors}).)\footnote{\begin{footnotesize}
 Specifically, a non-agent noun which was part of the actual attention-head compatible verb-centered pattern match (closer to the verb than the actual agent) in our RASP model getting labeled the agent. \textbf{See "Appendix: Attraction errors"} (\ref{attraction_errors}) \textbf{for a detailed figure and connection to prior NLP and psycholinguistics literature on similar errors in the context of hierarchical vs linear processing by language models and humans.}
 \end{footnotesize}
 } in its absence and found this predicted the exact error 
 (the nearest noun to the verb is mistaken for the agent of the verb) 
-in 96\% of the single relationship errors the \cite{Wu2023} baseline Transformers make on the obj-pp-to-subj-pp split\footnote{overall, their semantic exact match on the split is measured by us at 19.7\%, consistent with their Figure 5} when the agent is left of the verb in single verb sentences\footnote{\begin{footnotesize}See Figure \ref{attraction_errors_figure} in "Appendix: Attraction Errors" (\ref{attraction_errors}).\end{footnotesize}}
+in 96\% of the single relationship errors the \cite{Wu2023} baseline Transformers make on the obj-pp-to-subj-pp split\footnote{overall, their semantic exact match on the split is measured by us at 19.7\%, consistent with their Figure 5} when the agent is left of the verb in single verb sentences
 %\footnote{\begin{footnotesize}
 %%we also predicted a new split "v\_dat\_p2\_pp\_moved\_to\_recipient" based on "attraction" errors expected of the flat non-hierarchical, non-tree model and experimentally confirm it is just as difficult for the baseline Transformer.
 %\end{footnotesize}} 
@@ -487,6 +487,7 @@ the existence [of] hierarchical structure" (though e.g. in this work we see that
 No AI tools were used by the author in the preparation of this manuscript with the exception of anything used in the backend by Google Scholar searches for literature and citations and Google searches for related material. AI writing aids were not used.
 \clearpage
 \section{Results Notebook links by section}
+\label{results_notebook_links_by_section}
 
 \textbf{ReCOGS RASP model on test set}
 For steps to reproduce and results, see https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
@@ -2143,14 +2144,30 @@ For one, `np v\_dat\_p2 np pp np np`\footnote{\begin{footnotesize}Restricted to 
 For two, to see if augmenting the training data with v\_dat\_p2 recipient modified sentences has crossover benefit, we train separate default \cite{Wu2023} Transformer but with their existing train.csv plus the additional theme-modified sentences mentioned above, same as those used for generalization testing in the other experiment; we confirm it does not know them, and separately on fresh runs we try training on them to see if that can benefit other splits by teaching the Encoder-Decoder a general prepositional phrase handling rule (like ignore "pp np"). We then test on \cite{Wu2023}'s normal test and generalization splits.
 
 \cite{Wu2023} baseline Encoder-Decoder Transformers trained from scratch are trained with random weight initialization multiple times with at least 10 different random seeds with all performance metrics averaged across runs with sample mean, sample size, and unbiased sample standard deviation reported. Statistical significance of comparisons between any Transformers performance sample means will be checked with Welch's unequal variance t-test with p-values greater than 0.05 definitely rejected, though stricter thresholds may be used where applicable. Confidence intervals will be reported using 1.96 standard errors of the sample mean as the 95\% confidence interval for sample means with that N unless specified otherwise.
+
+See also "Appendix: Results Notebook links by section" (\ref{results_notebook_links_by_section}) for notebooks documenting results and giving steps to reproduce.
 \section{Appendix: Attraction errors}
 \label{attraction_errors}
 
+\textbf{See Figure} \ref{attraction_errors_figure}.
+
 In this paper we predict and confirm the existence of errors on prepositional modification splits where putting one or more new prepositional phrase nouns between a noun of interest and a verb it is related to causes the relation to inappropriately jump to one of the new nearer "attractor" nouns. 
 
-For lack of a better term I am referring to this as an "attraction" error following \cite{jespersen1913modernenglishgrammar1954reprint} section 6.72 "Attraction" in the context of subject-verb agreement (see below for quote) or \cite{FRANCK2006173} who in the context of subject-verb agreement, define attraction errors as "incorrect agreement with a word that is not the subject of the sentence". We are not investigating or explaining grammatical attraction in general here, just predicting and documenting a particular error the baseline Transformers make as a prediction of a non-hierarchical, non-tree structured approach without a rule for ignoring intervening prepositional phrase nouns. 
+\textbf{For overall attraction error results by the baseline Transformer see results section "Attraction Error Analysis for \cite{Wu2023} baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split" (\ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors}).}
 
-We specifically hypothesize attraction to the nearest noun (when there is more than one "attractor" noun unrelated to the verb added in-between the related noun and the verb), but the relationship jumping to any of those new "attractor" nouns would be an "attraction" error in this terminology.
+For lack of a better term I am referring to this as an "attraction" error following \cite{jespersen1913modernenglishgrammar1954reprint} section 6.72 "Attraction" in the context of subject-verb agreement, describing a similar "error" made by humans:
+
+"Very frequently in speech, and not infrequently in
+literature, the number of the verb \textbf{is determined by
+that part of the subject which is nearest to the verb},
+even if a stricter sense of grammar would make
+the verb agree with the main part of the subject.
+\textbf{This kind of attraction naturally occurs the more easily, the greater the distance is between the nominative and the verb.}"
+
+The term attraction error continues to be used to describe those errors by psycholinguists, e.g. \cite{FRANCK2006173} who in the context of subject-verb agreement, define attraction errors as "incorrect agreement with a word that is not the subject of the sentence".
+Those attraction errors are also used to study hierarchical vs linear language processing (in humans, see \cite{FRANCK2006173} and also \cite{VIGLIOCCO1998B13}; in language models as we discuss here, see also \cite{goldberg2019assessingbertssyntacticabilities} who states that successful subject-verb agreement in the presence of attractor nouns  "[is] traditionally taken as evidence for the existence [of] hierarchical structure"), similar to our investigation here. But we are not investigating or explaining grammatical attraction in general here, just predicting and documenting a particular error the baseline Transformers make as a prediction of a non-hierarchical, non-tree structured approach without a rule for ignoring intervening prepositional phrase nouns.
+
+We specifically hypothesized attraction to the nearest noun (when there is more than one "attractor" noun unrelated to the verb added in-between the related noun and the verb), but the relationship jumping to any of those new "attractor" nouns would be an "attraction" error in this terminology.
 
 Here are two real examples made by the \cite{Wu2023} baseline Encoder-Decoder Transformer with different prepositional recursion depths.
 
@@ -2171,8 +2188,12 @@ actual:   girl ( 1 ) ; * stool ( 4 ) ; * table ( 7 ) ; frog ( 10 ) ; nmod . on (
 
 expected: girl ( 1 ) ; * stool ( 4 ) ; * table ( 7 ) ; frog ( 10 ) ; nmod . on ( 1 , 4 ) AND nmod . on ( 4 , 7 ) AND draw ( 8 ) AND agent ( 8 , 1 ) AND theme ( 8 , 10 )
 
+We went looking for this hypothesizing that the \cite{Wu2023} Transformer may be using flat attention-head compatible verb-centered pattern matching as we are in our RASP model,
+and without learning the the single rule in our RASP program to ignore "pp det common\_noun" and "pp proper\_noun" were not learned by the Transformer (as our RASP model has "attraction" errors without it). Without the rule for avoiding "attraction" errors, we supposed the actual attention-head compatible verb-centered pattern matched noun (closer to the verb than the actual agent) for a grammar pattern would labeled the agent or theme instead of the appropriate one.
 
-See Figure \ref{attraction_errors_figure} below (section continues after the figure page).
+Note that \cite{vanschijndel2019quantitydoesntbuyquality} also see "attraction" errors by Transformers/RNNs (again in the context of subject-verb agreement) where a long-range dependency competes with attractors/distractors, finding "accuracy decrease[d] in the presence of distracting nouns intervening between the head of the subject and the verb".
+
+The "attraction" errors we report here where attractor/distractor prepositional phrase nouns replace the actual agent/subject in the ReCOGS logical form generated by \cite{Wu2023} baseline Transformers are NOT due to their presence in pre-training or training data, as the ReCOGS/COGS training data is synthetic and syntactically perfect and for this benchmark the Transformer is trained from scratch, so it a genuine new error made by the neural network itself (and we predict a mechanism using RASP). But in general, humans do also exhibit these "attraction" errors, e.g. again as discussed in human subject-verb agreement per \cite{jespersen1913modernenglishgrammar1954reprint} (see quote earlier in this section), so pre-trained models trained on human-generated text may have the additional problem of learning those errors from the training data itself. Language model tendencies to commit subject-verb agreement attraction errors were previously analyzed by a co-author of the RASP language in an earlier paper on BERT Transformers in \cite{goldberg2019assessingbertssyntacticabilities}, by a COGS benchmark co-author in \cite{vanschijndel2019quantitydoesntbuyquality}, and by both together regarding RNNs in \cite{linzen2016assessing} (whose reference to \cite{agreementwithnearestlanguagelog} led me to \cite{jespersen1913modernenglishgrammar1954reprint}).
 
 \clearpage
 \begin{figure}
@@ -2182,13 +2203,6 @@ See Figure \ref{attraction_errors_figure} below (section continues after the fig
 \label{attraction_errors_figure}
 \end{figure}
 \clearpage
-
-We went looking for this hypothesizing that the \cite{Wu2023} Transformer may be using flat attention-head compatible verb-centered pattern matching as we are in our RASP model,
-and without learning the the single rule in our RASP program to ignore "pp det common\_noun" and "pp proper\_noun" were not learned by the Transformer (as our RASP model has "attraction" errors without it). Without the rule for avoiding "attraction" errors, we supposed the actual attention-head compatible verb-centered pattern matched noun (closer to the verb than the actual agent) for a grammar pattern would labeled the agent or theme instead of the appropriate one.
-
-\cite{vanschijndel2019quantitydoesntbuyquality} also discuss a similar category of "attraction" errors where a long-range dependency competes with attractors/distractors, in subject-verb agreement by RNNs/Transformers where they find "accuracy decreases in the presence of distracting nouns intervening between the head of the subject and the verb".
-
-Note that such "attraction" errors we report here where attractor/distractor prepositional phrase nouns replace the actual agent/subject in the ReCOGS logical form generated by \cite{Wu2023} baseline Transformers are NOT due to their presence in pre-training or training data, as the ReCOGS/COGS training data is synthetic and syntactically perfect and for this benchmark the Transformer is trained from scratch, so it a genuine new error made by the neural network itself (and we predict a mechanism using RASP). But in general, humans do also exhibit these "attraction" errors, e.g. in subject-verb agreement per \cite{jespersen1913modernenglishgrammar1954reprint} "Very frequently in speech, and not infrequently in literature, the number of the verb is determined by that part of the subject which is nearest to the verb, even if a stricter sense of grammar would make the verb agree with the main part of the subject. This kind of attraction naturally occurs the more easily, the greater the distance is between the nominative and the verb", so pre-trained models trained on human-generated text may have the additional problem of learning those errors from the training data itself. Language model tendencies to commit subject-verb agreement attraction errors were previously analyzed by a co-author of the RASP language in an earlier paper on BERT Transformers in \cite{goldberg2019assessingbertssyntacticabilities}, by a COGS benchmark co-author in \cite{vanschijndel2019quantitydoesntbuyquality}, and by both together regarding RNNs in \cite{linzen2016assessing} (whose reference to \cite{agreementwithnearestlanguagelog} led me to \cite{jespersen1913modernenglishgrammar1954reprint}).
 
 \section{Appendix: Zhou et al 2024 relevance of their long addition experiment to language modeling and note on the Parity task and Transformers}
 \label{appendix_long_addition_and_parity}
