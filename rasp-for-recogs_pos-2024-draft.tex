@@ -2171,7 +2171,7 @@ That shows if one already knows parts of speech and verb types for words one nee
 Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand (in real world pretraining or a GloVe embedding would be used to solve this step)\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a pre-trained Transformer model in wide use, has part-of-speech information available at the earliest layers.}
  since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
 
-See Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} below for the 19 part-of-speech/verb type patterns and example sentences that cover the grammar at non-terminal (post-embedding level) used for the RASP model design.
+See Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} below for the 19 part-of-speech/verb type patterns and example sentences that cover the non-recursive grammar at non-terminal (post-embedding level) used for the RASP model design.
 
 \clearpage
 \onecolumn
