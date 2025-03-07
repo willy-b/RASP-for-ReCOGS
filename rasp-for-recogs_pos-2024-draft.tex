@@ -146,6 +146,7 @@ c3626b4e03bfc681be2c2a5b23da0b48abe6f570
 \end{footnotesize}}
 were used in designing our RASP solution and analyzing the ways in which this task could be learned (we did not actually use their grammar though, and our RASP solution is flat and non-hierarchical unlike their description of the COGS probabilistic context-free grammar which is hierarchical and recursive). See Figure \ref{data-and-task-figure}.
 \section{Model}
+\label{model}
 
 We used the RASP interpreter of \cite{Weiss2021} to run our program. For RASP model design and details see Appendix \ref{rasp-word-level-model-design}.
 
@@ -481,10 +482,13 @@ the existence [of] hierarchical structure" (though e.g. in this work we see that
 
 \bibliography{bibliography}
 
-\section{Notes}
+\section*{Notes}
 No AI tools were used by the author in the preparation of this manuscript with the exception of anything used in the backend by Google Scholar searches for literature and citations and Google searches for related material. AI writing aids were not used.
 \clearpage
-\section{Results Notebook links by section}
+
+\section{Appendix}
+
+\subsection{Results Notebook links by section}
 \label{results_notebook_links_by_section}
 
 \textbf{ReCOGS RASP model on test set}
@@ -538,7 +542,7 @@ ReCOGS\_Baseline\_non\_RASP\_Transformer
 
 \clearpage
 
-\section{Appendix: Vocabulary and Grammar}
+\subsection{Vocabulary and Grammar}
 \label{vocabulary_and_grammar}
 
 The description of the COGS \cite{KimLinzen2020} input vocab and grammar from the utilities of \cite{klinger2024compositionalprogramgenerationfewshot}'s CPG project\footnote{\begin{footnotesize}
@@ -546,10 +550,11 @@ https://github.com/IBM/cpg/blob/
 c3626b4e03bfc681be2c2a5b23da0b48abe6f570
 /src/model/cogs\_data.py\#L523 
 \end{footnotesize}
-} was used as a reference by this project (we did not use the CPG code or anything from the CPG project other than the following Lark-compatible description of the COGS PCFG grammar).
+} was used as a reference by this project \textbf{(we did not use the CPG code or anything from the CPG project other than the following Lark-compatible description of the COGS PCFG grammar)}.
 
 Note this paper is focused on the ReCOGS task but the input sentences for ReCOGS are identical to the COGS input sentences (only the output format / logical form is changed).
 
+The following COGS input context-free grammar description (based on training data, see \cite{klinger2024compositionalprogramgenerationfewshot}) was used for computing grammar coverage (\ref{grammar_coverage_analysis_for_model_design}) and for RASP model design (though \textbf{the RASP model does NOT use a context-free grammar, and just uses 19 flat pattern matching operations to cover this grammar}, see Model (\ref{model}) or for more detail Appendix \ref{rasp-word-level-model-design}):
 \begin{tiny}
 \begin{verbatim}
 start: 
@@ -690,9 +695,11 @@ v_dat_pp_p4:
 \end{verbatim}
 \end{tiny}
 
+For the vocabulary we follow the \cite{klinger2024compositionalprogramgenerationfewshot} description of COGS (same input as ReCOGS) and include in our RASP vocabulary (part-of-speech or verb-type embedding/mapping) all words occurring anywhere in the upstream (Re)COGS "train.tsv" (including "exposure" rows, though would not change results qualitatively to omit the very few words only occurring in exposure examples). We also include two words in our vocab/embedding as common nouns accidentally left out of train.tsv vocabulary by the COGS author: "monastery" and "gardner" (only included in their train\_100.tsv and dev.tsv not also in train.tsv, but present in test/gen), a decision affecting just 22 or 0.1\% of generalization examples so would not affect any conclusions qualitatively. See also the discussion on COGS Github with the COGS author at https://github.com/najoungkim/COGS/issues/2\#issuecomment-976216841 .
+
 \clearpage
 
-\section{Appendix: RASP for relation right index ignoring attractor "pp np"}
+\subsection{RASP for relation right index ignoring attractor "pp np"}
 \label{RASP_for_relation_right_index_ignoring_attractor_pp_np}
 
 \begin{tiny}
@@ -743,7 +750,7 @@ aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); 
 \end{tiny}
 
 \clearpage
-\section{Appendix: Attraction Error Analysis for \cite{Wu2023} baseline Transformer - parsing sentences with Lark and tagging sentences as agent left-of-verb or not  }
+\subsection{Methods detail for Attraction Error Analysis for \cite{Wu2023} baseline Transformer: parsing sentences with Lark and tagging sentences as agent left-of-verb or not  }
 \label{appendix_error_analysis_for_baseline_transformer_methods}
 
 For results, see results section (\ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors}).
@@ -875,7 +882,7 @@ def get_agent_side(lark_tree_root):
 \end{tiny}
 
 \clearpage
-\section{Appendix: v\_dat\_p2 recipient pp-modification for generalization assessment and data augmentation attempt}
+\subsection{v\_dat\_p2 recipient pp-modification for generalization assessment and data augmentation attempt}
 \label{v_dat_p2_recipient_pp-modification_for_generalization_assessment_and_data_augmentation_attempt}
 
 We test generalization by the \cite{Wu2023}'s default Transformer which has been trained on `np v\_dat\_p2 np np pp np` but not `np v\_dat\_p2 np pp np np` prepositional modifications.
@@ -893,7 +900,7 @@ So all the words and the grammar are otherwise familiar. This is similar to the 
 All modified rows available in the notebook link in the footnote.
 
 \clearpage
-\section{Appendix: Restricted Access Sequence Processing word-level token program/model design}
+\subsection{Restricted Access Sequence Processing word-level token program/model design}
 \label{rasp-word-level-model-design}
 
 You can run a demo and see the autoregressive output 
@@ -1393,7 +1400,7 @@ python recogs_examples_in_rasp.py
 
 \clearpage
 
-\section{Appendix: Note on a Restricted Access Sequence Processing character-level token program / model design (NOT what is used in this paper but feasible)}
+\subsection{Note on a Restricted Access Sequence Processing character-level token program / model design (NOT what is used in this paper but feasible)}
 \label{rasp_character_level_model_notes}
 
 Note, a proof of concept character level Restricted Access Sequence Processing model was done with a decoder loop (unlike word-level solution above, it was a sketch so did not limit to strictly causal operations which just require more careful indexing -- using the value at the separator or the end of a word instead of pooling the same value to all letters in a word for example). Note that this one did not cover translating sentences in general into ReCOGS unlike the word-level solution as it is tedious and redundant but the core operations are possible and the author believes any solution at the word level can be mapped to a solution in character level tokens (out of scope for this paper to prove it).
@@ -1460,7 +1467,7 @@ as_num_for_letter_multiset_word_pooling(tokens))*word_lengths;
 \clearpage
 Those values could then be looked up in a dictionary like in the completed word-level token solution to get part-of-speech, verb-type, etc, to derive a separate sequence which can be used for template matching as we successfully did with word-level tokens (see Appendix \ref{rasp-word-level-model-design}).
 
-\section{Appendix: Computing Grammar Coverage}
+\subsection{Computing Grammar Coverage}
 \label{computing_grammar_coverage}
 
 First we use the grammar as it was generated as a probablistic context free grammar per \cite{KimLinzen2020}
@@ -1669,6 +1676,7 @@ https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recog
 
 for the full list and associated rules in the code as the RASP does not learn from examples but hand-coded rules coded as a sequence of parts of speech / verb types)\end{footnotesize}}
 
+(note each of these sentences has multiple equivalent examples in the ReCOGS training set, as shown in Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} in Appendix \ref{grammar_coverage_analysis_for_model_design})
 
 \begin{tiny}
 \begin{verbatim}
@@ -1800,7 +1808,7 @@ Modifying the grammar coverage to model this non-tree representation would be ex
 
 See also "Appendix: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design" (\ref{grammar_coverage_analysis_for_model_design}).
 
-\section{Appendix: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design}
+\subsection{Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design}
 \label{grammar_coverage_analysis_for_model_design}
 
 See "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage}) for how the grammar coverage is computed.
@@ -1860,7 +1868,7 @@ Thus, we can be more efficient than using the ReCOGS training set for our RASP m
 \twocolumn
 \clearpage
 
-\section{Appendix: Model Detail}
+\subsection{Model Detail}
 \label{model_detail}
 
 For our Restricted Access Sequence Processing ReCOGS program, we used the RASP interpreter of \cite{Weiss2021} to run our program. For RASP model design and details see Appendix \ref{rasp-word-level-model-design}. We use word-level tokens for all results in this paper.\footnote{\begin{footnotesize}We believe any solution at the word-level can be converted to a character-level token solution and that is not the focus of our investigation here (see Appendix 6 for proof of concept details on a character level solution not used here).\end{footnotesize}}
@@ -2049,7 +2057,7 @@ when we say e.g. 3 or 4 layers, we refer to 3 or 4 x BertLayer in the Encoder an
 (This is intended because only once per block, during cross/self-attention is information exchanged between sequence positions, and \cite{Csordas2022} hypothesize that the number of such blocks must be at least the depth of the parse tree in a compositional solution, as in a grammar parse tree at each level symbols are combined which requires transferring information between sequence positions).
 \clearpage
 
-\section{Appendix: Methods Detail}
+\subsection{Methods Detail}
 \label{methods_detail}
 
 We use the RASP \cite{Weiss2021} interpreter\footnote{\begin{footnotesize}
@@ -2143,7 +2151,7 @@ For two, to see if augmenting the training data with v\_dat\_p2 recipient modifi
 \cite{Wu2023} baseline Encoder-Decoder Transformers trained from scratch are trained with random weight initialization multiple times with at least 10 different random seeds with all performance metrics averaged across runs with sample mean, sample size, and unbiased sample standard deviation reported. Statistical significance of comparisons between any Transformers performance sample means will be checked with Welch's unequal variance t-test with p-values greater than 0.05 definitely rejected, though stricter thresholds may be used where applicable. Confidence intervals will be reported using 1.96 standard errors of the sample mean as the 95\% confidence interval for sample means with that N unless specified otherwise.
 
 See also "Appendix: Results Notebook links by section" (\ref{results_notebook_links_by_section}) for notebooks documenting results and giving steps to reproduce.
-\section{Appendix: Attraction errors}
+\subsection{Attraction errors}
 \label{attraction_errors}
 
 \textbf{See Figure} \ref{attraction_errors_figure}.
@@ -2201,7 +2209,7 @@ The "attraction" errors we report here where attractor/distractor prepositional 
 \end{figure}
 \clearpage
 
-\section{Appendix: Zhou et al 2024 relevance of their long addition experiment to language modeling and note on the Parity task and Transformers}
+\subsection{Zhou et al 2024 relevance of their long addition experiment to language modeling and note on the Parity task and Transformers}
 \label{appendix_long_addition_and_parity}
 \cite{Zhou2024} adds index hints to the long addition task based on a RASP-grounded analysis of what is preventing the Transformer from learning it, allowing the model to learn to pair digits from each number being added more easily. They also observe that if multi-digit carries are not part of the training set one can still get generalization by making the carry causal for the causal autoregressive Transformer decoder mode by reversing the digits (least significant digit first), and prove this resolves the issue. Causality issues like trying to output a long addition digit by digit starting with the most significant digit in a long addition before computing the sums of the less significant digits that come later, and failing if there is a carry at any point, are not limited to math, nor limited to language models, for just one example from English grammar concerning human language processing, \cite{jespersen1913modernenglishgrammar1954reprint} explains "Concord of the verb" errors made by humans especially in speech when the verb is on the left due to needing to agree with a noun not explicitly selected yet: "The general rule, which needs no exemplification, is for the verb to be in the singular with a singular subject, and in the plural with a plural subject. Occasionally, however, the verb will be put in the [singular], even if the subject is plural; this will especially happen when the verb precedes the subject, because the speaker has not yet made up his mind, when pronouncing the verb, what words are to follow."
 
@@ -2209,7 +2217,7 @@ The "attraction" errors we report here where attractor/distractor prepositional 
 Some useful context is that e.g. \cite{Chiang2022} confirm experimentally that a Transformer cannot learn the basic Parity task even though Transformers can be shown to be able to solve it, \cite{Chiang2022} themselves in fact artifically construct a soft attention Transformer that can just barely solve it with confidence that is O(1/n) where n is the input length. 
 This is perhaps surprising since basic non-Transformer feedforward neural networks have been known to be able to learn Parity from randomly initialized weights per \cite{10.7551/mitpress/4943.003.0128}.
 
-\section{Appendix: Composition and Learning}
+\subsection{Composition and Learning}
 \label{composition_and_learning}
 Composition is important in learning. Consider a single nonterminal grammar expansion\footnote{COGS input sentences were actually generated by a probabilistic context-free grammar and this is a grammar expansion in their grammar. Words used in the example are within their vocabulary.} , `(noun phrase) (verb dative p2) (noun phrase) (noun phrase)`, with three noun phrases all already expanded to np\_det ("a" or "the" and "common noun") and a single verb. A possible substitution of terminals would be "a teacher gave the child a book", as would be "the teacher gave a child the book" (change of determiners), as would be "the manager sold a customer the car" (change of nouns and verb) and it would require $2^3 V_n^3V_v $ examples where $V_n$ is the vocab size for eligible common nouns and $V_v$ is the vocab size for eligible verbs to see all the possible terminal substitutions . If the qualifying vocabulary is say of order of magnitude 100 words for the nouns and 10 for the verbs\footnote{In COGS the number of common nouns is over 400 and qualifying verbs in this case over 20} that would come out order of magnitude 100 million examples. By contrast, if parts-of-speech and verb types are already known\footnote{that is if determiners ("a", "the") are understood to be equivalent, common nouns are already known ("teacher", "manager", "child", "customer", "book", "car") separately, qualifying verb dative verbs are already known ("gave", "sold"). Note \cite{tenney2019bertrediscoversclassicalnlp} report part-of-speech information is already tagged and in the very earliest layers of the 24-layer BERT large pre-trained language model.} it might take as few as one example to learn the new grammar pattern `(noun phrase) (verb dative p2) (noun phrase) (noun phrase)`.\footnote{\begin{footnotesize}
 Composing further, in a tree-structured or hierarchical way, allows for efficient handling of recursive grammar forms like nested prepositional phrases, so that learning the recursive combination rule `np\_det pp np -> np` for example allows the model in a single rule to understand how to handle prepositional phrase modification of any noun phrase in any sentence possible in the grammar, generally. 
