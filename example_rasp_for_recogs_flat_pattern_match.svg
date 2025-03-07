@@ -3,8 +3,8 @@
 
 <svg
    width="130mm"
-   height="150mm"
-   viewBox="0 0 130 150"
+   height="128mm"
+   viewBox="0 0 130 128"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showguides="true"
-     inkscape:zoom="1.2432405"
-     inkscape:cx="274.2832"
-     inkscape:cy="215.56569"
+     inkscape:zoom="1.0211984"
+     inkscape:cx="215.92278"
+     inkscape:cy="267.33296"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -37,37 +37,52 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <sodipodi:guide
-       position="39.057105,20.001219"
+       position="39.057105,-2.9987807"
        orientation="1,0"
        id="guide1"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="147.99189,1.6682927"
+       position="147.99189,-21.331707"
        orientation="0,-1"
        id="guide2"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="72.610776,101.65185"
+       position="72.610776,78.651851"
        orientation="0,-1"
        id="guide28"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="6.1898381,100.68473"
+       position="6.1898381,77.684731"
        orientation="1,0"
        id="guide3"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="9.333358,104.14882"
+       position="9.333358,81.148821"
        orientation="0,-1"
        id="guide4"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="42.806103,3.8898493"
+       orientation="0,-1"
+       id="guide5"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="69.683192,69.099971"
+       orientation="0,-1"
+       id="guide35"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="58.66832,62.251208"
+       orientation="0,-1"
+       id="guide36"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <defs
      id="defs1">
     <rect
-       x="235.69761"
-       y="87.108267"
-       width="77.453396"
+       x="235.69762"
+       y="87.108269"
+       width="77.4534"
        height="15.246558"
        id="rect57" />
     <rect
@@ -78,8 +93,8 @@
        id="rect56" />
     <rect
        x="237.51477"
-       y="95.564526"
-       width="44.884702"
+       y="95.564529"
+       width="44.884701"
        height="11.614985"
        id="rect54" />
     <clipPath
@@ -1004,7 +1019,7 @@
        x="471.28448"
        y="1.7839572"
        width="141.94952"
-       height="77.570431"
+       height="77.570435"
        id="rect106" />
   </defs>
   <g
@@ -1012,10 +1027,10 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;stroke-width:0.264729"
+       style="fill:#ffffff;stroke-width:0.244546"
        id="rect1"
        width="130"
-       height="150"
+       height="128"
        x="0"
        y="0" />
     <rect
@@ -1042,7 +1057,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-2-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan144">1</tspan></text>
+           id="tspan1">1</tspan></text>
     </g>
     <rect
        style="fill:none;fill-opacity:1;stroke:#ff00f3;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -1150,106 +1165,106 @@
        xml:space="preserve"
        style="font-size:2.82222px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0828813;stroke-dasharray:none;stroke-opacity:1"
        x="0"
-       y="75.596336"
+       y="59.721344"
        id="text8"><tspan
          sodipodi:role="line"
          id="tspan8"
          x="0"
-         y="75.596336"
+         y="59.721344"
          style="font-size:2.82222px;stroke-width:0.0828813">det: 1</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="79.124115"
+         y="63.249119"
          id="tspan9"
          style="font-size:2.82222px;stroke-width:0.0828813">pp: 2</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="82.651886"
+         y="66.776894"
          id="tspan10"
          style="font-size:2.82222px;stroke-width:0.0828813">was: 3</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="86.179665"
+         y="70.304672"
          id="tspan11"
          style="font-size:2.82222px;stroke-width:0.0828813">by: 4</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="89.707436"
+         y="73.832443"
          id="tspan12"
          style="font-size:2.82222px;stroke-width:0.0828813">to: 5</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="93.235214"
+         y="77.360222"
          id="tspan13"
          style="font-size:2.82222px;stroke-width:0.0828813">that: 6</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="96.762985"
+         y="80.887993"
          id="tspan14"
          style="font-size:2.82222px;stroke-width:0.0828813">common_noun: 7</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="100.29076"
+         y="84.415771"
          id="tspan15"
          style="font-size:2.82222px;stroke-width:0.0828813">proper_noun: 8</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="103.81853"
+         y="87.943542"
          id="tspan16"
          style="font-size:2.82222px;stroke-width:0.0828813">v_trans_omissible: 9</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="107.34631"
+         y="91.471321"
          id="tspan17"
          style="font-size:2.82222px;stroke-width:0.0828813">v_trans_omissible_pp: 10</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="110.87408"
+         y="94.999092"
          id="tspan18"
          style="font-size:2.82222px;stroke-width:0.0828813">v_trans_not_omissible: 11</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="114.40186"
+         y="98.526871"
          id="tspan19"
          style="font-size:2.82222px;stroke-width:0.0828813">v_trans_not_omissible_pp: 12</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="117.92963"
+         y="102.05464"
          id="tspan20"
          style="font-size:2.82222px;stroke-width:0.0828813">v_cp_taking: 13</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="121.45741"
+         y="105.58242"
          id="tspan21"
          style="font-size:2.82222px;stroke-width:0.0828813">v_inf_taking: 14</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="124.98519"
+         y="109.1102"
          id="tspan22"
          style="font-size:2.82222px;stroke-width:0.0828813">v_unacc: 15</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="128.51297"
+         y="112.63797"
          id="tspan23"
          style="font-size:2.82222px;stroke-width:0.0828813">v_unerg: 16</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="132.04074"
+         y="116.16575"
          id="tspan24"
          style="font-size:2.82222px;stroke-width:0.0828813">v_inf: 17</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="135.56851"
+         y="119.69352"
          id="tspan25"
          style="font-size:2.82222px;stroke-width:0.0828813">v_dat: 18</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="139.09628"
+         y="123.2213"
          id="tspan26"
          style="font-size:2.82222px;stroke-width:0.0828813">v_dat_pp: 19</tspan><tspan
          sodipodi:role="line"
          x="0"
-         y="142.62407"
+         y="126.74907"
          id="tspan27"
          style="font-size:2.82222px;stroke-width:0.0828813">v_unacc_pp: 20</tspan></text>
     <g
@@ -1269,7 +1284,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan145">1</tspan></text>
+           id="tspan2">1</tspan></text>
     </g>
     <g
        id="g28-7"
@@ -1288,7 +1303,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan146">7</tspan></text>
+           id="tspan4">7</tspan></text>
     </g>
     <g
        id="g28-7-9"
@@ -1307,7 +1322,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan147">18</tspan></text>
+           id="tspan5">18</tspan></text>
     </g>
     <g
        id="g28-7-8"
@@ -1326,7 +1341,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan148">1</tspan></text>
+           id="tspan6">1</tspan></text>
     </g>
     <g
        id="g28-7-1"
@@ -1345,7 +1360,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan149">7</tspan></text>
+           id="tspan7">7</tspan></text>
     </g>
     <g
        id="g28-7-0"
@@ -1364,7 +1379,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan150">1</tspan></text>
+           id="tspan29">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -1380,7 +1395,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan151">7</tspan></text>
+         id="tspan32">7</tspan></text>
     <g
        id="g28-3"
        transform="matrix(0.26458333,0,0,0.26458333,30.628754,14.271198)">
@@ -1398,7 +1413,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan152">1</tspan></text>
+           id="tspan36">1</tspan></text>
     </g>
     <g
        id="g28-7-6"
@@ -1417,7 +1432,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan153">7</tspan></text>
+           id="tspan37">7</tspan></text>
     </g>
     <g
        id="g28-7-9-8"
@@ -1436,7 +1451,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan154">18</tspan></text>
+           id="tspan38">18</tspan></text>
     </g>
     <g
        id="g28-7-8-4"
@@ -1455,7 +1470,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan155">1</tspan></text>
+           id="tspan39">1</tspan></text>
     </g>
     <g
        id="g28-7-1-9"
@@ -1474,7 +1489,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan156">7</tspan></text>
+           id="tspan40">7</tspan></text>
     </g>
     <g
        id="g28-7-0-3"
@@ -1493,7 +1508,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan157">1</tspan></text>
+           id="tspan41">1</tspan></text>
     </g>
     <g
        id="g29"
@@ -1512,7 +1527,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan158">7</tspan></text>
+           id="tspan42">7</tspan></text>
     </g>
     <g
        id="g28-3-1"
@@ -1531,7 +1546,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan159">1</tspan></text>
+           id="tspan43">1</tspan></text>
     </g>
     <g
        id="g28-7-6-6"
@@ -1550,7 +1565,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-02);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan160">7</tspan></text>
+           id="tspan44">7</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#002eff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -1566,7 +1581,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-9);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan161">18</tspan></text>
+         id="tspan45">18</tspan></text>
     <g
        id="g28-7-8-4-9"
        transform="matrix(0.26458333,0,0,0.26458333,4.4820467,13.253398)">
@@ -1584,7 +1599,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan162">1</tspan></text>
+           id="tspan46">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#003cff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -1600,7 +1615,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38-7-9);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan163">7</tspan></text>
+         id="tspan47">7</tspan></text>
     <g
        id="g28-7-0-3-9"
        transform="matrix(0.26458333,0,0,0.26458333,12.948711,13.253398)">
@@ -1618,7 +1633,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan164">1</tspan></text>
+           id="tspan48">1</tspan></text>
     </g>
     <g
        id="g29-4"
@@ -1637,7 +1652,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31-3-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan165">7</tspan></text>
+           id="tspan49">7</tspan></text>
     </g>
     <g
        id="g28-3-0"
@@ -1656,7 +1671,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan166">1</tspan></text>
+           id="tspan50">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -1672,7 +1687,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan167">7</tspan></text>
+         id="tspan51">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,41.885916,11.534815)"
@@ -1680,7 +1695,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5);display:inline;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan168">18</tspan></text>
+         id="tspan52">18</tspan></text>
     <g
        id="g28-7-8-4-2"
        transform="matrix(0.26458333,0,0,0.26458333,43.640388,7.9617396)">
@@ -1698,7 +1713,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan169">1</tspan></text>
+           id="tspan53">1</tspan></text>
     </g>
     <g
        id="g28-7-0-3-1"
@@ -1717,7 +1732,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan170">1</tspan></text>
+           id="tspan54">1</tspan></text>
     </g>
     <text
        xml:space="preserve"
@@ -1726,83 +1741,83 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect53);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="217.92383"
          y="244.33232"
-         id="tspan171">np_det_seq                = [0, 1, 0, 0, 1, 0, 1]
+         id="tspan56">np_det_seq                = [0, 1, 0, 0, 1, 0, 1]
 </tspan><tspan
          x="217.92383"
          y="257.66569"
-         id="tspan172">np_prop_seq             =  [0, 0, 0, 0, 0, 0, 0]
+         id="tspan57">np_prop_seq             =  [0, 0, 0, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="270.99907"
-         id="tspan173">v_dat_seq                   = [0, 0, 1, 0, 0, 0, 0]
+         id="tspan58">v_dat_seq                   = [0, 0, 1, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="284.33244"
-         id="tspan174">np_det_left_seq        = [1, 0, 0, 1, 0, 1, 0]
+         id="tspan59">np_det_left_seq        = [1, 0, 0, 1, 0, 1, 0]
 </tspan><tspan
          x="217.92383"
          y="297.66582"
-         id="tspan175">np_two_before_seq = [0, 1, 0, 1, 0, 0, 0]
+         id="tspan64">np_two_before_seq = [0, 1, 0, 1, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="310.99919"
-         id="tspan176">np_before_seq          = [0, 0, 1, 0, 1, 0, 0]
+         id="tspan68">np_before_seq          = [0, 0, 1, 0, 1, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="324.33256"
-         id="tspan177">np_after_seq              = [0, 0, 1, 0, 0, 1, 0]
+         id="tspan69">np_after_seq              = [0, 0, 1, 0, 0, 1, 0]
 </tspan><tspan
          x="217.92383"
          y="337.66594"
-         id="tspan178">
+         id="tspan71">
 </tspan><tspan
          x="217.92383"
          y="350.99931"
-         id="tspan179">(A) = (np_det_left_seq &amp; np_two_before_seq) = [0, 0, 0, 1, 0, 0, 0]
+         id="tspan72">(A) = (np_det_left_seq &amp; np_two_before_seq) = [0, 0, 0, 1, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="364.33269"
-         id="tspan180">(B) = (np_prop_seq &amp; np_before_seq) = [0, 0, 0, 0, 0, 0, 0]
+         id="tspan73">(B) = (np_prop_seq &amp; np_before_seq) = [0, 0, 0, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="377.66606"
-         id="tspan181">np_np_seq     = (A or B) = [0, 0, 0, 1, 0, 0, 0]
+         id="tspan75">np_np_seq     = (A or B) = [0, 0, 0, 1, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="390.99943"
-         id="tspan182">np_np_any_before_seq = [1, 1, 1, 0, 0, 0, 0]
+         id="tspan76">np_np_any_before_seq = [1, 1, 1, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="404.33281"
-         id="tspan183">np_v_dat_p_np_np = np_after_seq &amp; v_dat_seq
+         id="tspan77">np_v_dat_p_np_np = np_after_seq &amp; v_dat_seq
 </tspan><tspan
          x="217.92383"
          y="417.66618"
-         id="tspan184">&amp; np_before_seq &amp; np_np_any_before_seq
+         id="tspan78">&amp; np_before_seq &amp; np_np_any_before_seq
 </tspan><tspan
          x="217.92383"
          y="430.99956"
-         id="tspan185">                                  = [0, 0, 1, 0, 0, 0, 0]
+         id="tspan79">                                  = [0, 0, 1, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="444.33293"
-         id="tspan186">
+         id="tspan80">
 </tspan><tspan
          x="217.92383"
          y="457.6663"
-         id="tspan187">
+         id="tspan81">
 </tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.43241px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.228396;stroke-dasharray:none;stroke-opacity:1"
        x="22.558346"
-       y="112.07816"
+       y="92.499001"
        id="text55"><tspan
          sodipodi:role="line"
          id="tspan55"
          style="stroke-width:0.228397"
          x="22.558346"
-         y="112.07816">  </tspan></text>
+         y="92.499001">  </tspan></text>
     <rect
        style="fill:none;stroke:#ff0000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8"
@@ -1824,7 +1839,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan188">7</tspan></text>
+         id="tspan82">7</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2"
@@ -1839,7 +1854,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan189">7</tspan></text>
+         id="tspan83">7</tspan></text>
     <rect
        style="fill:none;stroke:#0037ff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-1-6-2"
@@ -1854,7 +1869,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-8);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan190">1</tspan></text>
+         id="tspan84">1</tspan></text>
     <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-3"
@@ -1869,7 +1884,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan191">7</tspan></text>
+         id="tspan85">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,82.631761,16.846388)"
@@ -1877,7 +1892,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan192">18</tspan></text>
+         id="tspan86">18</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-8-8-4-1"
@@ -1892,7 +1907,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-8);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan193">1</tspan></text>
+         id="tspan87">1</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-44-0-3-0"
@@ -1907,7 +1922,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-2);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan194">1</tspan></text>
+         id="tspan88">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8-8"
@@ -1929,7 +1944,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan195">7</tspan></text>
+         id="tspan89">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-8"
@@ -1944,7 +1959,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan196">7</tspan></text>
+         id="tspan90">7</tspan></text>
     <g
        id="g28-3-0-2"
        transform="matrix(0.26458333,0,0,0.26458333,30.099588,0.25415386)">
@@ -1962,7 +1977,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan197">1</tspan></text>
+           id="tspan91">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -1978,7 +1993,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-10);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan198">7</tspan></text>
+         id="tspan92">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,41.621344,3.8618942)"
@@ -1986,7 +2001,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-4);display:inline;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan199">18</tspan></text>
+         id="tspan93">18</tspan></text>
     <g
        id="g28-7-8-4-2-0"
        transform="matrix(0.26458333,0,0,0.26458333,43.375816,0.28882186)">
@@ -2004,7 +2019,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan200">1</tspan></text>
+           id="tspan94">1</tspan></text>
     </g>
     <g
        id="g28-7-0-3-1-2"
@@ -2023,7 +2038,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-22);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan201">1</tspan></text>
+           id="tspan95">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#ff0000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -2046,7 +2061,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan202">7</tspan></text>
+         id="tspan96">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-0"
@@ -2061,7 +2076,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan203">7</tspan></text>
+         id="tspan97">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-1-6-9-0"
@@ -2076,7 +2091,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-6-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan204">1</tspan></text>
+         id="tspan98">1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,37.591472,-7.8042197)"
@@ -2084,7 +2099,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-10-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan205">7</tspan></text>
+         id="tspan99">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,41.092153,-7.7797787)"
@@ -2092,7 +2107,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-4-3);display:inline;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan206">18</tspan></text>
+         id="tspan100">18</tspan></text>
     <g
        id="g28-7-0-3-1-2-8"
        transform="matrix(0.26458333,0,0,0.26458333,51.313292,-11.352849)">
@@ -2110,7 +2125,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-22-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan207">1</tspan></text>
+           id="tspan101">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -2126,7 +2141,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-0-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan208">7</tspan></text>
+         id="tspan102">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-0-7"
@@ -2141,7 +2156,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-5-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan209">7</tspan></text>
+         id="tspan103">7</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#RoundedArrow-22-4)"
        d="m 72.610717,39.959824 7.893947,2.393965"
@@ -2180,7 +2195,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-8-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan210">1</tspan></text>
+         id="tspan104">1</tspan></text>
     <rect
        style="fill:#ffffff;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-3-3"
@@ -2195,7 +2210,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-7-2);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan211">7</tspan></text>
+         id="tspan105">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,82.367171,5.8451966)"
@@ -2203,7 +2218,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-2-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan212">18</tspan></text>
+         id="tspan106">18</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-8-8-4-1-6"
@@ -2218,7 +2233,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-8-4);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan213">1</tspan></text>
+         id="tspan107">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-44-0-3-0-6"
@@ -2233,7 +2248,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-2-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan214">1</tspan></text>
+         id="tspan108">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8-8-9"
@@ -2255,7 +2270,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-9-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan215">7</tspan></text>
+         id="tspan109">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-8-3"
@@ -2270,7 +2285,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-9-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan216">7</tspan></text>
+         id="tspan110">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-1-6-2-8-0"
@@ -2285,7 +2300,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-8-2-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan217">1</tspan></text>
+         id="tspan111">1</tspan></text>
     <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-3-3-0"
@@ -2300,7 +2315,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-7-2-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan218">7</tspan></text>
+         id="tspan112">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,82.367181,-10.161017)"
@@ -2308,7 +2323,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-2-6-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan219">18</tspan></text>
+         id="tspan113">18</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-8-8-4-1-6-3"
@@ -2323,7 +2338,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-8-4-9);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan220">1</tspan></text>
+         id="tspan114">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-44-0-3-0-6-8"
@@ -2338,7 +2353,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-2-1-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan221">1</tspan></text>
+         id="tspan115">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8-8-9-1"
@@ -2360,7 +2375,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-9-2-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan222">7</tspan></text>
+         id="tspan116">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-8-3-1"
@@ -2375,7 +2390,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-9-8-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan223">7</tspan></text>
+         id="tspan117">7</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-1-6-2-8-0-5"
@@ -2390,7 +2405,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-8-2-5-7);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan224">1</tspan></text>
+         id="tspan118">1</tspan></text>
     <rect
        style="fill:#ffffff;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-3-3-0-1"
@@ -2405,7 +2420,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-7-2-8-4);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan225">7</tspan></text>
+         id="tspan119">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,82.367171,-18.892274)"
@@ -2413,7 +2428,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-2-6-7-9);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan226">18</tspan></text>
+         id="tspan120">18</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-8-8-4-1-6-3-2"
@@ -2428,7 +2443,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-8-4-9-9);display:inline;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan227">1</tspan></text>
+         id="tspan121">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-44-0-3-0-6-8-4"
@@ -2443,7 +2458,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-2-1-6-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan228">1</tspan></text>
+         id="tspan122">1</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8-8-9-1-0"
@@ -2465,7 +2480,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-9-2-0-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan229">7</tspan></text>
+         id="tspan123">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-8-3-1-1"
@@ -2480,7 +2495,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-9-8-4-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan230">7</tspan></text>
+         id="tspan124">7</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.314976px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#ArrowWide-8)"
        d="m 98.171932,23.780793 -9.538234,-0.04335"
@@ -2506,7 +2521,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect58);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="240.16602"
          y="82.586225"
-         id="tspan231">      &amp;</tspan></text>
+         id="tspan125">      &amp;</tspan></text>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 99.558383,36.926456 18.351387,-0.47628"
@@ -2586,7 +2601,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan232">1</tspan></text>
+           id="tspan126">1</tspan></text>
     </g>
     <g
        id="g28-7-6-3"
@@ -2605,7 +2620,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan233">7</tspan></text>
+           id="tspan127">7</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#0025ff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -2621,7 +2636,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-8);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan234">18</tspan></text>
+         id="tspan128">18</tspan></text>
     <g
        id="g28-7-8-4-21"
        transform="matrix(0.26458333,0,0,0.26458333,4.4708297,2.4054796)">
@@ -2639,7 +2654,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan235">1</tspan></text>
+           id="tspan129">1</tspan></text>
     </g>
     <g
        id="g28-7-1-9-1"
@@ -2658,7 +2673,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38-7-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan236">7</tspan></text>
+           id="tspan130">7</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#002bff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -2674,7 +2689,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-7);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan237">1</tspan></text>
+         id="tspan131">1</tspan></text>
     <g
        id="g29-8"
        transform="matrix(0.26458333,0,0,0.26458333,17.12377,8.3507986)">
@@ -2692,7 +2707,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31-3-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan238">7</tspan></text>
+           id="tspan132">7</tspan></text>
     </g>
     <g
        id="g28-3-8-0"
@@ -2711,7 +2726,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-8-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan239">1</tspan></text>
+           id="tspan133">1</tspan></text>
     </g>
     <g
        id="g28-7-6-3-5"
@@ -2730,10 +2745,10 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-5-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan240">7</tspan></text>
+           id="tspan134">7</tspan></text>
     </g>
     <rect
-       style="fill:none;stroke:#0025ff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#0025ff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-2-7"
        width="4.4269958"
        height="3.7476201"
@@ -2746,7 +2761,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-8-6);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan241">18</tspan></text>
+         id="tspan135">18</tspan></text>
     <g
        id="g28-7-8-4-21-9"
        transform="matrix(0.26458333,0,0,0.26458333,4.4820557,-15.586182)">
@@ -2764,7 +2779,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-4-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan242">1</tspan></text>
+           id="tspan136">1</tspan></text>
     </g>
     <g
        id="g28-7-1-9-1-0"
@@ -2783,7 +2798,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38-7-3-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan243">7</tspan></text>
+           id="tspan137">7</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -2799,7 +2814,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-7-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan244">1</tspan></text>
+         id="tspan138">1</tspan></text>
     <g
        id="g29-8-5"
        transform="matrix(0.26458333,0,0,0.26458333,17.134996,-9.6408647)">
@@ -2817,19 +2832,19 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31-3-1-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan245">7</tspan></text>
+           id="tspan139">7</tspan></text>
     </g>
     <text
        xml:space="preserve"
        style="font-size:2.82223px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-dasharray:none;stroke-opacity:1"
        x="11.492488"
-       y="54.052872"
+       y="52.46537"
        id="text65"><tspan
          sodipodi:role="line"
          id="tspan65"
          style="stroke-width:0.265"
          x="11.492488"
-         y="54.052872">before np</tspan></text>
+         y="52.46537">before np</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82223px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-dasharray:none;stroke-opacity:1"
@@ -2929,7 +2944,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect76);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="151.76953"
          y="92.594038"
-         id="tspan246">np v_dat_p2 np np</tspan></text>
+         id="tspan140">np v_dat_p2 np np</tspan></text>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#RoundedArrow-5)"
        d="M 39.919521,36.466055 34.208564,33.266614"
@@ -2964,13 +2979,13 @@
        xml:space="preserve"
        style="font-size:3.175px;fill:#000000;stroke-width:0.264999;stroke-dasharray:none"
        x="42.104042"
-       y="123.07832"
+       y="126.2533"
        id="text28"><tspan
          sodipodi:role="line"
          id="tspan28"
          style="stroke-width:0.265"
          x="42.104042"
-         y="123.07832">*COGS official training data uses &quot;lended&quot;, instead of &quot;lent&quot;</tspan></text>
+         y="126.2533">*COGS official training data uses &quot;lended&quot;, instead of &quot;lent&quot;</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-32.529164,73.572462)"
@@ -2978,23 +2993,23 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect106);display:inline;fill:#000000"><tspan
          x="471.28516"
          y="11.488569"
-         id="tspan247">In bidirectional Encoder
+         id="tspan141">In bidirectional Encoder
 </tspan><tspan
          x="471.28516"
          y="24.821945"
-         id="tspan248">of 
+         id="tspan142">of 
 </tspan><tspan
          x="471.28516"
          y="38.155321"
-         id="tspan249">Encoder-Decoder
+         id="tspan143">Encoder-Decoder
 </tspan><tspan
          x="471.28516"
          y="51.488699"
-         id="tspan250">Transformer
+         id="tspan144">Transformer
 </tspan><tspan
          x="471.28516"
          y="64.822073"
-         id="tspan251">equivalent model</tspan></text>
+         id="tspan145">equivalent model</tspan></text>
     <g
        id="g3"
        transform="translate(0,-6.3289181)">
@@ -3942,9 +3957,9 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect54);fill:none"><tspan
          x="237.51562"
          y="116.88505"
-         id="tspan253"><tspan
+         id="tspan147"><tspan
            dx="0 5.4186778 6.0160108 4.4053478"
-           id="tspan252">verb</tspan></tspan></text>
+           id="tspan146">verb</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,-0.26458333,0,48.699358)"
@@ -3957,6 +3972,44 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect57);fill:#000000;fill-opacity:1"><tspan
          x="235.69727"
          y="96.812788"
-         id="tspan254">verb</tspan></text>
+         id="tspan148">verb</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;fill:#000000;stroke-width:0.264583"
+       x="15.043444"
+       y="59.676697"
+       id="text7"><tspan
+         sodipodi:role="line"
+         style="font-size:2.82222px;stroke-width:0.264583"
+         x="15.043444"
+         y="59.676697"
+         id="tspan31">embed to</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.82222px;stroke-width:0.264583"
+         x="15.043444"
+         y="64.086411"
+         id="tspan35">part-of-speech</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.82222px;stroke-width:0.264583"
+         x="15.043444"
+         y="68.496124"
+         id="tspan30">and verb-type</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.82222px;stroke-width:0.264583"
+         x="15.043444"
+         y="72.905838"
+         id="tspan33">tokens</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.00035px;fill:#000000;stroke-width:0.750025"
+       x="36.041161"
+       y="64.199821"
+       id="text34"
+       transform="scale(1.0101477,0.98995422)"><tspan
+         sodipodi:role="line"
+         id="tspan34"
+         style="stroke-width:0.750025"
+         x="36.041161"
+         y="64.199821">{</tspan></text>
   </g>
 </svg>

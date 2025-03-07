@@ -1,4 +1,4 @@
-% This is the LaTex style file for *ACL.
+% This is the LaTex style file for *ACL (Association for Computational Linguistics, NOT Access Control related)
 % The official sources can be found at
 %
 %     https://github.com/acl-org/ACLPUB/
@@ -14,7 +14,7 @@
 \newif\ifacl@finalcopy
 \DeclareOption{final}{\acl@finalcopytrue}
 \DeclareOption{review}{\acl@finalcopyfalse}
-\ExecuteOptions{final} % final copy is the default
+\ExecuteOptions{final} % note even if finalcopy is set to false, this should be run
 
 % include hyperref, unless user specifies nohyperref option like this:
 % \usepackage[nohyperref]{acl}
@@ -127,15 +127,15 @@
 
 \newcommand{\Thanks}[1]{\thanks{\ #1}}
 
-% NOTE WE ARE NOT GOING TO "ANONYMIZE" THIS AS PUBLISHING IN MY PRIVATE REPO
-% If so lucky as to be invited to publish somewhere that requires a 1 month quiet "anonymization" period, we would just wait a month. However when directly submitting, in some cases the author should be omitted on that PDF and this block would be used.
 \newcommand\outauthor{
     \begin{tabular}[t]{c}
     \ifacl@finalcopy
 	     \bf\@author
 	\else 
-		% Avoiding common accidental de-anonymization issue. --MM
-        \bf Anonymous ACL submission
+        % de-identified, not actually anonymous (only used when generating for-review copy so reviewers can avoid seeing author identity; allowed to have public copy on my github with name attached in parallel)
+        % for https://aclrollingreview.org/cfp#instructions-for-two-way-anonymized-review
+        % see also https://www.aclweb.org/adminwiki/images/5/56/ACL_Anonymity_Policy.pdf
+        \bf Deidentified submission for blind review
 	\fi
     \end{tabular}}
 
@@ -292,7 +292,7 @@
 % The choices were between 1-pt and 1.5-pt leading
 \def\@normalsize{\@setsize\normalsize{11pt}\xpt\@xpt}
 \def\small{\@setsize\small{10pt}\ixpt\@ixpt}
-\def\footnotesize{\@setsize\footnotesize{10pt}\ixpt\@ixpt}
+\def\footnotesize{\@setsize\footnotesize{9pt}\ixpt\@ixpt}
 \def\scriptsize{\@setsize\scriptsize{8pt}\viipt\@viipt}
 \def\tiny{\@setsize\tiny{7pt}\vipt\@vipt}
 \def\large{\@setsize\large{14pt}\xiipt\@xiipt}
