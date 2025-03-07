@@ -696,210 +696,8 @@ v_dat_pp_p4:
 \end{tiny}
 
 For the vocabulary we follow the \cite{klinger2024compositionalprogramgenerationfewshot} description of COGS (same input as ReCOGS) and include in our RASP vocabulary (part-of-speech or verb-type embedding/mapping) all words occurring anywhere in the upstream (Re)COGS "train.tsv" (including "exposure" rows, though would not change results qualitatively to omit the very few words only occurring in exposure examples). We also include two words in our vocab/embedding as common nouns accidentally left out of train.tsv vocabulary by the COGS author: "monastery" and "gardner" (only included in their train\_100.tsv and dev.tsv not also in train.tsv, but present in test/gen), a decision affecting just 22 or 0.1\% of generalization examples so would not affect any conclusions qualitatively. See also the discussion on COGS Github with the COGS author at https://github.com/najoungkim/COGS/issues/2\#issuecomment-976216841 .
-
 \clearpage
 
-\subsection{RASP for relation right index ignoring attractor "pp np"}
-\label{RASP_for_relation_right_index_ignoring_attractor_pp_np}
-
-\begin{tiny}
-\begin{verbatim}
-pp_sequence = \
-indicator(pos_tokens == 2);
-pp_one_after_mask = \
-select(pp_sequence, 1, ==) and \
-select(indices+1, indices, ==);
-
-pp_one_after_sequence = \
-aggregate(pp_one_after_mask, 1);
-pp_one_after_mask = \
-select(pp_one_after_sequence, 1, ==) and \
-select(indices, indices, ==);
-
-pp_two_after_mask = \
-select(pp_sequence, 1, ==) and \
-select(indices+2, indices, ==);
-
-pp_two_after_sequence = \
-aggregate(pp_two_after_mask, 1);
-pp_two_after_mask = \
-select(pp_two_after_sequence, 1, ==) and \
-select(indices, indices, ==);
-
-np_det_diag_mask = \
-select(aggregate(np_det_mask, 1), 1, ==) and \
-select(indices, indices, ==);
-
-np_prop_diag_mask = \
-select(aggregate(np_prop_mask, 1), 1, ==) and \
-select(indices, indices, ==);
-
-no_pp_np_mask = \
-1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or \
-(pp_two_after_mask and np_det_diag_mask), 1);
-
-nps_without_pp_prefix_indices = \
-selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and \
-select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
-
-left_idx = \
-aggregate(select(indices, left_idx_in_nps_zero_based, ==), input_indices_sorted);
-right_idx = \
-aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); # <--
-\end{verbatim}
-\end{tiny}
-
-\clearpage
-\subsection{Methods detail for Attraction Error Analysis for \cite{Wu2023} baseline Transformer: parsing sentences with Lark and tagging sentences as agent left-of-verb or not  }
-\label{appendix_error_analysis_for_baseline_transformer_methods}
-
-For results, see results section (\ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors}).
-
-The errors from n=10 fresh training and evaluation runs of the baseline \cite{Wu2023} Encoder-Decoder Transformer on their ReCOGS\_pos train.tsv and tested on their unmodified gen.tsv were analyzed for the obj\_pp\_to\_subj\_pp split. All the input sentences and output logical forms as well as the ground truth logical forms were logged during the run. The input sentences were parsed by the Lark parser\footnote{\begin{footnotesize}https://github.com/lark-parser/lark\end{footnotesize}} against the COGS input grammar which allowed categorizing each sentence by its verb type \footnote{\begin{footnotesize}Code to analyze the errors is at: 
-
-https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
-ReCOGS\_Baseline\_non\_RASP\_Transformer
-\_ReCOGS\_error\_prediction\_with\_n=10
-\_Transformers\_trained\_from\_scratch
-
-\_(predicting\_the\_details\_of\_error\_in
-
-\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb
-\end{footnotesize}}. The author manually inspected each of verb type patterns and categorized them by the position of the agent and theme relative to the verb (see code below) and used Lark to assign agent, theme sides based on the verb type using that mapping.
-
-To focus the analysis, we considered only single verb cases\footnote{\begin{footnotesize}the 2 verb case of v\_inf and v\_inf\_taking are being analyzed and will be included\end{footnotesize}} and ignored sentences with complement phrases. Then, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{\begin{footnotesize}Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. Complement phrase examples were excluded to focus on predicting the form of the error on simpler examples.\end{footnotesize}}
-
-Our hypothesis is in terms of nouns with a logical form relationship to a verb or other noun, where the relationship could be agent, theme, or recipient.
-Since the obj\_pp\_to\_subj\_pp split is in terms of subject vs object prepositional modification (instead of agent, recipient, or theme), we use the subset of sentences within this split where the agent is to the left of the verb and modified by a prepositional phrase as it corresponds to the subject in that case.
-
-\begin{tiny}
-\begin{verbatim}
-# used grammar string defined in 
-# Appendix: Vocabulary and Grammar.
-parser = Lark(grammar, start='start')
-
-# 1st NP agent verbs (non CP)
-# "v_trans_omissible_p1": "agent",
-# "v_trans_omissible_p2": "agent",
-# "v_trans_not_omissible": "agent",
-# "v_cp_taking": "agent",
-# "v_inf_taking": "agent",
-# "v_unacc_p1": "agent",
-# "v_unerg": "agent",
-# "v_inf": "agent",
-# "v_dat_p1": "agent",
-# "v_dat_p2": "agent",
-agent_left_of_verb_verb_type_set = \
-set(["v_trans_omissible_p1", "v_trans_omissible_p2", 
-"v_trans_not_omissible", "v_cp_taking", "v_inf_taking", 
-"v_unacc_p1", "v_unerg", "v_inf", "v_dat_p1", "v_dat_p2"])
-
-theme_left_of_verb_verb_type_set = set(
-    ["v_trans_omissible_pp_p1",
-     "np v_unacc_p2",
-     "v_unacc_pp_p1",
-     "v_unacc_pp_p2",
-     "v_trans_omissible_pp_p2",
-     "v_trans_not_omissible_pp_p1",
-     "v_trans_not_omissible_pp_p2",
-     "v_dat_pp_p1",
-     "v_dat_pp_p2"
-     ])
-
-theme_right_of_verb_verb_type_set = set([
-    "v_unacc_p1",
-    "v_trans_omissible_p2",
-    "v_trans_not_omissible",
-])
-theme_middle_of_dative_verb_type_set = set(["v_dat_pp_p4",
-"v_dat_p1"])
-
-# for enforcing during the check of our hypothesis
-# a stricter expectation that the closest prepositional noun
-# to the left of the verb is the misassigned agent
-# (not just any prepositional noun)
-def \
-get_verbs_with_pps_before_and_\
-last_noun_before_first_verb_index(lark_tree_root):
-  nodes = [lark_tree_root]
-  verbs = []
-  terminals_before_count = 0
-  pps_before_counts = []
-  pps_before_count = 0
-  last_noun_before_first_verb_index = None
-  while len(nodes) > 0:
-    node = nodes[-1]
-    nodes = nodes[:-1]
-    node_type = node.data[:]
-    if node_type[:2] == 'v_':
-      pps_before_counts.append(pps_before_count)
-      verbs.append(node_type)
-    children = []
-    for child in node.children:
-      # it is a tree, no need to check for revisits
-      children.append(child)
-# need to visit in a particular order to not just get verbs
-# but pp before count, 
-# and the last noun before the first verb
-# in the one verb case this does not matter 
-    children.reverse()
-    # but we may want to return verbs in the order
-    # they appear in the sentence
-    for node in children:
-      nodes.append(node)
-    if node_type[:] in ["common_noun",
-    "proper_noun"] and len(verbs) == 0:
-# no need to subtract 1 here as before incrementing below
-      last_noun_before_first_verb_index = \
-        terminals_before_count
-# only increment on terminals
-    if len(children) == 0:
-      terminals_before_count += 1
-    if node_type[:] == "pp":
-      pps_before_count += 1
-  return verbs, pps_before_counts,
-         last_noun_before_first_verb_index
-
-def get_theme_side(lark_tree_root):
-    verb_type = get_verbs(lark_tree_root)[0]
-    if verb_type in theme_right_of_verb_verb_type_set:
-        return "right"
-    elif verb_type in theme_left_of_verb_verb_type_set:
-        return "left"
-    elif verb_type in theme_middle_of_dative_verb_type_set:
-        return "middle"
-    return None
-
-def get_agent_side(lark_tree_root):
-    verb_type = get_verbs(lark_tree_root)[0]
-    if verb_type != None and 
-      verb_type not in agent_left_of_verb_verb_type_set:
-        return "right or middle"
-    elif verb_type in agent_left_of_verb_verb_type_set:
-        return "left"
-    return None
-\end{verbatim}
-\end{tiny}
-
-\clearpage
-\subsection{v\_dat\_p2 recipient pp-modification for generalization assessment and data augmentation attempt}
-\label{v_dat_p2_recipient_pp-modification_for_generalization_assessment_and_data_augmentation_attempt}
-
-We test generalization by the \cite{Wu2023}'s default Transformer which has been trained on `np v\_dat\_p2 np np pp np` but not `np v\_dat\_p2 np pp np np` prepositional modifications.
-The following 328 examples were derived\footnote{\begin{footnotesize} Notebook: https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/np\_v\_dat\_p2\_np\_np\_modifications\_data\_prep\_script\_notebook.ipynb \end{footnotesize}} from the existing
-
-https://github.com/frankaging/ReCOGS/blob/
-
-1b6eca8ff4dca5fd2fb284a7d470998af5083beb
-
-/recogs\_positional\_index/train.tsv , 
-
-by modifying 328 existing single-pp v\_dat\_p2 lines in train.tsv to simply move the prepositional phrase from the 3rd NP (theme) in the `np v\_dat\_p2 np np` (agent, recipient, theme) to the 2nd NP (recipient), e.g. copying and modifying the line "Liam gave the monkey a chalk in the container ." to "Liam gave the monkey in the container a chalk .".
-
-So all the words and the grammar are otherwise familiar. This is similar to the existing `obj\_pp\_to\_subj\_pp` generalization \cite{Wu2023} reports on.
-All modified rows available in the notebook link in the footnote.
-
-\clearpage
 \subsection{Restricted Access Sequence Processing word-level token program/model design}
 \label{rasp-word-level-model-design}
 
@@ -1467,405 +1265,7 @@ as_num_for_letter_multiset_word_pooling(tokens))*word_lengths;
 \clearpage
 Those values could then be looked up in a dictionary like in the completed word-level token solution to get part-of-speech, verb-type, etc, to derive a separate sequence which can be used for template matching as we successfully did with word-level tokens (see Appendix \ref{rasp-word-level-model-design}).
 
-\subsection{Computing Grammar Coverage}
-\label{computing_grammar_coverage}
 
-First we use the grammar as it was generated as a probablistic context free grammar per \cite{KimLinzen2020}
-using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot}
-and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer}.
-
-Note this starting point is not the grammar we claim the our Restricted Access Sequence Processing model implements or the Transformer actually learns as we argue the Transformer is learning a flat, non-tree solution to this simple grammar (not actually learning to collapse "np\_det pp np" into "np" for example). First we compute grammar coverage relative to the PCFG approach that generated it, which mostly aligns with our RASP model. We also ignore terminals in this assessment of coverage, as stated earlier, when computing grammar coverage, we will report the grammar coverage over expansions that collapse all vocabulary leaves to a single leaf (for example not requiring that every particular proper noun or common noun be observed in a particular pattern, so long as one has and we can confirm the code treats them as equivalent; e.g. having tested "Liam drew the cat" and proven that "Liam" and "Noah" are treated as interchangeable proper nouns, and that "cat" and "dog" are treated as interchangeable common nouns by the RASP solution -- not something one can assume for neural network solutions in general -- means that confirming our solution produces the correct logical form for "Liam drew the cat" suffices to prove the RASP solution can handle "Noah drew the dog", which saves us a lot of work so long as we make sure to write our RASP solution such that noah/liam and cat/dog are indeed treated identically).
-
-\begin{tiny}
-\begin{verbatim}
-# Non-terminals only version of
-# https://github.com/IBM/cpg/blame/
-# c3626b4e03bfc681be2c2a5b23da0b48abe6f570
-# /src/model/cogs_data.py#L529
-# NOTE WE DO NOT ACTUALLY USE THIS GRAMMAR IN OUR MODEL,
-# IT IS FOR UNDERSTANDING THE GRAMMAR WE ARE TRYING TO LEARN/MODEL
-
-COGS_INPUT_GRAMMAR_NO_TERMINALS = {
-"<start>": ["<s1>", "<s2>", "<s3>", "<s4>", "<vp_internal>"],
-"<s1>": ["<np> <vp_external>"],
-"<s2>": ["<np> <vp_passive>"],
-"<s3>": ["<np> <vp_passive_dat>"],
-"<s4>": ["<np> <vp_external4>"],
-"<vp_external>": ["<v_unerg>", "<v_trans_omissible_p1>", 
-"<vp_external1>", "<vp_external2>", "<vp_external3>",
-"<vp_external5>", "<vp_external6>", "<vp_external7>"],
-"<vp_external1>": ["<v_unacc_p1> <np>"],
-"<vp_external2>": ["<v_trans_omissible_p2> <np>"],
-"<vp_external3>": ["<v_trans_not_omissible> <np>"],
-"<vp_external4>": ["<v_inf_taking> <to> <v_inf>"],
-"<vp_external5>": ["<v_cp_taking> <that> <start>"],
-"<vp_external6>": ["<v_dat_p1> <np> <pp_iobj>"],
-"<vp_external7>": ["<v_dat_p2> <np> <np>"],
-"<vp_internal>": ["<np> <v_unacc_p2>"],
-"<vp_passive>": ["<vp_passive1>", "<vp_passive2>", 
-"<vp_passive3>", "<vp_passive4>", "<vp_passive5>", 
-"<vp_passive6>", "<vp_passive7>", "<vp_passive8>"],
-"<vp_passive1>": ["<was> <v_trans_not_omissible_pp_p1>"],
-"<vp_passive2>": 
-  ["<was> <v_trans_not_omissible_pp_p2> <by> <np>"],
-"<vp_passive3>": ["<was> <v_trans_omissible_pp_p1>"],
-"<vp_passive4>": 
-  ["<was> <v_trans_omissible_pp_p2> <by> <np>"],
-"<vp_passive5>": ["<was> <v_unacc_pp_p1>"],
-"<vp_passive6>": ["<was> <v_unacc_pp_p2> <by> <np>"],
-"<vp_passive7>": ["<was> <v_dat_pp_p1> <pp_iobj>"],
-"<vp_passive8>": ["<was> <v_dat_pp_p2> <pp_iobj> <by> <np>"],
-"<vp_passive_dat>": 
-  ["<vp_passive_dat1>", "<vp_passive_dat2>"],
-"<vp_passive_dat1>": ["<was> <v_dat_pp_p3> <np>"],
-"<vp_passive_dat2>": 
-  ["<was> <v_dat_pp_p4> <np> <by> <np>"],
-"<np>": ["<np_prop>","<np_det>", "<np_pp>"],
-"<np_prop>": ["<proper_noun>"],
-"<np_det>": ["<det> <common_noun>"],
-"<np_pp>": ["<np_det> <pp> <np>"],
-"<pp_iobj>": ["<to> <np>"],
-"<det>": [],
-"<pp>": [],
-"<was>": [],
-"<by>": [],
-"<to>": [],
-"<that>": [],
-"<common_noun>": [],
-"<proper_noun>": [],
-"<v_trans_omissible_p1>": [],
-"<v_trans_omissible_p2>": [],
-"<v_trans_omissible_pp_p1>": [],
-"<v_trans_omissible_pp_p2>": [],
-"<v_trans_not_omissible>": [],
-"<v_trans_not_omissible_pp_p1>": [],
-"<v_trans_not_omissible_pp_p2>": [],
-"<v_cp_taking>": [],
-"<v_inf_taking>": [],
-  "<v_unacc_p1>": [],
-  "<v_unacc_p2>": [],
-  "<v_unacc_pp_p1>": [],
-  "<v_unacc_pp_p2>": [],
-  "<v_unerg>": [],
-  "<v_inf>": [],
-  "<v_dat_p1>": [],
-  "<v_dat_p2>": [],
-  "<v_dat_pp_p1>": [],
-  "<v_dat_pp_p2>": [],
-  "<v_dat_pp_p3>": [],
-  "<v_dat_pp_p4>": [],
-}
-\end{verbatim}
-\end{tiny}
-
-After parsing a sentence with the Lark parser, we can compute the expansions it covers with the following Python:
-\begin{tiny}
-\begin{verbatim}
-def generate_set_of_expansion_keys_for_lark_parse_tree(tree):
-  nodes = [tree]
-  expansions_observed = set()
-  for node in nodes:
-    current_node_label = node.data[:]
-    children = node.children
-    expansion = f"<{current_node_label}> ->"
-    for child in children:
-      # add expansion for current -> child
-      child_node_label = child.data[:]
-      expansion += f" <{child_node_label}>"
-      # also process expansions from child
-      nodes.append(child)
-    if len(children) > 0:
-      #print(f"{expansion}")
-      expansions_observed.add(expansion)
-  return expansions_observed
-\end{verbatim}
-\end{tiny}
-
-For example, for the sentence "the girl noticed that a boy painted the girl",
-
-we get
-\begin{tiny}
-\begin{verbatim}
-sentence = "the girl noticed that a boy painted the girl"
-tree = parser.parse(sentence)
-expansions_observed = \
-generate_set_of_expansion_keys_for_lark_parse_tree(tree)
-# <start> -> <s1>
-# <s1> -> <np> <vp_external>
-# <np> -> <np_det>
-# <vp_external> -> <vp_external5>
-# <np_det> -> <det> <common_noun>
-# <vp_external5> -> <v_cp_taking> <that> <start>
-# <start> -> <s1>
-# <s1> -> <np> <vp_external>
-# <np> -> <np_det>
-# <vp_external> -> <vp_external2>
-# <np_det> -> <det> <common_noun>
-# <vp_external2> -> <v_trans_omissible_p2> <np>
-# <np> -> <np_det>
-# <np_det> -> <det> <common_noun>
-\end{verbatim}
-\end{tiny}
-
-At first we use TrackingGrammarCoverageFuzzer (from \cite{fuzzingbook2023:GrammarCoverageFuzzer}) to compute the set of all possible grammar expansions:
-\begin{tiny}
-\begin{verbatim}
-cogs_simplified_input_grammar_fuzzer = \
-TrackingGrammarCoverageFuzzer(COGS_INPUT_GRAMMAR_SIMPLIFIED)
-
-expected_expansions = \
-cogs_simplified_input_grammar_fuzzer.max_expansion_coverage()
-\end{verbatim}
-\end{tiny}
-
-One can use this to get a sense of what it is possible to learn about the grammar from a particular set of examples
-
-and what examples need to be seen at a minimum for any model to learn the task from scratch and could possibly help one design a minimum length dataset with low redundancy.
-Note for a Transformer model learning word embeddings / mapping to part-of-speech for each word, one would need to use the grammar with terminals to compute coverage. Here we want to argue something about our RASP model where we can ensure via implementation that all terminals in a category are treated identically (and we observe 100\% semantic exact match for the related generalization splits for swapping words within a part of speech).
-
-
-We can ask what \% of the grammar without terminals is covered by the first 21 sentences from the COGS training set?
-\begin{tiny}
-\begin{verbatim}
-# https://raw.githubusercontent.com/frankaging/ReCOGS/
-# 1b6eca8ff4dca5fd2fb284a7d470998af5083beb/cogs/train.tsv
-nonsense_example_sentences = [
-"A rose was helped by a dog",
-"The sailor dusted a boy",
-"Emma rolled a teacher",
-"Evelyn rolled the girl",
-"A cake was forwarded to Levi by Charlotte",
-"The captain ate",
-"The girl needed to cook",
-"A cake rolled",
-"The cookie was passed to Emma",
-"Emma ate the ring beside a bed",
-"A horse gave the cake beside a table to the mouse",
-"Amelia gave Emma a strawberry",
-"A cat disintegrated a girl",
-"Eleanor sold Evelyn the cake",
-"The book was lended to Benjamin by a cat",
-"The cake was frozen by the giraffe",
-"The donut was studied",
-"Isabella forwarded a box on a tree to Emma",
-"A cake was stabbed by Scarlett",
-"A pencil was fed to Liam by the deer",
-"The cake was eaten by Olivia"
-]
-
-all_expansions_observed_across_examples = set()
-
-for sentence in nonsense_example_sentences:
-  single_example_expansions = \
-  generate_set_of_expansion_keys_for_lark_parse_tree\
-  (parser.parse(sentence.lower()))
-  all_expansions_observed_across_examples = \
-  all_expansions_observed_across_examples.union\
-  (single_example_expansions)
-
-1 - len(set(expansions_expected) \
-- all_expansions_observed_across_examples) / len(expansions_expected)
-# 0.7115384615384616
-\end{verbatim}
-\end{tiny}
-Those 21 COGS input sentences cover 71\% of the grammar. (Continued on next page.)
-
-We can compare the first 21 sentences of COGS that to the 19 sentences used in developing the RASP program (then add one to cover basic prepositional phrases, and one more to cover complement phrases):\footnote{\begin{footnotesize}(see 
-
-https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574 
-
-for the full list and associated rules in the code as the RASP does not learn from examples but hand-coded rules coded as a sequence of parts of speech / verb types)\end{footnotesize}}
-
-(note each of these sentences has multiple equivalent examples in the ReCOGS training set, as shown in Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} in Appendix \ref{grammar_coverage_analysis_for_model_design})
-
-\begin{tiny}
-\begin{verbatim}
-handpicked_example_sentences = [ 
-# non-recursive grammar rule examples only
-# no prepositional phrases or complement phrases
-# see link above all these examples 
-# each correspond to distinct rules in the code
-"the girl was painted",
-"a boy painted",
-"a boy painted the girl",
-"the girl was painted by a boy",
-"a boy respected the girl", 
-"the girl was respected",
-"the girl was respected by a boy",
-"the boy grew the flower",
-"the flower was grown",
-"the flower was grown by a boy",
-"the scientist wanted to read",
-"the guest smiled",
-"the flower grew",
-"ella sold a car to the customer",
-"ella sold a customer a car",
-"the customer was sold a car",
-"the customer was sold a car by ella",
-"the car was sold to the customer by ella",
-"the car was sold to the customer",
-]
-
-all_expansions_observed_across_examples = set()
-
-for sentence in handpicked_example_sentences:
-  single_example_expansions = \
-  generate_set_of_expansion_keys_for_lark_parse_tree(
-    parser.parse(sentence.lower())
-  )
-  all_expansions_observed_across_examples = \
-  all_expansions_observed_across_examples.union(
-    single_example_expansions)
-
-1 - len(set(expansions_expected) \
-- all_expansions_observed_across_examples) 
-  / len(expansions_expected)
-# 0.9230769230769231
-
-# Those 19 rules cover 92.3% of the COGS input grammar
-# (not necessarily 92.3% of examples as the examples 
-# are not evenly distributed across grammar rules).
-# Let's see what rules are still missing:
-
-set(expansions_expected) - 
-  all_expansions_observed_across_examples
-# tells us we need a prepositional phrase example!
-#{'<np> -> <np_pp>',
-# tell us we need prepositional phrase examples
-# '<np_pp> -> <np_det> <pp> <np>',
-# tells us we need complement phrase examples
-# '<vp_external5> -> <v_cp_taking> <that> <start>',
-# tells us we need complement phrase examples
-# '<vp_external> -> <vp_external5>'}
-\end{verbatim}
-\end{tiny}
-
-\clearpage
-We got to 92.3\% grammar coverage in our 19 examples instead of COGS 71\% in 21 examples.
-
-And, it is telling us we are missing an example with prepositional phrases and complement phrases (see next examples)
-
-Let us add a simple prepositional phrase example and complement phrase example:
-\begin{tiny}
-\begin{verbatim}
-handpicked_example_sentences = \
-handpicked_example_sentences + \
-["a boy painted the girl in a house"] + \
-["the girl noticed that a boy painted the girl"]
-
-handpicked_example_sentences
-# ['the girl was painted',
-#  'a boy painted',
-#  'a boy painted the girl',
-#  'the girl was painted by a boy',
-#  'a boy respected the girl',
-#  'the girl was respected',
-#  'the girl was respected by a boy',
-#  'the boy grew the flower',
-#  'the flower was grown',
-#  'the flower was grown by a boy',
-#  'the scientist wanted to read',
-#  'the guest smiled',
-#  'the flower grew',
-#  'ella sold a car to the customer',
-#  'ella sold a customer a car',
-#  'the customer was sold a car',
-#  'the customer was sold a car by ella',
-#  'the car was sold to the customer by ella',
-#  'the car was sold to the customer',
-#  'a boy painted the girl in a house',
-#  'the girl noticed that a boy painted the girl'
-#]
-all_expansions_observed_across_examples = set()
-
-for sentence in handpicked_example_sentences:
-  single_example_expansions = \
-    generate_set_of_expansion_keys_for_lark_parse_tree(parser.parse(sentence.lower()))
-  all_expansions_observed_across_examples = \
-    all_expansions_observed_across_examples.union(single_example_expansions)
-
-1 - len(set(expansions_expected) - \
-  all_expansions_observed_across_examples) / len(expansions_expected)
-# 1.0
-
-set(expansions_expected) - all_expansions_observed_across_examples
-# set()
-\end{verbatim}
-\end{tiny}
-(continued below)
-\clearpage
-
-Thus in 19 intentionally crafted sentences (each is in the RASP code with a corresponding rule) cover 92.3\% of the grammar, 
-using the coverage we can what we did not cover yet, and thus add two sentences to fill the reported gap and get to 100\% .
-
-However these coverage metrics are misleading when it comes to prepositional phrases as it would not suggest to include prepositional phrases in all positions, assuming they could be collapsed by the model back to `np` using `np -> np\_pp -> np\_det pp np` while \cite{Wu2023} and our experiments suggest it is necessary to train with prepositional phrases explicitly in the different positions in the different verb patterns (see below).
-
-Based on the finding earlier we believe that the only recursion learned is tail recursion in the decoder loop and that `np -> np\_det | np\_prop | np\_pp` and `np\_pp -> np\_det pp np` is not actually performed as if the Encoder-Decoder Transformer were to learn a tree-based or recursive representation. If the Transformer had a tree based representation, it is predicted that the "v\_dat\_p2\_pp\_moved\_to\_recipient" would not be any harder than when the pp modification is on the theme, as `np v\_dat\_p2 np\_det pp np np` can be transformed by the recursive grammar rule `np\_det pp np -> np\_pp -> np` to `np v\_dat\_p2 np np` on which it is already trained and has good performance, but instead it fails completely, and see also "Error Analysis for \cite{Wu2023} baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split" where we observe that prepositional modification of a noun to the left of a verb it is the agent of causes the new prepositional phrase noun that becomes the closest noun to be mistaken for the agent, which is in contradiction to the model collapsing `np\_det pp np` to `np` before matching the overall grammar pattern.
-
-That said with a couple of simple rules that were not tree we were able to get 100\% on the pp\_recursion split (up to depth 12) and 92.20\% (90.36-93.79\% 95\% CI) of the obj\_pp\_to\_subj\_pp split.
-
-Modifying the grammar coverage to model this non-tree representation would be exciting to address in future work.
-
-See also "Appendix: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design" (\ref{grammar_coverage_analysis_for_model_design}).
-
-\subsection{Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design}
-\label{grammar_coverage_analysis_for_model_design}
-
-See "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage}) for how the grammar coverage is computed.
-
-If we ignore lexical differences, by the first 55 examples of the ReCOGS training set (unshuffled, no augmentations) or 77 (median; 95\% confidence interval, n=1000 random shuffles: 39 to 161) examples of the ReCOGS training set (shuffled, no augmentations), 100\% grammar coverage is reached\footnote{\begin{footnotesize}
-
-Given the COGS input sentences were generated as a probablistic context free grammar per \cite{KimLinzen2020}
-using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot}
-and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer} (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) , we use their TrackingGrammarCoverageFuzzer to generate the set of all expansions of the COGS grammar.
-\end{footnotesize}
-}(lexical differences ignored) \cite{fuzzingbook2023:GrammarCoverageFuzzer} (noting that if the model is not capable of learning certain expansions in the grammar such as `np\_det pp np -> np\_pp -> np`, it may need to see more variations to memorize individual cases instead ):
-\includegraphics[scale=0.38]{grammar_coverage_by_number_of_recogs_training_examples_lexical_differences_ignored.png}
-
-That shows if one already knows parts of speech and verb types for words one needs much less data.
-
-Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand (in real world pretraining or a GloVe embedding would be used to solve this step)\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a pre-trained Transformer model in wide use, has part-of-speech information available at the earliest layers.}
- since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
-
-\clearpage
-\onecolumn
-\begin{table}
-\centering
-\begin{tabular}{p{0.2\linewidth} p{0.52\linewidth} p{0.2\linewidth}}
-\hline
-\begin{small}\textbf{RASP-for-ReCOGS grammar pattern example mentioned in paper}\end{small} & \begin{small}\textbf{Actual part-of-speech/verb-type sequence used in RASP model}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small}\\
-\hline
-\begin{small}\end{small} & \begin{small}\end{small} & \begin{small}\end{small} \\
-\begin{small}the girl was painted\end{small} & \begin{small}det common\_noun was v\_trans\_omissible\_pp\_p1 \end{small} & \begin{small}The donut was studied .\end{small} \\
-\begin{small}a boy painted\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p1 \end{small} & \begin{small}The captain ate .\end{small} \\
-\begin{small}a boy painted the girl\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p2 det common\_noun \end{small} & \begin{small}The sailor dusted a boy .\end{small} \\
-\begin{small}the girl was painted by a boy\end{small} & \begin{small}det common\_noun was v\_trans\_omissible\_pp\_p2 by det common\_noun \end{small} & \begin{small}A drink was eaten by a child .\end{small} \\
-\begin{small}a boy respected the girl\end{small} & \begin{small}det common\_noun v\_trans\_not\_omissible det common\_noun \end{small} & \begin{small}A girl liked the raisin .\end{small} \\
-\begin{small}the girl was respected\end{small} & \begin{small}det common\_noun was v\_trans\_not\_omissible\_pp\_p1 \end{small} & \begin{small}The pen was helped .\end{small} \\
-\begin{small}the girl was respected by a boy\end{small} & \begin{small}det common\_noun was v\_trans\_not\_omissible\_pp\_p2 by det common\_noun \end{small} & \begin{small}A rose was helped by a dog .\end{small} \\
-\begin{small}the boy grew the flower\end{small} & \begin{small}det common\_noun v\_unacc\_p1 det common\_noun \end{small} & \begin{small}A cat disintegrated a girl .\end{small} \\
-\begin{small}the flower was grown\end{small} & \begin{small}det common\_noun was v\_unacc\_pp\_p1 \end{small} & \begin{small}A box was inflated .\end{small} \\
-\begin{small}the flower was grown by a boy\end{small} & \begin{small}det common\_noun was v\_unacc\_pp\_p2 by det common\_noun \end{small} & \begin{small}The cake was frozen by the giraffe .\end{small} \\
-\begin{small}the scientist wanted to read\end{small} & \begin{small}det common\_noun v\_inf\_taking to v\_inf \end{small} & \begin{small}The girl needed to cook .\end{small} \\
-\begin{small}the guest smiled\end{small} & \begin{small}det common\_noun v\_unerg \end{small} & \begin{small}The sailor laughed .\end{small} \\
-\begin{small}the flower grew\end{small} & \begin{small}det common\_noun v\_unacc\_p2 \end{small} & \begin{small}A cake rolled .\end{small} \\
-\begin{small}ella sold a car to the customer\end{small} & \begin{small}proper\_noun v\_dat\_p1 det common\_noun to det common\_noun \end{small} & \begin{small}Emma passed a cake to the girl .\end{small} \\
-\begin{small}ella sold a customer a car\end{small} & \begin{small}proper\_noun v\_dat\_p2 det common\_noun det common\_noun \end{small} & \begin{small}Liam forwarded the girl the donut .\end{small} \\
-\begin{small}the customer was sold a car\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p3 det common\_noun \end{small} & \begin{small}A girl was sold the cake .\end{small} \\
-\begin{small}the customer was sold a car by ella\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p4 det common\_noun by proper\_noun \end{small} & \begin{small}The girl was lended the balloon by Harper .\end{small} \\
-\begin{small}the car was sold to the customer by ella\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p2 to det common\_noun by proper\_noun \end{small} & \begin{small}The pen was offered to the girl by Emma .\end{small} \\
-\begin{small}the car was sold to the customer\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p1 to det common\_noun \end{small} & \begin{small}The melon was lended to a girl .\end{small} \\
-\hline
-\begin{small}\textbf{Prepositional phrase and complement phrase examples mentioned in paper}\end{small} & \begin{small}\textbf{part-of-speech/verb-type sequence (used example for development)}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small} \\
-\hline
-\begin{small}a boy painted the girl in a house\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p2 det common\_noun pp det common\_noun\end{small} & \begin{small}A frog ate a sweetcorn in a pile .\end{small} \\
-\begin{small}the girl noticed that a boy painted the girl\end{small} & \begin{small}det common\_noun v\_cp\_taking that det common\_noun v\_trans\_omissible\_p2 det common\_noun\end{small} & \begin{small}A girl said that a crocodile ate the rose .\end{small} \\
-\hline
-\end{tabular}
-\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to COGS/ReCOGS training examples. Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific complement phrase example we gave by modifying one of our existing examples with a complement phrase ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes complement phrase examples are demonstrated earlier, e.g. within 55 examples in default ordering). Note the prepositional phrase and complement phrase examples are not actually pattern matched (the 19 pattern matches plus a general cp/pp rule are used) and so do not exist in the RASP code, but are just given for reference.\end{small}}
-\label{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}
-\end{table}
-\twocolumn
 \clearpage
 
 \subsection{Model Detail}
@@ -2209,6 +1609,611 @@ The "attraction" errors we report here where attractor/distractor prepositional 
 \end{figure}
 \clearpage
 
+\subsection{RASP for relation right index ignoring attractor "pp np"}
+\label{RASP_for_relation_right_index_ignoring_attractor_pp_np}
+
+\begin{tiny}
+\begin{verbatim}
+pp_sequence = \
+indicator(pos_tokens == 2);
+pp_one_after_mask = \
+select(pp_sequence, 1, ==) and \
+select(indices+1, indices, ==);
+
+pp_one_after_sequence = \
+aggregate(pp_one_after_mask, 1);
+pp_one_after_mask = \
+select(pp_one_after_sequence, 1, ==) and \
+select(indices, indices, ==);
+
+pp_two_after_mask = \
+select(pp_sequence, 1, ==) and \
+select(indices+2, indices, ==);
+
+pp_two_after_sequence = \
+aggregate(pp_two_after_mask, 1);
+pp_two_after_mask = \
+select(pp_two_after_sequence, 1, ==) and \
+select(indices, indices, ==);
+
+np_det_diag_mask = \
+select(aggregate(np_det_mask, 1), 1, ==) and \
+select(indices, indices, ==);
+
+np_prop_diag_mask = \
+select(aggregate(np_prop_mask, 1), 1, ==) and \
+select(indices, indices, ==);
+
+no_pp_np_mask = \
+1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or \
+(pp_two_after_mask and np_det_diag_mask), 1);
+
+nps_without_pp_prefix_indices = \
+selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and \
+select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
+
+left_idx = \
+aggregate(select(indices, left_idx_in_nps_zero_based, ==), input_indices_sorted);
+right_idx = \
+aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); # <--
+\end{verbatim}
+\end{tiny}
+
+\clearpage
+\subsection{Methods detail for Attraction Error Analysis for \cite{Wu2023} baseline Transformer: parsing sentences with Lark and tagging sentences as agent left-of-verb or not  }
+\label{appendix_error_analysis_for_baseline_transformer_methods}
+
+For results, see results section (\ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors}).
+
+The errors from n=10 fresh training and evaluation runs of the baseline \cite{Wu2023} Encoder-Decoder Transformer on their ReCOGS\_pos train.tsv and tested on their unmodified gen.tsv were analyzed for the obj\_pp\_to\_subj\_pp split. All the input sentences and output logical forms as well as the ground truth logical forms were logged during the run. The input sentences were parsed by the Lark parser\footnote{\begin{footnotesize}https://github.com/lark-parser/lark\end{footnotesize}} against the COGS input grammar which allowed categorizing each sentence by its verb type \footnote{\begin{footnotesize}Code to analyze the errors is at: 
+
+https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
+ReCOGS\_Baseline\_non\_RASP\_Transformer
+\_ReCOGS\_error\_prediction\_with\_n=10
+\_Transformers\_trained\_from\_scratch
+
+\_(predicting\_the\_details\_of\_error\_in
+
+\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb
+\end{footnotesize}}. The author manually inspected each of verb type patterns and categorized them by the position of the agent and theme relative to the verb (see code below) and used Lark to assign agent, theme sides based on the verb type using that mapping.
+
+To focus the analysis, we considered only single verb cases\footnote{\begin{footnotesize}the 2 verb case of v\_inf and v\_inf\_taking are being analyzed and will be included\end{footnotesize}} and ignored sentences with complement phrases. Then, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{\begin{footnotesize}Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. Complement phrase examples were excluded to focus on predicting the form of the error on simpler examples.\end{footnotesize}}
+
+Our hypothesis is in terms of nouns with a logical form relationship to a verb or other noun, where the relationship could be agent, theme, or recipient.
+Since the obj\_pp\_to\_subj\_pp split is in terms of subject vs object prepositional modification (instead of agent, recipient, or theme), we use the subset of sentences within this split where the agent is to the left of the verb and modified by a prepositional phrase as it corresponds to the subject in that case.
+
+\begin{tiny}
+\begin{verbatim}
+# used grammar string defined in 
+# Appendix: Vocabulary and Grammar.
+parser = Lark(grammar, start='start')
+
+# 1st NP agent verbs (non CP)
+# "v_trans_omissible_p1": "agent",
+# "v_trans_omissible_p2": "agent",
+# "v_trans_not_omissible": "agent",
+# "v_cp_taking": "agent",
+# "v_inf_taking": "agent",
+# "v_unacc_p1": "agent",
+# "v_unerg": "agent",
+# "v_inf": "agent",
+# "v_dat_p1": "agent",
+# "v_dat_p2": "agent",
+agent_left_of_verb_verb_type_set = \
+set(["v_trans_omissible_p1", "v_trans_omissible_p2", 
+"v_trans_not_omissible", "v_cp_taking", "v_inf_taking", 
+"v_unacc_p1", "v_unerg", "v_inf", "v_dat_p1", "v_dat_p2"])
+
+theme_left_of_verb_verb_type_set = set(
+    ["v_trans_omissible_pp_p1",
+     "np v_unacc_p2",
+     "v_unacc_pp_p1",
+     "v_unacc_pp_p2",
+     "v_trans_omissible_pp_p2",
+     "v_trans_not_omissible_pp_p1",
+     "v_trans_not_omissible_pp_p2",
+     "v_dat_pp_p1",
+     "v_dat_pp_p2"
+     ])
+
+theme_right_of_verb_verb_type_set = set([
+    "v_unacc_p1",
+    "v_trans_omissible_p2",
+    "v_trans_not_omissible",
+])
+theme_middle_of_dative_verb_type_set = set(["v_dat_pp_p4",
+"v_dat_p1"])
+
+# for enforcing during the check of our hypothesis
+# a stricter expectation that the closest prepositional noun
+# to the left of the verb is the misassigned agent
+# (not just any prepositional noun)
+def \
+get_verbs_with_pps_before_and_\
+last_noun_before_first_verb_index(lark_tree_root):
+  nodes = [lark_tree_root]
+  verbs = []
+  terminals_before_count = 0
+  pps_before_counts = []
+  pps_before_count = 0
+  last_noun_before_first_verb_index = None
+  while len(nodes) > 0:
+    node = nodes[-1]
+    nodes = nodes[:-1]
+    node_type = node.data[:]
+    if node_type[:2] == 'v_':
+      pps_before_counts.append(pps_before_count)
+      verbs.append(node_type)
+    children = []
+    for child in node.children:
+      # it is a tree, no need to check for revisits
+      children.append(child)
+# need to visit in a particular order to not just get verbs
+# but pp before count, 
+# and the last noun before the first verb
+# in the one verb case this does not matter 
+    children.reverse()
+    # but we may want to return verbs in the order
+    # they appear in the sentence
+    for node in children:
+      nodes.append(node)
+    if node_type[:] in ["common_noun",
+    "proper_noun"] and len(verbs) == 0:
+# no need to subtract 1 here as before incrementing below
+      last_noun_before_first_verb_index = \
+        terminals_before_count
+# only increment on terminals
+    if len(children) == 0:
+      terminals_before_count += 1
+    if node_type[:] == "pp":
+      pps_before_count += 1
+  return verbs, pps_before_counts,
+         last_noun_before_first_verb_index
+
+def get_theme_side(lark_tree_root):
+    verb_type = get_verbs(lark_tree_root)[0]
+    if verb_type in theme_right_of_verb_verb_type_set:
+        return "right"
+    elif verb_type in theme_left_of_verb_verb_type_set:
+        return "left"
+    elif verb_type in theme_middle_of_dative_verb_type_set:
+        return "middle"
+    return None
+
+def get_agent_side(lark_tree_root):
+    verb_type = get_verbs(lark_tree_root)[0]
+    if verb_type != None and 
+      verb_type not in agent_left_of_verb_verb_type_set:
+        return "right or middle"
+    elif verb_type in agent_left_of_verb_verb_type_set:
+        return "left"
+    return None
+\end{verbatim}
+\end{tiny}
+
+\clearpage
+\subsection{v\_dat\_p2 recipient pp-modification for generalization assessment and data augmentation attempt}
+\label{v_dat_p2_recipient_pp-modification_for_generalization_assessment_and_data_augmentation_attempt}
+
+We test generalization by the \cite{Wu2023}'s default Transformer which has been trained on `np v\_dat\_p2 np np pp np` but not `np v\_dat\_p2 np pp np np` prepositional modifications.
+The following 328 examples were derived\footnote{\begin{footnotesize} Notebook: https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/np\_v\_dat\_p2\_np\_np\_modifications\_data\_prep\_script\_notebook.ipynb \end{footnotesize}} from the existing
+
+https://github.com/frankaging/ReCOGS/blob/
+
+1b6eca8ff4dca5fd2fb284a7d470998af5083beb
+
+/recogs\_positional\_index/train.tsv , 
+
+by modifying 328 existing single-pp v\_dat\_p2 lines in train.tsv to simply move the prepositional phrase from the 3rd NP (theme) in the `np v\_dat\_p2 np np` (agent, recipient, theme) to the 2nd NP (recipient), e.g. copying and modifying the line "Liam gave the monkey a chalk in the container ." to "Liam gave the monkey in the container a chalk .".
+
+So all the words and the grammar are otherwise familiar. This is similar to the existing `obj\_pp\_to\_subj\_pp` generalization \cite{Wu2023} reports on.
+All modified rows available in the notebook link in the footnote.
+
+\clearpage
+
+\subsection{Computing Grammar Coverage}
+\label{computing_grammar_coverage}
+
+First we use the grammar as it was generated as a probablistic context free grammar per \cite{KimLinzen2020}
+using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot}
+and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer}.
+
+Note this starting point is not the grammar we claim the our Restricted Access Sequence Processing model implements or the Transformer actually learns as we argue the Transformer is learning a flat, non-tree solution to this simple grammar (not actually learning to collapse "np\_det pp np" into "np" for example). First we compute grammar coverage relative to the PCFG approach that generated it, which mostly aligns with our RASP model. We also ignore terminals in this assessment of coverage, as stated earlier, when computing grammar coverage, we will report the grammar coverage over expansions that collapse all vocabulary leaves to a single leaf (for example not requiring that every particular proper noun or common noun be observed in a particular pattern, so long as one has and we can confirm the code treats them as equivalent; e.g. having tested "Liam drew the cat" and proven that "Liam" and "Noah" are treated as interchangeable proper nouns, and that "cat" and "dog" are treated as interchangeable common nouns by the RASP solution -- not something one can assume for neural network solutions in general -- means that confirming our solution produces the correct logical form for "Liam drew the cat" suffices to prove the RASP solution can handle "Noah drew the dog", which saves us a lot of work so long as we make sure to write our RASP solution such that noah/liam and cat/dog are indeed treated identically).
+
+\begin{tiny}
+\begin{verbatim}
+# Non-terminals only version of
+# https://github.com/IBM/cpg/blame/
+# c3626b4e03bfc681be2c2a5b23da0b48abe6f570
+# /src/model/cogs_data.py#L529
+# NOTE WE DO NOT ACTUALLY USE THIS GRAMMAR IN OUR MODEL,
+# IT IS FOR UNDERSTANDING THE GRAMMAR WE ARE TRYING TO LEARN/MODEL
+
+COGS_INPUT_GRAMMAR_NO_TERMINALS = {
+"<start>": ["<s1>", "<s2>", "<s3>", "<s4>", "<vp_internal>"],
+"<s1>": ["<np> <vp_external>"],
+"<s2>": ["<np> <vp_passive>"],
+"<s3>": ["<np> <vp_passive_dat>"],
+"<s4>": ["<np> <vp_external4>"],
+"<vp_external>": ["<v_unerg>", "<v_trans_omissible_p1>", 
+"<vp_external1>", "<vp_external2>", "<vp_external3>",
+"<vp_external5>", "<vp_external6>", "<vp_external7>"],
+"<vp_external1>": ["<v_unacc_p1> <np>"],
+"<vp_external2>": ["<v_trans_omissible_p2> <np>"],
+"<vp_external3>": ["<v_trans_not_omissible> <np>"],
+"<vp_external4>": ["<v_inf_taking> <to> <v_inf>"],
+"<vp_external5>": ["<v_cp_taking> <that> <start>"],
+"<vp_external6>": ["<v_dat_p1> <np> <pp_iobj>"],
+"<vp_external7>": ["<v_dat_p2> <np> <np>"],
+"<vp_internal>": ["<np> <v_unacc_p2>"],
+"<vp_passive>": ["<vp_passive1>", "<vp_passive2>", 
+"<vp_passive3>", "<vp_passive4>", "<vp_passive5>", 
+"<vp_passive6>", "<vp_passive7>", "<vp_passive8>"],
+"<vp_passive1>": ["<was> <v_trans_not_omissible_pp_p1>"],
+"<vp_passive2>": 
+  ["<was> <v_trans_not_omissible_pp_p2> <by> <np>"],
+"<vp_passive3>": ["<was> <v_trans_omissible_pp_p1>"],
+"<vp_passive4>": 
+  ["<was> <v_trans_omissible_pp_p2> <by> <np>"],
+"<vp_passive5>": ["<was> <v_unacc_pp_p1>"],
+"<vp_passive6>": ["<was> <v_unacc_pp_p2> <by> <np>"],
+"<vp_passive7>": ["<was> <v_dat_pp_p1> <pp_iobj>"],
+"<vp_passive8>": ["<was> <v_dat_pp_p2> <pp_iobj> <by> <np>"],
+"<vp_passive_dat>": 
+  ["<vp_passive_dat1>", "<vp_passive_dat2>"],
+"<vp_passive_dat1>": ["<was> <v_dat_pp_p3> <np>"],
+"<vp_passive_dat2>": 
+  ["<was> <v_dat_pp_p4> <np> <by> <np>"],
+"<np>": ["<np_prop>","<np_det>", "<np_pp>"],
+"<np_prop>": ["<proper_noun>"],
+"<np_det>": ["<det> <common_noun>"],
+"<np_pp>": ["<np_det> <pp> <np>"],
+"<pp_iobj>": ["<to> <np>"],
+"<det>": [],
+"<pp>": [],
+"<was>": [],
+"<by>": [],
+"<to>": [],
+"<that>": [],
+"<common_noun>": [],
+"<proper_noun>": [],
+"<v_trans_omissible_p1>": [],
+"<v_trans_omissible_p2>": [],
+"<v_trans_omissible_pp_p1>": [],
+"<v_trans_omissible_pp_p2>": [],
+"<v_trans_not_omissible>": [],
+"<v_trans_not_omissible_pp_p1>": [],
+"<v_trans_not_omissible_pp_p2>": [],
+"<v_cp_taking>": [],
+"<v_inf_taking>": [],
+  "<v_unacc_p1>": [],
+  "<v_unacc_p2>": [],
+  "<v_unacc_pp_p1>": [],
+  "<v_unacc_pp_p2>": [],
+  "<v_unerg>": [],
+  "<v_inf>": [],
+  "<v_dat_p1>": [],
+  "<v_dat_p2>": [],
+  "<v_dat_pp_p1>": [],
+  "<v_dat_pp_p2>": [],
+  "<v_dat_pp_p3>": [],
+  "<v_dat_pp_p4>": [],
+}
+\end{verbatim}
+\end{tiny}
+
+After parsing a sentence with the Lark parser, we can compute the expansions it covers with the following Python:
+\begin{tiny}
+\begin{verbatim}
+def generate_set_of_expansion_keys_for_lark_parse_tree(tree):
+  nodes = [tree]
+  expansions_observed = set()
+  for node in nodes:
+    current_node_label = node.data[:]
+    children = node.children
+    expansion = f"<{current_node_label}> ->"
+    for child in children:
+      # add expansion for current -> child
+      child_node_label = child.data[:]
+      expansion += f" <{child_node_label}>"
+      # also process expansions from child
+      nodes.append(child)
+    if len(children) > 0:
+      #print(f"{expansion}")
+      expansions_observed.add(expansion)
+  return expansions_observed
+\end{verbatim}
+\end{tiny}
+
+For example, for the sentence "the girl noticed that a boy painted the girl",
+
+we get
+\begin{tiny}
+\begin{verbatim}
+sentence = "the girl noticed that a boy painted the girl"
+tree = parser.parse(sentence)
+expansions_observed = \
+generate_set_of_expansion_keys_for_lark_parse_tree(tree)
+# <start> -> <s1>
+# <s1> -> <np> <vp_external>
+# <np> -> <np_det>
+# <vp_external> -> <vp_external5>
+# <np_det> -> <det> <common_noun>
+# <vp_external5> -> <v_cp_taking> <that> <start>
+# <start> -> <s1>
+# <s1> -> <np> <vp_external>
+# <np> -> <np_det>
+# <vp_external> -> <vp_external2>
+# <np_det> -> <det> <common_noun>
+# <vp_external2> -> <v_trans_omissible_p2> <np>
+# <np> -> <np_det>
+# <np_det> -> <det> <common_noun>
+\end{verbatim}
+\end{tiny}
+
+At first we use TrackingGrammarCoverageFuzzer (from \cite{fuzzingbook2023:GrammarCoverageFuzzer}) to compute the set of all possible grammar expansions:
+\begin{tiny}
+\begin{verbatim}
+cogs_simplified_input_grammar_fuzzer = \
+TrackingGrammarCoverageFuzzer(COGS_INPUT_GRAMMAR_SIMPLIFIED)
+
+expected_expansions = \
+cogs_simplified_input_grammar_fuzzer.max_expansion_coverage()
+\end{verbatim}
+\end{tiny}
+
+One can use this to get a sense of what it is possible to learn about the grammar from a particular set of examples
+
+and what examples need to be seen at a minimum for any model to learn the task from scratch and could possibly help one design a minimum length dataset with low redundancy.
+Note for a Transformer model learning word embeddings / mapping to part-of-speech for each word, one would need to use the grammar with terminals to compute coverage. Here we want to argue something about our RASP model where we can ensure via implementation that all terminals in a category are treated identically (and we observe 100\% semantic exact match for the related generalization splits for swapping words within a part of speech).
+
+
+We can ask what \% of the grammar without terminals is covered by the first 21 sentences from the COGS training set?
+\begin{tiny}
+\begin{verbatim}
+# https://raw.githubusercontent.com/frankaging/ReCOGS/
+# 1b6eca8ff4dca5fd2fb284a7d470998af5083beb/cogs/train.tsv
+nonsense_example_sentences = [
+"A rose was helped by a dog",
+"The sailor dusted a boy",
+"Emma rolled a teacher",
+"Evelyn rolled the girl",
+"A cake was forwarded to Levi by Charlotte",
+"The captain ate",
+"The girl needed to cook",
+"A cake rolled",
+"The cookie was passed to Emma",
+"Emma ate the ring beside a bed",
+"A horse gave the cake beside a table to the mouse",
+"Amelia gave Emma a strawberry",
+"A cat disintegrated a girl",
+"Eleanor sold Evelyn the cake",
+"The book was lended to Benjamin by a cat",
+"The cake was frozen by the giraffe",
+"The donut was studied",
+"Isabella forwarded a box on a tree to Emma",
+"A cake was stabbed by Scarlett",
+"A pencil was fed to Liam by the deer",
+"The cake was eaten by Olivia"
+]
+
+all_expansions_observed_across_examples = set()
+
+for sentence in nonsense_example_sentences:
+  single_example_expansions = \
+  generate_set_of_expansion_keys_for_lark_parse_tree\
+  (parser.parse(sentence.lower()))
+  all_expansions_observed_across_examples = \
+  all_expansions_observed_across_examples.union\
+  (single_example_expansions)
+
+1 - len(set(expansions_expected) \
+- all_expansions_observed_across_examples) / len(expansions_expected)
+# 0.7115384615384616
+\end{verbatim}
+\end{tiny}
+Those 21 COGS input sentences cover 71\% of the grammar. (Continued on next page.)
+
+We can compare the first 21 sentences of COGS that to the 19 sentences used in developing the RASP program (then add one to cover basic prepositional phrases, and one more to cover complement phrases):\footnote{\begin{footnotesize}(see 
+
+https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574 
+
+for the full list and associated rules in the code as the RASP does not learn from examples but hand-coded rules coded as a sequence of parts of speech / verb types)\end{footnotesize}}
+
+(note each of these sentences has multiple equivalent examples in the ReCOGS training set, as shown in Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} in Appendix \ref{grammar_coverage_analysis_for_model_design})
+
+\begin{tiny}
+\begin{verbatim}
+handpicked_example_sentences = [ 
+# non-recursive grammar rule examples only
+# no prepositional phrases or complement phrases
+# see link above all these examples 
+# each correspond to distinct rules in the code
+"the girl was painted",
+"a boy painted",
+"a boy painted the girl",
+"the girl was painted by a boy",
+"a boy respected the girl", 
+"the girl was respected",
+"the girl was respected by a boy",
+"the boy grew the flower",
+"the flower was grown",
+"the flower was grown by a boy",
+"the scientist wanted to read",
+"the guest smiled",
+"the flower grew",
+"ella sold a car to the customer",
+"ella sold a customer a car",
+"the customer was sold a car",
+"the customer was sold a car by ella",
+"the car was sold to the customer by ella",
+"the car was sold to the customer",
+]
+
+all_expansions_observed_across_examples = set()
+
+for sentence in handpicked_example_sentences:
+  single_example_expansions = \
+  generate_set_of_expansion_keys_for_lark_parse_tree(
+    parser.parse(sentence.lower())
+  )
+  all_expansions_observed_across_examples = \
+  all_expansions_observed_across_examples.union(
+    single_example_expansions)
+
+1 - len(set(expansions_expected) \
+- all_expansions_observed_across_examples) 
+  / len(expansions_expected)
+# 0.9230769230769231
+
+# Those 19 rules cover 92.3% of the COGS input grammar
+# (not necessarily 92.3% of examples as the examples 
+# are not evenly distributed across grammar rules).
+# Let's see what rules are still missing:
+
+set(expansions_expected) - 
+  all_expansions_observed_across_examples
+# tells us we need a prepositional phrase example!
+#{'<np> -> <np_pp>',
+# tell us we need prepositional phrase examples
+# '<np_pp> -> <np_det> <pp> <np>',
+# tells us we need complement phrase examples
+# '<vp_external5> -> <v_cp_taking> <that> <start>',
+# tells us we need complement phrase examples
+# '<vp_external> -> <vp_external5>'}
+\end{verbatim}
+\end{tiny}
+
+\clearpage
+We got to 92.3\% grammar coverage in our 19 examples instead of COGS 71\% in 21 examples.
+
+And, it is telling us we are missing an example with prepositional phrases and complement phrases (see next examples)
+
+Let us add a simple prepositional phrase example and complement phrase example:
+\begin{tiny}
+\begin{verbatim}
+handpicked_example_sentences = \
+handpicked_example_sentences + \
+["a boy painted the girl in a house"] + \
+["the girl noticed that a boy painted the girl"]
+
+handpicked_example_sentences
+# ['the girl was painted',
+#  'a boy painted',
+#  'a boy painted the girl',
+#  'the girl was painted by a boy',
+#  'a boy respected the girl',
+#  'the girl was respected',
+#  'the girl was respected by a boy',
+#  'the boy grew the flower',
+#  'the flower was grown',
+#  'the flower was grown by a boy',
+#  'the scientist wanted to read',
+#  'the guest smiled',
+#  'the flower grew',
+#  'ella sold a car to the customer',
+#  'ella sold a customer a car',
+#  'the customer was sold a car',
+#  'the customer was sold a car by ella',
+#  'the car was sold to the customer by ella',
+#  'the car was sold to the customer',
+#  'a boy painted the girl in a house',
+#  'the girl noticed that a boy painted the girl'
+#]
+all_expansions_observed_across_examples = set()
+
+for sentence in handpicked_example_sentences:
+  single_example_expansions = \
+    generate_set_of_expansion_keys_for_lark_parse_tree(parser.parse(sentence.lower()))
+  all_expansions_observed_across_examples = \
+    all_expansions_observed_across_examples.union(single_example_expansions)
+
+1 - len(set(expansions_expected) - \
+  all_expansions_observed_across_examples) / len(expansions_expected)
+# 1.0
+
+set(expansions_expected) - all_expansions_observed_across_examples
+# set()
+\end{verbatim}
+\end{tiny}
+(continued below)
+\clearpage
+
+Thus in 19 intentionally crafted sentences (Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}) (each is in the RASP code with a corresponding rule) cover 92.3\% of the grammar, 
+using the coverage we can what we did not cover yet, and thus add two sentences to fill the reported gap and get to 100\% .
+
+However these coverage metrics are misleading when it comes to prepositional phrases as it would not suggest to include prepositional phrases in all positions, assuming they could be collapsed by the model back to `np` using `np -> np\_pp -> np\_det pp np` while \cite{Wu2023} and our experiments suggest it is necessary to train with prepositional phrases explicitly in the different positions in the different verb patterns (see below).
+
+Based on the finding earlier we believe that the only recursion learned is tail recursion in the decoder loop and that `np -> np\_det | np\_prop | np\_pp` and `np\_pp -> np\_det pp np` is not actually performed as if the Encoder-Decoder Transformer were to learn a tree-based or recursive representation. If the Transformer had a tree based representation, it is predicted that the "v\_dat\_p2\_pp\_moved\_to\_recipient" would not be any harder than when the pp modification is on the theme, as `np v\_dat\_p2 np\_det pp np np` can be transformed by the recursive grammar rule `np\_det pp np -> np\_pp -> np` to `np v\_dat\_p2 np np` on which it is already trained and has good performance, but instead it fails completely, and see also "Error Analysis for \cite{Wu2023} baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split" where we observe that prepositional modification of a noun to the left of a verb it is the agent of causes the new prepositional phrase noun that becomes the closest noun to be mistaken for the agent, which is in contradiction to the model collapsing `np\_det pp np` to `np` before matching the overall grammar pattern.
+
+That said with a couple of simple rules that were not tree we were able to get 100\% on the pp\_recursion split (up to depth 12) and 92.20\% (90.36-93.79\% 95\% CI) of the obj\_pp\_to\_subj\_pp split.
+
+Modifying the grammar coverage to model this non-tree representation would be exciting to address in future work.
+
+See also "Appendix: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design" (\ref{grammar_coverage_analysis_for_model_design}).
+
+\subsection{Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design}
+\label{grammar_coverage_analysis_for_model_design}
+
+See "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage}) for how the grammar coverage is computed.
+
+If we ignore lexical differences, by the first 55 examples of the ReCOGS training set (unshuffled, no augmentations) or 77 (median; 95\% confidence interval, n=1000 random shuffles: 39 to 161) examples of the ReCOGS training set (shuffled, no augmentations), 100\% grammar coverage is reached\footnote{\begin{footnotesize}
+
+Given the COGS input sentences were generated as a probablistic context free grammar per \cite{KimLinzen2020}
+using the full details put in Lark format by \cite{klinger2024compositionalprogramgenerationfewshot}
+and converting it ourselves to a format compatible with \cite{fuzzingbook2023:GrammarCoverageFuzzer} (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) , we use their TrackingGrammarCoverageFuzzer to generate the set of all expansions of the COGS grammar.
+\end{footnotesize}
+}(lexical differences ignored) \cite{fuzzingbook2023:GrammarCoverageFuzzer} (noting that if the model is not capable of learning certain expansions in the grammar such as `np\_det pp np -> np\_pp -> np`, it may need to see more variations to memorize individual cases instead ):
+\includegraphics[scale=0.38]{grammar_coverage_by_number_of_recogs_training_examples_lexical_differences_ignored.png}
+
+That shows if one already knows parts of speech and verb types for words one needs much less data.
+
+Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand (in real world pretraining or a GloVe embedding would be used to solve this step)\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a pre-trained Transformer model in wide use, has part-of-speech information available at the earliest layers.}
+ since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
+
+See Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} below for the 19 part-of-speech/verb type patterns and example sentences that cover the grammar at non-terminal (post-embedding level) used for the RASP model design.
+
+\clearpage
+\onecolumn
+\begin{table}
+\centering
+\begin{tabular}{p{0.2\linewidth} p{0.52\linewidth} p{0.2\linewidth}}
+\hline
+\begin{small}\textbf{RASP-for-ReCOGS grammar pattern example mentioned in paper}\end{small} & \begin{small}\textbf{Actual part-of-speech/verb-type sequence used in RASP model}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small}\\
+\hline
+\begin{small}\end{small} & \begin{small}\end{small} & \begin{small}\end{small} \\
+\begin{small}the girl was painted\end{small} & \begin{small}det common\_noun was v\_trans\_omissible\_pp\_p1 \end{small} & \begin{small}The donut was studied .\end{small} \\
+\begin{small}a boy painted\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p1 \end{small} & \begin{small}The captain ate .\end{small} \\
+\begin{small}a boy painted the girl\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p2 det common\_noun \end{small} & \begin{small}The sailor dusted a boy .\end{small} \\
+\begin{small}the girl was painted by a boy\end{small} & \begin{small}det common\_noun was v\_trans\_omissible\_pp\_p2 by det common\_noun \end{small} & \begin{small}A drink was eaten by a child .\end{small} \\
+\begin{small}a boy respected the girl\end{small} & \begin{small}det common\_noun v\_trans\_not\_omissible det common\_noun \end{small} & \begin{small}A girl liked the raisin .\end{small} \\
+\begin{small}the girl was respected\end{small} & \begin{small}det common\_noun was v\_trans\_not\_omissible\_pp\_p1 \end{small} & \begin{small}The pen was helped .\end{small} \\
+\begin{small}the girl was respected by a boy\end{small} & \begin{small}det common\_noun was v\_trans\_not\_omissible\_pp\_p2 by det common\_noun \end{small} & \begin{small}A rose was helped by a dog .\end{small} \\
+\begin{small}the boy grew the flower\end{small} & \begin{small}det common\_noun v\_unacc\_p1 det common\_noun \end{small} & \begin{small}A cat disintegrated a girl .\end{small} \\
+\begin{small}the flower was grown\end{small} & \begin{small}det common\_noun was v\_unacc\_pp\_p1 \end{small} & \begin{small}A box was inflated .\end{small} \\
+\begin{small}the flower was grown by a boy\end{small} & \begin{small}det common\_noun was v\_unacc\_pp\_p2 by det common\_noun \end{small} & \begin{small}The cake was frozen by the giraffe .\end{small} \\
+\begin{small}the scientist wanted to read\end{small} & \begin{small}det common\_noun v\_inf\_taking to v\_inf \end{small} & \begin{small}The girl needed to cook .\end{small} \\
+\begin{small}the guest smiled\end{small} & \begin{small}det common\_noun v\_unerg \end{small} & \begin{small}The sailor laughed .\end{small} \\
+\begin{small}the flower grew\end{small} & \begin{small}det common\_noun v\_unacc\_p2 \end{small} & \begin{small}A cake rolled .\end{small} \\
+\begin{small}ella sold a car to the customer\end{small} & \begin{small}proper\_noun v\_dat\_p1 det common\_noun to det common\_noun \end{small} & \begin{small}Emma passed a cake to the girl .\end{small} \\
+\begin{small}ella sold a customer a car\end{small} & \begin{small}proper\_noun v\_dat\_p2 det common\_noun det common\_noun \end{small} & \begin{small}Liam forwarded the girl the donut .\end{small} \\
+\begin{small}the customer was sold a car\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p3 det common\_noun \end{small} & \begin{small}A girl was sold the cake .\end{small} \\
+\begin{small}the customer was sold a car by ella\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p4 det common\_noun by proper\_noun \end{small} & \begin{small}The girl was lended the balloon by Harper .\end{small} \\
+\begin{small}the car was sold to the customer by ella\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p2 to det common\_noun by proper\_noun \end{small} & \begin{small}The pen was offered to the girl by Emma .\end{small} \\
+\begin{small}the car was sold to the customer\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p1 to det common\_noun \end{small} & \begin{small}The melon was lended to a girl .\end{small} \\
+\hline
+\begin{small}\textbf{Prepositional phrase and complement phrase examples mentioned in paper}\end{small} & \begin{small}\textbf{part-of-speech/verb-type sequence (used example for development)}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small} \\
+\hline
+\begin{small}a boy painted the girl in a house\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p2 det common\_noun pp det common\_noun\end{small} & \begin{small}A frog ate a sweetcorn in a pile .\end{small} \\
+\begin{small}the girl noticed that a boy painted the girl\end{small} & \begin{small}det common\_noun v\_cp\_taking that det common\_noun v\_trans\_omissible\_p2 det common\_noun\end{small} & \begin{small}A girl said that a crocodile ate the rose .\end{small} \\
+\hline
+\end{tabular}
+\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to COGS/ReCOGS training examples. Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific complement phrase example we gave by modifying one of our existing examples with a complement phrase ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes complement phrase examples are demonstrated earlier, e.g. within 55 examples in default ordering). Note the prepositional phrase and complement phrase examples are not actually pattern matched (the 19 pattern matches plus a general cp/pp rule are used) and so do not exist in the RASP code, but are just given for reference.\end{small}}
+\label{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}
+\end{table}
+\twocolumn
+\clearpage
+
 \subsection{Zhou et al 2024 relevance of their long addition experiment to language modeling and note on the Parity task and Transformers}
 \label{appendix_long_addition_and_parity}
 \cite{Zhou2024} adds index hints to the long addition task based on a RASP-grounded analysis of what is preventing the Transformer from learning it, allowing the model to learn to pair digits from each number being added more easily. They also observe that if multi-digit carries are not part of the training set one can still get generalization by making the carry causal for the causal autoregressive Transformer decoder mode by reversing the digits (least significant digit first), and prove this resolves the issue. Causality issues like trying to output a long addition digit by digit starting with the most significant digit in a long addition before computing the sums of the less significant digits that come later, and failing if there is a carry at any point, are not limited to math, nor limited to language models, for just one example from English grammar concerning human language processing, \cite{jespersen1913modernenglishgrammar1954reprint} explains "Concord of the verb" errors made by humans especially in speech when the verb is on the left due to needing to agree with a noun not explicitly selected yet: "The general rule, which needs no exemplification, is for the verb to be in the singular with a singular subject, and in the plural with a plural subject. Occasionally, however, the verb will be put in the [singular], even if the subject is plural; this will especially happen when the verb precedes the subject, because the speaker has not yet made up his mind, when pronouncing the verb, what words are to follow."
@@ -2228,6 +2233,6 @@ In this paper we demonstrate a model (our RASP model, see below) which is not tr
 
 Note in this paper that having an or condition everywhere in our model for "det common\_noun", "proper\_noun" , such that they are treated the same, without adjusting the sequence length or further combining any non-terminals, is not referred to as tree-structured or hierarchical - we consider a model that stops at this level of structure which per the discussion above already provides a lot of representational power as flat/non-hierarchical/non-tree-structured.
 
-We see in the results quantitatively how few (training) sentence examples (and if recursive or looping rules are omitted, equivalently how many flat-pattern rules\footnote{if we ignore terminals and stop at part-of-speech and verb type tokens, for example, which we can map word level tokens to by an embedding layer}), it actually takes to cover a grammar in the sense of \cite{fuzzingbook2023:GrammarCoverageFuzzer}, and use this to design our Transformer-equivalent model by hand to translate sentences in a particular subset of the English grammar into their corresponding logical forms.
+We see in the results, Appendix \ref{grammar_coverage_analysis_for_model_design}, and Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}  quantitatively how few (training) sentence examples (and if recursive or looping rules are omitted, equivalently how many flat-pattern rules\footnote{if we ignore terminals and stop at part-of-speech and verb type tokens, for example, which we can map word level tokens to by an embedding layer}), it actually takes to cover a grammar in the sense of \cite{fuzzingbook2023:GrammarCoverageFuzzer}, and use this to design our Transformer-equivalent model by hand to translate sentences in a particular subset of the English grammar into their corresponding logical forms.
 
 \end{document}
