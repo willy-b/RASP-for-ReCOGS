@@ -58,3 +58,7 @@ New difficult generalization split v_dat_p2 recipient pp modification predicted 
 Note this work derives from a final project done for Stanford's excellent XCS224U class ( https://digitalcredential.stanford.edu/check/24288227F20DD8486799B5FF5E8C04CB440129EC0DE44FEB65C4BAFABDBAA68BQWtzR2p1TG45dHowNWg5dXp6UW1kNmdYVVExekNJa1V3R2J5aFdhWi9Lb01MakFZ ).
 
 You can find out more about the content of that course and the Stanford AI Professional Program by visiting the links provided on the certificate above or visiting the professor's excellent public course repository at https://github.com/cgpotts/cs224u (no endorsement from the professor implied by linking to them).
+
+### Related
+
+(NEW 2025-03-15) See also the in-development (not yet evaluated) RASP-for-COGS project at https://github.com/willy-b/RASP-for-COGS , for the original Kim and Linzen 2020 task format where structural generalizations are even harder for Transformers than in ReCOGS and Exact Match instead of Semantic Exact Match is used everywhere.
