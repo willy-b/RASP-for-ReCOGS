@@ -61,4 +61,4 @@ You can find out more about the content of that course and the Stanford AI Profe
 
 ### Related
 
-(NEW 2025-03-15) See also the in-development (not yet evaluated) RASP-for-COGS project at https://github.com/willy-b/RASP-for-COGS , for the original Kim and Linzen 2020 task format where structural generalizations are even harder for Transformers than in ReCOGS and Exact Match instead of Semantic Exact Match is used everywhere.
+(NEW 2025-03-15) See also the RASP-for-COGS project (just started gen/test evaluations on 2025-03-23) at https://github.com/willy-b/RASP-for-COGS , for the original Kim and Linzen 2020 task format where structural generalizations are even harder for Transformers than in ReCOGS and Exact Match instead of Semantic Exact Match is used everywhere.
