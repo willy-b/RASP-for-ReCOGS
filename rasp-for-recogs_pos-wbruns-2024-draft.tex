@@ -724,10 +724,12 @@ v_inf: 17
 v_dat: 18
 v_dat_pp: 19
 v_unacc_pp: 20
+# v_normalized_in_output: 21 # only used in decoder loop 
+#, represents stemmed verbs where type is not important
 \end{verbatim}
 \end{tiny}
 
-For those used to multidimensional representations, one can think of these as one-hot vectors of dimension 21, and replace equality checks with vector dot product (and a check for either common\_noun or proper\_noun would be a dot product with the sum of one-hot 21 dimensional vectors given by (common\_noun + proper\_noun)) but we keep it simple for human reading here and use these scalars in 1d as is easily supported by RASP.
+For those used to multidimensional representations, one can think of these as one-hot vectors of dimension 20\footnote{\begin{footnotesize}21d in decoder only for v\_normalized\_in\_output\end{footnotesize}} and replace equality checks with vector dot product (and a check for either common\_noun or proper\_noun would be a dot product with the sum of one-hot 20 dimensional vectors given by (common\_noun + proper\_noun)) but we keep it simple for human reading here and use these scalars in 1d as is easily supported by RASP.
 
 Each of the five sequences comes from a separate map. Since in RASP a map could only have a single value per key, and since individual words had up to four different verb roles (as in "liked" which had 4).
 
