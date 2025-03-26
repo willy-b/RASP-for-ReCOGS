@@ -168,7 +168,8 @@ https://github.com/frankaging/ReCOGS/blob/
 \section{Methods}
 We use the RASP \cite{Weiss2021} interpreter\footnote{\begin{footnotesize}provided at https://github.com/tech-srl/RASP/
 \end{footnotesize}
-} to evaluate our RASP programs\footnote{\begin{footnotesize}https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771
+} to evaluate our RASP programs\footnote{\begin{footnotesize}https://github.com/willy-b/learning-rasp/blob/
+2be461ba83b7393fda4dc5a96ae600ac98478771
 /word-level-pos-tokens-recogs-style-decoder-loop.rasp with a demo at https://github.com/willy-b/learning-rasp/blob/
 2be461ba83b7393fda4dc5a96ae600ac98478771
 /recogs\_examples\_in\_rasp.py  
@@ -184,8 +185,10 @@ https://github.com/frankaging/ReCOGS/blob/
 } against ground truth.
 
 We also measure grammar coverage \cite{fuzzingbook2023:GrammarCoverageFuzzer} (more detail in Appendix \ref{computing_grammar_coverage}) by input examples supported by our RASP model against the full grammar of COGS/ReCOGS input sentences provided in the utilities of the IBM CPG project \cite{klinger2024compositionalprogramgenerationfewshot}\footnote{\begin{footnotesize}https://github.com/IBM/cpg/blob/
-c3626b4e03bfc681be2c2a5b23da0b48abe6f570
-/src/model/cogs\_data.py\#L523 
+c3626b4e03bfc681be
+2c2a5b23da0b48abe6f570
+/src/model/
+cogs\_data.py\#L523 
 \end{footnotesize}
 }. See "Appendix: Methods Detail" (\ref{methods_detail}). See also "Appendix: Results Notebook links by section" (\ref{results_notebook_links_by_section}) for notebooks documenting results and giving steps to reproduce.
 \section{Results}
@@ -227,7 +230,9 @@ We generated 21 sentences based on rules present in the training examples\footno
 \end{verbatim}
 \end{tiny}
 
-The first 19 of those sentences are present in our RASP program code\footnote{\begin{footnotesize}https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574\end{footnotesize}}
+The first 19 of those sentences are present in our RASP program code\footnote{\begin{footnotesize}https://github.com/willy-b/learning-rasp/blob/
+2be461ba83b7393fda4dc5a96ae600ac98478771
+/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574\end{footnotesize}}
 and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{\begin{footnotesize}see also "Appendix: Restricted Access Sequence Processing word-level token program/model design" (\ref{rasp-word-level-model-design})
 
 \end{footnotesize}
@@ -448,10 +453,10 @@ The attraction error analysis of the \cite{Wu2023} baseline Encoder-Decoder Tran
 
 We only provide and discuss a RASP solution for ReCOGS \cite{Wu2023} here, not the semantically equivalent COGS\footnote{\begin{footnotesize}nor the recently introduced extended version SLOG \cite{li2023slogstructuralgeneralizationbenchmark}\end{footnotesize}} \cite{KimLinzen2020}, though as this goes to publication we have just separately released a RASP model for COGS at https://github.com/willy-b/RASP-for-COGS/\footnote{RASP-for-COGS also supports case-sensitive string exact match and ignoring out-of-vocabulary words, features not supported in RASP-for-ReCOGS}, which is undergoing evaluation with preliminary data supporting the same conclusions for that task (can also be solved by a non-tree structured, non-hierarchical Transformer compatible model, despite using Exact Match instead of Semantic Exact Match, with same RASP for the Encoder as used here for ReCOGS\_pos but a different Decoder).
 
-Much deeper Transformer networks may be learning a tree-based grammar representation and not suffer from the predicted generalization issues observed in \cite{Wu2023}'s baseline 2-layer Transformer and predicted by our intentionally non-tree RASP model (if compensating rules to avoid attraction errors in a flat model are not also learned).\footnote{\begin{footnotesize}Nothing explored here rules that out and there is plenty of evidence outside the COGS task-related literature suggesting this will be the case: \cite{tenney2019bertrediscoversclassicalnlp} show the 24-layer BERT model seems to handle "POS tagging, parsing, NER, semantic roles, then coreference"; \cite{hewitt-manning-2019-structural} "provid[e] evidence that entire syntax trees are embedded implicitly in deep models’ [including BERT's] vector geometry", and \cite{goldberg2019assessingbertssyntacticabilities} shows BERT excels at subject-verb agreement, "which [is] traditionally taken as evidence for
+Much deeper Transformer networks may be learning a tree-based grammar representation\footnote{\begin{footnotesize}Nothing explored here rules that out and there is plenty of evidence outside the COGS task-related literature suggesting this will be the case: \cite{tenney2019bertrediscoversclassicalnlp} show the 24-layer BERT model seems to handle "POS tagging, parsing, NER, semantic roles, then coreference"; \cite{hewitt-manning-2019-structural} "provid[e] evidence that entire syntax trees are embedded implicitly in deep models’ [including BERT's] vector geometry", and \cite{goldberg2019assessingbertssyntacticabilities} shows BERT excels at subject-verb agreement, "which [is] traditionally taken as evidence for
 the existence [of] hierarchical structure" (though e.g. in this work we see that ignoring distractor nouns in long-term dependencies does not require hierarchy or a deep understanding of syntax but simple rules like ignore "pp det common\_noun" and "pp proper\_noun" for finding noun-verb relationships in the logical form can allow for handling of such long-range dependencies). On the other hand, \cite{petty2024impactdepthcompositionalgeneralization} argue specifically for the COGS benchmark (semantically equivalent to ReCOGS which is derived from it) that increasing depth does not allow their Transformers to make progress on the structural generalization splits, even at depths up to 32 layers.
 \end{footnotesize}
-}
+} and not suffer from the predicted generalization issues observed in \cite{Wu2023}'s baseline 2-layer Transformer and predicted by our intentionally non-tree RASP model (if compensating rules to avoid attraction errors in a flat model are not also learned).
 
 \bibliography{bibliography}
 
@@ -516,7 +521,8 @@ ReCOGS\_Baseline\_non\_RASP\_Transformer
 \_n%3D10\_Transformers
 \_trained\_from\_scratch
 \_(predicting\_the\_details\_of\_error
-\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb .
+\_in\_logical\_form\_on
+\_obj\_pp\_to\_subj\_pp\_split).ipynb .
 
 \clearpage
 
@@ -1499,7 +1505,9 @@ and https://arxiv.org/abs/1303.1288
 \end{footnotesize}
 }) as each Semantic Exact Match is a binary outcome (0 or 1 for each example). Unlike bootstrapping this also supports the common case for our RASP program of 100\% accuracy, which occurs in all but one split, where resampling would not help us estimate uncertainty in bootstrapping, but using the Beta distribution will give us confidence bounds that depend on the sample size.
 
-In developing our RASP program\footnote{\begin{footnotesize}https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L776
+In developing our RASP program\footnote{\begin{footnotesize}https://github.com/willy-b/learning-rasp/blob/
+2be461ba83b7393fda4dc5a96ae600ac98478771/
+word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L776
 \end{footnotesize}
 },
 when we find the right index of a verb relation (like agent, theme, or recipient), 
@@ -1991,7 +1999,9 @@ Those 21 COGS input sentences cover 71\% of the grammar. (Continued on next page
 
 We can compare the first 21 sentences of COGS that to the 19 sentences used in developing the RASP program (then add one to cover basic prepositional phrases, and one more to cover complement phrases):\footnote{\begin{footnotesize}(see 
 
-https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574
+https://github.com/willy-b/learning-rasp/blob/
+2be461ba83b7393fda4dc5a96ae600ac98478771
+/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574
 
 for the full list and associated rules in the code as the RASP does not learn from examples but hand-coded rules coded as a sequence of parts of speech / verb types)\end{footnotesize}}
 
