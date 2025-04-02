@@ -1,7 +1,11 @@
-% This is the LaTex style file for *ACL.
+% Style file obtained from https://web.archive.org/web/20250202185659/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj
+% which is licensed Creative Commons CC BY 4.0 ( https://creativecommons.org/licenses/by/4.0/deed.en ).
+% This is completely separable from any scientific content in this folder and is used as requested by https://web.archive.org/web/20250211084433/https://aclrollingreview.org/authors which requests using their formatting and explicitly lists https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj as an option (Overleaf option). This folder started with the ACL 2020 conference version which moved from https://github.com/acl-org/ACLPUB/blob/b0bb1c0523feea6fb1c56eb0ef69595e809356d5/templates/README.md to https://github.com/acl-org/acl-style-files (and https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj ).
+
+% This is the LaTex style file for *ACL [Association for Computational Linguistics, do NOT confuse with Access Control List].
 % The official sources can be found at
 %
-%     https://github.com/acl-org/ACLPUB/
+%     https://github.com/acl-org/acl-style-files/
 %
 % This package is activated by adding
 %
@@ -12,9 +16,14 @@
 %    \usepackage[review]{acl}
 
 \newif\ifacl@finalcopy
-\DeclareOption{final}{\acl@finalcopytrue}
-\DeclareOption{review}{\acl@finalcopyfalse}
-\ExecuteOptions{final} % note even if finalcopy is set to false, this should be run
+\newif\ifacl@anonymize
+\newif\ifacl@linenumbers
+\newif\ifacl@pagenumbers
+% note on my GitHub I may use the final styling, it does not mean it is the final version
+\DeclareOption{final}{\acl@finalcopytrue\acl@anonymizefalse\acl@linenumbersfalse\acl@pagenumbersfalse}
+\DeclareOption{review}{\acl@finalcopyfalse\acl@anonymizetrue\acl@linenumberstrue\acl@pagenumberstrue}
+\DeclareOption{preprint}{\acl@finalcopytrue\acl@anonymizefalse\acl@linenumbersfalse\acl@pagenumberstrue}
+\ExecuteOptions{final} % final copy is the default
 
 % include hyperref, unless user specifies nohyperref option like this:
 % \usepackage[nohyperref]{acl}
@@ -24,15 +33,11 @@
 \ExecuteOptions{hyperref} % default is to use hyperref
 \ProcessOptions\relax
 
-\typeout{Conference Style for ACL 2020}
+\typeout{Conference Style for ACL}
 
-\usepackage{xcolor}	
+\usepackage{xcolor}
 
-\ifacl@finalcopy
-  % Hack to ignore these commands, which review mode puts into the .aux file.
-  \newcommand{\@LN@col}[1]{}
-  \newcommand{\@LN}[2]{}
-\else
+\ifacl@linenumbers
   % Add draft line numbering via the lineno package
   % https://texblog.org/2012/02/08/adding-line-numbers-to-documents/
   \usepackage[switch,mathlines]{lineno}
@@ -47,7 +52,7 @@
   \def\fillzeros[#1]#2{\cv@tmpc@=#2\relax\ifnum\cv@tmpc@<0\cv@tmpc@=-\cv@tmpc@\fi
     \cv@tmpc=1 %
     \loop\ifnum\cv@tmpc@<10 \else \divide\cv@tmpc@ by 10 \advance\cv@tmpc by 1 \fi
-       \ifnum\cv@tmpc@=10\relax\cv@tmpc@=11\relax\fi \ifnum\cv@tmpc@>10 \repeat
+      \ifnum\cv@tmpc@=10\relax\cv@tmpc@=11\relax\fi \ifnum\cv@tmpc@>10 \repeat
     \ifnum#2<0\advance\cv@tmpc1\relax-\fi
     \loop\ifnum\cv@tmpc<#1\relax0\advance\cv@tmpc1\relax\fi \ifnum\cv@tmpc<#1 \repeat
     \cv@tmpc@=#2\relax\ifnum\cv@tmpc@<0\cv@tmpc@=-\cv@tmpc@\fi \relax\the\cv@tmpc@}%
@@ -62,7 +67,7 @@
   % are numbered. Bug: multline has an extra line number.
   % https://tex.stackexchange.com/questions/461186/how-to-use-lineno-with-amsmath-align
   \usepackage{etoolbox} %% <- for \pretocmd, \apptocmd and \patchcmd
-  
+
   \newcommand*\linenomathpatch[1]{%
     \expandafter\pretocmd\csname #1\endcsname {\linenomath}{}{}%
     \expandafter\pretocmd\csname #1*\endcsname {\linenomath}{}{}%
@@ -75,7 +80,7 @@
     \expandafter\apptocmd\csname end#1\endcsname {\endlinenomath}{}{}%
     \expandafter\apptocmd\csname end#1*\endcsname {\endlinenomath}{}{}%
   }
-  
+
   %% Definition of \linenomathAMS depends on whether the mathlines option is provided
   \expandafter\ifx\linenomath\linenomathWithnumbers
     \let\linenomathAMS\linenomathWithnumbers
@@ -93,22 +98,21 @@
     \linenomathpatchAMS{alignat}%
     \linenomathpatchAMS{flalign}%
   }
+\else
+  % Hack to ignore these commands, which review mode puts into the .aux file.
+  \newcommand{\@LN@col}[1]{}
+  \newcommand{\@LN}[2]{}
+  \newcommand{\nolinenumbers}{}
 \fi
 
-\iffalse
-\PassOptionsToPackage{
-  a4paper,
-  top=2.21573cm,left=2.54cm,
-  textheight=24.7cm,textwidth=16.0cm,
-  headheight=0.17573cm,headsep=0cm
-}{geometry}
-\fi
-\PassOptionsToPackage{a4paper,margin=2.5cm}{geometry}
+\PassOptionsToPackage{a4paper,margin=2.5cm,heightrounded=true}{geometry}
 \RequirePackage{geometry}
 
-\setlength\columnsep{0.6cm}  
-\newlength\titlebox 
-\setlength\titlebox{5cm}
+\setlength\columnsep{0.6cm}
+\newlength\titlebox
+\setlength\titlebox{11\baselineskip}
+% \titlebox should be a multiple of \baselineskip so that
+% column height remaining fits an exact number of lines of text
 
 \flushbottom \twocolumn \sloppy
 
@@ -116,28 +120,29 @@
 % save space --- suggested by drstrip@sandia-2
 \def\addcontentsline#1#2#3{}
 
-\ifacl@finalcopy
-    \thispagestyle{empty}        
-    \pagestyle{empty}
-\else
+\ifacl@pagenumbers
     \pagenumbering{arabic}
+\else
+    \thispagestyle{empty}
+    \pagestyle{empty}
 \fi
 
 %% Title and Authors %%
 
-\newcommand{\Thanks}[1]{\thanks{\ #1}}
+\let\Thanks\thanks % \Thanks and \thanks used to be different, but keep this for backwards compatibility.
 
-\newcommand\outauthor{
+\newcommand\outauthor{%
     \begin{tabular}[t]{c}
-    \ifacl@finalcopy
-	     \bf\@author
-	\else 
+    \ifacl@anonymize
         % de-identified, not actually anonymous
         % for https://aclrollingreview.org/cfp#instructions-for-two-way-anonymized-review
         % see also https://www.aclweb.org/adminwiki/images/5/56/ACL_Anonymity_Policy.pdf
         \bf Deidentified submission for blind review
-	\fi
+    \else
+        \bfseries\@author
+    \fi
     \end{tabular}}
+
 
 % Mostly taken from deproc.
 \AtBeginDocument{

@@ -1,7 +1,8 @@
 % Note that the starting LaTeX template used here for styling the document (not any of the scientific or text content, but font sizes and document layout)
-% was derived from the recommended Association for Computational Linguistics conference template hosted e.g. at https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj
+% was first derived from the 2020 version recommended Association for Computational Linguistics conference template hosted at Overleaf and then updated to https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj
 % Which is licensed Creative Commons CC BY 4.0 ( https://creativecommons.org/licenses/by/4.0/deed.en )
 % The motivation for using the template to format this work is that a version of this work is being submitted to an ACL-associated conference/journal for publication.
+% The use of Association for Computational Linguistics formatting is by https://web.archive.org/web/20250211084433/https://aclrollingreview.org/authors which requests using their formatting and explicitly lists https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj as an option (Overleaf option). This folder started with the ACL 2020 conference version which moved from https://github.com/acl-org/ACLPUB/blob/b0bb1c0523feea6fb1c56eb0ef69595e809356d5/templates/README.md to https://github.com/acl-org/acl-style-files (and https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj ).
 
 % This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
 \pdfoutput=1
@@ -9,15 +10,11 @@
 
 \documentclass[11pt]{article}
 
-% Remove the "review" option to generate the final version.
-%\usepackage[]{acl}
-\usepackage[review]{acl} % note this has nothing to do with access control, this is association for computational linguistics paper formatting
-% there is no sensitive data in this paper whatsoever
+\usepackage[review]{acl} % note this has nothing to do with access control or privacy, this is association for computational linguistics paper formatting, and this paper has no sensitive content
 
 % Standard package includes
 \usepackage{times}
 \usepackage{latexsym}
-\usepackage{graphicx}
 
 % For proper rendering and hyphenation of words containing Latin characters (including in bib files)
 \usepackage[T1]{fontenc}
@@ -33,12 +30,22 @@
 % and will typically save some space.
 \usepackage{microtype}
 
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+%Including images in your LaTeX document requires adding
+%additional package(s)
+\usepackage{graphicx}
+
 % If the title and author information does not fit in the area allocated, uncomment the following
 %
 %\setlength\titlebox{<dim>}
 %
 % and set <dim> to something 5cm or larger.
 
+% BEGIN SCIENTIFIC CONTENT -- LaTeX template content above ends here. Everything below should be assumed Copyright the author unless granted otherwise (excepting COGS/ReCOGS example sentences analyzed which are MIT licensed from their cited authors, see Data section and "Scientific Artifacts - Is Our Use Consistent with Authors' Intention and Licensing")
 \title{(DRAFT) Exploring Compositional Generalization (in ReCOGS\_pos) by Transformers using Restricted Access Sequence Processing (RASP)}
 
 \author{Deidentified for blind review}
@@ -139,8 +146,7 @@ Thus we apply techniques similar to \cite{Zhou2024} and \cite{Weiss2021} to ReCO
 \section{Data}
 
 The ReCOGS \cite{Wu2023} dataset (ReCOGS with positional indexing variant) based on COGS \cite{KimLinzen2020} (input sentences/grammar are the same but logical form output are different) was used\footnote{\begin{footnotesize}https://github.com/frankaging/ReCOGS
-\end{footnotesize}},
-with special attention on the structural generalization splits (especially prepositional phrase Object-to-Subject generalization).
+\end{footnotesize}}, with special attention on the structural generalization splits (especially prepositional phrase Object-to-Subject generalization).
 
 The grammar and vocabulary description for COGS English input sentences provided in the utilities associated with the IBM CPG project \cite{klinger2024compositionalprogramgenerationfewshot}\footnote{\begin{footnotesize}https://github.com/IBM/cpg/blob/
 c3626b4e03bfc681be2c2a5b23da0b48abe6f570
@@ -2099,4 +2105,11 @@ c675e20c92f1514692067f01b7654d7e78ab0a97
 /README.md?plain=1\#L59 ).
 
 Software versions for packages installed are also typically logged for each experiment in the notebook for each experiment see Section \ref{results_notebook_links_by_section} for links.
+
+For styling and formatting this paper, we used the Association for Computational Linguistics conference paper templates hosted at Overleaf, see https://web.archive.org/web/
+20250131174713/
+https://www.overleaf.com/latex/templates/
+association-for-computational-linguistics-acl-conference/jvxskxpnznfj which is licensed Creative Commons CC BY 4.0 ( https://creativecommons.org/licenses/by/4.0/deed.en ) and explicitly listed as an option by https://web.archive.org/web/
+20250211084433/
+https://aclrollingreview.org/authors (Overleaf template option).
 \end{document}
