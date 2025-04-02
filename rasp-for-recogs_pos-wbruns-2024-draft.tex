@@ -55,7 +55,7 @@ We use \cite{Weiss2021}'s Restricted Access Sequence Processing (RASP), a Transf
 %\footnote{We follow \cite{Zhou2024} who used RASP to analyze encoder-decoder and decoder-loop cases, not just Transformer encoders as done by RASP author \cite{Weiss2021}.} 
 can perform the semantically equivalent ReCOGS\_pos
 %\footnote{ReCOGS\_pos is closer to COGS than ReCOGS: COGS and ReCOGS\_pos are both positional, non-positional ReCOGS randomizes indices and makes measuring string exact match impossible, only semantic exact match. Since our RASP model can produce string exact match results in most cases and we are working on a RASP model for COGS, we stuck with ReCOGS\_pos. \cite{Wu2023} hypothesized randomizing the indices would improve generalization, but that was actually not the case.} 
-\cite{Wu2023} variant of COGS systematically and compositionally: Our RASP model attains 100\% semantic exact match\footnote{\begin{footnotesize}and 100\% string exact match\end{footnotesize}} on the ReCOGS test set and 100\% SEM on all generalization splits except obj\_pp\_to\_subj\_pp\footnote{\begin{footnotesize}where, in the generalization case, prepositional nouns are frequently inserted between the leading noun and the verb it is related to, unlike the training case for those verb types, and models (our RASP model, without a specific rule to avoid attraction errors learnable from training data, and we show also the baseline Transformer trained from scratch) in this case tend to an attraction error to a nearer noun, now a prepositional phrase noun. \textit{See "Appendix: Attraction errors"} (\ref{attraction_errors})\end{footnotesize}} which gets 92\%. Furthermore, our RASP model shows the ReCOGS\_pos task does not require a hierarchical or tree-structured solution: we use word-level tokens with an "embedding" layer that tags with possible part of speech\footnote{\begin{footnotesize}per \cite{tenney2019bertrediscoversclassicalnlp} by layer 0 the part-of-speech could be predicted for most words in Transformers trained on a masked language modeling objective, so we assume an equivalent embedding is learnable.\end{footnotesize}}, applying just once per encoder pass 19 attention-head compatible flat pattern-matching rules, shown using grammar coverage \cite{fuzzingbook2023:GrammarCoverageFuzzer} to be learnable from the training data, plus general prepositional phrase (pp) handling and complement phrase (cp) handling logic, and output the next logical form (LF) token (repeating until the LF is complete). The model does not apply recursive, tree-structured rules like `np\_det pp np -> np\_pp -> np`, but scores 100\% semantic and string exact match on pp recursion, cp recursion using the decoder loop.
+\cite{Wu2023} variant of COGS systematically and compositionally: Our RASP model attains 100\% semantic exact match\footnote{\begin{footnotesize}and 100\% string exact match\end{footnotesize}} on the ReCOGS test set and 100\% SEM on all generalization splits except obj\_pp\_to\_subj\_pp\footnote{\begin{footnotesize}where, in the generalization case, prepositional nouns are frequently inserted between the leading noun and the verb it is related to, unlike the training case for those verb types, and models (our RASP model, without a specific rule to avoid attraction errors learnable from training data, and we show also the baseline Transformer trained from scratch) in this case tend to an attraction error to a nearer noun, now a prepositional phrase noun. \textit{See "Appendix: Attraction errors"} (\ref{attraction_errors})\end{footnotesize}} which gets 92\%. Furthermore, our RASP model shows the ReCOGS\_pos task does not require a hierarchical or tree-structured solution: we use word-level tokens with an "embedding" layer that tags with possible part of speech\footnote{\begin{footnotesize}per \cite{tenney2019bertrediscoversclassicalnlp} by layer 0 the part-of-speech could be predicted for most words in Transformers trained on a masked language modeling objective, so we assume an equivalent embedding is learnable.\end{footnotesize}}, applying just once per encoder pass 19 attention-head compatible flat pattern-matching rules, shown using grammar coverage \cite{fuzzingbook2023:GrammarCoverageFuzzer} to be learnable from the training data, plus general prepositional phrase (pp) handling and sentential complement (cp) handling logic, and output the next logical form (LF) token (repeating until the LF is complete). The model does not apply recursive, tree-structured rules like `np\_det pp np -> np\_pp -> np`, but scores 100\% semantic and string exact match on pp recursion, cp recursion using the decoder loop.
 %We find a single flat pattern matching rule we originally added to fit training examples, to ignore "pp det common\_noun" and "pp proper\_noun" when matching nouns for the agent, theme, recipient right indices, is sufficient to avoid structural generalization errors due to pp modification in novel positions. Interestingly, we imagined ablating that single rule and hypothesized attraction to the nearest noun\footnote{\begin{footnotesize}
 %Specifically, a non-agent noun which was part of the actual attention-head compatible verb-centered pattern match (closer to the verb than the actual agent) in our RASP model getting labeled the agent. See "Appendix: Attraction errors" (\ref{attraction_errors}) for detailed definition, examples, and justification for the term/historical references.
 %\end{footnotesize}
@@ -87,7 +87,7 @@ in the COGS task and ReCOGS\cite{Wu2023} variant of the COGS task \cite{KimLinze
 , a benchmark based on extracting semantics (logical form) from the syntax (grammatical form) of synthetic sentences in a simplified subset of English grammar, requiring models trained only on certain grammar examples to generalize to sentences with unseen grammar built up / recombined from parts present in the training examples.
 
 
-We use \cite{Weiss2021}'s Restricted Access Sequence Processing (RASP) language that can be compiled to concrete Transformer weights to prove by construction that a Transformer encoder-decoder\footnote{\begin{footnotesize}We follow \cite{Zhou2024} who used RASP to analyze encoder-decoder and decoder-loop cases, not just Transformer encoders as done by RASP author \cite{Weiss2021}.\end{footnotesize}} can perform ReCOGS\_pos\footnote{\begin{footnotesize}official variant, closer to COGS than non-positional ReCOGS, as COGS is also positional, and means we can also measure string exact match, not just semantic exact match\end{footnotesize}} over the vocabulary and grammar of that task in a systematic, compositional way (length and recursion depth limited) as a rigorous starting point to investigating when Transformers might learn or not actually learn such compositional/systematic solutions. We find a flat, not hierarchical/tree-structured model which lacks any handling for the recursive rules in the grammar (for prepositional phrase recursion and complement phrase recursion) can perform the task at high accuracy, but requires a special rule for avoiding "attraction" errors\footnote{\begin{footnotesize}These attraction errors are similar to those discussed elsewhere in NLP and psycholinguistics literature on hierarchical vs linear processing by language models and humans, see "Appendix: Attraction errors" (\ref{attraction_errors}).\end{footnotesize}} where inserted prepositional phrase nouns replace agent/theme/recipient nouns in the logical form by accident. This is our main result and suggests that the ReCOGS task can be performed with high accuracy by Transformers, turning efforts to learnability, and also adds to the literature a caveat on interpreting success on ReCOGS (and COGS\footnote{semantically equivalent and see also https://github.com/willy-b/RASP-for-COGS}) by noting a hierarchical or tree-structured representation is not necessarily required (contrary to \cite{KimLinzen2020} and assumption of \cite{murty2022characterizingintrinsiccompositionalitytransformers}).
+We use \cite{Weiss2021}'s Restricted Access Sequence Processing (RASP) language that can be compiled to concrete Transformer weights to prove by construction that a Transformer encoder-decoder\footnote{\begin{footnotesize}We follow \cite{Zhou2024} who used RASP to analyze encoder-decoder and decoder-loop cases, not just Transformer encoders as done by RASP author \cite{Weiss2021}.\end{footnotesize}} can perform ReCOGS\_pos\footnote{\begin{footnotesize}official variant, closer to COGS than non-positional ReCOGS, as COGS is also positional, and means we can also measure string exact match, not just semantic exact match\end{footnotesize}} over the vocabulary and grammar of that task in a systematic, compositional way (length and recursion depth limited) as a rigorous starting point to investigating when Transformers might learn or not actually learn such compositional/systematic solutions. We find a flat, not hierarchical/tree-structured model which lacks any handling for the recursive rules in the grammar (for prepositional phrase recursion and sentential complement recursion) can perform the task at high accuracy, but requires a special rule for avoiding "attraction" errors\footnote{\begin{footnotesize}These attraction errors are similar to those discussed elsewhere in NLP and psycholinguistics literature on hierarchical vs linear processing by language models and humans, see "Appendix: Attraction errors" (\ref{attraction_errors}).\end{footnotesize}} where inserted prepositional phrase nouns replace agent/theme/recipient nouns in the logical form by accident. This is our main result and suggests that the ReCOGS task can be performed with high accuracy by Transformers, turning efforts to learnability, and also adds to the literature a caveat on interpreting success on ReCOGS (and COGS\footnote{semantically equivalent and see also https://github.com/willy-b/RASP-for-COGS}) by noting a hierarchical or tree-structured representation is not necessarily required (contrary to \cite{KimLinzen2020} and assumption of \cite{murty2022characterizingintrinsiccompositionalitytransformers}).
 \begin{figure}
 \includegraphics[scale=0.560]{./image_pdfs/expanded_version_of_sentences_and_lfs_and_lf_graph_figure.pdf}
 \caption{\begin{small}Introducing parse trees, logical form, and semantic graphs. Two semantically identical but syntactically distinct (i) sentences (a) "a boy painted the girl" and (b) "the girl was painted by a boy" are shown with (ii) their distinct parse tree (parsed into COGS input grammar), (iii) the string form of their semantics (ReCOGS logical form; differs in indices and ordering), and (c) the graph representation of their logical form (semantic graph\protect\footnotemark, not different at all between the two examples). Note the (iii) logical forms (LFs) differ by String Exact Match but not \cite{Wu2023}'s Semantic Exact Match (order and indices do not match but nouns, normalized verbs, and relationships between nouns and verbs are same). Note the "agent", "theme" order in the logical form string is not required to match for Semantic Exact Match. COGS and ReCOGS tasks require extracting the semantics/meaning (c) encoded in LFs (iii) of sentences (i).\end{small}}
@@ -240,7 +240,7 @@ Attention-head compatible flat patterns/rules were derived from those examples (
 #             except when outputting noun and nmod)
 ((det common)|proper) v_trans_omissible_p2 
   ((det common)|proper) pp ((det common)|proper)
-# 1 complement phrase example
+# 1 sentential complement example
 # (flat rule: mask out cp prefix except 
 #  when outputting that part of LF)
 ((det common)|proper) v_cp_taking that 
@@ -297,7 +297,7 @@ To handle prepositional phrases in a flat solution, we find it necessary on the 
 \end{tabular}
 \caption{\begin{small}ReCOGS\_pos test set performance (n=3000) and non-recursive out-of-distribution generalization split performance for \textbf{Restricted Access Sequence Processing (RASP) Encoder-Decoder Transformer-compatible model} (n=1000 per gen split).\end{small}}%, Semantic Exact Match \%, with Beta/Clopper-Pearson confidence intervals. N=1000 examples for each generalization split. No examples excluded.\end{small}}
 %This model gets 100\% Semantic Exact Match and String Exact Match on the in-distribution but unseen test set.
-% Model uses a part-of-speech and verb-type map for word-level embedding and just 19 Transformer attention-head compatible flat grammar pattern recognizers based on rules visible in training data plus decoder-loop compatible prepositional phrase, complement phrase unrolling.\end{small}}
+% Model uses a part-of-speech and verb-type map for word-level embedding and just 19 Transformer attention-head compatible flat grammar pattern recognizers based on rules visible in training data plus decoder-loop compatible prepositional phrase, sentential complement unrolling.\end{small}}
 \label{results-table}
 \end{table}
 
@@ -307,7 +307,7 @@ The \textit{Restricted Access Sequence Processing program scored 100\% Semantic 
 
 Recursion splits are reported below.
 
-\textbf{Restricted Access Sequence Processing - prepositional phrase and complement phrase recursion (tail recursive) with a non-tree, non-recursive approach using the decoder loop}\footnote{\begin{footnotesize}The grammar includes two (tail) recursive aspects, prepositional phrase and complement phrase recursion.
+\textbf{Restricted Access Sequence Processing - prepositional phrase and sentential complement recursion (tail recursive) with a non-tree, non-recursive approach using the decoder loop}\footnote{\begin{footnotesize}The grammar includes two (tail) recursive aspects, prepositional phrase and sentential complement recursion.
 
 The prepositional phrase recursion comes from the following COGS input grammar rules: `np -> np\_det | np\_prop | np\_pp` and `np\_pp -> np\_det pp np`.
 
@@ -315,11 +315,11 @@ Thus np can be expanded in an unbounded way as follows: `np -> (np\_det pp np) -
 
 However, one sees this is tail recursion and can be handled by a loop that just appends `np\_det pp` until the final `np` is not `np\_pp`.
 
-Complement phrase recursion 
+sentential complement recursion 
 %comes from the following COGS input grammar rules: 
 arises from `np v\_cp\_taking that start`, 
 %where the form supports being recursively expanded like 
-which can recursively expand as `np v\_cp\_taking that start -> np v\_cp\_taking that (np v\_cp\_taking that start)`, and so on until the nonterminal start expands to some other non complement phrase related nonterminal.
+which can recursively expand as `np v\_cp\_taking that start -> np v\_cp\_taking that (np v\_cp\_taking that start)`, and so on until the nonterminal start expands to some other non sentential complement related nonterminal.
 \end{footnotesize}
 }
 
@@ -356,7 +356,7 @@ Since no improvement was observed, we did not run the costly experiments to incr
 %https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental_data/ReCOGS_Baseline_non_RASP_Transformer_ReCOGS_error_prediction_with_n=10_Transformers_trained_from_scratch_(predicting_the_details_of_error_in_logical_form_on_obj_pp_to_subj_pp_split).ipynb
 %}. The author manually inspected each of verb type patterns and categorized them by the position of the agent and theme relative to the verb (see "Appendix: Error Analysis - parsing sentences with Lark and tagging sentences as agent left-of-verb or not" (\ref{appendix_error_analysis_for_baseline_transformer_methods})) as used below.
 
-%For the error analysis of the difficult obj\_pp\_to\_subj\_pp split, considering only single verb cases\footnote{the 2 verb case of v\_inf and v\_inf\_taking are being analyzed and will be included} and ignoring sentences with complement phrases, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. Complement phrase examples were excluded to focus on predicting the form of the error on simpler examples.}
+%For the error analysis of the difficult obj\_pp\_to\_subj\_pp split, considering only single verb cases\footnote{the 2 verb case of v\_inf and v\_inf\_taking are being analyzed and will be included} and ignoring sentences with sentential complements, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. sentential complement examples were excluded to focus on predicting the form of the error on simpler examples.}
 
 %Our hypothesis is in terms of nouns with a logical form relationship to a verb or other noun, where the relationship could be agent, theme, or recipient.
 %Since the obj\_pp\_to\_subj\_pp split is in terms of subject vs object prepositional modification (instead of agent, recipient, or theme), we use the subset of sentences within this split where the agent is to the left of the verb and modified by a prepositional phrase as it corresponds to the subject in that case.
@@ -396,7 +396,7 @@ We report that for all (n=22) single logical form part errors observed (from run
 \cite{Wu2023}'s baseline Encoder-Decoder Transformer was trained with default data (ReCOGS\_pos train.tsv) but with additionally the same modified v\_dat\_p2 pp training examples used for the "v\_dat\_p2\_pp\_moved\_to\_recipient" split (non-subject recipient modified with prepositional phrase, so nonoverlapping with subj\_pp, Figure \ref{baseline_transformer_standard_training_cannot_do_v_dat_p2_generalization} (b) and (d)) above on which it performed poorly, then tested on the standard prepositional modification generalization split "obj\_pp\_to\_subj\_pp", after which it achieved 22\% +/- 6.7\% Semantic Exact Match (sample mean +/- std, n=10) with 95\% confidence interval for sample mean n=10 of 17.9\% to 26.1\% (not significantly different than \cite{Wu2023}'s baseline by one-tailed Welch's unequal variances t-test). 
 
 \section{Analysis} 
-Our RASP model of a Transformer Encoder Decoder, without tree-based or recursive aspects scored 100\% in semantic exact match accuracy on the \cite{Wu2023} test set (n=3000), and on the generalization data scored 100\% in all but one category (see above) without explicit rules in the RASP program to handle them. This includes 100\% semantic exact match accuracy on the prepositional phrase recursion and complement phrase recursion generalization splits up to depth 12 (n=1000 examples each), without any hardcoded prepositional phrase or complement phrase expansion shortcuts added\footnote{\begin{footnotesize}a single rule applies to all depths; the only limit on length generalization is the RASP interpreter and a simple to extend positional encoding which only handles sentences up to a limit
+Our RASP model of a Transformer Encoder Decoder, without tree-based or recursive aspects scored 100\% in semantic exact match accuracy on the \cite{Wu2023} test set (n=3000), and on the generalization data scored 100\% in all but one category (see above) without explicit rules in the RASP program to handle them. This includes 100\% semantic exact match accuracy on the prepositional phrase recursion and sentential complement recursion generalization splits up to depth 12 (n=1000 examples each), without any hardcoded prepositional phrase or sentential complement expansion shortcuts added\footnote{\begin{footnotesize}a single rule applies to all depths; the only limit on length generalization is the RASP interpreter and a simple to extend positional encoding which only handles sentences up to a limit
 %due to a map that only covers numbers up to a limit but can be easily expanded by literally adding dummy entries like "'121':0,'122':0" and so on to a map in one place
 \end{footnotesize}}. The RASP program only made a significant number of errors on obj\_pp\_to\_subj\_pp which scored only 92.20\% Semantic Exact Match (95\% confidence interval (Beta dist / Clopper-Pearson): 90.36\% to 93.79\%) Semantic Exact Match accuracy, much better than \cite{Wu2023} baseline Encoder-Decoder Transformers which only scored 19.7\% +/- 6.1\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for the sample mean with n=20 of 17.0\% to 22.4\% (n=20 separately trained models with different random seeds for weight initialization and training data ordering; n=1000 examples used to test each of the n=20 models). \textbf{Thus, we demonstrated by construction using the Restricted Access Sequence Processing language which can be compiled to concrete Transformer weights that theoretically a Transformer Encoder-Decoder can solve the COGS input to ReCOGS\_pos logical form translation in a systematic, compositional, and length generalizing way.}
 
@@ -636,7 +636,7 @@ Also, the author thinks many of these RASP steps could be consolidated. The goal
 
 Introduction of variables at the beginning of the ReCOGS logical form (e.g. in the logical form for "a boy painted the girl", we have "boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 ) AND agent ( 2 , 1 ) AND theme ( 2 , 4 )" , the variable introduction is "boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 )" before the "AND"). We took a simple approach and sorted the input sequence with nouns before verbs and determiners, fillers last (with determiners and fillers not having any corresponding entry in the output sequence). We then count nouns and verbs in the input and count nouns and verbs in the output and determine if we have introduced all the nouns and verbs.
 
-See code for full details (for simplicity this description was written without discussing complement phrase handling).
+See code for full details (for simplicity this description was written without discussing sentential complement handling).
 
 Example counting how many nouns and verbs we have output (introduced as variables) so far (to determine what we need to output for next token):
 \begin{tiny}
@@ -730,7 +730,7 @@ As you can see above, if we have not introduced all the variables, we determine 
 If we are done introducing variables at that point in the decoder loop, we move on, 
 and attention head compatible operations recognize templates in the five parallel part-of-speech / verb-type per location sequences for "v\_trans\_omissible\_p1", "v\_trans\_omissible\_p2", "v\_trans\_omissible\_pp\_p1", "v\_trans\_omissible\_pp\_p2", "v\_trans\_not\_omissible", "v\_trans\_not\_omissible\_pp\_p1", "v\_trans\_not\_omissible\_pp\_p2", "v\_cp\_taking", "v\_inf\_taking", "v\_unacc\_p1", "v\_unacc\_p2", "v\_unacc\_pp\_p1", "v\_unacc\_pp\_p2", "v\_unerg", "v\_dat\_p2", "v\_dat\_pp\_p1", "v\_dat\_pp\_p2",  "v\_dat\_pp\_p3",  "v\_dat\_pp\_p4".
 
-Here are a couple of examples of patterns, to see how it looks if we support 1 verb pattern per input (no complement phrase recursion; which can be easily handled how we handle other things we loop over, looping over current phrase and masking and processing), which is sufficient to get approximately 100\% on all entries that do not use complement phrases (e.g. "so-and-so noticed that (full input here)"):
+Here are a couple of examples of patterns, to see how it looks if we support 1 verb pattern per input (no sentential complement recursion; which can be easily handled how we handle other things we loop over, looping over current phrase and masking and processing), which is sufficient to get approximately 100\% on all entries that do not use sentential complements (e.g. "so-and-so noticed that (full input here)"):
 \begin{tiny}
 \begin{verbatim}
 # define the pattern
@@ -751,7 +751,7 @@ np_np_any_before_mask = \
   select(np_np_sequence, 1, ==) and select(indices, indices, >); # acausal is ok \
 # in INPUT sequence (encoder part, not decoder), \
 # would mask further if we wanted to do multiple templates per input or \
-# something outside the supported grammar (COGS without complement phrase \
+# something outside the supported grammar (COGS without sentential complement \
 # recursion is supported here)
 np_np_any_before_sequence = \
   aggregate(np_np_any_before_mask, 1);
@@ -840,7 +840,7 @@ def template_size(template_name) {
 
 Details are in the code, but we compute at the last sequence position (in parallel) the number of relationships output for the verb so far, and for the current relationship which token within that multi-token process (e.g. the word "agent" or the open parenthesis "(" or the left index, or the comma, or right index, close parenthesis ")", "AND", etc) we are on.
 
-Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with complement phrases (see repo for CP support)), we compute the number of agent,theme,recipient,xcomp,ccomp entries in the output:
+Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with sentential complements (see repo for CP support)), we compute the number of agent,theme,recipient,xcomp,ccomp entries in the output:
 \begin{tiny}
 \begin{verbatim}
 atrxc_in_output_sequence = OUTPUT_MASK*(indicator(tokens == "agent" 
@@ -1011,7 +1011,7 @@ after_intro_num_tokens_in_output_excluding_asterisks - template_size(template_na
 \end{verbatim}
 \end{tiny}
 
-See code for full details (for simplicity this description was also written without discussing complement phrase handling). For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
+See code for full details (for simplicity this description was also written without discussing sentential complement handling). For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
 
 You can run a demo and see the autoregressive output 
 
@@ -1513,7 +1513,7 @@ https://github.com/willy-b/RASP-for-ReCOGS/blob/
 
 \end{footnotesize}}. The author manually inspected each of verb type patterns and categorized them by the position of the agent and theme relative to the verb (see code below) and used Lark to assign agent, theme sides based on the verb type using that mapping.
 
-To focus the analysis, we considered only single verb cases\footnote{\begin{footnotesize}the 2 verb case of v\_inf and v\_inf\_taking are being analyzed and will be included\end{footnotesize}} and ignored sentences with complement phrases. Then, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{\begin{footnotesize}Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. Complement phrase examples were excluded to focus on predicting the form of the error on simpler examples.\end{footnotesize}}
+To focus the analysis, we considered only single verb cases\footnote{\begin{footnotesize}the 2 verb case of v\_inf and v\_inf\_taking are being analyzed and will be included\end{footnotesize}} and ignored sentences with sentential complements. Then, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{\begin{footnotesize}Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. sentential complement examples were excluded to focus on predicting the form of the error on simpler examples.\end{footnotesize}}
 
 Our hypothesis is in terms of nouns with a logical form relationship to a verb or other noun, where the relationship could be agent, theme, or recipient.
 Since the obj\_pp\_to\_subj\_pp split is in terms of subject vs object prepositional modification (instead of agent, recipient, or theme), we use the subset of sentences within this split where the agent is to the left of the verb and modified by a prepositional phrase as it corresponds to the subject in that case.
@@ -1850,7 +1850,7 @@ for sentence in nonsense_example_sentences:
 \end{tiny}
 Those 21 COGS input sentences cover 71\% of the grammar. (Continued on next page.)
 
-We can compare the first 21 sentences of COGS that to the 19 sentences used in developing the RASP program (then add one to cover basic prepositional phrases, and one more to cover complement phrases):\footnote{\begin{footnotesize}(see 
+We can compare the first 21 sentences of COGS that to the 19 sentences used in developing the RASP program (then add one to cover basic prepositional phrases, and one more to cover sentential complements):\footnote{\begin{footnotesize}(see 
 
 https://github.com/willy-b/learning-rasp/blob/
 2be461ba83b7393fda4dc5a96ae600ac98478771
@@ -1864,7 +1864,7 @@ for the full list and associated rules in the code as the RASP does not learn fr
 \begin{verbatim}
 handpicked_example_sentences = [ 
 # non-recursive grammar rule examples only
-# no prepositional phrases or complement phrases
+# no prepositional phrases or sentential complements
 # see link above all these examples 
 # each correspond to distinct rules in the code
 "the girl was painted",
@@ -1915,9 +1915,9 @@ set(expansions_expected) -
 #{'<np> -> <np_pp>',
 # tell us we need prepositional phrase examples
 # '<np_pp> -> <np_det> <pp> <np>',
-# tells us we need complement phrase examples
+# tells us we need sentential complement examples
 # '<vp_external5> -> <v_cp_taking> <that> <start>',
-# tells us we need complement phrase examples
+# tells us we need sentential complement examples
 # '<vp_external> -> <vp_external5>'}
 \end{verbatim}
 \end{tiny}
@@ -1925,9 +1925,9 @@ set(expansions_expected) -
 \clearpage
 We got to 92.3\% grammar coverage in our 19 examples instead of COGS 71\% in 21 examples.
 
-And, it is telling us we are missing an example with prepositional phrases and complement phrases (see next examples)
+And, it is telling us we are missing an example with prepositional phrases and sentential complements (see next examples)
 
-Let us add a simple prepositional phrase example and complement phrase example:
+Let us add a simple prepositional phrase example and sentential complement example:
 \begin{tiny}
 \begin{verbatim}
 handpicked_example_sentences = \
@@ -2007,7 +2007,7 @@ That shows if one already knows parts of speech and verb types for words one nee
 Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand (in real world pretraining or a GloVe embedding would be used to solve this step)\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a pre-trained Transformer model in wide use, has part-of-speech information available at the earliest layers.}
  since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
 
-See Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} below for the 19 part-of-speech/verb type patterns and example sentences that cover the non-recursive grammar at non-terminal (post-embedding level), as well as the training-compatible prepositional phrase and complement phrase examples used for the RASP model design.
+See Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} below for the 19 part-of-speech/verb type patterns and example sentences that cover the non-recursive grammar at non-terminal (post-embedding level), as well as the training-compatible prepositional phrase and sentential complement examples used for the RASP model design.
 
 \clearpage
 \onecolumn
@@ -2038,13 +2038,13 @@ See Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-co
 \begin{small}the car was sold to the customer by ella\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p2 to det common\_noun by proper\_noun \end{small} & \begin{small}The pen was offered to the girl by Emma .\end{small} \\
 \begin{small}the car was sold to the customer\end{small} & \begin{small}det common\_noun was v\_dat\_pp\_p1 to det common\_noun \end{small} & \begin{small}The melon was lended to a girl .\end{small} \\
 \hline
-\begin{small}\textbf{Prepositional phrase and complement phrase examples mentioned in paper}\end{small} & \begin{small}\textbf{part-of-speech/verb-type sequence (used example for development)}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small} \\
+\begin{small}\textbf{Prepositional phrase and sentential complement examples mentioned in paper}\end{small} & \begin{small}\textbf{part-of-speech/verb-type sequence (used example for development)}\end{small} & \begin{small}\textbf{COGS/ReCOGS input training example}\end{small} \\
 \hline
 \begin{small}a boy painted the girl in a house\end{small} & \begin{small}det common\_noun v\_trans\_omissible\_p2 det common\_noun pp det common\_noun\end{small} & \begin{small}A frog ate a sweetcorn in a pile .\end{small} \\
 \begin{small}the girl noticed that a boy painted the girl\end{small} & \begin{small}det common\_noun v\_cp\_taking that det common\_noun v\_trans\_omissible\_p2 det common\_noun\end{small} & \begin{small}A girl said that a crocodile ate the rose .\end{small} \\
 \hline
 \end{tabular}
-\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to COGS/ReCOGS training examples. Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific complement phrase example we gave by modifying one of our existing examples with a complement phrase ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes complement phrase examples are demonstrated earlier, e.g. within 55 examples in default ordering). Note the prepositional phrase and complement phrase examples are not actually pattern matched (the 19 pattern matches plus a general cp/pp rule are used) and so do not exist in the RASP code, but are just given for reference.\end{small}}
+\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to COGS/ReCOGS training examples. Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific sentential complement example we gave by modifying one of our existing examples with a sentential complement ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes sentential complement examples are demonstrated earlier, e.g. within 55 examples in default ordering). Note the prepositional phrase and sentential complement examples are not actually pattern matched (the 19 pattern matches plus a general cp/pp rule are used) and so do not exist in the RASP code, but are just given for reference.\end{small}}
 \label{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}
 \end{table}
 \twocolumn
