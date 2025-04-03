@@ -1,68 +1,53 @@
-% Note that the starting LaTeX template used here for styling the document (not any of the scientific or text content, but font sizes and document layout)
-% was first derived from the 2020 version of the recommended Association for Computational Linguistics conference template hosted at Overleaf and then updated to https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj
-% Which is licensed Creative Commons CC BY 4.0 ( https://creativecommons.org/licenses/by/4.0/deed.en )
-% The motivation for using the template to format this work is that a version of this work is being submitted to an ACL-associated conference/journal for publication.
-% The use of Association for Computational Linguistics formatting is by https://web.archive.org/web/20250211084433/https://aclrollingreview.org/authors which requests using their formatting and explicitly lists https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj as an option (Overleaf option). This folder started with the ACL 2020 conference version provided by a course which moved from https://github.com/acl-org/ACLPUB/blob/b0bb1c0523feea6fb1c56eb0ef69595e809356d5/templates/README.md to https://github.com/acl-org/acl-style-files (and https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj ).
-% The acl.sty and acl_natbib.bst dependencies have been further removed
-
 % This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
 \pdfoutput=1
 % In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
 
-\documentclass[11pt]{article}
+% Note that the starting LaTeX template used here for styling the document (not any of the scientific or text content, but font sizes and document layout)
+% was first derived from the 2020 version of the recommended Association for Computational Linguistics conference template hosted at Overleaf and then updated to https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj
+% Which is licensed Creative Commons CC BY 4.0 ( https://creativecommons.org/licenses/by/4.0/deed.en )
+% The motivation for using the template to format this work is that a version of this work is being submitted to an ACL-associated conference/journal for publication.
+% The use of Association for Computational Linguistics formatting is as requested by https://web.archive.org/web/20250211084433/https://aclrollingreview.org/authors which links https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj as an option (Overleaf option). This folder started with the ACL 2020 conference version provided by a course which moved from https://github.com/acl-org/ACLPUB/blob/b0bb1c0523feea6fb1c56eb0ef69595e809356d5/templates/README.md to https://github.com/acl-org/acl-style-files (and https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj ). For arXiv release, the Association for Computational Linguistics acl.sty and acl_natbib.bst dependencies have been further removed.
 
+% -- begin what remains of Association for Computational Linguistics template ( https://creativecommons.org/licenses/by/4.0/ at https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj )
+\documentclass[11pt]{article}
 % Standard package includes
 \usepackage{times}
 \usepackage{latexsym}
-
 % For proper rendering and hyphenation of words containing Latin characters (including in bib files)
 \usepackage[T1]{fontenc}
-
 % This assumes your files are encoded as UTF8
 \usepackage[utf8]{inputenc}
-
 % This is not strictly necessary, and may be commented out,
 % but it will improve the layout of the manuscript,
 % and will typically save some space.
 \usepackage{microtype}
-
 % This is also not strictly necessary, and may be commented out.
 % However, it will improve the aesthetics of text in
 % the typewriter font.
 \usepackage{inconsolata}
-
 %Including images in your LaTeX document requires adding
 %additional package(s)
 \usepackage{graphicx}
+% -- end what remains of Association for Computational Linguistics template --
 
-% If the title and author information does not fit in the area allocated, uncomment the following
-%
-%\setlength\titlebox{<dim>}
-%
-% and set <dim> to something 5cm or larger.
-
-\RequirePackage{caption}
-\DeclareCaptionFont{10pt}{\fontsize{10pt}{12pt}\selectfont}
-\captionsetup{font=10pt}
-
-\RequirePackage{natbib}
-
-\PassOptionsToPackage{breaklinks}{hyperref}
-\RequirePackage{hyperref}
-% make links dark blue
-\usepackage{xcolor}
-\definecolor{darkblue}{rgb}{0, 0, 0.5}
-\hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue, urlcolor=darkblue}
-
-% adjustments to avoid dependency on acl.sty
+% adjustments to avoid dependency on Association for Computational Linguistics Conference style files
 \PassOptionsToPackage{a4paper,margin=2.3cm,heightrounded=true}{geometry} % Association for Computational Linguistics version uses 2.5cm margin we are using a little less here to compensate for not matching their other sizes exactly
 \RequirePackage{geometry}
 \setlength\columnsep{0.6cm}
 \newlength\titlebox
 \setlength\titlebox{11\baselineskip}
 \flushbottom \twocolumn \sloppy
+\RequirePackage{caption}
+\DeclareCaptionFont{10pt}{\fontsize{10pt}{12pt}\selectfont}
+\captionsetup{font=10pt}
+\RequirePackage{natbib}
+\PassOptionsToPackage{breaklinks}{hyperref}
+\RequirePackage{hyperref}
+\usepackage{xcolor}
+\definecolor{linkcolor}{rgb}{0, 0, 0.5}
+\hypersetup{colorlinks=true, citecolor=linkcolor, linkcolor=linkcolor, urlcolor=linkcolor}
 
-% match the section sizes in Association for Computational Linguistics Conference formatting
+% similar to Association for Computational Linguistics Conference formatting
 \makeatletter
 \renewcommand\section{\@startsection{section}{1}{\z@}%
                                   {-2.0ex \@plus -0.5ex \@minus -.2ex}%
@@ -70,19 +55,10 @@
                                   {\large\bfseries\raggedright}}
 \makeatother
 
-% match the abstract size in Association for Computational Linguistics Conference formatting
+% similar to Association for Computational Linguistics Conference formatting
 \makeatletter
-\renewenvironment{abstract}%
-  {\begin{center}\large\textbf{\abstractname}\end{center}%
-    \begin{list}{}%
-      {\setlength{\rightmargin}{0.6cm}%
-        \setlength{\leftmargin}{0.6cm}}%
-      \item[]\ignorespaces%
-      \@setsize\normalsize{12pt}\xpt\@xpt
-  }%
-  {\unskip\end{list}}
+\renewenvironment{abstract}{\begin{center}\large\textbf{Abstract}\end{center}\begin{list}{}{\setlength{\rightmargin}{0.55cm}\setlength{\leftmargin}{0.55cm}}\item[]\ignorespaces\@setsize\normalsize{12pt}\xpt\@xpt}{\unskip\end{list}}
 \makeatother
-
 
 % BEGIN SCIENTIFIC CONTENT -- LaTeX template content above ends here. Everything below should be assumed Copyright the author unless granted otherwise (excepting COGS/ReCOGS example sentences analyzed which are MIT licensed from their cited authors, see Data section and "Scientific Artifacts - Is Our Use Consistent with Authors' Intention and Licensing")
 
@@ -118,7 +94,6 @@ can perform the semantically equivalent ReCOGS\_pos
 %(beyond mapping words to parts-of-speech)
 %are not required for high accuracy on ReCOGS which is semantically equivalent to COGS and argue it is likely Transformer models will be able to perform the ReCOGS\_pos near perfectly including the structural generalization splits, but a different learning strategy may be required.
 \end{abstract}
-
 
 \section{Introduction}
 It was long argued that connectionist models (i.e. neural networks) were somehow structurally incapable of compositional generalization \citep{FodorPylyshyn1988}.\footnote{\begin{footnotesize}
@@ -475,7 +450,7 @@ Implementing our task in Restricted Access Sequence Processing immediately helpe
 
 The Restricted Access Sequence Processing code is not optimized. Cannot yet predict attention heads and layers required from the select and aggregate operations performed like the RASP authors \citep{Weiss2021} were able to do with their problems.
 
-Grammar coverage \citep{fuzzingbook2023:GrammarCoverageFuzzer} is only valid when the expansions are rules your model can learn.\footnote{\begin{footnotesize}If for example, as with our flat RASP model by design or as we hypothesize for \citep{Wu2023}'s baseline Encoder-Decoder Transformer, the model cannot or will not learn the rule `np\_det pp np -> np\_pp -> np` which recursively replaces noun phrases modified by prepositional phrases with a noun phrase, then grammar coverage will assume any prepositional phrase exposure is sufficient, which is evidently not true given the errors on prepositional phrase modification generalization splits reported here and by \citep{Wu2023}, \citep{KimLinzen2020}.
+Grammar coverage \citep{fuzzingbook2023:GrammarCoverageFuzzer} is only valid when the expansions are rules your model can learn.\footnote{\begin{footnotesize}If for example, as with our flat RASP model by design or as we hypothesize for \citep{Wu2023}'s baseline Encoder-Decoder Transformer, the model cannot or will not learn the rule `np\_det pp np -> np\_pp -> np` which recursively replaces noun phrases modified by prepositional phrases with a noun phrase, then grammar coverage will still assume any prepositional phrase exposure is sufficient, which is evidently not true given the errors on prepositional phrase modification generalization splits reported here and by \citep{Wu2023}, \citep{KimLinzen2020}.
 \end{footnotesize}
 } We specifically made use of this limitation in this paper but still caution anyone about it who might just take the grammar coverage metric away by itself.
 
@@ -1135,7 +1110,7 @@ as_num_for_letter_multiset_word_pooling(tokens))*word_lengths;
 \end{verbatim}
 \end{tiny}
 (Per-character token example is not causally masked, we do causal strict-decoder-compatible solution for anything outside input sequence in the full word-level solution above just leaving out of this character-level sketch, which is NOT used in this paper. For the causal character level solution one would use the summed value at the end of the word or the separator instead, indexing relative to separators.) 
-\clearpage
+
 Those values could then be looked up in a dictionary like in the completed word-level token solution to get part-of-speech, verb-type, etc, to derive a separate sequence which can be used for template matching as we successfully did with word-level tokens (see Appendix \ref{rasp-word-level-model-design}).
 
 
@@ -1341,7 +1316,7 @@ EncoderDecoderModel(
 For the \citep{Wu2023} baseline Encoder-Decoder Transformer layer variation experiments, 
 when we say e.g. 3 or 4 layers, we refer to 3 or 4 x BertLayer in the Encoder and Decoder, setting (3 or 4 Transformer blocks).
 (This is intended because only once per block, during cross/self-attention is information exchanged between sequence positions, and \citep{Csordas2022} hypothesize that the number of such blocks must be at least the depth of the parse tree in a compositional solution, as in a grammar parse tree at each level symbols are combined which requires transferring information between sequence positions).
-\clearpage
+
 
 \subsection{Methods Detail}
 \label{methods_detail}
@@ -1537,7 +1512,7 @@ select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 left_idx = \
 aggregate(select(indices, left_idx_in_nps_zero_based, ==), input_indices_sorted);
 right_idx = \
-aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); # <--
+aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); 
 \end{verbatim}
 \end{tiny}
 
@@ -1674,7 +1649,6 @@ def get_agent_side(lark_tree_root):
 \end{verbatim}
 \end{tiny}
 
-\clearpage
 \subsection{v\_dat\_p2 recipient pp-modification for generalization assessment and data augmentation attempt}
 \label{v_dat_p2_recipient_pp-modification_for_generalization_assessment_and_data_augmentation_attempt}
 
@@ -1692,7 +1666,6 @@ by modifying 328 existing single-pp v\_dat\_p2 lines in train.tsv to simply move
 So all the words and the grammar are otherwise familiar. This is similar to the existing `obj\_pp\_to\_subj\_pp` generalization \citep{Wu2023} reports on.
 All modified rows available in the notebook link in the footnote.
 
-\clearpage
 
 \subsection{Computing Grammar Coverage}
 \label{computing_grammar_coverage}
@@ -1969,7 +1942,6 @@ set(expansions_expected) -
 \end{verbatim}
 \end{tiny}
 
-\clearpage
 We got to 92.3\% grammar coverage in our 19 examples instead of COGS 71\% in 21 examples.
 
 And, it is telling us we are missing an example with prepositional phrases and sentential complements (see next examples)
@@ -2023,7 +1995,6 @@ set(expansions_expected) - all_expansions_observed_across_examples
 \end{tiny}
 (continued below)
 \clearpage
-
 Thus in 19 intentionally crafted sentences (Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}) (each is in the RASP code with a corresponding rule) cover 92.3\% of the grammar, 
 using the coverage we can what we did not cover yet, and thus add two sentences to fill the reported gap and get to 100\% .
 
@@ -2160,16 +2131,6 @@ c675e20c92f1514692067f01b7654d7e78ab0a97
 /README.md?plain=1\#L59 ).
 
 Software versions for packages installed are also typically logged for each experiment in the notebook for each experiment see Section \ref{results_notebook_links_by_section} for links.
-
-For styling and formatting this paper, we used the Association for Computational Linguistics conference paper templates linked from 
-https://github.com/acl-org/acl-style-files/blob/
-40bd374c5610aa17a96e3e4f0b5834ba90febe98
-/README.md?plain=1\#L13 and hosted at Overleaf, see https://web.archive.org/web/
-20250131174713/
-https://www.overleaf.com/latex/templates/
-association-for-computational-linguistics-acl-conference/jvxskxpnznfj which is licensed Creative Commons CC BY 4.0 ( https://creativecommons.org/licenses/by/4.0/ ) and explicitly listed as an option by https://web.archive.org/web/
-20250211084433/
-https://aclrollingreview.org/authors (Overleaf template option).
 
 \section{Acknowledgements}
 
