@@ -477,70 +477,38 @@ See also "Appendix: Potential Risks" (\ref{potential_risks}) and "Appendix: Scie
 
 \section*{Notes}
 No AI tools were used by the author in the preparation of this manuscript with the exception of anything used in the backend by Google Scholar searches for literature and citations and Google searches for related material. AI writing aids were not used.
-\clearpage
 
+\onecolumn
 \section{Appendix}
 
 \subsection{Results Notebook links by section}
 \label{results_notebook_links_by_section}
 
-\textbf{ReCOGS RASP model on test set}
-For steps to reproduce and results, see https://github.com/willy-b/RASP-for-ReCOGS/blob/
-0d7cfb3b0721c17669193ac032a6c1a5b377d761
-/supplemental\_data/RASP\_model\_for\_ReCOGS
-\_eval\_test\_set
-\_(multiday\_run\_on\_dedicated\_VM)
-\_(PR\_7\_contents\_on\_TEST\_set
-\_incl\_complement\_phrase\_support)\_(public).ipynb .
+\subsubsection{ReCOGS RASP model on test set}
+For steps to reproduce and results, see \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_test\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{the RASP model ReCOGS test set notebook (link)}.
 
-\textbf{ReCOGS RASP model on generalization set (all splits)}
-For steps to reproduce and results, see https://github.com/willy-b/RASP-for-ReCOGS/blob/
-0d7cfb3b0721c17669193ac032a6c1a5b377d761
-/supplemental\_data/
-RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_(multiday\_run\_on\_dedicated\_VM)
-\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb .
+\subsubsection{ReCOGS RASP model on generalization set (all splits)}
+For steps to reproduce and results, see 
+\href{https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{the RASP model ReCOGS generalization set notebook (link)}.
 
-\textbf{\citep{Wu2023} Encoder-Decoder Transformer from scratch baselines (ReCOGS\_pos)}
+\subsubsection{\citep{Wu2023} Encoder-Decoder Transformer from scratch baselines (ReCOGS\_pos)}
 
-See https://github.com/willy-b/RASP-for-ReCOGS/blob/
-1f0c74914b893f356e1268015d7c463dccf97454
-/supplemental\_data/
-RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)
-\_more\_Wu\_et\_al\_2023\_transformer\_baselines
-\_to\_compare\_with\_Restricted\_Access
-\_Sequence\_Processing\_(\_use\_fixed\_positional
-\_indices)\_and\_or\_data\_augmentation.ipynb
+See \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{the Encoder-Decoder Transformer from scratch baselines notebook (link)}
 
 for \citep{Wu2023} script execution and analysis code.
 
-\textbf{\citep{Wu2023} Encoder-Decoder baseline 2-layer Transformer does not improve on the obj\_pp\_to\_subj\_pp split when adding 1 or 2 additional layers}
+\subsubsection{\citep{Wu2023} Encoder-Decoder baseline 2-layer Transformer does not improve on the obj\_pp\_to\_subj\_pp split when adding 1 or 2 additional layers}
 
-3 and 4 layer results can be found in:
+3 and 4 layer results can be found in
 
-https://github.com/willy-b/RASP-for-ReCOGS/blob/
-1f0c74914b893f356e1268015d7c463dccf97454
-/supplemental\_data/
-RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)
-\_more\_Wu\_et\_al\_2023\_transformer\_baselines
-\_to\_compare\_with\_Restricted\_Access
-\_Sequence\_Processing\_(\_use\_fixed\_positional
-\_indices)\_and\_or\_data\_augmentation.ipynb .
+\href{https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{the baseline Encoder-Decoder Transformer 3 or 4 layer variation results notebook (link)} .
 
-\textbf{Attraction Error Analysis for \citep{Wu2023} baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split}
+\subsubsection{Attraction Error Analysis for \citep{Wu2023} baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split}
 
-See https://github.com/willy-b/RASP-for-ReCOGS/blob/
-609f4fff9e5b8ff2354081db617ad576bc7fb840
-/supplemental\_data/
-ReCOGS\_Baseline\_non\_RASP\_Transformer
-\_ReCOGS\_error\_prediction\_with
-\_n%3D10\_Transformers
-\_trained\_from\_scratch
-\_(predicting\_the\_details\_of\_error
-\_in\_logical\_form\_on
-\_obj\_pp\_to\_subj\_pp\_split).ipynb .
+See \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/609f4fff9e5b8ff2354081db617ad576bc7fb840/supplemental\_data/ReCOGS\_Baseline\_non\_RASP\_Transformer\_ReCOGS\_error\_prediction\_with\_n\%3D10\_Transformers\_trained\_from\_scratch\_(predicting\_the\_details\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb}{Attraction Error Analysis on baseline Encoder-Decoder Transformer notebook (link)} .
 
 \clearpage
-
+\twocolumn
 \subsection{Restricted Access Sequence Processing word-level token program/model design}
 \label{rasp-word-level-model-design}
 
