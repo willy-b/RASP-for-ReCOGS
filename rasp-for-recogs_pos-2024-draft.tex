@@ -1108,7 +1108,7 @@ as_num_for_letter_multiset_word_pooling(tokens))*word_lengths;
 
 Those values could then be looked up in a dictionary like in the completed word-level token solution to get part-of-speech, verb-type, etc, to derive a separate sequence which can be used for template matching as we successfully did with word-level tokens (see Appendix \ref{rasp-word-level-model-design}).
 
-
+\clearpage
 \subsection{Model Detail}
 \label{model_detail}
 
@@ -2096,9 +2096,7 @@ GitHub hosted artifacts for COGS ( \href{https://github.com/najoungkim/COGS}{htt
 
 The RASP \cite{Weiss2021} interpreter (hosted at \href{https://github.com/tech-srl/rasp}{https://github.com/tech-srl/rasp} ) is MIT licensed and we do not reproduce their code or any substantial part of their actual work within this publication (our code when executed retrieves a fresh copy from the source and their interpreter is not bundled with it), though we use the language they define and provide code samples written in that language. We are studying how a Transformer could perform the ReCOGS task (an approximation of interpreting the meaning of a subset of English sentences), which is consistent with their intended research use for the language. We are not deploying any RASP programs in a customer/user facing or online use case and using in an offline research context only.
  
-Klinger's description of the COGS input probabilistic context-free grammar (PCFG) from within their CPG project (from \href{https://github.com/IBM/cpg/blob/
-c3626b4e03bfc681be2c2a5b23da0b48abe6f570
-/src/model/cogs\_data.py\#L523}{https://github.com/IBM/cpg/blob/
+Klinger's description of the COGS input probabilistic context-free grammar (PCFG) from within their CPG project (from \href{https://github.com/IBM/cpg/blob/c3626b4e03bfc681be2c2a5b23da0b48abe6f570/src/model/cogs\_data.py#L523}{https://github.com/IBM/cpg/blob/
 c3626b4e03bfc681be2c2a5b23da0b48abe6f570
 /src/model/cogs\_data.py\#L523} , note we are not using CPG itself) is Apache v2 licensed ( \href{https://github.com/IBM/cpg/blob/c3626b4e03bfc681be2c2a5b23da0b48abe6f570/LICENSE}{https://github.com/IBM/cpg/blob/
 c3626b4e03bfc681be2c2a5b23da0b48abe6f570
