@@ -1091,11 +1091,9 @@ as_num_for_letter_multiset_word_pooling(tokens))*word_lengths;
 \end{verbatim}
 \end{tiny}
 (Per-character token example is not causally masked, we do causal strict-decoder-compatible solution for anything outside input sequence in the full word-level solution above just leaving out of this character-level sketch, which is NOT used in this paper. For the causal character level solution one would use the summed value at the end of the word or the separator instead, indexing relative to separators.) 
-\clearpage
+
 Those values could then be looked up in a dictionary like in the completed word-level token solution to get part-of-speech, verb-type, etc, to derive a separate sequence which can be used for template matching as we successfully did with word-level tokens (see Appendix \ref{rasp-word-level-model-design}).
 
-
-\clearpage
 
 \subsection{Model Detail}
 \label{model_detail}
@@ -1294,7 +1292,6 @@ EncoderDecoderModel(
 For the \cite{Wu2023} baseline Encoder-Decoder Transformer layer variation experiments, 
 when we say e.g. 3 or 4 layers, we refer to 3 or 4 x BertLayer in the Encoder and Decoder, setting (3 or 4 Transformer blocks).
 (This is intended because only once per block, during cross/self-attention is information exchanged between sequence positions, and \cite{Csordas2022} hypothesize that the number of such blocks must be at least the depth of the parse tree in a compositional solution, as in a grammar parse tree at each level symbols are combined which requires transferring information between sequence positions).
-\clearpage
 
 \subsection{Methods Detail}
 \label{methods_detail}
