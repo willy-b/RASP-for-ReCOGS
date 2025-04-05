@@ -424,7 +424,7 @@ Implementing our task in Restricted Access Sequence Processing immediately helpe
 \end{footnotesize}
 }) of \cite{Wu2023}'s baseline Encoder-Decoder Transformer, predict errors in detail made in the logical forms, and demonstrated that tree-structured/recursive representations are not needed to cover the recursive aspects of the COGS/ReCOGS grammar\footnote{\begin{footnotesize}input grammar for COGS/ReCOGS are the same\end{footnotesize}}. We recommend others to consider RASP to understand Transformer behavior even for more complicated tasks like ReCOGS. We predict that Transformers should be able to perform the ReCOGS task (even structural generalization splits) with high accuracy and that the problem is just of getting the Transformer to learn the appropriate rules\footnote{\begin{footnotesize}e.g. to ignore "pp det common\_noun" and "pp proper\_noun" when finding nouns in relationships with verbs, which allows the RASP model to get 100\% on the ReCOGS test set, and 100\% two of the three structural generalizations, and 92\% on the obj-pp-to-subj-pp split\end{footnotesize}}, turning attention to data augmentation\footnote{\begin{footnotesize}We tried one augmentation, see Results and Appendix \ref{v_dat_p2_recipient_pp-modification_for_generalization_assessment_and_data_augmentation_attempt}, but there are many other possibilities.
 %We note we attempted in the course of this work one simple data augmentation (see Methods) which did not improve performance on the obj-pp-to-subj-pp split which was to attempt to teach the network to ignore the distracting "pp det common\_noun" and "pp proper\_noun" (a rule we had to add to the RASP, see Appendix \ref{rasp-word-level-model-design} and Model sections) which along with templates with dynamic size gaps (match any occurrence of something in the future rather than a fixed length away) allows our RASP model to achieve high obj-pp-to-subj-pp scores despite being a non-tree solution. The author will continue to attempt to augment the data to get the model to learn to ignore "pp det common\_noun" and "pp proper\_noun" when looking for nouns to assign to right indices of relationships, as the initial attempt did not appear to get the trained-from-scratch Transformer to learn this rule, which means we cannot conclude anything about whether that rule is sufficient in the trained as it is in the RASP model, and is also not sufficient to say that the Transformer won't be able to learn the rule with a simple data augmentation (we only tried one).
-\end{footnotesize}}, curriculum learning \cite{10.1145/1553374.1553380}, reinforcement learning \cite{Ranzato2015}, training objectives \cite{10.1162/tacl_a_00733}, and other approaches.
+\end{footnotesize}}, curriculum learning \cite{10.1145/1553374.1553380}, reinforcement learning \cite{Ranzato2015}, training objectives \cite{10.1162/tacl_a_00733}, and other approaches \cite{Csordas2021} \cite{ontanon-etal-2022-making}.
 
 \clearpage
 \section*{Known Project Limitations}
@@ -1028,7 +1028,7 @@ python recogs_examples_in_rasp.py
 
 Note, a proof of concept character level Restricted Access Sequence Processing model was done with a decoder loop (unlike word-level solution above, it was a sketch so did not limit to strictly causal operations which just require more careful indexing -- using the value at the separator or the end of a word instead of pooling the same value to all letters in a word for example). Note that this one did not cover translating sentences in general into ReCOGS unlike the word-level solution as it is tedious and redundant but the core operations are possible and the author believes any solution at the word level can be mapped to a solution in character level tokens (out of scope for this paper to prove it).
 
-Since it is a separate problem and adds a lot of complexity without bringing anything to bear on the main questions of the paper, I left a full implementation to the word-level tokens which were simpler and ran faster. The difference is one uses a similar approach started at \footnote{\begin{footnotesize} \href{https://anonymous.4open.science/r/learning-rasp-F7C2/other-examples/decoder-loop-example-parse-into-recogs-style-variables.rasp\#L2}{https://anonymous.4open.science/r/learning-rasp-F7C2/other-examples/decoder-loop-example-parse-into-recogs-style-variables.rasp\#L2} \end{footnotesize}} to assign all the letters in each word an index. 
+Since it is a separate problem and adds a lot of complexity without bringing anything to bear on the main questions of the paper, I left a full implementation to the word-level tokens which were simpler and ran faster. The difference is one uses a similar approach started at \footnote{\begin{footnotesize}\href{https://anonymous.4open.science/r/learning-rasp-F7C2/other-examples/decoder-loop-example-parse-into-recogs-style-variables.rasp\#L2}{https://anonymous.4open.science/r/learning-rasp-F7C2/other-examples/decoder-loop-example-parse-into-recogs-style-variables.rasp\#L2}\end{footnotesize}} to assign all the letters in each word an index. 
 
 Word indices can be assigned using RASP to count separators occurring prior to each sequence location like:
 
@@ -1331,14 +1331,11 @@ The overall Semantic Exact Match performance is reported as well as the performa
 Prepositional Phrase (pp\_recursion) are highlighted and discussed in depth for all models.
 
 For the RASP program's Semantic Exact Match results which are based on the outcome of a deterministic program (so cannot randomly reinitialize weights and retrain, rerun),
-we can use the Beta distribution to model the uncertainty and generate confidence intervals (Clopper-Pearson intervals\footnote{\begin{footnotesize}see e.g. 
-https://en.wikipedia.org/w/index.php
-
-?title=Binomial\_proportion\_confidence\_interval
-
-\&oldid=1252517214\#Clopper\%E2\%80\%93Pearson\_interval
-
-and \href{https://arxiv.org/abs/1303.1288}{https://arxiv.org/abs/1303.1288} 
+we can use the Beta distribution to model the uncertainty and generate confidence intervals (Clopper-Pearson intervals\footnote{\begin{footnotesize}see e.g. \href{https://en.wikipedia.org/w/index.php?title=Binomial\_proportion\_confidence\_interval\&oldid=1252517214\#Clopper\%E2\%80\%93Pearson\_interval}{https://en.wikipedia.org/w/index.php?title=
+Binomial\_proportion\_confidence\_interval\&oldid=1252517214
+\#Clopper\%E2\%80\%93Pearson\_interval}
+and
+\href{https://arxiv.org/abs/1303.1288}{https://arxiv.org/abs/1303.1288} 
 \end{footnotesize}
 }) as each Semantic Exact Match is a binary outcome (0 or 1 for each example). Unlike bootstrapping this also supports the common case for our RASP program of 100\% accuracy, which occurs in all but one split, where resampling would not help us estimate uncertainty in bootstrapping, but using the Beta distribution gives us confidence bounds that depend on the sample size.
 
