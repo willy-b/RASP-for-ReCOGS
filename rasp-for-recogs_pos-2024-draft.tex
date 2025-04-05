@@ -3,8 +3,8 @@
 % Which is licensed Creative Commons CC BY 4.0 ( https://creativecommons.org/licenses/by/4.0/deed.en )
 % The motivation for using the template to format this work is that a version of this work is being submitted to an ACL-associated conference/journal for publication.
 % The use of Association for Computational Linguistics formatting is by https://web.archive.org/web/20250211084433/https://aclrollingreview.org/authors which requests using their formatting and explicitly lists https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj as an option (Overleaf option). This folder started with the ACL 2020 conference version which moved from https://github.com/acl-org/ACLPUB/blob/b0bb1c0523feea6fb1c56eb0ef69595e809356d5/templates/README.md to https://github.com/acl-org/acl-style-files (and https://web.archive.org/web/20250131174713/https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj ).
-% Please run `wget https://raw.githubusercontent.com/acl-org/acl-style-files/40bd374c5610aa17a96e3e4f0b5834ba90febe98/latex/acl.sty` to download the separate acl.sty file so we do not need to reproduce it here though it is included in the template above when opened.
-\typeout{IMPORTANT! Please run `wget https://raw.githubusercontent.com/acl-org/acl-style-files/40bd374c5610aa17a96e3e4f0b5834ba90febe98/latex/acl.sty` to download the separate acl.sty file so we do not need to reproduce it here though it is included in the template above when opened. IF YOU DO NOT DOWNLOAD acl.sty THE PDF WILL NOT GENERATE.}
+% IMPORTANT! Please run `wget https://raw.githubusercontent.com/acl-org/acl-style-files/40bd374c5610aa17a96e3e4f0b5834ba90febe98/latex/acl.sty` to download the separate acl.sty file and `wget https://raw.githubusercontent.com/acl-org/acl-style-files/40bd374c5610aa17a96e3e4f0b5834ba90febe98/latex/acl\_natbib.bst` to download their `acl\_natbib.bst` so we do not need to reproduce it here though it is included in the template above when opened. IF YOU DO NOT DOWNLOAD acl.sty/acl\_natbib.bst THE PDF WILL NOT GENERATE.
+\typeout{IMPORTANT! Please run `wget https://raw.githubusercontent.com/acl-org/acl-style-files/40bd374c5610aa17a96e3e4f0b5834ba90febe98/latex/acl.sty` to download the separate acl.sty file and `wget https://raw.githubusercontent.com/acl-org/acl-style-files/40bd374c5610aa17a96e3e4f0b5834ba90febe98/latex/acl\_natbib.bst` to download their `acl\_natbib.bst` so we do not need to reproduce it here though it is included in the template above when opened. IF YOU DO NOT DOWNLOAD acl.sty/acl\_natbib.bst THE PDF WILL NOT GENERATE.}
 
 % This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
 \pdfoutput=1
@@ -159,19 +159,19 @@ were used in designing our RASP solution and analyzing the ways in which this ta
 We used the RASP interpreter of \cite{Weiss2021}. For RASP model design and details see Appendix \ref{rasp-word-level-model-design}. We use word-level tokens for all RASP model results in this paper,\footnote{\begin{footnotesize}We believe any solution at the word-level can be converted to a character-level token solution (see Appendix \ref{rasp_character_level_model_notes} for proof of concept details on a character level solution not used here).
 \end{footnotesize}
 }
-with an "embedding" layer that tags with possible part of speech\footnote{\begin{footnotesize}Note we follow the \cite{klinger2024compositionalprogramgenerationfewshot} description of COGS and include in our RASP vocabulary (part-of-speech or verb-type embedding/mapping) all words occurring anywhere in the upstream (Re)COGS "train.tsv". We also include two words in our vocab/embedding as common nouns accidentally left out of train.tsv vocabulary by the COGS author: "monastery" and "gardner" (only included in their train\_100.tsv and dev.tsv not also in train.tsv, but present in test/gen), a decision affecting just 22 or 0.1\% of generalization examples so would not affect any conclusions qualitatively. See also the discussion on COGS Github with the COGS author at https://github.com/najoungkim/COGS/issues/2\#issuecomment-976216841 .\end{footnotesize}}, and apply just once per encoder pass 19 attention-head compatible flat pattern-matching rules (Figures \ref{rasp-model-flat-pattern-match-example}, \ref{rasp-model-flat-pattern-match-example-v_dat_p2_match_with_middle_pp}, \ref{rasp-model-flat-pattern-match-example-v_dat_p2_non_matching}), shown using grammar coverage \cite{fuzzingbook2023:GrammarCoverageFuzzer} to be learnable from the training data\footnote{\begin{footnotesize}Specific training examples for each rule are in Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} the end of "Appendix: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design" (\ref{grammar_coverage_analysis_for_model_design})\end{footnotesize}}, plus general pp/cp handling logic. Each pattern handles "det common\_noun" and "proper\_noun" identically, a symmetry which is evident in the training data. The model does NOT apply recursive, tree-structured rules like `np\_det pp np -> np\_pp -> np`.
+with an "embedding" layer that tags with possible part of speech\footnote{\begin{footnotesize}Note we follow the \cite{klinger2024compositionalprogramgenerationfewshot} description of COGS and include in our RASP vocabulary (part-of-speech or verb-type embedding/mapping) all words occurring anywhere in the upstream (Re)COGS "train.tsv". We also include two words in our vocab/embedding as common nouns accidentally left out of train.tsv vocabulary by the COGS author: "monastery" and "gardner" (only included in their train\_100.tsv and dev.tsv not also in train.tsv, but present in test/gen), a decision affecting just 22 or 0.1\% of generalization examples so would not affect any conclusions qualitatively. See also the discussion on COGS Github with the COGS author at \href{https://github.com/najoungkim/COGS/issues/2\#issuecomment-976216841}{https://github.com/najoungkim/COGS/issues/2\#issuecomment-976216841} .\end{footnotesize}}, and apply just once per encoder pass 19 attention-head compatible flat pattern-matching rules (Figures \ref{rasp-model-flat-pattern-match-example}, \ref{rasp-model-flat-pattern-match-example-v_dat_p2_match_with_middle_pp}, \ref{rasp-model-flat-pattern-match-example-v_dat_p2_non_matching}), shown using grammar coverage \cite{fuzzingbook2023:GrammarCoverageFuzzer} to be learnable from the training data\footnote{\begin{footnotesize}Specific training examples for each rule are in Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} the end of "Appendix: Grammar Coverage analysis to develop and justify Restricted Access Sequence Processing model design" (\ref{grammar_coverage_analysis_for_model_design})\end{footnotesize}}, plus general pp/cp handling logic. Each pattern handles "det common\_noun" and "proper\_noun" identically, a symmetry which is evident in the training data. The model does NOT apply recursive, tree-structured rules like `np\_det pp np -> np\_pp -> np`.
 
 Consistent with \cite{Zhou2024} we use \cite{Weiss2021}'s RASP originally used for modeling Transformer encoders to model an encoder-decoder in a causal way by feeding the autoregressive output back into the program.\footnote{\begin{footnotesize}We only have aggregations with non-causal masks when that aggregation (or without loss of generality just before the aggregation product is used to avoid multiplying everywhere) is masked by an input mask restricting it to the sequence corresponding to the input.\end{footnotesize}}
 
 For training Transformers from scratch with randomly initialized weights, we use scripts derived from those provided by \cite{Wu2023}\footnote{
-\begin{footnotesize}https://github.com/frankaging/ReCOGS/blob/
-1b6eca8ff4dca5fd2fb284a7d470998af5083beb/run\_cogs.py
+\begin{footnotesize}\href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/run\_cogs.py}{https://github.com/frankaging/ReCOGS/blob/
+1b6eca8ff4dca5fd2fb284a7d470998af5083beb/run\_cogs.py}
 
 and
 
-https://github.com/frankaging/ReCOGS/blob/
+\href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/model/encoder\_decoder\_hf.py}{https://github.com/frankaging/ReCOGS/blob/
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb
-/model/encoder\_decoder\_hf.py 
+/model/encoder\_decoder\_hf.py} 
 \end{footnotesize}
 }. See "Appendix: Model Detail" (\ref{model_detail}).
 \section{Methods}
@@ -179,13 +179,13 @@ We use the RASP \cite{Weiss2021} interpreter\footnote{\begin{footnotesize}provid
 \end{footnotesize}
 } to evaluate our RASP programs\footnote{\begin{footnotesize}\href{https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recogs-style-decoder-loop.rasp} with a demo at \href{https://anonymous.4open.science/r/learning-rasp-F7C2/recogs\_examples\_in\_rasp.py}{https://anonymous.4open.science/r/learning-rasp-F7C2/recogs\_examples\_in\_rasp.py}
 \end{footnotesize}
-}. Logical forms (LFs) generated by the models were scored by Semantic Exact Match\footnote{\begin{footnotesize}Using the official scripts at https://github.com/frankaging/ReCOGS/blob/
-1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/train\_utils.py
+}. Logical forms (LFs) generated by the models were scored by Semantic Exact Match\footnote{\begin{footnotesize}Using the official scripts at \href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/train\_utils.py}{https://github.com/frankaging/ReCOGS/blob/
+1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/train\_utils.py}
 
 and
 
-https://github.com/frankaging/ReCOGS/blob/
-1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/compgen.py
+\href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/compgen.py}{https://github.com/frankaging/ReCOGS/blob/
+1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/compgen.py}
 \end{footnotesize}
 } against ground truth.
 
@@ -437,7 +437,7 @@ Grammar coverage \cite{fuzzingbook2023:GrammarCoverageFuzzer} is only valid when
 
 The attraction error analysis of the \cite{Wu2023} baseline Encoder-Decoder Transformer on the obj\_pp\_to\_subj\_pp split does not yet attempt to explain the common case of multiple errors in the logical form.\footnote{\begin{footnotesize}e.g. agent index may be replaced by prepositional phrase noun but also a spurious theme relationship is added or the theme index is also corrupted\end{footnotesize}}
 
-We only provide and discuss a RASP solution for ReCOGS \cite{Wu2023} here, not the semantically equivalent COGS\footnote{\begin{footnotesize}nor the recently introduced extended version SLOG \cite{li2023slogstructuralgeneralizationbenchmark}\end{footnotesize}} \cite{KimLinzen2020}, though as this goes to publication we have just separately released a RASP model for COGS at https://anonymous.4open.science/r/RASP-for-COGS-102F\footnote{RASP-for-COGS also supports case-sensitive string exact match and ignoring out-of-vocabulary words, features not supported in RASP-for-ReCOGS}, which is undergoing evaluation with preliminary data supporting the same conclusions for that task (can also be solved by a non-tree structured, non-hierarchical Transformer compatible model, despite using Exact Match instead of Semantic Exact Match, with same RASP for the Encoder as used here for ReCOGS\_pos but a different Decoder).
+We only provide and discuss a RASP solution for ReCOGS \cite{Wu2023} here, not the semantically equivalent COGS\footnote{\begin{footnotesize}nor the recently introduced extended version SLOG \cite{li2023slogstructuralgeneralizationbenchmark}\end{footnotesize}} \cite{KimLinzen2020}, though as this goes to publication we have just separately released a RASP model for COGS at \href{https://anonymous.4open.science/r/RASP-for-COGS-102F}{https://anonymous.4open.science/r/RASP-for-COGS-102F}\footnote{RASP-for-COGS also supports case-sensitive string exact match and ignoring out-of-vocabulary words, features not supported in RASP-for-ReCOGS}, which is undergoing evaluation with preliminary data supporting the same conclusions for that task (can also be solved by a non-tree structured, non-hierarchical Transformer compatible model, despite using Exact Match instead of Semantic Exact Match, with same RASP for the Encoder as used here for ReCOGS\_pos but a different Decoder).
 
 Much deeper Transformer networks may be learning a tree-based grammar representation\footnote{\begin{footnotesize}Nothing explored here rules that out and there is plenty of evidence outside the COGS task-related literature suggesting this will be the case: \cite{tenney2019bertrediscoversclassicalnlp} show the 24-layer BERT model seems to handle "POS tagging, parsing, NER, semantic roles, then coreference"; \cite{hewitt-manning-2019-structural} "provid[e] evidence that entire syntax trees are embedded implicitly in deep models’ [including BERT's] vector geometry", and \cite{goldberg2019assessingbertssyntacticabilities} shows BERT excels at subject-verb agreement, "which [is] traditionally taken as evidence for
 the existence [of] hierarchical structure" (though e.g. in this work we see that ignoring distractor nouns in long-term dependencies does not require hierarchy or a deep understanding of syntax but simple rules like ignore "pp det common\_noun" and "pp proper\_noun" for finding noun-verb relationships in the logical form can allow for handling of such long-range dependencies). On the other hand, \cite{petty2024impactdepthcompositionalgeneralization} argue specifically for the COGS benchmark (semantically equivalent to ReCOGS which is derived from it) that increasing depth does not allow their Transformers to make progress on the structural generalization splits, even at depths up to 32 layers.
@@ -468,36 +468,27 @@ No AI tools were used by the author in the preparation of this manuscript with t
 
 For steps to reproduce and results, see \href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_test\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{the RASP model ReCOGS test set notebook (link)}\footnote{\begin{footnotesize}Full URL for printed copies: 
 
-https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
-
+\href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_test\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
 RASP\_model\_for\_ReCOGS\_eval\_test\_set
-
 \_(multiday\_run\_on\_dedicated\_VM)
-
-\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb\end{footnotesize}}.
+\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}\end{footnotesize}}.
 
 \subsubsection{ReCOGS RASP model on generalization set (all splits)}
 For steps to reproduce and results, see \href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{the RASP model ReCOGS generalization set notebook (link)}\footnote{\begin{footnotesize}Full URL for printed copies: 
 
-https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
-
+\href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
 RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set
-
 \_(multiday\_run\_on\_dedicated\_VM)
-
-\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb\end{footnotesize}}.
+\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}\end{footnotesize}}.
 
 \subsubsection{\cite{Wu2023} Encoder-Decoder Transformer from scratch baselines (ReCOGS\_pos)}
 
 See \href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{the Encoder-Decoder Transformer from scratch baselines notebook (link)}\footnote{\begin{footnotesize}Full URL for printed copies: 
 
-https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/
-
+\href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/
 supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)
-
 \_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing
-
-\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb\end{footnotesize}}
+\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}\end{footnotesize}}
 
 for \cite{Wu2023} script execution and analysis code.
 
@@ -505,25 +496,19 @@ for \cite{Wu2023} script execution and analysis code.
 
 3 and 4 layer results can also be found in that same notebook, which is also \href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{the baseline Encoder-Decoder Transformer 3 or 4 layer variation results notebook (link)}\footnote{\begin{footnotesize}Full URL for printed copies: 
 
-https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/
-
+\href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/
 supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)
-
 \_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing
-
-\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb\end{footnotesize}} (scroll down).
+\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}\end{footnotesize}} (scroll down).
 
 \subsubsection{Attraction Error Analysis for \cite{Wu2023} baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split}
 
 See \href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/ReCOGS\_Baseline\_non\_RASP\_Transformer\_ReCOGS\_error\_prediction\_with\_n=10\_Transformers\_trained\_from\_scratch\_(predicting\_the\_details\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb}{Attraction Error Analysis on baseline Encoder-Decoder Transformer notebook (link)}\footnote{\begin{footnotesize}Full URL for printed copies: 
 
-https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/ReCOGS\_Baseline
-
+\href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/ReCOGS\_Baseline\_non\_RASP\_Transformer\_ReCOGS\_error\_prediction\_with\_n=10\_Transformers\_trained\_from\_scratch\_(predicting\_the\_details\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb}{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/ReCOGS\_Baseline
 \_non\_RASP\_Transformer\_ReCOGS\_error\_prediction
-
 \_with\_n=10\_Transformers\_trained\_from\_scratch\_(predicting\_the\_details
-
-\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb
+\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb}
 \end{footnotesize}} .
 
 \twocolumn
@@ -1121,20 +1106,17 @@ c3626b4e03bfc681be2c2a5b23da0b48abe6f570
 \end{footnotesize}} (same input as ReCOGS) (NOT using their CPG solution or model anywhere) in constructing our RASP vocabulary and part-of-speech or verb-type embedding/mapping. 
 
 We are focused on structural, not lexical generalizations, so same as in \cite{klinger2024compositionalprogramgenerationfewshot} we include all words occurring anywhere in the upstream (Re)COGS "train.tsv" (including "exposure" rows, though would not change results qualitatively to omit the very few words only occurring in exposure examples). We also include two words in our vocab/embedding as common nouns accidentally left out of train.tsv vocabulary by the COGS author: "monastery" and "gardner" (only included in their train\_100.tsv and dev.tsv not also in train.tsv, but present in test/gen), a decision affecting just 22 or 0.1\% of generalization examples so would not affect any conclusions qualitatively. See also the discussion on COGS Github with the COGS author at 
-https://github.com/najoungkim
-/COGS/issues/2\#issuecomment-976216841 .
+\href{https://github.com/najoungkim/COGS/issues/2\#issuecomment-976216841}{https://github.com/najoungkim
+/COGS/issues/2\#issuecomment-976216841} .
 
-For training the baseline Transformers from scratch with randomly initialized weights using gradient descent for comparison with RASP predictions, we use scripts derived from those provided by \cite{Wu2023}\footnote{\begin{footnotesize}https://github.com/frankaging/ReCOGS/blob/
-1b6eca8ff4dca5fd2fb284a7d470998af5083beb/run\_cogs.py
+For training the baseline Transformers from scratch with randomly initialized weights using gradient descent for comparison with RASP predictions, we use scripts derived from those provided by \cite{Wu2023}\footnote{\begin{footnotesize}\href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/run\_cogs.py}{https://github.com/frankaging/ReCOGS/blob/
+1b6eca8ff4dca5fd2fb284a7d470998af5083beb/run\_cogs.py}
 
 and
 
-https://github.com/frankaging/ReCOGS/blob/
+\href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/model/encoder\_decoder\_hf.py}{https://github.com/frankaging/ReCOGS/blob/
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb
-
-/model/encoder\_decoder\_hf.py
-\end{footnotesize}
-}.
+/model/encoder\_decoder\_hf.py}\end{footnotesize}}.
 
 The baseline \cite{Wu2023} Encoder-Decoder Transformer was by default 2-layers with 4344077 parameters,
 except for the layer variation experiments which had 6046701 parameters for the 3-layer , and 7749325 parameters for the 4-layer variations.
@@ -1319,12 +1301,9 @@ We implement in RASP the transformation of COGS input sentences into ReCOGS\_pos
 
 See ReCOGS\_pos dataset at 
 
-https://github.com/frankaging/ReCOGS/tree/
-
+\href{https://github.com/frankaging/ReCOGS/tree/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/recogs\_positional\_index}{https://github.com/frankaging/ReCOGS/tree/
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb
-
-/recogs\_positional\_index
-\end{footnotesize}
+/recogs\_positional\_index}\end{footnotesize}
 }. logical forms (LFs) which are scored by Semantic Exact Match\footnote{ 
 \begin{footnotesize}\href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/train_utils.py}{https://github.com/frankaging/ReCOGS/blob/
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb/utils/
@@ -1637,7 +1616,7 @@ The following 328 examples were derived\footnote{\begin{footnotesize} Notebook: 
 
 \href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/recogs_positional_index/train.tsv}{https://github.com/frankaging/ReCOGS/blob/
 1b6eca8ff4dca5fd2fb284a7d470998af5083beb
-/recogs\_positional\_index/train.tsv} , 
+/recogs\_positional\_index/train.tsv},
 
 by modifying 328 existing single-pp v\_dat\_p2 lines in train.tsv to simply move the prepositional phrase from the 3rd NP (theme) in the `np v\_dat\_p2 np np` (agent, recipient, theme) to the 2nd NP (recipient), e.g. copying and modifying the line "Liam gave the monkey a chalk in the container ." to "Liam gave the monkey in the container a chalk .".
 
