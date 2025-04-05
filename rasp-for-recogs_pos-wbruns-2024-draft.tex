@@ -96,8 +96,7 @@ can perform the semantically equivalent ReCOGS\_pos
 \end{abstract}
 
 \section{Introduction}
-It was long argued that connectionist models (i.e. neural networks) were somehow structurally incapable of compositional generalization \citep{FodorPylyshyn1988}.\footnote{\begin{footnotesize}
-More specific versions of this debate continue, for example re: syntax, one can read \citep{vanschijndel2019quantitydoesntbuyquality} vs \citep{goldberg2019assessingbertssyntacticabilities} or re: hierarchical generalization by Transformers, \citep{petty2021transformersgeneralizelinearly} vs \citep{murty2023grokkinghierarchicalstructurevanilla}.
+It was long argued that connectionist models (i.e. neural networks) were somehow structurally incapable of compositional generalization \citep{FodorPylyshyn1988}.\footnote{\begin{footnotesize}More specific versions of this debate continue, for example re: syntax, one can read \citep{vanschijndel2019quantitydoesntbuyquality} vs \citep{goldberg2019assessingbertssyntacticabilities} or re: hierarchical generalization by Transformers, \citep{petty2021transformersgeneralizelinearly} vs \citep{murty2023grokkinghierarchicalstructurevanilla}.
 \end{footnotesize}
 } 
 However, large language models based on the Transformers architecture compose seemingly fluent and novel text and are excellent few or zero shot learners \citep{Brown2020}.
@@ -358,8 +357,7 @@ which can recursively expand as `np v\_cp\_taking that start -> np v\_cp\_taking
 %we argue for in ths paper, that e.g. cannot learn to combine `np\_det pp np -> np\_pp -> np`, makes the predicted mistakes in the subj pp when the agent is left of the verb, and does poorly on our new v\_dat\_p2\_pp\_moved\_to\_recipient split  (see discussion).
 %\end{footnotesize}
 %}
-\textbf{(even allowing parameter count to increase)}\footnote{\begin{footnotesize}
-Since no improvement was observed, we did not run the costly experiments to increase the layers while controlling the parameter count (which would be a follow up to distinguish if the improvement was from the layer increase or the parameter increase).
+\textbf{(even allowing parameter count to increase)}\footnote{\begin{footnotesize}Since no improvement was observed, we did not run the costly experiments to increase the layers while controlling the parameter count (which would be a follow up to distinguish if the improvement was from the layer increase or the parameter increase).
 \end{footnotesize}
 }
 
@@ -486,27 +484,22 @@ No AI tools were used by the author in the preparation of this manuscript with t
 \subsubsection{ReCOGS RASP model on test set}
 For steps to reproduce and results, see \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_test\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{the RASP model ReCOGS test set notebook (link)}\footnote{\begin{tiny}Full URL for printed copies: 
 
-https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/
-
-supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_test\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb\end{tiny}}.
+\href{https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_test\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_test\_set\_(multiday
+\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_TEST\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}\end{tiny}}.
 
 \subsubsection{ReCOGS RASP model on generalization set (all splits)}
 For steps to reproduce and results, see 
 \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{the RASP model ReCOGS generalization set notebook (link)}\footnote{\begin{tiny}Full URL for printed copies: 
 
-https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761
-
-/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb\end{tiny}}.
+\href{https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_(multiday\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}{https://github.com/willy-b/RASP-for-ReCOGS/blob/0d7cfb3b0721c17669193ac032a6c1a5b377d761/supplemental\_data/RASP\_model\_for\_ReCOGS\_eval\_on\_gen\_set\_(multiday
+\_run\_on\_dedicated\_VM)\_(PR\_7\_contents\_on\_GEN\_set\_incl\_complement\_phrase\_support)\_(public).ipynb}\end{tiny}}.
 
 \subsubsection{\citep{Wu2023} Encoder-Decoder Transformer from scratch baselines (ReCOGS\_pos)}
 
 See \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{the Encoder-Decoder Transformer from scratch baselines notebook (link)}\footnote{\begin{tiny}Full URL for printed copies: 
 
-https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454
-
-/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)
-
-\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb\end{tiny}}
+\href{https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)
+\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}\end{tiny}}
 
 for \citep{Wu2023} script execution and analysis code.
 
@@ -516,22 +509,16 @@ for \citep{Wu2023} script execution and analysis code.
 
 \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{the baseline Encoder-Decoder Transformer 3 or 4 layer variation results notebook (link)}\footnote{\begin{tiny}Full URL for printed copies: 
 
-https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454
-
-/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)
-
+\href{https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)\_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}{https://github.com/willy-b/RASP-for-ReCOGS/blob/1f0c74914b893f356e1268015d7c463dccf97454/supplemental\_data/RASP\_for\_ReCOGS\_(no\_RASP\_in\_this\_file)
 \_more\_Wu\_et\_al\_2023\_transformer\_baselines\_to\_compare\_with\_Restricted\_Access\_Sequence\_Processing
-\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb\end{tiny}} (scroll down).
+\_(\_use\_fixed\_positional\_indices)\_and\_or\_data\_augmentation.ipynb}\end{tiny}} (scroll down).
 
 \subsubsection{Attraction Error Analysis for \citep{Wu2023} baseline Encoder-Decoder Transformer on obj\_pp\_to\_subj\_pp split}
 
 See \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/609f4fff9e5b8ff2354081db617ad576bc7fb840/supplemental\_data/ReCOGS\_Baseline\_non\_RASP\_Transformer\_ReCOGS\_error\_prediction\_with\_n\%3D10\_Transformers\_trained\_from\_scratch\_(predicting\_the\_details\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb}{Attraction Error Analysis on baseline Encoder-Decoder Transformer notebook (link)}\footnote{\begin{tiny}Full URL for printed copies: 
 
-https://github.com/willy-b/RASP-for-ReCOGS/blob/609f4fff9e5b8ff2354081db617ad576bc7fb840
-
-/supplemental\_data/ReCOGS\_Baseline\_non\_RASP\_Transformer\_ReCOGS\_error\_prediction\_with\_n\%3D10\_
-
-Transformers\_trained\_from\_scratch\_(predicting\_the\_details\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb\end{tiny}}.
+\href{https://github.com/willy-b/RASP-for-ReCOGS/blob/609f4fff9e5b8ff2354081db617ad576bc7fb840/supplemental\_data/ReCOGS\_Baseline\_non\_RASP\_Transformer\_ReCOGS\_error\_prediction\_with\_n\%3D10\_Transformers\_trained\_from\_scratch\_(predicting\_the\_details\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb}{https://github.com/willy-b/RASP-for-ReCOGS/blob/609f4fff9e5b8ff2354081db617ad576bc7fb840/supplemental\_data/ReCOGS\_Baseline\_non\_RASP\_Transformer\_ReCOGS\_error\_prediction
+\_with\_n\%3D10\_Transformers\_trained\_from\_scratch\_(predicting\_the\_details\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb}\end{tiny}}.
 
 \clearpage
 \twocolumn
@@ -552,7 +539,7 @@ python recogs_examples_in_rasp.py
 
 The script will show performance on \citep{Wu2023} ReCOGS\_pos data by default, run with "--use\_dev\_split", "--use\_gen\_split" , or "--use\_test\_split" to see it run on those and give a running score every row.
 
-For ReCOGS, intending to perform well on Semantic Exact Match, we took a simple, flat, non-tree, non-recursive approach which was able to get 100\% semantic exact match (and string exact match) on the full test set, and 99.6\% semantic exact match on the out-of-distribution generalization set of the real ReCOGS dataset\footnote{\begin{footnotesize} word-level token Restricted Access Sequence Processing solution: \href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp} \end{footnotesize}}.
+For ReCOGS, intending to perform well on Semantic Exact Match, we took a simple, flat, non-tree, non-recursive approach which was able to get 100\% semantic exact match (and string exact match) on the full test set, and 99.6\% semantic exact match on the out-of-distribution generalization set of the real ReCOGS dataset\footnote{\begin{footnotesize}word-level token Restricted Access Sequence Processing solution: \href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp} \end{footnotesize}}.
 
 We use word-level tokens for all RASP model results in this paper.\footnote{\begin{footnotesize}We believe any solution at the word-level can be converted to a character-level token solution and that is not the focus of our investigation here (see Appendix \ref{rasp_character_level_model_notes} for proof of concept details on a character level solution not used here).\end{footnotesize}}. We took the RASP native sequence tokens at the word-level, and first did a Transformer learned-embedding compatible operation and created 1 part-of-speech and 4 extra verb-type sequences (because each word in the COGS vocabulary may actually serve multiple POS roles; up to four different verb types as in the case of "liked" 
 
@@ -1045,7 +1032,7 @@ python recogs_examples_in_rasp.py
 
 Note, a proof of concept character level Restricted Access Sequence Processing model was done with a decoder loop (unlike word-level solution above, it was a sketch so did not limit to strictly causal operations which just require more careful indexing -- using the value at the separator or the end of a word instead of pooling the same value to all letters in a word for example). Note that this one did not cover translating sentences in general into ReCOGS unlike the word-level solution as it is tedious and redundant but the core operations are possible and the author believes any solution at the word level can be mapped to a solution in character level tokens (out of scope for this paper to prove it).
 
-Since it is a separate problem and adds a lot of complexity without bringing anything to bear on the main questions of the paper, I left a full implementation to the word-level tokens which were simpler and ran faster. The difference is one uses a similar approach started at \footnote{\begin{footnotesize} \href{https://github.com/willy-b/learning-rasp/blob/63f0df56339b81dd24fe1fd31576f3ae02b97763/other-examples/decoder-loop-example-parse-into-recogs-style-variables.rasp\#L2}{https://github.com/willy-b/learning-rasp/blob/63f0df56339b81dd24fe1fd31576f3ae02b97763/other-examples/decoder-loop-example-parse-into-recogs-style-variables.rasp\#L2} \end{footnotesize}} to assign all the letters in each word an index. 
+Since it is a separate problem and adds a lot of complexity without bringing anything to bear on the main questions of the paper, I left a full implementation to the word-level tokens which were simpler and ran faster. The difference is one uses a similar approach started at \footnote{\begin{footnotesize}\href{https://github.com/willy-b/learning-rasp/blob/63f0df56339b81dd24fe1fd31576f3ae02b97763/other-examples/decoder-loop-example-parse-into-recogs-style-variables.rasp\#L2}{https://github.com/willy-b/learning-rasp/blob/63f0df56339b81dd24fe1fd31576f3ae02b97763/other-examples/decoder-loop-example-parse-into-recogs-style-variables.rasp\#L2} \end{footnotesize}} to assign all the letters in each word an index. 
 
 Word indices can be assigned using RASP to count separators occurring prior to each sequence location like:
 
@@ -1316,7 +1303,7 @@ when we say e.g. 3 or 4 layers, we refer to 3 or 4 x BertLayer in the Encoder an
 
 We use the RASP \citep{Weiss2021} interpreter\footnote{\begin{footnotesize}provided at \href{https://github.com/tech-srl/RASP/}{https://github.com/tech-srl/RASP/}.
 \end{footnotesize}
-} to evaluate our RASP programs\footnote{\begin{footnotesize}https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp
+} to evaluate our RASP programs\footnote{\begin{footnotesize}\href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}
 
 with a demo at
 
@@ -1359,12 +1346,9 @@ The overall Semantic Exact Match performance is reported as well as the performa
 Prepositional Phrase (pp\_recursion) are highlighted and discussed in depth for all models.
 
 For the RASP program's Semantic Exact Match results which are based on the outcome of a deterministic program (so cannot randomly reinitialize weights and retrain, rerun),
-we can use the Beta distribution to model the uncertainty and generate confidence intervals (Clopper-Pearson intervals\footnote{\begin{footnotesize}see e.g. 
-https://en.wikipedia.org/w/index.php
-
-?title=Binomial\_proportion\_confidence\_interval
-
-\&oldid=1252517214\#Clopper\%E2\%80\%93Pearson\_interval
+we can use the Beta distribution to model the uncertainty and generate confidence intervals (Clopper-Pearson intervals\footnote{\begin{footnotesize}see e.g. \href{https://en.wikipedia.org/w/index.php?title=Binomial\_proportion\_confidence\_interval\&oldid=1252517214\#Clopper\%E2\%80\%93Pearson\_interval}{https://en.wikipedia.org/w/index.php?title=Binomial\_proportion
+\_confidence\_interval\&oldid=1252517214\#Clopper\%E2\%80\%93
+Pearson\_interval}
 
 and \href{https://arxiv.org/abs/1303.1288}{https://arxiv.org/abs/1303.1288}
 \end{footnotesize}
@@ -1643,7 +1627,7 @@ def get_agent_side(lark_tree_root):
 \label{v_dat_p2_recipient_pp-modification_for_generalization_assessment_and_data_augmentation_attempt}
 
 We test generalization by the \citep{Wu2023}'s default Transformer which has been trained on `np v\_dat\_p2 np np pp np` but not `np v\_dat\_p2 np pp np np` prepositional modifications.
-The following 328 examples were derived\footnote{\begin{footnotesize} Notebook: \href{https://colab.research.google.com/drive/1IDs0EwIMp2wtLHk4KqnuGhuT3G14QEG1}{https://colab.research.google.com/drive/
+The following 328 examples were derived\footnote{\begin{footnotesize}Notebook: \href{https://colab.research.google.com/drive/1IDs0EwIMp2wtLHk4KqnuGhuT3G14QEG1}{https://colab.research.google.com/drive/
 1IDs0EwIMp2wtLHk4KqnuGhuT3G14QEG1}\end{footnotesize}} from the existing
 
 \href{https://github.com/frankaging/ReCOGS/blob/1b6eca8ff4dca5fd2fb284a7d470998af5083beb/recogs_positional_index/train.tsv}{https://github.com/frankaging/ReCOGS/blob/
@@ -2097,7 +2081,7 @@ There is a risk that the results could be misinterpreted to reduce future invest
 \subsection{Scientific Artifacts - Is Our Use Consistent with Authors' Intention and Licensing}
 \label{scientific_artifacts_use}
 
-COGS \citep{KimLinzen2020} ( \href{https://aclanthology.org/2020.emnlp-main.731/}{https://aclanthology.org/2020.emnlp-main.731/} ) and ReCOGS \citep{Wu2023} ( \href{https://aclanthology.org/2023.tacl-1.96/}{https://aclanthology.org/2023.tacl-1.96/} ) papers and examples are licensed Creative Commons Attribution 4.0 International License ( \href{https://creativecommons.org/licenses/by/4.0/}{https://creativecommons.org/licenses/by/4.0/} ) as hosted by the ACL Anthology with the intention of providing datasets for others to perform research upon. 
+COGS \citep{KimLinzen2020} ( \href{https://aclanthology.org/2020.emnlp-main.731/}{https://aclanthology.org/2020.emnlp-main.731/} ) and ReCOGS \citep{Wu2023} ( \href{https://aclanthology.org/2023.tacl-1.96/}{https://aclanthology.org/2023.tacl-1.96/} ) papers and examples are licensed Creative Commons Attribution 4.0 International License ( \href{https://creativecommons.org/licenses/by/4.0/}{https://creativecommons.org/licenses/by/4.0/} ) as hosted by the ACL Anthology with the intention of providing datasets for others to perform research upon.
 
 GitHub hosted artifacts for COGS ( \href{https://github.com/najoungkim/COGS}{https://github.com/najoungkim/COGS}  ) and ReCOGS ( \href{https://github.com/frankaging/recogs}{https://github.com/frankaging/recogs} ) including the training, development, and generalization set examples are MIT licensed, are intended for research use, and were used in a research context for this paper. We specifically use the ReCOGS authors' provided python scripts to run their baselines, with their chosen hyperparameters and obtain results compared to and consistent with those they publish in their paper (e.g. we compare our reported performance of their baseline on the obj-pp-to-subj-pp generalization (of ReCOGS\_pos), measured by us as 19.7\% +/- 6.1\% Semantic Exact Match (sample mean +/- std) with 95\% confidence interval for the sample mean with n=20 of 17.0\% to 22.4\% (n=20 separately trained models with different random seeds for weight initialization and training data ordering; n=1000 examples used to test each of the n=20 models) with their Figure 5 (ReCOGS\_pos)).
 
