@@ -846,7 +846,7 @@ def template_size(template_name) {
 
 Details are in the code, but we compute at the last sequence position (in parallel) the number of relationships output for the verb so far, and for the current relationship which token within that multi-token process (e.g. the word "agent" or the open parenthesis "(" or the left index, or the comma, or right index, close parenthesis ")", "AND", etc) we are on.
 
-Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with sentential complements (see repo for CP support)), we compute the number of agent,theme,recipient,xcomp,ccomp entries in the output:
+Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with sentential complements (see actual code for CP support)), we compute the number of agent,theme,recipient,xcomp,ccomp entries in the output:
 \begin{tiny}
 \begin{verbatim}
 atrxc_in_output_sequence = OUTPUT_MASK*(indicator(tokens == "agent" 
@@ -856,12 +856,11 @@ or tokens=="xcomp" or tokens =="ccomp"));
 # agent_theme_recipient_xcomp_ccomp_output_count is the number of relationships we have output
 agent_theme_recipient_xcomp_ccomp_output_count = 
 selector_width(select(atrxc_in_output_sequence, 1, ==));
-after_intro_idx = 
-(nv_in_output_count - nv_in_input_count + \
-agent_theme_recipient_xcomp_ccomp_output_count) \
-if nv_in_output_count >= nv_in_input_count else 0;
-after_intro_num_tokens_in_output_excluding_asterisks = 
-num_tokens_in_output_excluding_asterisks - ((5 * nv_in_input_count));
+after_intro_idx = \
+  (nv_in_output_count - nv_in_input_count + (1 if any_v_inf_taking == 1 else 0) \
+   + agent_theme_recipient_xcomp_output_count) \
+   if nv_in_output_count + (1 if any_v_inf_taking == 1 else 0) \
+   >= nv_in_input_count else 0;
 \end{verbatim}
 \end{tiny}
 \clearpage
@@ -896,7 +895,7 @@ template_mapping1 = {
 \end{verbatim}
 \end{tiny}
 
-Outputting the verb relationships we must skip over any "pp np" as possible agents, themes, or recipients to avoid getting confused by noun phrases added by prepositional modification (believed by the author to be the cause of the issue with obj pp to subj pp generalization by \citep{Wu2023}'s Transformer).
+Outputting the verb relationships we must skip over any "pp np" as possible agents, themes, or recipients to avoid getting confused by noun phrases added by prepositional modification (believed by the author to be a cause of the issue with obj pp to subj pp generalization by \citep{Wu2023}'s Transformer).
 
 \begin{tiny}
 \begin{verbatim}
@@ -915,23 +914,46 @@ np_prop_diag_mask = select(aggregate(np_prop_mask, 1), 1, ==) and select(indices
 no_pp_np_mask = 
 1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or 
 (pp_two_after_mask and np_det_diag_mask), 1);
+
+# here we compute left_idx and right_idx
+# for verb relationships, like "agent ( [left_idx] , [right_idx] )"
+
+# one-based index
 nps_without_pp_prefix_indices = 
 selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and
 select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 
-left_idx = aggregate(select(indices,
-left_idx_in_nps_zero_based, ==), input_indices_sorted);
+# the one verb (except v_inf_taking cases)
+left_idx_in_nvs_zero_based = nv_in_input_count-1;
+# (after sentential complements, not covered in this example, see actual code via link above)
+# need to also subtract the index in ReCOGS for the 2nd verb if it is v_inf_taking
+left_idx_in_nvs_zero_based = (left_idx_in_nvs_zero_based-1) \
+  if (template_name == "v_inf_taking" and after_intro_idx <= 2) else left_idx_in_nvs_zero_based;
+left_idx = aggregate(select(indices, left_idx_in_nvs_zero_based, ==), input_indices_sorted);
+
+# avoids attractor nouns
 right_idx = aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices);
 
 # points to 2nd verb for xcomp for v_inf_taking_v_inf
-right_idx = aggregate(select(indices, (nv_in_output_count-1), ==), input_indices_sorted) 
-if (template_name == "v_inf_taking" and after_intro_idx == 2) else right_idx;
+# note that after_intro_idx is defined differently here than in actual code 
+# since this simplified example ignores sentential complement (CP) handling
+# (ideally this would be verb specific,
+#  we simplify here to reuse variables available in this example)
+right_idx = aggregate(select(indices, nv_in_output_count, ==), input_indices_sorted) \
+   if (template_name == "v_inf_taking" and after_intro_idx == 2) else right_idx;
 
 # points to 1st noun for 2nd v_inf agent in v_inf_taking_v_inf
-right_idx = aggregate(select(indices, 0, ==), input_indices_sorted) 
-if (template_name == "v_inf_taking" and after_intro_idx == 3) else right_idx;
+right_idx = aggregate(select(nps_without_pp_prefix_indices, 1, ==), indices) \
+  if (template_name == "v_inf_taking" and after_intro_idx == 4) else right_idx;
+
+# we have computed left_idx and right_idx
+# for verb relationships, like "agent ( [left_idx] , [right_idx] )"
 
 # ...
+
+# note, the offset since the last separator in the output,
+# instead of a modulus, could have been used here
+# see actual RASP file in GitHub for computation
 
 after_intro_target_token = left_idx 
 if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2)
@@ -1017,7 +1039,8 @@ after_intro_num_tokens_in_output_excluding_asterisks - template_size(template_na
 \end{verbatim}
 \end{tiny}
 
-See code for full details (for simplicity this description was also written without discussing sentential complement handling). For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
+See code for full details (for simplicity this description was also written without discussing sentential complement handling).
+For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
 
 You can run a demo and see the autoregressive output 
 
@@ -1486,8 +1509,6 @@ nps_without_pp_prefix_indices = \
 selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and \
 select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 
-left_idx = \
-aggregate(select(indices, left_idx_in_nps_zero_based, ==), input_indices_sorted);
 right_idx = \
 aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); 
 \end{verbatim}
