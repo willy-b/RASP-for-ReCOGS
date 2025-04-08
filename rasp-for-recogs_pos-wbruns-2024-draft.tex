@@ -618,8 +618,6 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \end{verbatim}
 \end{tiny}
 
-
-
 \begin{figure}
 \includegraphics[scale=0.75]{./image_pdfs/example_rasp_for_recogs_flat_pattern_match_with_pp_modification.pdf}
 \caption{\begin{small}Example RASP model flat grammar pattern matching, for np v\_dat\_p2 np np, for a matching sentence, despite pp modification of middle recipient noun. This is in the encoder. See also Figure \ref{attraction_errors_figure} for how the RASP model avoids attraction errors in assigning agents, recipients, themes due to prepositional phrase modification in the decoder.\end{small} \\
@@ -832,7 +830,7 @@ def template_size(template_name) {
  "v_trans_not_omissible_pp_p1": 1,
  "v_trans_not_omissible_pp_p2": 2,
  "v_cp_taking": 2,
- "v_inf_taking": 4,
+ "v_inf_taking": 5,
  "v_unacc_p1": 2,
  "v_unacc_p2": 1,
  "v_unacc_pp_p1": 1,
@@ -844,9 +842,9 @@ def template_size(template_name) {
  "v_dat_pp_p1": 2,
  "v_dat_pp_p2": 3,
  "v_dat_pp_p3": 2,
- "v_dat_pp_p4": 3 
+ "v_dat_pp_p4": 3
   };
-  # v_inf_taking includes v_inf and an extra verb is why it is 4 instead of 2
+  # v_inf_taking includes v_inf and an extra verb is why it is 5 instead of 2
   return template_sizes[template_name];
 }
 \end{verbatim}
