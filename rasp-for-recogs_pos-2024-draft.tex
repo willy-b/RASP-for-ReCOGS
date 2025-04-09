@@ -746,22 +746,27 @@ Here are a couple of examples of patterns the Encoder recognizes, to see how it 
 # e.g. [8,18,1,7,1,7]
 set example ["ella","sold","a","customer","a","car"]
 np_np_sequence = \
-  aggregate((np_prop_mask and np_before_mask) or (np_det_left_mask and np_two_before_mask), 1);
+  aggregate((np_prop_mask and np_before_mask) or \
+  (np_det_left_mask and np_two_before_mask), 1);
 # would not support prepositional phrase modification on middle NP
 #np_np_before_mask = \
 #  select(np_np_sequence, 1, ==) and select(indices-1, indices, ==);
 np_np_any_before_mask = \
-  select(np_np_sequence, 1, ==) and select(indices, indices, >); # acausal is ok \
+  select(np_np_sequence, 1, ==) and select(indices, indices, >);
+# acausal is ok 
 # in INPUT sequence (encoder part, not decoder), \
-# would mask further if we wanted to do multiple templates per input or \
-# something outside the supported grammar (COGS without sentential complement \
+# would mask further if we wanted to do multiple templates per input or
+# something outside the supported grammar (COGS without sentential complement
 # recursion is supported here)
 np_np_any_before_sequence = \
   aggregate(np_np_any_before_mask, 1);
 np_np_any_before_mask = \
-  select(np_np_any_before_sequence, 1, ==) and select(indices, indices, ==);
+  select(np_np_any_before_sequence, 1, ==) and \
+  select(indices, indices, ==);
 np_v_dat_p_np_np = \
-  aggregate(np_after_mask and v_dat_mask and np_before_mask and np_np_any_before_mask, 1);
+  aggregate(np_after_mask and v_dat_mask and \
+    np_before_mask \
+    and np_np_any_before_mask, 1);
 # Example: np_v_dat_p_np_np(\
 #  ['ella', 'sold', 'a', 'customer', 'a', 'car']) \
 #  = [0, 1, 0, 0, 0, 0] (ints)
@@ -975,7 +980,8 @@ after_intro_target_token = "";
 
 # "agent", "theme", "recipient", etc 
 # depending on relationship index and flat-matched template (in Encoder)
-template_mapping_output = get_template_mapping(template_name, after_intro_idx);
+template_mapping_output = \
+  get_template_mapping(template_name, after_intro_idx);
 
 # see code in Github for definition of 
 # after_intro_num_tokens_in_output_excluding_asterisks
@@ -1014,8 +1020,10 @@ else after_intro_target_token;
 
 # ...
 
-# the next token predicted ("output") is overridden with after_intro_target_token
-# ONLY if the decoder detects that verb relationships are the appropriate output phase
+# the next token predicted ("output") is
+# overridden with after_intro_target_token
+# ONLY if the decoder detects that verb relationships 
+# are the appropriate output phase
 # by counting how many nouns/verbs/relationships are already in the output
 \end{verbatim}
 \end{tiny}
