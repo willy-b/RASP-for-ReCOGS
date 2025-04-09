@@ -920,16 +920,22 @@ Outputting the verb relationships we must skip over any "pp np" as possible agen
 \begin{tiny}
 \begin{verbatim}
 pp_sequence = indicator(pos_tokens == 2);
-pp_one_after_mask = select(pp_sequence, 1, ==) and select(indices+1, indices, ==);
+pp_one_after_mask = select(pp_sequence, 1, ==) and \
+  select(indices+1, indices, ==);
 pp_one_after_sequence = aggregate(pp_one_after_mask, 1);
-pp_one_after_mask = select(pp_one_after_sequence, 1, ==) and select(indices, indices, ==);
+pp_one_after_mask = select(pp_one_after_sequence, 1, ==) and \
+  select(indices, indices, ==);
 
-pp_two_after_mask = select(pp_sequence, 1, ==) and select(indices+2, indices, ==);
+pp_two_after_mask = select(pp_sequence, 1, ==) and \
+  select(indices+2, indices, ==);
 pp_two_after_sequence = aggregate(pp_two_after_mask, 1);
-pp_two_after_mask = select(pp_two_after_sequence, 1, ==) and select(indices, indices, ==);
+pp_two_after_mask = select(pp_two_after_sequence, 1, ==) and \
+  select(indices, indices, ==);
 
-np_det_diag_mask = select(aggregate(np_det_mask, 1), 1, ==) and select(indices, indices, ==);
-np_prop_diag_mask = select(aggregate(np_prop_mask, 1), 1, ==) and select(indices, indices, ==);
+np_det_diag_mask = select(aggregate(np_det_mask, 1), 1, ==) and \
+  select(indices, indices, ==);
+np_prop_diag_mask = select(aggregate(np_prop_mask, 1), 1, ==) and \
+  select(indices, indices, ==);
 
 no_pp_np_mask = 
 1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or 
