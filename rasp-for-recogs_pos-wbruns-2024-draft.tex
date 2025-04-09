@@ -618,8 +618,6 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \end{verbatim}
 \end{tiny}
 
-
-
 \begin{figure}
 \includegraphics[scale=0.75]{./image_pdfs/example_rasp_for_recogs_flat_pattern_match_with_pp_modification.pdf}
 \caption{\begin{small}Example RASP model flat grammar pattern matching, for np v\_dat\_p2 np np, for a matching sentence, despite pp modification of middle recipient noun. This is in the encoder. See also Figure \ref{attraction_errors_figure} for how the RASP model avoids attraction errors in assigning agents, recipients, themes due to prepositional phrase modification in the decoder.\end{small} \\
@@ -642,7 +640,7 @@ Also, the author thinks many of these RASP steps could be consolidated. The goal
 
 Introduction of variables at the beginning of the ReCOGS logical form (e.g. in the logical form for "a boy painted the girl", we have "boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 ) AND agent ( 2 , 1 ) AND theme ( 2 , 4 )" , the variable introduction is "boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 )" before the "AND"). We took a simple approach and sorted the input sequence with nouns before verbs and determiners, fillers last (with determiners and fillers not having any corresponding entry in the output sequence). We then count nouns and verbs in the input and count nouns and verbs in the output and determine if we have introduced all the nouns and verbs.
 
-See code for full details (for simplicity this description was written without discussing sentential complement handling).
+See code for full details\footnote{\begin{footnotesize}word-level token Restricted Access Sequence Processing solution: \href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp} \end{footnotesize}} (for simplicity this description was written without discussing sentential complement (CP) handling).
 
 Example counting how many nouns and verbs we have output (introduced as variables) so far (to determine what we need to output for next token):
 \begin{tiny}
@@ -727,16 +725,24 @@ else output;
 # that needs to be output
 output = 
  "|" if num_pipes_in_output == 0 else output;
+
+# note that the output/next token prediction above will be overridden 
+# with later decoder variables 
+# (e.g. verb relationship or noun modifier logical form tokens, see below)
+# if noun/verb introduction is complete, that is if the decoder detects
+# that all nouns/verbs in input have been output in the logical form.
 \end{verbatim}
 \end{tiny}
 Note that "normalize\_nv" is a lookup into a map that has no effect unless the word is a verb in which case it normalizes it to a standard suffix ("ate" to "eat" , "painted" to "paint", etc).
 \clearpage
-As you can see above, if we have not introduced all the variables, we determine our index into the sorted list of nouns and verbs (nouns before verbs), and using a MLP modeling modulus, compute index mod 5 and condition on that to output that noun/verb or parentheses or index as prediction for next token at last sequence position (all other sequence positions are ignored). Since we do ReCOGS\_pos (semantically identical to random indices but avoid requiring random numbers) the index we use is the index of the original noun or verb in the original sequence. If we are still introducing variables, that is the end and we have our prediction for the next token.
+As you can see above, if we have not introduced all the variables, we determine our index into the sorted list of nouns and verbs (nouns before verbs), and using a MLP modeling modulus, compute index mod 5 (alternatively, number of tokens since last separator)  and condition on that to output that noun/verb or parentheses or index as prediction for next token at last sequence position (all other sequence positions are ignored). Since we do ReCOGS\_pos (semantically identical to random indices but avoid requiring random numbers) the index we use is the index of the original noun or verb in the original sequence. If we are still introducing variables, that is the end and we have our prediction for the next token.
 
-If we are done introducing variables at that point in the decoder loop, we move on, 
-and attention head compatible operations recognize templates in the five parallel part-of-speech / verb-type per location sequences for "v\_trans\_omissible\_p1", "v\_trans\_omissible\_p2", "v\_trans\_omissible\_pp\_p1", "v\_trans\_omissible\_pp\_p2", "v\_trans\_not\_omissible", "v\_trans\_not\_omissible\_pp\_p1", "v\_trans\_not\_omissible\_pp\_p2", "v\_cp\_taking", "v\_inf\_taking", "v\_unacc\_p1", "v\_unacc\_p2", "v\_unacc\_pp\_p1", "v\_unacc\_pp\_p2", "v\_unerg", "v\_dat\_p2", "v\_dat\_pp\_p1", "v\_dat\_pp\_p2",  "v\_dat\_pp\_p3",  "v\_dat\_pp\_p4".
+If we are done introducing variables at that point in the Decoder loop, we move on,
+and use templates that the attention head compatible operations in the Encoder recognized for us in the five parallel part-of-speech / verb-type per location sequences for "v\_trans\_omissible\_p1", "v\_trans\_omissible\_p2", "v\_trans\_omissible\_pp\_p1", "v\_trans\_omissible\_pp\_p2", "v\_trans\_not\_omissible", "v\_trans\_not\_omissible\_pp\_p1", "v\_trans\_not\_omissible\_pp\_p2", "v\_cp\_taking", "v\_inf\_taking", "v\_unacc\_p1", "v\_unacc\_p2", "v\_unacc\_pp\_p1", "v\_unacc\_pp\_p2", "v\_unerg", "v\_dat\_p2", "v\_dat\_pp\_p1", "v\_dat\_pp\_p2",  "v\_dat\_pp\_p3",  "v\_dat\_pp\_p4".
 
-Here are a couple of examples of patterns, to see how it looks if we support 1 verb pattern per input (no sentential complement recursion; which can be easily handled how we handle other things we loop over, looping over current phrase and masking and processing), which is sufficient to get approximately 100\% on all entries that do not use sentential complements (e.g. "so-and-so noticed that (full input here)"):
+To be clear, we always compute all variables (noun and verb introduction, verb relationships, nmods) but depending on the number of nouns/verbs, verb relationships, nmods detected in the output so far, variables from "completed" or "premature" phases are discarded and the next predicted token is given by variables associated with the appropriate phase, here the verb relationship phase.
+
+Here are a couple of examples of patterns the Encoder recognizes, to see how it looks if we support 1 verb pattern per input (no sentential complement recursion; which can be easily handled how we handle other things we loop over, looping over current phrase and masking and processing), which is sufficient to get approximately 100\% on all entries that do not use sentential complements (e.g. "the girl noticed that a boy painted" is not supported in this example but "a boy painted" is):
 \begin{tiny}
 \begin{verbatim}
 # define the pattern
@@ -814,6 +820,9 @@ Based on the template recognized, we lookup the template size for number of rela
 \begin{tiny}
 \begin{verbatim}
 def template_size(template_name) {
+  # number of items to output in verb relationship phase
+  # after noun and verb introduction phase
+  # (special exception is 2-verb v_inf)
   template_sizes = {
  "": 0,
  "v_trans_omissible_p1": 1,
@@ -824,7 +833,23 @@ def template_size(template_name) {
  "v_trans_not_omissible_pp_p1": 1,
  "v_trans_not_omissible_pp_p2": 2,
  "v_cp_taking": 2,
- "v_inf_taking": 4,
+ # (NOTE: comments within the map should be removed)
+ # v_inf_taking is a special 2-verb case, 5 items
+ # after noun introduction
+ # (verb 1, agent 1, xcomp verb 1 to verb 2, verb 2, agent 2)
+ # if first verb were included 
+ # in introduction phase for v_inf,
+ # then it would be 4
+ # indeed the last map used is template_mapping4
+ "v_inf_taking": 5,
+ # n.b. if we output out of order
+ # (as allowed by Semantic Exact Match)
+ # and put both verbs in beginning
+ # (verb 1, verb 2, agent 1, xcomp verb 1 to verb 2, agent 2)
+ # then the count would be 3
+ # as we could do normal combined noun and verb intro
+ # but if doing String Exact Match, ReCOGS LF has
+ # verb 2 after the xcomp for v_inf_taking
  "v_unacc_p1": 2,
  "v_unacc_p2": 1,
  "v_unacc_pp_p1": 1,
@@ -836,32 +861,30 @@ def template_size(template_name) {
  "v_dat_pp_p1": 2,
  "v_dat_pp_p2": 3,
  "v_dat_pp_p3": 2,
- "v_dat_pp_p4": 3 
+ "v_dat_pp_p4": 3
   };
-  # v_inf_taking includes v_inf and an extra verb is why it is 4 instead of 2
   return template_sizes[template_name];
 }
 \end{verbatim}
 \end{tiny}
 
-Details are in the code, but we compute at the last sequence position (in parallel) the number of relationships output for the verb so far, and for the current relationship which token within that multi-token process (e.g. the word "agent" or the open parenthesis "(" or the left index, or the comma, or right index, close parenthesis ")", "AND", etc) we are on.
+Details are in the learning-rasp GitHub RASP code\footnote{\begin{footnotesize}word-level token Restricted Access Sequence Processing solution: \href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp} \end{footnotesize}}, but we compute at the last sequence position (in parallel) the number of relationships output for the verb so far, and for the current relationship which token within that multi-token process (e.g. the word "agent" or the open parenthesis "(" or the left index, or the comma, or right index, close parenthesis ")", "AND", etc) we are on.
 
-Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with sentential complements (see repo for CP support)), we compute the number of agent,theme,recipient,xcomp,ccomp entries in the output:
+Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with sentential complements (see actual code for CP support)), we compute the number of agent,theme,recipient,xcomp entries in the output:
 \begin{tiny}
 \begin{verbatim}
-atrxc_in_output_sequence = OUTPUT_MASK*(indicator(tokens == "agent" 
-or tokens == "theme" 
-or tokens=="recipient" 
-or tokens=="xcomp" or tokens =="ccomp"));
-# agent_theme_recipient_xcomp_ccomp_output_count is the number of relationships we have output
-agent_theme_recipient_xcomp_ccomp_output_count = 
-selector_width(select(atrxc_in_output_sequence, 1, ==));
-after_intro_idx = 
-(nv_in_output_count - nv_in_input_count + \
-agent_theme_recipient_xcomp_ccomp_output_count) \
-if nv_in_output_count >= nv_in_input_count else 0;
-after_intro_num_tokens_in_output_excluding_asterisks = 
-num_tokens_in_output_excluding_asterisks - ((5 * nv_in_input_count));
+atrx_in_output_sequence = OUTPUT_MASK*(indicator(tokens == "agent"
+or tokens == "theme"
+or tokens=="recipient"
+or tokens=="xcomp"));
+# agent_theme_recipient_xcomp_output_count is the number of relationships we have output
+agent_theme_recipient_xcomp_output_count = 
+selector_width(select(atrx_in_output_sequence, 1, ==));
+after_intro_idx = \
+  (nv_in_output_count - nv_in_input_count + (1 if any_v_inf_taking == 1 else 0) \
+   + agent_theme_recipient_xcomp_output_count) \
+   if nv_in_output_count + (1 if any_v_inf_taking == 1 else 0) \
+   >= nv_in_input_count else 0;
 \end{verbatim}
 \end{tiny}
 \clearpage
@@ -896,7 +919,7 @@ template_mapping1 = {
 \end{verbatim}
 \end{tiny}
 
-Outputting the verb relationships we must skip over any "pp np" as possible agents, themes, or recipients to avoid getting confused by noun phrases added by prepositional modification (believed by the author to be the cause of the issue with obj pp to subj pp generalization by \citep{Wu2023}'s Transformer).
+Outputting the verb relationships we must skip over any "pp np" as possible agents, themes, or recipients to avoid getting confused by noun phrases added by prepositional modification (believed by the author to be a cause of the issue with obj pp to subj pp generalization by \citep{Wu2023}'s Transformer).
 
 \begin{tiny}
 \begin{verbatim}
@@ -915,23 +938,65 @@ np_prop_diag_mask = select(aggregate(np_prop_mask, 1), 1, ==) and select(indices
 no_pp_np_mask = 
 1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or 
 (pp_two_after_mask and np_det_diag_mask), 1);
+
+# here we compute left_idx and right_idx
+# for verb relationships, like "agent ( [left_idx] , [right_idx] )"
+
+# one-based index
 nps_without_pp_prefix_indices = 
 selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and
 select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 
-left_idx = aggregate(select(indices,
-left_idx_in_nps_zero_based, ==), input_indices_sorted);
+# the one verb (except v_inf_taking cases)
+left_idx_in_nvs_zero_based = nv_in_input_count-1;
+# (after sentential complements, not covered in this example, see actual code via link above)
+# need to also subtract the index in ReCOGS for the 2nd verb if it is v_inf_taking
+left_idx_in_nvs_zero_based = (left_idx_in_nvs_zero_based-1) \
+  if (template_name == "v_inf_taking" and after_intro_idx <= 2) else left_idx_in_nvs_zero_based;
+left_idx = aggregate(select(indices, left_idx_in_nvs_zero_based, ==), input_indices_sorted);
+
+# avoids attractor nouns
 right_idx = aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices);
 
 # points to 2nd verb for xcomp for v_inf_taking_v_inf
-right_idx = aggregate(select(indices, (nv_in_output_count-1), ==), input_indices_sorted) 
-if (template_name == "v_inf_taking" and after_intro_idx == 2) else right_idx;
+# note, this simplified example ignores sentential complement (CP) handling
+# (ideally this would be verb specific,
+#  we simplify here to reuse variables available in this example)
+right_idx = aggregate(select(indices, nv_in_output_count, ==), input_indices_sorted) \
+   if (template_name == "v_inf_taking" and after_intro_idx == 2) else right_idx;
 
 # points to 1st noun for 2nd v_inf agent in v_inf_taking_v_inf
-right_idx = aggregate(select(indices, 0, ==), input_indices_sorted) 
-if (template_name == "v_inf_taking" and after_intro_idx == 3) else right_idx;
+right_idx = aggregate(select(nps_without_pp_prefix_indices, 1, ==), indices) \
+  if (template_name == "v_inf_taking" and after_intro_idx == 4) else right_idx;
+
+# we have computed left_idx and right_idx
+# for verb relationships, like "agent ( [left_idx] , [right_idx] )"
 
 # ...
+
+# note, the offset since the last separator in the output,
+# instead of a modulus, could have been used here
+# see actual RASP file in GitHub for computation
+
+# relationship ( idx , idx ) AND
+#      0       1  2  3  4  5  6
+after_intro_target_token = "";
+
+# "agent", "theme", "recipient", etc 
+# depending on relationship index and flat-matched template (in Encoder)
+template_mapping_output = get_template_mapping(template_name, after_intro_idx);
+
+# see code in Github for definition of 
+# after_intro_num_tokens_in_output_excluding_asterisks
+# and use of an offset that depends on v_inf or not
+# out of scope for this simplified example
+after_intro_target_token = template_mapping_output \
+  if ((after_intro_num_tokens_in_output_excluding_asterisks) % 7 == 0) \
+  else after_intro_target_token;
+
+after_intro_target_token = "(" \
+  if ((after_intro_num_tokens_in_output_excluding_asterisks) % 7 == 1) \
+  else after_intro_target_token;
 
 after_intro_target_token = left_idx 
 if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2)
@@ -957,10 +1022,17 @@ not (template_mapping_output == ""))
 else after_intro_target_token;
 
 # ...
+
+# the next token predicted ("output") is overridden with after_intro_target_token
+# ONLY if the decoder detects that verb relationships are the appropriate output phase
+# by counting how many nouns/verbs/relationships are already in the output
 \end{verbatim}
 \end{tiny}
 \clearpage
 After outputting all verb relationships, we consider whether we have prepositional phrase noun modifiers to record in the logical form.
+That is to say, if the current output sequence already includes the verb relationships expected for the input (the count matches), 
+then those Decoder variables discussed earlier for verb relationships are still computed, but discarded,
+and the next token predicted will be overridden with a prepositional phrase noun modifier related output given by a RASP path similar to that below.
 
 For outputting prepositional relationships ("nmod . in", "nmod . on", "nmod . beside"), we do a similar approach, counting prepositional phrases in the input, counting how many nmods we have output, figuring out which one is currently being output:
 
@@ -1014,10 +1086,23 @@ after_intro_and_relationships_nmod_token =
 current_nmod_token if nmods_and_pps_in_output_count <= pps_in_input_count else "";
 num_tokens_in_nmod_section = 
 after_intro_num_tokens_in_output_excluding_asterisks - template_size(template_name)*7 + 1;
+
+# the decision of whether the nmod output dominates the current decoder next predicted token
+# is computed similarly to the following (see GitHub for actual)
+# we have not included the computation of "offset" and "after_intro_num_tokens_in_output_excluding_asterisks"
+output = after_intro_and_relationships_nmod_token \
+  if (template_mapping_output == "" and \
+    after_intro_num_tokens_in_output_excluding_asterisks >= \
+    template_size(template_name)*7+offset - 1 and \
+    num_tokens_in_nmod_section < 7*pps_in_input_count and pps_in_input_count > 0 \
+  ) else output;
+
 \end{verbatim}
 \end{tiny}
 
-See code for full details (for simplicity this description was also written without discussing sentential complement handling). For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
+Again, see the code for full details\footnote{\begin{footnotesize}word-level token Restricted Access Sequence Processing solution: \href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp} \end{footnotesize}} (for simplicity this description was also written without discussing sentential complement handling).
+
+For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
 
 You can run a demo and see the autoregressive output 
 
@@ -1486,8 +1571,6 @@ nps_without_pp_prefix_indices = \
 selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and \
 select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 
-left_idx = \
-aggregate(select(indices, left_idx_in_nps_zero_based, ==), input_indices_sorted);
 right_idx = \
 aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); 
 \end{verbatim}
