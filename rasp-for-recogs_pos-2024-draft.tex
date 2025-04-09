@@ -1553,10 +1553,8 @@ nps_without_pp_prefix_indices = \
 selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and \
 select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 
-left_idx = \
-aggregate(select(indices, left_idx_in_nps_zero_based, ==), input_indices_sorted);
 right_idx = \
-aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices); # <--
+aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices);
 \end{verbatim}
 \end{tiny}
 
