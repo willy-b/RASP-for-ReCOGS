@@ -640,7 +640,7 @@ Also, the author thinks many of these RASP steps could be consolidated. The goal
 
 Introduction of variables at the beginning of the ReCOGS logical form (e.g. in the logical form for "a boy painted the girl", we have "boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 ) AND agent ( 2 , 1 ) AND theme ( 2 , 4 )" , the variable introduction is "boy ( 1 ) ; * girl ( 4 ) ; paint ( 2 )" before the "AND"). We took a simple approach and sorted the input sequence with nouns before verbs and determiners, fillers last (with determiners and fillers not having any corresponding entry in the output sequence). We then count nouns and verbs in the input and count nouns and verbs in the output and determine if we have introduced all the nouns and verbs.
 
-See code for full details (for simplicity this description was written without discussing sentential complement handling).
+See code for full details\footnote{\begin{footnotesize}word-level token Restricted Access Sequence Processing solution: \href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp} \end{footnotesize}} (for simplicity this description was written without discussing sentential complement (CP) handling).
 
 Example counting how many nouns and verbs we have output (introduced as variables) so far (to determine what we need to output for next token):
 \begin{tiny}
@@ -868,9 +868,9 @@ def template_size(template_name) {
 \end{verbatim}
 \end{tiny}
 
-Details are in the GitHub code, but we compute at the last sequence position (in parallel) the number of relationships output for the verb so far, and for the current relationship which token within that multi-token process (e.g. the word "agent" or the open parenthesis "(" or the left index, or the comma, or right index, close parenthesis ")", "AND", etc) we are on.
+Details are in the learning-rasp GitHub RASP code\footnote{\begin{footnotesize}word-level token Restricted Access Sequence Processing solution: \href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp} \end{footnotesize}}, but we compute at the last sequence position (in parallel) the number of relationships output for the verb so far, and for the current relationship which token within that multi-token process (e.g. the word "agent" or the open parenthesis "(" or the left index, or the comma, or right index, close parenthesis ")", "AND", etc) we are on.
 
-Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with sentential complements (see actual code for CP support)), we compute the number of agent,theme,recipient,xcomp,ccomp entries in the output:
+Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with sentential complements (see actual code for CP support)), we compute the number of agent,theme,recipient,xcomp entries in the output:
 \begin{tiny}
 \begin{verbatim}
 atrx_in_output_sequence = OUTPUT_MASK*(indicator(tokens == "agent"
@@ -1100,7 +1100,8 @@ output = after_intro_and_relationships_nmod_token \
 \end{verbatim}
 \end{tiny}
 
-See code for full details (for simplicity this description was also written without discussing sentential complement handling).
+Again, see the code for full details\footnote{\begin{footnotesize}word-level token Restricted Access Sequence Processing solution: \href{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp}{https://github.com/willy-b/learning-rasp/blob/2be461ba83b7393fda4dc5a96ae600ac98478771/word-level-pos-tokens-recogs-style-decoder-loop.rasp} \end{footnotesize}} (for simplicity this description was also written without discussing sentential complement handling).
+
 For all steps only the RASP outputs aligned with the input sequence (Encoder part of derived Transformer) or the very last sequence output (for next token in autoregressive generation) were used. For convenience of reading the aggregate operator was usually used acausally to assign all sequence outputs before the last one to the same value as the last (so only one value would be displayed).
 
 You can run a demo and see the autoregressive output 
