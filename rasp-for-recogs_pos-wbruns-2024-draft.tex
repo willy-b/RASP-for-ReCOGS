@@ -273,7 +273,7 @@ The first 19 of those patterns are present in our RASP program code\footnote{\be
 /word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574}\end{footnotesize}}
 and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{\begin{footnotesize}see also "Appendix: Restricted Access Sequence Processing word-level token program/model design" (\ref{rasp-word-level-model-design})\end{footnotesize}}.
 %See Figure \ref{rasp-model-flat-pattern-match-example} for example grammar pattern matching with mismatched sentences and pp modification handling shown in additional figures in Appendix \ref{rasp-word-level-model-design}.
-To handle prepositional phrases in a flat solution, we find it necessary on the training data to add a rule that ignores "det common\_noun" or "proper noun" preceded by a preposition when searching for noun indexes to report in relationships (agent, theme, recipient, etc) and as if we did that during pattern matching by using before/after matches instead of strict relative indexing. Considering how a model without this rule would behave led us to be able to predict 96\% of a certain category of errors a baseline Encoder-Decoder Transformer makes (see baseline attraction error results page \ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors})).
+To handle prepositional phrases in a flat solution, we find it necessary on the training data to add a rule that ignores "det common\_noun" or "proper noun" preceded by a preposition when searching for noun indexes to report in relationships (agent, theme, recipient, etc) and as if we did that during pattern matching by using before/after matches instead of strict relative indexing. Considering how a model without this rule would behave led us to be able to predict 96\% of a certain category of errors a baseline Encoder-Decoder Transformer makes (see baseline attraction error results page \ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors}).
 
 \begin{figure}
 \includegraphics[scale=0.60]{./image_pdfs/example_rasp_for_recogs_flat_pattern_match.pdf}
@@ -636,7 +636,7 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \end{figure}
 \clearpage
 
-\textbf{These patterns are not causal because their use/input/output is masked to the input section of the sequence, so would take part in the Encoder of the Encoder-Decoder only}(\textbf{all operations outside the input mask in the word-level token RASP solution used in this paper are directly or indirectly causally masked} and we built symbol by symbol in a causal autoregressive way). \textbf{We could have added an explicit causal mask to each operation but for efficiency and simplicity of the code omitted it when we are doing it implicitly by taking only the last sequence position (we also acausally aggregate so that all sequence positions have the same value as the last sequence position to make it easier to read the output -- RASP interpreter will just print it as one position if they are all equal and we only take one position).}
+\textbf{These patterns are not causal because their use/input/output is masked to the input section of the sequence, so would take part in the Encoder of the Encoder-Decoder only} (\textbf{all operations outside the input mask in the word-level token RASP solution used in this paper are directly or indirectly causally masked} and we built symbol by symbol in a causal autoregressive way). \textbf{We could have added an explicit causal mask to each operation but for efficiency and simplicity of the code omitted it when we are doing it implicitly by taking only the last sequence position (we also acausally aggregate so that all sequence positions have the same value as the last sequence position to make it easier to read the output -- RASP interpreter will just print it as one position if they are all equal and we only take one position).}
 
 Also, the author thinks many of these RASP steps could be consolidated. The goal here was to first prove by construction that a non-recursive, flat RASP program could get approximately 100\% Semantic Exact Match on all the ReCOGS generalization splits (we only missed one split, obj-pp-to-subj-pp by a little (see results), which we believe was due to a mistake made rushing due to two week time constraint for original model implementation, not a fundamental limitation of the RASP approach).
 
@@ -785,7 +785,7 @@ np_v_dat_p_np_np = \
 # check the pattern and set the template name
 any_np_v_trans_omissible = \
   aggregate(select(np_v_trans_omissible, 1, ==), 1);
-template_name = "v_trans_omissible_p1" 
+template_name = "v_trans_omissible_p1" \
 if (any_np_v_trans_omissible == 1) else template_name;
 
 # ...
@@ -937,16 +937,16 @@ pp_two_after_mask = select(pp_two_after_sequence, 1, ==) and select(indices, ind
 np_det_diag_mask = select(aggregate(np_det_mask, 1), 1, ==) and select(indices, indices, ==);
 np_prop_diag_mask = select(aggregate(np_prop_mask, 1), 1, ==) and select(indices, indices, ==);
 
-no_pp_np_mask = 
-1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or 
+no_pp_np_mask = \
+1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or \
 (pp_two_after_mask and np_det_diag_mask), 1);
 
 # here we compute left_idx and right_idx
 # for verb relationships, like "agent ( [left_idx] , [right_idx] )"
 
 # one-based index
-nps_without_pp_prefix_indices = 
-selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and
+nps_without_pp_prefix_indices = \
+selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and \
 select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 
 # the one verb (except v_inf_taking cases)
@@ -1000,27 +1000,27 @@ after_intro_target_token = "(" \
   if ((after_intro_num_tokens_in_output_excluding_asterisks) % 7 == 1) \
   else after_intro_target_token;
 
-after_intro_target_token = left_idx 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2)
+after_intro_target_token = left_idx \
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2) \
 else after_intro_target_token;
 
-after_intro_target_token = "," 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 3)
+after_intro_target_token = "," \ 
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 3) \
 else after_intro_target_token;
 
-after_intro_target_token = right_idx 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4)
+after_intro_target_token = right_idx \
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4) \
 else after_intro_target_token;
 
-after_intro_target_token = ")" 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5) 
+after_intro_target_token = ")" \
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5) \
 else after_intro_target_token;
 
-after_intro_target_token = "AND"
-if 
-(after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6
-and
-not (template_mapping_output == ""))
+after_intro_target_token = "AND" \
+if \
+(after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6 \
+and \
+not (template_mapping_output == "")) \
 else after_intro_target_token;
 
 # ...
@@ -1042,51 +1042,51 @@ For outputting prepositional relationships ("nmod . in", "nmod . on", "nmod . be
 \begin{verbatim}
 pps_in_input_sequence = INPUT_MASK*(indicator(pos_tokens == 2));
 pps_in_input_count = selector_width(select(pps_in_input_sequence, 1, ==));
-pps_index = pps_in_input_sequence*selector_width(select(pps_in_input_sequence, 1, ==) 
+pps_index = pps_in_input_sequence*selector_width(select(pps_in_input_sequence, 1, ==) \
 and select(indices,indices, <=));
-nmods_and_pps_in_output_sequence = 
+nmods_and_pps_in_output_sequence = \
   OUTPUT_MASK*(indicator(tokens == "nmod . in" or tokens == "nmod . beside" or tokens=="nmod . on"));
-nmods_and_pps_in_output_count = 
+nmods_and_pps_in_output_count = \
   selector_width(select(nmods_and_pps_in_output_sequence, 1, ==));
 \end{verbatim}
 \end{tiny}
 
 \begin{tiny}
 \begin{verbatim}
-current_pp = 
-  aggregate(select(pps_index, nmods_and_pps_in_output_count+1, ==), tokens) 
+current_pp = \
+  aggregate(select(pps_index, nmods_and_pps_in_output_count+1, ==), tokens) \
   if pps_in_input_count > 0 else "";
 current_pp = "" if current_pp == 0 else current_pp;
-current_nmod_token = 
-("nmod . " + current_pp) if (pps_in_input_count > 0 and not (current_pp == 0) 
+current_nmod_token = \
+("nmod . " + current_pp) if (pps_in_input_count > 0 and not (current_pp == 0) \
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 0) else "";
-current_nmod_token = 
+current_nmod_token = \
   "(" if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 1 else current_nmod_token;
-current_nmod_token = 
-(aggregate(select(pps_index, nmods_and_pps_in_output_count, ==), indices)-1) if pps_in_input_count > 0 
+current_nmod_token = \
+(aggregate(select(pps_index, nmods_and_pps_in_output_count, ==), indices)-1) if pps_in_input_count > 0 \
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2 else current_nmod_token;
-current_nmod_token = "," 
+current_nmod_token = "," \
 if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 3 else current_nmod_token;
-after_nmod_idx = 
+after_nmod_idx = \
 aggregate(select(pps_index, nmods_and_pps_in_output_count, ==), indices)+1;
-token_at_after_nmod_idx = 
+token_at_after_nmod_idx = \
 aggregate(select(indices, after_nmod_idx, ==), tokens);
-after_nmod_idx = 
-  (after_nmod_idx + 1) 
+after_nmod_idx = \
+  (after_nmod_idx + 1) \
   if (token_at_after_nmod_idx == "the" or token_at_after_nmod_idx == "a") else after_nmod_idx;
-current_nmod_token = (after_nmod_idx) 
-if pps_in_input_count > 0 
+current_nmod_token = (after_nmod_idx) \
+if pps_in_input_count > 0 \
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4 else current_nmod_token;
-current_nmod_token = ")" 
-if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5 
+current_nmod_token = ")" \
+if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5 \
 else current_nmod_token;
-current_nmod_token = 
-("AND" if nmods_and_pps_in_output_count < pps_in_input_count else "") 
-if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6 
+current_nmod_token = \
+("AND" if nmods_and_pps_in_output_count < pps_in_input_count else "") \
+if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6 \
 else current_nmod_token;
-after_intro_and_relationships_nmod_token = 
+after_intro_and_relationships_nmod_token = \
 current_nmod_token if nmods_and_pps_in_output_count <= pps_in_input_count else "";
-num_tokens_in_nmod_section = 
+num_tokens_in_nmod_section = \
 after_intro_num_tokens_in_output_excluding_asterisks - template_size(template_name)*7 + 1;
 
 # the decision of whether the nmod output dominates the current decoder next predicted token
@@ -1131,8 +1131,8 @@ Word indices can be assigned using RASP to count separators occurring prior to e
 \begin{tiny}
 \begin{verbatim}
 word_indices = \
-(1+selector_width(select(tokens, " ", ==) 
-and select(indices, indices, <=)))
+(1+selector_width(select(tokens, " ", ==) \
+and select(indices, indices, <=))) \
 *(0 if indicator(tokens == " ") else 1);
 \end{verbatim}
 \end{tiny}
@@ -1584,6 +1584,9 @@ aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices);
 
 For results, see results section (\ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors}).
 
+Our hypothesis is in terms of nouns with a logical form relationship to a verb or other noun, where the relationship could be agent, theme, or recipient.
+\textbf{We chose to analyze the agent relationship since it is the most common relationship type for the subject noun. Since the obj\_pp\_to\_subj\_pp split is in terms of subject vs object prepositional modification (instead of agent, recipient, or theme), we use the subset of sentences within this split where the agent is to the left of the verb and modified by a prepositional phrase as it corresponds to the subject in that case. Note that for the input grammar of (Re)COGS, agent-left-of-verb sentences only have one non-prepositional phrase noun to the left of the verb, so without explicitly considering the theme side, requiring the agent to be on the left already intentionally excludes cases like v\_unacc\_p2 where the subject is the theme, not the agent.}
+
 The errors from n=10 fresh training and evaluation runs of the baseline \citep{Wu2023} Encoder-Decoder Transformer on their ReCOGS\_pos train.tsv and tested on their unmodified gen.tsv were analyzed for the obj\_pp\_to\_subj\_pp split. All the input sentences and output logical forms as well as the ground truth logical forms were logged during the run. The input sentences were parsed by the Lark parser\footnote{\begin{footnotesize}\href{https://github.com/lark-parser/lark}{https://github.com/lark-parser/lark}\end{footnotesize}} against the COGS input grammar which allowed categorizing each sentence by its verb type \footnote{\begin{footnotesize}Code to analyze the errors is at: 
 
 \href{https://github.com/willy-b/RASP-for-ReCOGS/blob/main/supplemental\_data/ReCOGS\_Baseline\_non\_RASP\_Transformer\_ReCOGS\_error\_prediction\_with\_n\%3D10\_Transformers\_trained\_from\_scratch\_(predicting\_the\_details\_of\_error\_in\_logical\_form\_on\_obj\_pp\_to\_subj\_pp\_split).ipynb}{https://github.com/willy-b/RASP-for-ReCOGS/blob/
@@ -1595,17 +1598,16 @@ main
 \_in\_logical\_form\_on\_obj\_pp\_to\_subj
 \_pp\_split).ipynb}
 
-\end{footnotesize}}. The author manually inspected each of verb type patterns and categorized them by the position of the agent and theme relative to the verb (see code below) and used Lark to assign agent, theme sides based on the verb type using that mapping.
+\end{footnotesize}}. The author manually inspected each of verb type patterns and categorized them by the position of the agent relative to the verb (see code below) and used Lark to assign agent sides based on the verb type using that mapping.
 
-To focus the analysis, we considered only single verb cases and ignored sentences with sentential complements. Then, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{\begin{footnotesize}Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. sentential complement examples were excluded to focus on predicting the form of the error on simpler examples.\end{footnotesize}}
-
-Our hypothesis is in terms of nouns with a logical form relationship to a verb or other noun, where the relationship could be agent, theme, or recipient.
-Since the obj\_pp\_to\_subj\_pp split is in terms of subject vs object prepositional modification (instead of agent, recipient, or theme), we use the subset of sentences within this split where the agent is to the left of the verb and modified by a prepositional phrase as it corresponds to the subject in that case.
+To focus the analysis, we considered only single verb cases and ignored sentences with sentential complements. Then, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{\begin{footnotesize}Of the single relationship errors, we categorized them by a description of the position of both the agent relative to the verb in that sentence (agent was considered to be either left OR "right or middle") and what relationship had the error. Sentential complement examples were excluded to focus on predicting the form of the error on simpler examples.\end{footnotesize}}
 
 \begin{tiny}
 \begin{verbatim}
-# used grammar string defined in 
-# Appendix: Vocabulary and Grammar.
+# used the description of the (Re)COGS grammar 
+# referenced in 
+# Appendix: Methods Detail for categorizing
+# input sentences for error analysis.
 parser = Lark(grammar, start='start')
 
 # 1st NP agent verbs (non CP)
@@ -1623,26 +1625,6 @@ agent_left_of_verb_verb_type_set = \
 set(["v_trans_omissible_p1", "v_trans_omissible_p2", 
 "v_trans_not_omissible", "v_cp_taking", "v_inf_taking", 
 "v_unacc_p1", "v_unerg", "v_inf", "v_dat_p1", "v_dat_p2"])
-
-theme_left_of_verb_verb_type_set = set(
-    ["v_trans_omissible_pp_p1",
-     "np v_unacc_p2",
-     "v_unacc_pp_p1",
-     "v_unacc_pp_p2",
-     "v_trans_omissible_pp_p2",
-     "v_trans_not_omissible_pp_p1",
-     "v_trans_not_omissible_pp_p2",
-     "v_dat_pp_p1",
-     "v_dat_pp_p2"
-     ])
-
-theme_right_of_verb_verb_type_set = set([
-    "v_unacc_p1",
-    "v_trans_omissible_p2",
-    "v_trans_not_omissible",
-])
-theme_middle_of_dative_verb_type_set = set(["v_dat_pp_p4",
-"v_dat_p1"])
 
 # for enforcing during the check of our hypothesis
 # a stricter expectation that the closest prepositional noun
@@ -1689,16 +1671,6 @@ last_noun_before_first_verb_index(lark_tree_root):
       pps_before_count += 1
   return verbs, pps_before_counts,
          last_noun_before_first_verb_index
-
-def get_theme_side(lark_tree_root):
-    verb_type = get_verbs(lark_tree_root)[0]
-    if verb_type in theme_right_of_verb_verb_type_set:
-        return "right"
-    elif verb_type in theme_left_of_verb_verb_type_set:
-        return "left"
-    elif verb_type in theme_middle_of_dative_verb_type_set:
-        return "middle"
-    return None
 
 def get_agent_side(lark_tree_root):
     verb_type = get_verbs(lark_tree_root)[0]
