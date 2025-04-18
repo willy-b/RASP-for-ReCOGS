@@ -1626,6 +1626,37 @@ set(["v_trans_omissible_p1", "v_trans_omissible_p2",
 "v_trans_not_omissible", "v_cp_taking", "v_inf_taking", 
 "v_unacc_p1", "v_unerg", "v_inf", "v_dat_p1", "v_dat_p2"])
 
+
+# simpler get_verbs function referenced by get_agent_side
+# (returns verbs starting from end of sentence, 
+# opposite of 
+# get_verbs_with_pps_before_and_last_noun_before_first_verb_index )
+# not appropriate for use with sentential complement prefix sentences
+# that have pp modification in the cp prefix
+def get_verbs(lark_tree_root):
+  nodes = [lark_tree_root]
+  verbs = []
+  while len(nodes) > 0:
+    node = nodes[-1]
+    nodes = nodes[:-1]
+    node_type = node.data[:]
+    if node_type[:2] == 'v_':
+      verbs.append(node_type)
+    for child in node.children:
+      # it is a tree, no need to check for revisits
+      nodes.append(child)
+  return verbs
+
+def get_agent_side(lark_tree_root):
+    verb_type = get_verbs(lark_tree_root)[0]
+    if verb_type != None and 
+      verb_type not in agent_left_of_verb_verb_type_set:
+        return "right or middle"
+    elif verb_type in agent_left_of_verb_verb_type_set:
+        return "left"
+    return None
+
+# more complicated version
 # for enforcing during the check of our hypothesis
 # a stricter expectation that the closest prepositional noun
 # to the left of the verb is the misassigned agent
@@ -1650,10 +1681,10 @@ last_noun_before_first_verb_index(lark_tree_root):
     for child in node.children:
       # it is a tree, no need to check for revisits
       children.append(child)
-# need to visit in a particular order to not just get verbs
-# but pp before count, 
-# and the last noun before the first verb
-# in the one verb case this does not matter 
+    # need to visit in a particular order to not just get verbs
+    # but pp before count, 
+    # and the last noun before the first verb
+    # in the one verb case this does not matter 
     children.reverse()
     # but we may want to return verbs in the order
     # they appear in the sentence
@@ -1661,25 +1692,16 @@ last_noun_before_first_verb_index(lark_tree_root):
       nodes.append(node)
     if node_type[:] in ["common_noun",
     "proper_noun"] and len(verbs) == 0:
-# no need to subtract 1 here as before incrementing below
+      # no need to subtract 1 here as before incrementing below
       last_noun_before_first_verb_index = \
         terminals_before_count
-# only increment on terminals
+    # only increment on terminals
     if len(children) == 0:
       terminals_before_count += 1
     if node_type[:] == "pp":
       pps_before_count += 1
   return verbs, pps_before_counts,
          last_noun_before_first_verb_index
-
-def get_agent_side(lark_tree_root):
-    verb_type = get_verbs(lark_tree_root)[0]
-    if verb_type != None and 
-      verb_type not in agent_left_of_verb_verb_type_set:
-        return "right or middle"
-    elif verb_type in agent_left_of_verb_verb_type_set:
-        return "left"
-    return None
 \end{verbatim}
 \end{tiny}
 
