@@ -80,7 +80,7 @@ It was long argued that connectionist models (i.e. neural networks) were somehow
 More specific versions of this debate continue, for example re: syntax, one can read \cite{vanschijndel2019quantitydoesntbuyquality} vs \cite{goldberg2019assessingbertssyntacticabilities} or re: hierarchical generalization by Transformers, \cite{petty2021transformersgeneralizelinearly} vs \cite{murty2023grokkinghierarchicalstructurevanilla}.
 \end{footnotesize}
 } 
-However, large language models based on the Transformers architecture compose seemingly fluent and novel text and are excellent few or zero shot learners \cite{Brown2020}.
+However, large language models based on the Transformer architecture \cite{vaswani2017attention} compose seemingly fluent and novel text and are excellent few or zero shot learners \cite{Brown2020}.
 
 Some observations do contradict that Transformers learn systematic, compositional solutions to problems that generalize\footnote{\begin{footnotesize}See "Appendix: Composition and Learning" (\ref{composition_and_learning})\end{footnotesize}}, for example structural generalizations
 %\footnote{\begin{footnotesize}especially prepositional phrase generalizations\end{footnotesize}} 
@@ -126,7 +126,7 @@ Thankfully, \cite{Wu2023} are able to begin to get traction (low but nonzero acc
 
 \cite{Zhou2024} apply \cite{Weiss2021}'s RASP language to explain some inconsistent findings regarding generalization and use RASP to predict exactly which cases of generalization come easily to Transformers and which do not. \cite{Zhou2024} seem to reveal \cite{Weiss2021} has provided the framework we seek by demonstrating how to apply RASP to Transformer decoders with intermediate steps, and even use it to learn how to modify difficult-to-learn tasks like Parity\footnote{\begin{footnotesize}See \cite{Strobl2024} for context from formal language theory, computational complexity, circuit complexity theory, and experimental papers together, providing robust lower and upper bounds on what Transformers can do, including discussion of under what conditions Parity can be solved by Transformers and how whether it can be learned by randomly initialized Transformers under simple training schemes is a different question (general feed-forward neural networks can learn to solve Parity per \cite{10.7551/mitpress/4943.003.0128}). \cite{delétang2023neuralnetworkschomskyhierarchy} also. See "Appendix: Zhou et al 2024 relevance of their long addition experiment to language modeling and note on the Parity task and Transformers" (\ref{appendix_long_addition_and_parity})\end{footnotesize}} and long addition in seemingly incidental ways based on RASP analysis to make them readily learnable by Transformers in a compositional, length generalizing way!
 
-Thus we apply techniques similar to \cite{Zhou2024} and \cite{Weiss2021} to ReCOGS to (1) argue Transformers should be capable of performing the task, including the structural generalization splits, with high accuracy, and that the problem is learning not capability and (2) try understand the prepositional phrase modification related generalization errors \cite{Wu2023}'s baseline Encoder-Decoder Transformers are making.
+Thus we apply techniques similar to \cite{Zhou2024} and \cite{Weiss2021} to ReCOGS to (1) argue Transformers should be capable of performing the task, including the structural generalization splits, with high accuracy, and that the problem is learning not capability and (2) try to understand the prepositional phrase modification related generalization errors \cite{Wu2023}'s baseline Encoder-Decoder Transformers are making.
 
 %\section{Prior Literature}
 %
@@ -251,7 +251,7 @@ Attention-head compatible flat patterns/rules were derived from those examples (
 The first 19 of those patterns are present in our RASP program code\footnote{\begin{footnotesize}\href{https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574}{https://anonymous.4open.science/r/learning-rasp-F7C2/word-level-pos-tokens-recogs-style-decoder-loop.rasp\#L574}\end{footnotesize}}
 and each correspond to a set of RASP operations corresponding to attention operations in a Transformer to match a template corresponding to that sentence type\footnote{\begin{footnotesize}see also "Appendix: Restricted Access Sequence Processing word-level token program/model design" (\ref{rasp-word-level-model-design})\end{footnotesize}}.
 %See Figure \ref{rasp-model-flat-pattern-match-example} for example grammar pattern matching with mismatched sentences and pp modification handling shown in additional figures in Appendix \ref{rasp-word-level-model-design}.
-To handle prepositional phrases in a flat solution, we find it necessary on the training data to add a rule that ignores "det common\_noun" or "proper noun" preceded by a preposition when searching for noun indexes to report in relationships (agent, theme, recipient, etc) and as if we did that during pattern matching by using before/after matches instead of strict relative indexing. Considering how a model without this rule would behave led us to be able to predict 96\% of a certain category of errors a baseline Encoder-Decoder Transformer makes (see baseline attraction error results page \ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors})).
+To handle prepositional phrases in a flat solution, we find it necessary on the training data to add a rule that ignores "det common\_noun" or "proper noun" preceded by a preposition when searching for noun indexes to report in relationships (agent, theme, recipient, etc) and as if we did that during pattern matching by using before/after matches instead of strict relative indexing. Considering how a model without this rule would behave led us to be able to predict 96\% of a certain category of errors a baseline Encoder-Decoder Transformer makes (see baseline attraction error results page \ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors}).
 
 \begin{figure}
 \includegraphics[scale=0.60]{./image_pdfs/example_rasp_for_recogs_flat_pattern_match.pdf}
@@ -625,7 +625,7 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \end{figure}
 \clearpage
 
-\textbf{These patterns are not causal because their use/input/output is masked to the input section of the sequence, so would take part in the Encoder of the Encoder-Decoder only}(\textbf{all operations outside the input mask in the word-level token RASP solution used in this paper are directly or indirectly causally masked} and we built symbol by symbol in a causal autoregressive way). \textbf{We could have added an explicit causal mask to each operation but for efficiency and simplicity of the code omitted it when we are doing it implicitly by taking only the last sequence position (we also acausally aggregate so that all sequence positions have the same value as the last sequence position to make it easier to read the output -- RASP interpreter will just print it as one position if they are all equal and we only take one position).}
+\textbf{These patterns are not causal because their use/input/output is masked to the input section of the sequence, so would take part in the Encoder of the Encoder-Decoder only} (\textbf{all operations outside the input mask in the word-level token RASP solution used in this paper are directly or indirectly causally masked} and we built symbol by symbol in a causal autoregressive way). \textbf{We could have added an explicit causal mask to each operation but for efficiency and simplicity of the code omitted it when we are doing it implicitly by taking only the last sequence position (we also acausally aggregate so that all sequence positions have the same value as the last sequence position to make it easier to read the output -- RASP interpreter will just print it as one position if they are all equal and we only take one position).}
 
 Also, the author thinks many of these RASP steps could be consolidated. The goal here was to first prove by construction that a non-recursive, flat RASP program could get approximately 100\% Semantic Exact Match on all the ReCOGS generalization splits (we only missed one split, obj-pp-to-subj-pp by a little (see results), which we believe was due to a mistake made rushing due to two week time constraint for original model implementation, not a fundamental limitation of the RASP approach).
 
@@ -1578,6 +1578,9 @@ aggregate(select(nps_without_pp_prefix_indices, after_intro_idx, ==), indices);
 
 For results, see results section (\ref{error_analysis_for_baseline_transformer_predict_and_confirm_attraction_errors}).
 
+Our hypothesis is in terms of nouns with a logical form relationship to a verb or other noun, where the relationship could be agent, theme, or recipient.
+\textbf{We chose to analyze the agent relationship since it is the most common relationship type for the subject noun. Since the obj\_pp\_to\_subj\_pp split is in terms of subject vs object prepositional modification (instead of agent, recipient, or theme), we use the subset of sentences within this split where the agent is to the left of the verb and modified by a prepositional phrase as it corresponds to the subject in that case. Note that for the input grammar of (Re)COGS, agent-left-of-verb sentences only have one non-prepositional phrase noun to the left of the verb, so without explicitly considering the theme side, requiring the agent to be on the left already intentionally excludes cases like v\_unacc\_p2 where the subject is the theme, not the agent.}
+
 The errors from n=10 fresh training and evaluation runs of the baseline \cite{Wu2023} Encoder-Decoder Transformer on their ReCOGS\_pos train.tsv and tested on their unmodified gen.tsv were analyzed for the obj\_pp\_to\_subj\_pp split. All the input sentences and output logical forms as well as the ground truth logical forms were logged during the run. The input sentences were parsed by the Lark parser\footnote{\begin{footnotesize}\href{https://github.com/lark-parser/lark}{https://github.com/lark-parser/lark}\end{footnotesize}} against the COGS input grammar which allowed categorizing each sentence by its verb type \footnote{\begin{footnotesize}Code to analyze the errors is at: 
 
 \href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental_data/ReCOGS_Baseline_non_RASP_Transformer_ReCOGS_error_prediction_with_n=10_Transformers_trained_from_scratch_(predicting_the_details_of_error_in_logical_form_on_obj_pp_to_subj_pp_split).ipynb}{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/supplemental\_data/
@@ -1586,17 +1589,16 @@ ReCOGS\_Baseline\_non\_RASP\_Transformer
 \_with\_n=10\_Transformers\_trained\_from\_scratch
 \_(predicting\_the\_details\_of
 \_error\_in\_logical\_form\_on\_obj
-\_pp\_to\_subj\_pp\_split).ipynb} .\end{footnotesize}}. The author manually inspected each of verb type patterns and categorized them by the position of the agent and theme relative to the verb (see code below) and used Lark to assign agent, theme sides based on the verb type using that mapping.
+\_pp\_to\_subj\_pp\_split).ipynb} .\end{footnotesize}}. The author manually inspected each of verb type patterns and categorized them by the position of the agent relative to the verb (see code below) and used Lark to assign agent sides based on the verb type using that mapping.
 
-To focus the analysis, we considered only single verb cases and ignored sentences with sentential complements. Then, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{\begin{footnotesize}Of the single relationship errors, we categorized them by a description of the position of both the agent and theme relative to the verb in that sentence (agent was considered to be either left OR "right or middle"; theme could be left, right, or middle) and what relationship had the error. sentential complement examples were excluded to focus on predicting the form of the error on simpler examples.\end{footnotesize}}
-
-Our hypothesis is in terms of nouns with a logical form relationship to a verb or other noun, where the relationship could be agent, theme, or recipient.
-Since the obj\_pp\_to\_subj\_pp split is in terms of subject vs object prepositional modification (instead of agent, recipient, or theme), we use the subset of sentences within this split where the agent is to the left of the verb and modified by a prepositional phrase as it corresponds to the subject in that case.
+To focus the analysis, we considered only single verb cases and ignored sentences with sentential complements. Then, of the sentences with the model generating an invalid logical form assessed by Semantic Exact Match, we focused on examples with a single error in one of the logical form parts (e.g. agent, theme, recipient, or nmod relationships).\footnote{\begin{footnotesize}Of the single relationship errors, we categorized them by a description of the position of both the agent relative to the verb in that sentence (agent was considered to be either left OR "right or middle") and what relationship had the error. Sentential complement examples were excluded to focus on predicting the form of the error on simpler examples.\end{footnotesize}}
 
 \begin{tiny}
 \begin{verbatim}
-# used grammar string defined in 
-# Appendix: Vocabulary and Grammar.
+# used the description of the (Re)COGS grammar 
+# referenced in 
+# Appendix: Methods Detail for categorizing
+# input sentences for error analysis.
 parser = Lark(grammar, start='start')
 
 # 1st NP agent verbs (non CP)
@@ -1615,26 +1617,35 @@ set(["v_trans_omissible_p1", "v_trans_omissible_p2",
 "v_trans_not_omissible", "v_cp_taking", "v_inf_taking", 
 "v_unacc_p1", "v_unerg", "v_inf", "v_dat_p1", "v_dat_p2"])
 
-theme_left_of_verb_verb_type_set = set(
-    ["v_trans_omissible_pp_p1",
-     "np v_unacc_p2",
-     "v_unacc_pp_p1",
-     "v_unacc_pp_p2",
-     "v_trans_omissible_pp_p2",
-     "v_trans_not_omissible_pp_p1",
-     "v_trans_not_omissible_pp_p2",
-     "v_dat_pp_p1",
-     "v_dat_pp_p2"
-     ])
+# simpler get_verbs function referenced by get_agent_side
+# (returns verbs starting from end of sentence, 
+# opposite of 
+# get_verbs_with_pps_before_and_last_noun_before_first_verb_index )
+# not appropriate for use with sentential complement prefix sentences
+# that have pp modification in the cp prefix
+def get_verbs(lark_tree_root):
+  nodes = [lark_tree_root]
+  verbs = []
+  while len(nodes) > 0:
+    node = nodes[-1]
+    nodes = nodes[:-1]
+    node_type = node.data[:]
+    if node_type[:2] == 'v_':
+      verbs.append(node_type)
+    for child in node.children:
+      # it is a tree, no need to check for revisits
+      nodes.append(child)
+  return verbs
+def get_agent_side(lark_tree_root):
+    verb_type = get_verbs(lark_tree_root)[0]
+    if verb_type != None and 
+      verb_type not in agent_left_of_verb_verb_type_set:
+        return "right or middle"
+    elif verb_type in agent_left_of_verb_verb_type_set:
+        return "left"
+    return None
 
-theme_right_of_verb_verb_type_set = set([
-    "v_unacc_p1",
-    "v_trans_omissible_p2",
-    "v_trans_not_omissible",
-])
-theme_middle_of_dative_verb_type_set = set(["v_dat_pp_p4",
-"v_dat_p1"])
-
+# more complicated version
 # for enforcing during the check of our hypothesis
 # a stricter expectation that the closest prepositional noun
 # to the left of the verb is the misassigned agent
@@ -1659,10 +1670,10 @@ last_noun_before_first_verb_index(lark_tree_root):
     for child in node.children:
       # it is a tree, no need to check for revisits
       children.append(child)
-# need to visit in a particular order to not just get verbs
-# but pp before count, 
-# and the last noun before the first verb
-# in the one verb case this does not matter 
+    # need to visit in a particular order to not just get verbs
+    # but pp before count, 
+    # and the last noun before the first verb
+    # in the one verb case this does not matter 
     children.reverse()
     # but we may want to return verbs in the order
     # they appear in the sentence
@@ -1670,35 +1681,16 @@ last_noun_before_first_verb_index(lark_tree_root):
       nodes.append(node)
     if node_type[:] in ["common_noun",
     "proper_noun"] and len(verbs) == 0:
-# no need to subtract 1 here as before incrementing below
+      # no need to subtract 1 here as before incrementing below
       last_noun_before_first_verb_index = \
         terminals_before_count
-# only increment on terminals
+    # only increment on terminals
     if len(children) == 0:
       terminals_before_count += 1
     if node_type[:] == "pp":
       pps_before_count += 1
   return verbs, pps_before_counts,
          last_noun_before_first_verb_index
-
-def get_theme_side(lark_tree_root):
-    verb_type = get_verbs(lark_tree_root)[0]
-    if verb_type in theme_right_of_verb_verb_type_set:
-        return "right"
-    elif verb_type in theme_left_of_verb_verb_type_set:
-        return "left"
-    elif verb_type in theme_middle_of_dative_verb_type_set:
-        return "middle"
-    return None
-
-def get_agent_side(lark_tree_root):
-    verb_type = get_verbs(lark_tree_root)[0]
-    if verb_type != None and 
-      verb_type not in agent_left_of_verb_verb_type_set:
-        return "right or middle"
-    elif verb_type in agent_left_of_verb_verb_type_set:
-        return "left"
-    return None
 \end{verbatim}
 \end{tiny}
 
@@ -2075,8 +2067,8 @@ and converting it ourselves to a format compatible with \cite{fuzzingbook2023:Gr
 
 That shows if one already knows parts of speech and verb types for words one needs much less data.
 
-Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand (in real world pretraining or a GloVe embedding would be used to solve this step)\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a pre-trained Transformer model in wide use, has part-of-speech information available at the earliest layers.}
- since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically.
+Thus, we can be more efficient than using the ReCOGS training set for our RASP model built by hand
+ since our solution uses a manual embedding via a dictionary mapping words to part-of-speech and verb-type, that ensures all words within a part of speech are treated identically. In general, pretraining\footnote{\cite{tenney2019bertrediscoversclassicalnlp} confirm BERT, a Transformer model pretrained using a language modeling objective, in wide use, has part-of-speech information available at the earliest layers.} or using an embedding like GloVe \cite{pennington-etal-2014-glove} would ensure this type of information was available in the embedding; when training from scratch for COGS/ReCOGS we expect the act of modeling the input sentences to be able to result in embeddings with part-of-speech and verb type information, to facilitate this one might consider also to adjust the training objective as discussed in \cite{10.1162/tacl_a_00733} to explicitly predict the input sentences by treating the seq2seq problem as a language modeling problem for the input concatenated with output instead of as a seq2seq. We are focused on ReCOGS (and COGS) structural generalizations (which Transformer models perform poorly on), not lexical generalizations in this paper (Transformers already known to perform relatively well), so do not study the learning of word level representations (embeddings) here, only how those words are combined once they are mapped to their possible part-of-speech and possible verb-types.
 
 See Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples} below for the 19 part-of-speech/verb type patterns and example sentences that cover the non-recursive grammar at non-terminal (post-embedding level), as well as the training-compatible prepositional phrase and sentential complement examples used for the RASP model design.
 
