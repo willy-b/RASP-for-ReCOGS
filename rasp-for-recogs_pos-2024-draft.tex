@@ -583,27 +583,27 @@ Upon these five parallel, aligned, sequences we used a series of attention head 
 
 \begin{tiny}
 \begin{verbatim}
-np_det_mask = select(7, pos_tokens, ==) 
-and select(pos_tokens, 1, ==) 
+np_det_mask = select(7, pos_tokens, ==) \
+and select(pos_tokens, 1, ==) \
 and select(indices+1, indices, ==);
-np_prop_mask = select(8, pos_tokens, ==) and 
+np_prop_mask = select(8, pos_tokens, ==) and \
 select(indices, indices, ==);
 np_det_sequence = aggregate(np_det_mask, 1);
 np_prop_sequence = aggregate(np_prop_mask, 1);
-np_det_after = select(np_det_sequence, 1, ==) and 
+np_det_after = select(np_det_sequence, 1, ==) and \
 select(indices+1, indices, ==);
-np_prop_after = select(np_prop_sequence, 1, ==) and 
+np_prop_after = select(np_prop_sequence, 1, ==) and \
 select(indices+1, indices, ==);
 np_after_mask = np_det_after or np_prop_after;
 np_after_sequence = aggregate(np_after_mask, 1);
-np_after_mask = select(np_after_sequence, 1, ==) and 
+np_after_mask = select(np_after_sequence, 1, ==) and \
 select(indices,indices, ==);
 # ...
 
 # np v_unerg
 # e.g. [1,7,16]
 set example ["the", "guest", "smiled"]
-v_unerg_mask = select(16, pos_tokens_vmap1, ==) and 
+v_unerg_mask = select(16, pos_tokens_vmap1, ==) and \
 select(indices, indices, ==);
 np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \end{verbatim}
@@ -636,14 +636,14 @@ See code for full details\footnote{\begin{footnotesize}word-level token Restrict
 Example counting how many nouns and verbs we have output (introduced as variables) so far (to determine what we need to output for next token):
 \begin{tiny}
 \begin{verbatim}
-nv_in_output_sequence = 
-OUTPUT_MASK*(indicator(pos_tokens == 7 or pos_tokens == 8) + 
-indicator(pos_tokens_vmap1 == 9 or pos_tokens_vmap2 == 10 or 
-pos_tokens_vmap1 == 11 or pos_tokens_vmap2 == 12 or pos_tokens_vmap3 == 13 or 
-pos_tokens_vmap4 == 14 or pos_tokens_vmap1 == 15 or pos_tokens_vmap1 == 16 or 
-pos_tokens_vmap1 == 17 or pos_tokens_vmap1 == 18 or pos_tokens_vmap2 == 19 or 
+nv_in_output_sequence = \
+OUTPUT_MASK*(indicator(pos_tokens == 7 or pos_tokens == 8) + \
+indicator(pos_tokens_vmap1 == 9 or pos_tokens_vmap2 == 10 or \
+pos_tokens_vmap1 == 11 or pos_tokens_vmap2 == 12 or pos_tokens_vmap3 == 13 or \
+pos_tokens_vmap4 == 14 or pos_tokens_vmap1 == 15 or pos_tokens_vmap1 == 16 or \
+pos_tokens_vmap1 == 17 or pos_tokens_vmap1 == 18 or pos_tokens_vmap2 == 19 or \
 pos_tokens_vmap2 == 20 or pos_tokens_vmap1==21));
-nv_in_output_count = selector_width(select(nv_in_output_sequence, 1, ==)); 
+nv_in_output_count = selector_width(select(nv_in_output_sequence, 1, ==));
 # causal operation as we use only last sequence position
 \end{verbatim}
 \end{tiny}
@@ -655,66 +655,66 @@ How variables are introduced with their index (omitted sorting of input and othe
 # introducing variables
 output = "";
 # definite article word handling
-before_target_word_index = 
- aggregate(select(indices, nv_in_output_count, ==), 
+before_target_word_index = \
+ aggregate(select(indices, nv_in_output_count, ==), \
  input_indices_sorted)-1;
-has_star = 
- aggregate(select(indices, before_target_word_index, ==), 
+has_star = \
+ aggregate(select(indices, before_target_word_index, ==), \
  tokens) == "the";
-last_output_is_star = 
- aggregate(select(indices, length-1, ==), 
+last_output_is_star = \
+ aggregate(select(indices, length-1, ==), \
  tokens) == "*";
 
-input_nv_sorted_by_type = 
- input_tokens_sorted_by_type * 
+input_nv_sorted_by_type = \
+ input_tokens_sorted_by_type * \
  (input_noun_mask_sorted + input_verb_mask_sorted);
-target_word_token = 
- aggregate(select(indices, nv_in_output_count, ==), 
- normalize_nv(input_nv_sorted_by_type)) 
+target_word_token = \
+ aggregate(select(indices, nv_in_output_count, ==), \
+ normalize_nv(input_nv_sorted_by_type)) \
 if (not has_star or last_output_is_star) else "*";
 # subtract 1 when matching 
 # for producing the index 
 # because we just output the additional word by then
-target_word_index = 
- aggregate(select(indices, nv_in_output_count-1, ==), 
+target_word_index = \
+ aggregate(select(indices, nv_in_output_count-1, ==), \
  input_indices_sorted);
 
-output = 
- target_word_token 
- if ((num_tokens_in_output_excluding_asterisks % 5) == 0) 
- else 
+output = \
+ target_word_token \
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 0) \
+ else \
  output;
-output = 
- "(" 
- if ((num_tokens_in_output_excluding_asterisks % 5) == 1)
+output = \
+ "(" \
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 1) \
  else output;
-output = 
- target_word_index
- if ((num_tokens_in_output_excluding_asterisks % 5) == 2) 
+output = \
+ target_word_index \
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 2) \
  else output;
-output = 
- ")" 
- if ((num_tokens_in_output_excluding_asterisks % 5) == 3) 
+output = \
+ ")" \
+ if ((num_tokens_in_output_excluding_asterisks % 5) == 3) \
  else output;
 # note that 
 # when nv_in_output_count == nv_in_input_count, 
 # we will add AND instead of ";"
-output = 
- (
-  ";" 
-  if 
-  (
-   5 * nv_in_input_count - 1 > 
-   num_tokens_in_output_excluding_asterisks
-  ) 
-  else "AND"
- ) 
-if (num_tokens_in_output_excluding_asterisks % 5 == 4) 
+output = \
+ ( \
+  ";" \
+  if \ 
+  ( \
+   5 * nv_in_input_count - 1 > \
+   num_tokens_in_output_excluding_asterisks \
+  ) \
+  else "AND" \
+ ) \
+if (num_tokens_in_output_excluding_asterisks % 5 == 4) \
 else output;
 
 # if we didn't have an input/output separator 
 # that needs to be output
-output = 
+output = \
  "|" if num_pipes_in_output == 0 else output;
 
 # note that the output/next token prediction above will be overridden 
@@ -779,7 +779,7 @@ np_v_dat_p_np_np = \
 # check the pattern and set the template name
 any_np_v_trans_omissible = \
   aggregate(select(np_v_trans_omissible, 1, ==), 1);
-template_name = "v_trans_omissible_p1" 
+template_name = "v_trans_omissible_p1" \
 if (any_np_v_trans_omissible == 1) else template_name;
 
 # ...
@@ -869,12 +869,12 @@ Details are in the learning-rasp GitHub RASP code\footnote{\begin{footnotesize}w
 Like we computed at the last sequence position the number of nouns and verbs in the output once we are finished introducing nouns and verbs (this would be a little different with sentential complements (see actual code for CP support)), we compute the number of agent,theme,recipient,xcomp entries in the output:
 \begin{tiny}
 \begin{verbatim}
-atrx_in_output_sequence = OUTPUT_MASK*(indicator(tokens == "agent"
-or tokens == "theme"
-or tokens=="recipient"
+atrx_in_output_sequence = OUTPUT_MASK*(indicator(tokens == "agent" \
+or tokens == "theme" \
+or tokens=="recipient" \
 or tokens=="xcomp"));
 # agent_theme_recipient_xcomp_output_count is the number of relationships we have output
-agent_theme_recipient_xcomp_output_count = 
+agent_theme_recipient_xcomp_output_count = \
 selector_width(select(atrx_in_output_sequence, 1, ==));
 after_intro_idx = \
   (nv_in_output_count - nv_in_input_count + (1 if any_v_inf_taking == 1 else 0) \
@@ -937,16 +937,16 @@ np_det_diag_mask = select(aggregate(np_det_mask, 1), 1, ==) and \
 np_prop_diag_mask = select(aggregate(np_prop_mask, 1), 1, ==) and \
   select(indices, indices, ==);
 
-no_pp_np_mask = 
-1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or 
+no_pp_np_mask = \
+1 - aggregate((pp_one_after_mask and np_prop_diag_mask) or \
 (pp_two_after_mask and np_det_diag_mask), 1);
 
 # here we compute left_idx and right_idx
 # for verb relationships, like "agent ( [left_idx] , [right_idx] )"
 
 # one-based index
-nps_without_pp_prefix_indices = 
-selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and
+nps_without_pp_prefix_indices = \
+selector_width(select(NOUN_MASK*no_pp_np_mask, 1, ==) and \
 select(indices, indices, <=))*NOUN_MASK*no_pp_np_mask;
 
 # the one verb (except v_inf_taking cases)
@@ -1001,27 +1001,27 @@ after_intro_target_token = "(" \
   if ((after_intro_num_tokens_in_output_excluding_asterisks) % 7 == 1) \
   else after_intro_target_token;
 
-after_intro_target_token = left_idx 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2)
+after_intro_target_token = left_idx \
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2) \
 else after_intro_target_token;
 
-after_intro_target_token = "," 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 3)
+after_intro_target_token = "," \
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 3) \
 else after_intro_target_token;
 
-after_intro_target_token = right_idx 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4)
+after_intro_target_token = right_idx \
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4) \
 else after_intro_target_token;
 
-after_intro_target_token = ")" 
-if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5) 
+after_intro_target_token = ")" \
+if (after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5) \
 else after_intro_target_token;
 
-after_intro_target_token = "AND"
-if 
-(after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6
-and
-not (template_mapping_output == ""))
+after_intro_target_token = "AND" \
+if \
+(after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6 \
+and \
+not (template_mapping_output == "")) \
 else after_intro_target_token;
 
 # ...
@@ -1045,51 +1045,51 @@ For outputting prepositional relationships ("nmod . in", "nmod . on", "nmod . be
 \begin{verbatim}
 pps_in_input_sequence = INPUT_MASK*(indicator(pos_tokens == 2));
 pps_in_input_count = selector_width(select(pps_in_input_sequence, 1, ==));
-pps_index = pps_in_input_sequence*selector_width(select(pps_in_input_sequence, 1, ==) 
+pps_index = pps_in_input_sequence*selector_width(select(pps_in_input_sequence, 1, ==) \
 and select(indices,indices, <=));
-nmods_and_pps_in_output_sequence = 
+nmods_and_pps_in_output_sequence = \
   OUTPUT_MASK*(indicator(tokens == "nmod . in" or tokens == "nmod . beside" or tokens=="nmod . on"));
-nmods_and_pps_in_output_count = 
+nmods_and_pps_in_output_count = \
   selector_width(select(nmods_and_pps_in_output_sequence, 1, ==));
 \end{verbatim}
 \end{tiny}
 
 \begin{tiny}
 \begin{verbatim}
-current_pp = 
-  aggregate(select(pps_index, nmods_and_pps_in_output_count+1, ==), tokens) 
+current_pp = \
+  aggregate(select(pps_index, nmods_and_pps_in_output_count+1, ==), tokens) \
   if pps_in_input_count > 0 else "";
 current_pp = "" if current_pp == 0 else current_pp;
-current_nmod_token = 
-("nmod . " + current_pp) if (pps_in_input_count > 0 and not (current_pp == 0) 
+current_nmod_token = \
+("nmod . " + current_pp) if (pps_in_input_count > 0 and not (current_pp == 0) \
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 0) else "";
-current_nmod_token = 
+current_nmod_token = \
   "(" if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 1 else current_nmod_token;
-current_nmod_token = 
-(aggregate(select(pps_index, nmods_and_pps_in_output_count, ==), indices)-1) if pps_in_input_count > 0 
+current_nmod_token = \
+(aggregate(select(pps_index, nmods_and_pps_in_output_count, ==), indices)-1) if pps_in_input_count > 0 \
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 2 else current_nmod_token;
-current_nmod_token = "," 
+current_nmod_token = "," \
 if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 3 else current_nmod_token;
-after_nmod_idx = 
+after_nmod_idx = \
 aggregate(select(pps_index, nmods_and_pps_in_output_count, ==), indices)+1;
-token_at_after_nmod_idx = 
+token_at_after_nmod_idx = \
 aggregate(select(indices, after_nmod_idx, ==), tokens);
-after_nmod_idx = 
-  (after_nmod_idx + 1) 
+after_nmod_idx = \
+  (after_nmod_idx + 1) \
   if (token_at_after_nmod_idx == "the" or token_at_after_nmod_idx == "a") else after_nmod_idx;
-current_nmod_token = (after_nmod_idx) 
-if pps_in_input_count > 0 
+current_nmod_token = (after_nmod_idx) \
+if pps_in_input_count > 0 \
 and after_intro_num_tokens_in_output_excluding_asterisks % 7 == 4 else current_nmod_token;
-current_nmod_token = ")" 
-if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5 
+current_nmod_token = ")" \
+if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 5 \
 else current_nmod_token;
-current_nmod_token = 
-("AND" if nmods_and_pps_in_output_count < pps_in_input_count else "") 
-if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6 
+current_nmod_token = \
+("AND" if nmods_and_pps_in_output_count < pps_in_input_count else "") \
+if after_intro_num_tokens_in_output_excluding_asterisks % 7 == 6 \
 else current_nmod_token;
-after_intro_and_relationships_nmod_token = 
+after_intro_and_relationships_nmod_token = \
 current_nmod_token if nmods_and_pps_in_output_count <= pps_in_input_count else "";
-num_tokens_in_nmod_section = 
+num_tokens_in_nmod_section = \
 after_intro_num_tokens_in_output_excluding_asterisks - template_size(template_name)*7 + 1;
 
 # the decision of whether the nmod output dominates the current decoder next predicted token
@@ -1137,8 +1137,8 @@ Word indices can be assigned using RASP to count separators occurring prior to e
 \begin{tiny}
 \begin{verbatim}
 word_indices = \
-(1+selector_width(select(tokens, " ", ==) 
-and select(indices, indices, <=)))
+(1+selector_width(select(tokens, " ", ==) \
+and select(indices, indices, <=))) \
 *(0 if indicator(tokens == " ") else 1);
 \end{verbatim}
 \end{tiny}
