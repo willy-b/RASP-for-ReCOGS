@@ -1,0 +1,2123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="300.72998mm"
+   height="338.99252mm"
+   viewBox="0 0 300.72998 338.99252"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="rasp-for-recogs-decoder-loop-supplementary-figure_pp_depth_2_wip.svg"
+   inkscape:export-filename="rasp-for-recogs-decoder-loop-supplementary-figure_pp_depth_2_wip.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.96217061"
+     inkscape:cx="95.617138"
+     inkscape:cy="1000.862"
+     inkscape:window-width="1536"
+     inkscape:window-height="888"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     inkscape:export-bgcolor="#ffffffff">
+    <sodipodi:guide
+       position="0.62913875,-236.57186"
+       orientation="1,0"
+       id="guide9"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="88.31347,298.90006"
+       orientation="0,-1"
+       id="guide48"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="32.12839,284.80815"
+       orientation="1,0"
+       id="guide49"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="25.625704,291.76801"
+       orientation="0,-1"
+       id="guide50"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="64.065155,316.52329"
+       orientation="0,-1"
+       id="guide54"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="2.1976283,313.81137"
+       orientation="1,0"
+       id="guide55"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="59.835152,231.31549"
+       orientation="0,-1"
+       id="guide56"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="10.520351,145.33218"
+       orientation="0,-1"
+       id="guide57"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="55.955357,60.98562"
+       orientation="0,-1"
+       id="guide58"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-6-3-7-3-4-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-8-3-7-8-6-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-5-8-60"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-2-0-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-9-2-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-6-4-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-48-9-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-7-0-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-8-3-7-8-6-7-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-8-3-7-8-6-7-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-2-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-8-3-7-8-6-7-7-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-5-8-60-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-2-0-4-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-9-2-1-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-6-4-3-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-48-9-0-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-7-0-2-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-8-3-7-8-6-7-39" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-2-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-8-3-7-8-6-7-7-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-5-8-60-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-2-0-4-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-9-2-1-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-6-4-3-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-48-9-0-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-7-0-2-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-8-3-7-8-6-7-74" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-2-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-8-3-7-8-6-7-7-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-5-8-60-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-2-0-4-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-9-2-1-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-6-4-3-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-22-48-9-0-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-8-7-0-2-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-0-9-3-0-9-6-7-9-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-0-9-3-0-9-6-7-9-9-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-0-9-3-0-9-6-7-9-9-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8-1-5-1-6-9-0-9-3-0-9-6-7-9-9-7" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.07588132,255.46448)">
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8)"
+       d="M 51.233195,77.21459 4.4487645,72.365795"
+       id="path116-6-9-4-2-1-8-5-7-9-4-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-2)"
+       d="M 74.725617,77.418215 24.653179,71.995677"
+       id="path116-6-9-4-2-1-8-5-7-9-4-6-9"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="2.1053886"
+       y="20.037401"
+       id="text43-2-7-4-7-0-4-1-0-6-1-1-0-4-1-7-9-1-0-2-4-3-4-09"><tspan
+         sodipodi:role="line"
+         id="tspan43-5-8-8-1-8-4-8-5-2-5-9-93-7-1-5-2-9-4-6-8-2-3-35"
+         style="fill:#800000;stroke:none;stroke-width:0.264583"
+         x="2.1053886"
+         y="20.037401">Camila cookie house computer Olivia forwarded <tspan
+   style="fill:#800080"
+   id="tspan53">was the in a beside the by</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="1.5876617"
+       y="17.254068"
+       id="text44-7-8-7-9-9-9-8-4-7-0-9-8-6-3-5-8-5-2-4-6-0-0-0"><tspan
+         sodipodi:role="line"
+         id="tspan44-4-8-2-7-6-6-6-7-2-7-3-7-8-6-7-1-6-9-1-4-2-2-9"
+         style="stroke-width:0.264583;fill:#800000"
+         x="1.5876617"
+         y="17.254068">           0          4          7              10       12                  2      1     3  5 6           8    9 11</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="61.951561"
+       y="24.290209"
+       id="text71-5-9-2-0-8-9-7-9-8-7-8-6-0-8-0-4-1-1"><tspan
+         sodipodi:role="line"
+         id="tspan71-7-7-8-2-0-4-5-2-1-5-0-2-4-6-7-1-3-77"
+         style="fill:#800000;stroke-width:0.264583"
+         x="61.951561"
+         y="24.290209">forward</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="50.164745"
+       y="28.278124"
+       id="text74-4-7-9-7-4-3-9-0-2-3-2-6-0-2-0-7-3-4"><tspan
+         sodipodi:role="line"
+         id="tspan74-1-6-3-6-2-5-2-6-9-8-1-7-9-4-1-1-3-1"
+         style="stroke-width:0.264583"
+         x="50.164745"
+         y="28.278124">(stemmed verb)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="23.536638"
+       y="52.581348"
+       id="text43-2-7-4-7-0-4-1-0-6-1-1-8-2-8-3-8-0-5-1-7-0-1-8-1"><tspan
+         sodipodi:role="line"
+         id="tspan43-5-8-8-1-8-4-8-5-2-5-9-9-8-9-9-3-5-6-9-9-1-1-5-91"
+         style="fill:#800000;stroke:none;stroke-width:0.264583"
+         x="23.536638"
+         y="52.581348">Camila cookie Olivia </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="23.018923"
+       y="49.797901"
+       id="text44-7-8-7-9-9-9-8-4-7-0-9-3-7-6-8-9-8-2-4-8-2-0-7-4"><tspan
+         sodipodi:role="line"
+         id="tspan44-4-8-2-7-6-6-6-7-2-7-3-8-3-4-5-6-5-8-4-3-6-8-6-9"
+         style="fill:#800000;stroke-width:0.264583"
+         x="23.018923"
+         y="49.797901">           0          4       12 </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="1.9191551"
+       y="10.113085"
+       id="text2-6-2-5-2-1-5-1-7-3-8-9-1-2-5-9-3-4-0-6-9-2-2-0-9"><tspan
+         sodipodi:role="line"
+         id="tspan2-1-3-0-0-0-6-5-5-0-0-6-7-9-0-6-3-6-2-0-1-9-1-4-3"
+         style="fill:#800000;stroke-width:0.264583"
+         x="1.9191551"
+         y="10.113085">Camila was forwarded the cookie in a house beside the computer by Olivia | Camila ( 0 ) ; * cookie ( 4 ) ; house ( 7 ) ; * computer ( 10 ) ; Olivia ( 12 ) ; forward ( 2 ) AND </tspan><tspan
+         sodipodi:role="line"
+         style="fill:#800000;stroke-width:0.264583"
+         x="1.9191551"
+         y="14.081835"
+         id="tspan1">                                                                                                                                          recipient ( 2 , 0 ) AND theme ( 2 , 4 ) AND agent ( 2 , 12 ) AND nmod . in ( 4 , 7 ) AND nmod . beside ( 7 , 10 )	</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="1.5876617"
+       y="6.9353504"
+       id="text5-8-9-3-9-9-9-0-8-2-6-4-1-4-1-6-8-4-1-3-7-1-8-9-23"><tspan
+         sodipodi:role="line"
+         id="tspan5-7-2-2-5-1-3-4-8-5-6-2-4-7-7-1-8-7-5-5-4-0-1-3-8"
+         style="stroke-width:0.264583"
+         x="1.5876617"
+         y="6.9353504">           0     1                  2     3          4  5  6         7           8     9             10  11       12</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="2.2018623"
+       y="34.911915"
+       id="text87-2-9-4-7-5-7-4-9-7-9-0-6-5-8"><tspan
+         sodipodi:role="line"
+         id="tspan87-0-4-5-2-9-7-0-1-4-3-4-4-6-5"
+         style="stroke-width:0.264583"
+         x="2.2018623"
+         y="34.911915"><tspan
+           style="fill:#1a1a1a"
+           id="tspan88-5-2-0-2-8-6-6-4-3-5-6-6-5-2">v_dat_pp_p4 ( index <tspan
+   style="fill:#800000"
+   id="tspan90-5-2-3-6-4-4-2-9-1-7-7-3-9-8">2</tspan> ) template:</tspan></tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="2.2018623"
+         y="38.880665"
+         id="tspan248-3"><tspan
+   style="fill:#800000"
+   id="tspan92-6-6-1-8-3-9-1-4-0-6-7-9-6">recipient ( 2 ,  0 ) </tspan> <tspan
+   id="tspan221-9-0-6-8-0-9-0-7"
+   style="fill:#800000">AND</tspan><tspan
+   style="fill:#1a1a1a"
+   id="tspan89-2-4-1-0-1-0-0-7-9-1-9-7-7-8"> <tspan
+   style="fill:#800000"
+   id="tspan2">theme ( 2 , 4 )</tspan> <tspan
+   style="fill:#800000"
+   id="tspan220-1-8-2-9-5-9-3-2">AND</tspan> </tspan><tspan
+   id="tspan4"
+   style="fill:#800000">agent ( 2 , 12 )</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#800000;stroke-width:0.264583"
+       x="114.74804"
+       y="43.960587"
+       id="text232-3-3-0-0-0"><tspan
+         sodipodi:role="line"
+         id="tspan232-4-3-8-6-3"
+         style="font-size:12.7px;stroke-width:0.264583"
+         x="114.74804"
+         y="43.960587">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="123.46373"
+       y="44.414322"
+       id="text233-9-8-5-5-72"><tspan
+         sodipodi:role="line"
+         id="tspan233-0-3-3-0-35"
+         style="stroke-width:0.264583"
+         x="123.46373"
+         y="44.414322">number of relationships in output matches template size for matched verb-centered grammar pattern?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#800000;stroke-width:0.264583"
+       x="115.00634"
+       y="25.87196"
+       id="text232-0-2-7-9-8-1"><tspan
+         sodipodi:role="line"
+         id="tspan232-6-0-9-4-1-7"
+         style="font-size:12.7px;stroke-width:0.264583"
+         x="115.00634"
+         y="25.87196">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="123.93219"
+       y="26.325573"
+       id="text233-8-1-3-1-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan233-79-9-7-5-2-9"
+         style="stroke-width:0.264583"
+         x="123.93219"
+         y="26.325573">number of nouns,verbs in output matches input?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#ff0000;stroke-width:0.264583"
+       x="114.95179"
+       y="79.582649"
+       id="text232-8-6-8-4-6-4"><tspan
+         sodipodi:role="line"
+         id="tspan232-0-2-7-1-9-1"
+         style="font-size:12.7px;fill:#800000;stroke-width:0.264583"
+         x="114.95179"
+         y="79.582649">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="124.72579"
+       y="79.50721"
+       id="text233-4-1-4-5-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan233-7-2-1-5-0-4"
+         style="fill:#800000;stroke-width:0.264583"
+         x="124.72579"
+         y="79.50721">number of nmods in output matches number of prepositions in input?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="0.73446655"
+       y="82.766037"
+       id="text234-0-9-4-4-3"><tspan
+         sodipodi:role="line"
+         id="tspan234-7-0-9-2-5"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.73446655"
+         y="82.766037">Camila was forwarded the <tspan
+   style="fill:#0000ff"
+   id="tspan6">cookie</tspan> <tspan
+   style="fill:#ff00ff"
+   id="tspan5">in</tspan> a <tspan
+   style="fill:#0000ff"
+   id="tspan7">house</tspan> <tspan
+   style="fill:#ff00ff"
+   id="tspan8">beside</tspan> the <tspan
+   style="fill:#0000ff"
+   id="tspan9">computer</tspan> by Olivia</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="0.82707125"
+       y="70.572067"
+       id="text236-9-5-5-3-5"><tspan
+         sodipodi:role="line"
+         id="tspan236-0-8-2-2-0"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.82707125"
+         y="70.572067">in ( 4 , 7 ) beside ( 7 , 10 )</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="144.03157"
+       y="74.12281"
+       id="text249-1"><tspan
+         sodipodi:role="line"
+         id="tspan249-4"
+         style="stroke-width:0.264583"
+         x="144.03157"
+         y="74.12281">nmod handling phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="141.01758"
+       y="38.796524"
+       id="text249-7-5"><tspan
+         sodipodi:role="line"
+         id="tspan249-0-7"
+         style="stroke-width:0.264583"
+         x="141.01758"
+         y="38.796524">verb relationship phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="135.20195"
+       y="20.540058"
+       id="text249-7-9-0"><tspan
+         sodipodi:role="line"
+         id="tspan249-0-2-7"
+         style="stroke-width:0.264583"
+         x="135.20195"
+         y="20.540058">noun and verb introduction phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="0.26445007"
+       y="61.674854"
+       id="text111-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan111-0-9"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.26445007"
+         y="61.674854"><tspan
+   style="fill:#0000ff"
+   id="tspan10">Camila</tspan> was forwarded the <tspan
+   style="fill:#0000ff"
+   id="tspan11">cookie</tspan> in a <tspan
+   style="fill:#0000ff"
+   id="tspan13">house</tspan> beside the <tspan
+   style="fill:#0000ff"
+   id="tspan14">computer</tspan> by <tspan
+   style="fill:#0000ff"
+   id="tspan12">Olivia</tspan></tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-5-8-60)"
+       d="m 12.91272,58.755791 13.37411,-5.004"
+       id="path7-3-5-0-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-9-2-1)"
+       d="M 41.640582,58.680657 39.26825,54.105891"
+       id="path7-3-4-8-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-48-9-0)"
+       d="M 102.88612,57.927475 49.171598,54.163284"
+       id="path7-3-86-3-5"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.417227;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 51.409889,60.839582 46.340402,-0.07698"
+       id="path7-3-86-9-8-5"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#1a1a1a;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+       d="M 1.5853801,0.1322915 H 300.4481"
+       id="path270" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.11667px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="50.584385"
+       y="64.434219"
+       id="text2-4"><tspan
+         sodipodi:role="line"
+         id="tspan2-00"
+         style="font-size:2.11667px;stroke-width:0.264583"
+         x="50.584385"
+         y="64.434219">nouns preceded by preposition</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.11667px;stroke-width:0.264583"
+         x="50.584385"
+         y="67.080055"
+         id="tspan3-6">ignored in this phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="-7.7168143e-06"
+       y="80.089378"
+       id="text5-8-9-3-9-9-9-0-8-2-6-4-1-4-1-6-8-4-1-3-7-1-8-9-23-6"><tspan
+         sodipodi:role="line"
+         id="tspan5-7-2-2-5-1-3-4-8-5-6-2-4-7-7-1-8-7-5-5-4-0-1-3-8-2"
+         style="fill:#800000;stroke-width:0.264583"
+         x="-7.7168143e-06"
+         y="80.089378">           0     1                  2     3          4  5  6         7           8     9             10  11       12</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-5)"
+       d="M 51.233197,-7.1874936 4.4487645,-12.036288"
+       id="path116-6-9-4-2-1-8-5-7-9-4-6-8"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-2-8)"
+       d="M 74.725619,-6.9838686 24.65318,-12.406406"
+       id="path116-6-9-4-2-1-8-5-7-9-4-6-9-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="2.1053889"
+       y="-64.364677"
+       id="text43-2-7-4-7-0-4-1-0-6-1-1-0-4-1-7-9-1-0-2-4-3-4-09-0"><tspan
+         sodipodi:role="line"
+         id="tspan43-5-8-8-1-8-4-8-5-2-5-9-93-7-1-5-2-9-4-6-8-2-3-35-4"
+         style="fill:#800000;stroke:none;stroke-width:0.264583"
+         x="2.1053889"
+         y="-64.364677">Camila cookie house computer Olivia forwarded was the in a beside the by</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="1.587662"
+       y="-67.14801"
+       id="text44-7-8-7-9-9-9-8-4-7-0-9-8-6-3-5-8-5-2-4-6-0-0-0-8"><tspan
+         sodipodi:role="line"
+         id="tspan44-4-8-2-7-6-6-6-7-2-7-3-7-8-6-7-1-6-9-1-4-2-2-9-8"
+         style="stroke-width:0.264583;fill:#800000"
+         x="1.587662"
+         y="-67.14801">           0          4          7              10       12                  2      1     3  5 6           8    9 11</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="61.951565"
+       y="-60.111874"
+       id="text71-5-9-2-0-8-9-7-9-8-7-8-6-0-8-0-4-1-1-8"><tspan
+         sodipodi:role="line"
+         id="tspan71-7-7-8-2-0-4-5-2-1-5-0-2-4-6-7-1-3-77-9"
+         style="fill:#800000;stroke-width:0.264583"
+         x="61.951565"
+         y="-60.111874">forward</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="50.164749"
+       y="-56.123959"
+       id="text74-4-7-9-7-4-3-9-0-2-3-2-6-0-2-0-7-3-4-7"><tspan
+         sodipodi:role="line"
+         id="tspan74-1-6-3-6-2-5-2-6-9-8-1-7-9-4-1-1-3-1-7"
+         style="stroke-width:0.264583"
+         x="50.164749"
+         y="-56.123959">(stemmed verb)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="23.536638"
+       y="-31.820736"
+       id="text43-2-7-4-7-0-4-1-0-6-1-1-8-2-8-3-8-0-5-1-7-0-1-8-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan43-5-8-8-1-8-4-8-5-2-5-9-9-8-9-9-3-5-6-9-9-1-1-5-91-4"
+         style="fill:#800000;stroke:none;stroke-width:0.264583"
+         x="23.536638"
+         y="-31.820736">Camila cookie Olivia </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="23.018923"
+       y="-34.604183"
+       id="text44-7-8-7-9-9-9-8-4-7-0-9-3-7-6-8-9-8-2-4-8-2-0-7-4-3"><tspan
+         sodipodi:role="line"
+         id="tspan44-4-8-2-7-6-6-6-7-2-7-3-8-3-4-5-6-5-8-4-3-6-8-6-9-0"
+         style="fill:#800000;stroke-width:0.264583"
+         x="23.018923"
+         y="-34.604183">           0          4       12 </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="1.9191554"
+       y="-74.288994"
+       id="text2-6-2-5-2-1-5-1-7-3-8-9-1-2-5-9-3-4-0-6-9-2-2-0-9-3"><tspan
+         sodipodi:role="line"
+         id="tspan2-1-3-0-0-0-6-5-5-0-0-6-7-9-0-6-3-6-2-0-1-9-1-4-3-0"
+         style="fill:#800000;stroke-width:0.264583"
+         x="1.9191554"
+         y="-74.288994">Camila was forwarded the cookie in a house beside the computer by Olivia | Camila ( 0 ) ; * cookie ( 4 ) ; house ( 7 ) ; * computer ( 10 ) ; Olivia ( 12 ) ; forward ( 2 ) AND </tspan><tspan
+         sodipodi:role="line"
+         style="fill:#800000;stroke-width:0.264583"
+         x="1.9191554"
+         y="-70.320244"
+         id="tspan1-9">                                                                                                                                          recipient ( 2 , 0 ) AND theme ( 2 , 4 ) AND agent ( 2 , 12 ) AND nmod . in ( 4 , 7 ) AND nmod . <tspan
+   style="fill:#ff0000"
+   id="tspan18">_</tspan>	</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="1.587662"
+       y="-77.466728"
+       id="text5-8-9-3-9-9-9-0-8-2-6-4-1-4-1-6-8-4-1-3-7-1-8-9-23-2"><tspan
+         sodipodi:role="line"
+         id="tspan5-7-2-2-5-1-3-4-8-5-6-2-4-7-7-1-8-7-5-5-4-0-1-3-8-5"
+         style="stroke-width:0.264583"
+         x="1.587662"
+         y="-77.466728">           0     1                  2     3          4  5  6         7           8     9             10  11       12</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="2.2018626"
+       y="-49.49017"
+       id="text87-2-9-4-7-5-7-4-9-7-9-0-6-5-8-4"><tspan
+         sodipodi:role="line"
+         id="tspan87-0-4-5-2-9-7-0-1-4-3-4-4-6-5-0"
+         style="stroke-width:0.264583"
+         x="2.2018626"
+         y="-49.49017"><tspan
+           style="fill:#1a1a1a"
+           id="tspan88-5-2-0-2-8-6-6-4-3-5-6-6-5-2-5">v_dat_pp_p4 ( index <tspan
+   style="fill:#800000"
+   id="tspan90-5-2-3-6-4-4-2-9-1-7-7-3-9-8-9">2</tspan> ) template:</tspan></tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="2.2018626"
+         y="-45.52142"
+         id="tspan248-3-4"><tspan
+   style="fill:#800000"
+   id="tspan92-6-6-1-8-3-9-1-4-0-6-7-9-6-6">recipient ( 2 ,  0 ) </tspan> <tspan
+   id="tspan221-9-0-6-8-0-9-0-7-9"
+   style="fill:#800000">AND</tspan><tspan
+   style="fill:#1a1a1a"
+   id="tspan89-2-4-1-0-1-0-0-7-9-1-9-7-7-8-2"> <tspan
+   style="fill:#800000"
+   id="tspan2-2">theme ( 2 , 4 )</tspan> <tspan
+   style="fill:#800000"
+   id="tspan220-1-8-2-9-5-9-3-2-4">AND</tspan> </tspan><tspan
+   id="tspan4-7"
+   style="fill:#800000">agent ( 2 , 12 )</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#800000;stroke-width:0.264583"
+       x="114.74802"
+       y="-40.441498"
+       id="text232-3-3-0-0-0-8"><tspan
+         sodipodi:role="line"
+         id="tspan232-4-3-8-6-3-1"
+         style="font-size:12.7px;stroke-width:0.264583"
+         x="114.74802"
+         y="-40.441498">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="123.46371"
+       y="-39.987762"
+       id="text233-9-8-5-5-72-2"><tspan
+         sodipodi:role="line"
+         id="tspan233-0-3-3-0-35-8"
+         style="stroke-width:0.264583"
+         x="123.46371"
+         y="-39.987762">number of relationships in output matches template size for matched verb-centered grammar pattern?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#800000;stroke-width:0.264583"
+       x="115.00629"
+       y="-58.530125"
+       id="text232-0-2-7-9-8-1-9"><tspan
+         sodipodi:role="line"
+         id="tspan232-6-0-9-4-1-7-3"
+         style="font-size:12.7px;stroke-width:0.264583"
+         x="115.00629"
+         y="-58.530125">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="123.93217"
+       y="-58.076511"
+       id="text233-8-1-3-1-2-8-6"><tspan
+         sodipodi:role="line"
+         id="tspan233-79-9-7-5-2-9-8"
+         style="stroke-width:0.264583"
+         x="123.93217"
+         y="-58.076511">number of nouns,verbs in output matches input?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#ff0000;stroke-width:0.264583"
+       x="114.95177"
+       y="-4.8194342"
+       id="text232-8-6-8-4-6-4-0"><tspan
+         sodipodi:role="line"
+         id="tspan232-0-2-7-1-9-1-2"
+         style="font-size:12.7px;fill:#ff0000;stroke-width:0.264583"
+         x="114.95177"
+         y="-4.8194342">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="124.72578"
+       y="-4.8948736"
+       id="text233-4-1-4-5-1-6-1"><tspan
+         sodipodi:role="line"
+         id="tspan233-7-2-1-5-0-4-0"
+         style="fill:#ff0000;stroke-width:0.264583"
+         x="124.72578"
+         y="-4.8948736">number of nmods in output matches number of prepositions in input?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="0.73446584"
+       y="-1.6360466"
+       id="text234-0-9-4-4-3-5"><tspan
+         sodipodi:role="line"
+         id="tspan234-7-0-9-2-5-1"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.73446584"
+         y="-1.6360466"><tspan
+   style="fill:#1a1a1a"
+   id="tspan3">Camila was forwarded the</tspan> <tspan
+   style="fill:#0000ff"
+   id="tspan6-1">cookie</tspan> <tspan
+   style="fill:#ff00ff"
+   id="tspan5-0">in</tspan> <tspan
+   style="fill:#1a1a1a"
+   id="tspan15">a</tspan> <tspan
+   style="fill:#0000ff"
+   id="tspan7-8">house</tspan> <tspan
+   style="fill:#ff00ff"
+   id="tspan8-5">beside</tspan> <tspan
+   style="fill:#1a1a1a"
+   id="tspan16">the</tspan> <tspan
+   style="fill:#0000ff"
+   id="tspan9-0">computer</tspan> <tspan
+   style="fill:#000000"
+   id="tspan17">by Olivia</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="0.82707143"
+       y="-13.830017"
+       id="text236-9-5-5-3-5-6"><tspan
+         sodipodi:role="line"
+         id="tspan236-0-8-2-2-0-4"
+         style="fill:#000000;stroke-width:0.264583"
+         x="0.82707143"
+         y="-13.830017"><tspan
+   style="fill:#800000"
+   id="tspan20">in ( 4 , 7 )</tspan> <tspan
+   style="fill:#ff0000"
+   id="tspan19">beside</tspan> ( 7 , 10 )</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="144.03157"
+       y="-10.279275"
+       id="text249-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan249-4-2"
+         style="stroke-width:0.264583;fill:#ff0000"
+         x="144.03157"
+         y="-10.279275">nmod handling phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="141.01758"
+       y="-45.60556"
+       id="text249-7-5-5"><tspan
+         sodipodi:role="line"
+         id="tspan249-0-7-8"
+         style="stroke-width:0.264583"
+         x="141.01758"
+         y="-45.60556">verb relationship phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="135.20195"
+       y="-63.862022"
+       id="text249-7-9-0-6"><tspan
+         sodipodi:role="line"
+         id="tspan249-0-2-7-2"
+         style="stroke-width:0.264583"
+         x="135.20195"
+         y="-63.862022">noun and verb introduction phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="0.2644493"
+       y="-22.727228"
+       id="text111-2-8-8"><tspan
+         sodipodi:role="line"
+         id="tspan111-0-9-4"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.2644493"
+         y="-22.727228"><tspan
+   style="fill:#0000ff"
+   id="tspan10-7">Camila</tspan> was forwarded the <tspan
+   style="fill:#0000ff"
+   id="tspan11-2">cookie</tspan> in a <tspan
+   style="fill:#0000ff"
+   id="tspan13-4">house</tspan> beside the <tspan
+   style="fill:#0000ff"
+   id="tspan14-0">computer</tspan> by <tspan
+   style="fill:#0000ff"
+   id="tspan12-6">Olivia</tspan></tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-5-8-60-8)"
+       d="m 12.912721,-25.646292 13.37411,-5.004"
+       id="path7-3-5-0-6-2"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-9-2-1-6)"
+       d="m 41.640584,-25.721426 -2.372332,-4.574766"
+       id="path7-3-4-8-4-9"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-48-9-0-3)"
+       d="M 102.88613,-26.474608 49.1716,-30.238799"
+       id="path7-3-86-3-5-9"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.417227;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 51.409891,-23.562501 46.340406,-0.07698"
+       id="path7-3-86-9-8-5-0"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#1a1a1a;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+       d="M 1.5853807,-84.269792 H 300.44812"
+       id="path270-8" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.11667px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="50.584389"
+       y="-19.967863"
+       id="text2-4-1"><tspan
+         sodipodi:role="line"
+         id="tspan2-00-3"
+         style="font-size:2.11667px;stroke-width:0.264583"
+         x="50.584389"
+         y="-19.967863">nouns preceded by preposition</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.11667px;stroke-width:0.264583"
+         x="50.584389"
+         y="-17.322025"
+         id="tspan3-6-1">ignored in this phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="-8.2475353e-06"
+       y="-4.312705"
+       id="text5-8-9-3-9-9-9-0-8-2-6-4-1-4-1-6-8-4-1-3-7-1-8-9-23-6-1"><tspan
+         sodipodi:role="line"
+         id="tspan5-7-2-2-5-1-3-4-8-5-6-2-4-7-7-1-8-7-5-5-4-0-1-3-8-2-0"
+         style="fill:#000000;stroke-width:0.264583"
+         x="-8.2475353e-06"
+         y="-4.312705">           0     1                  2     3          4  5  6         7           8     9             10  11       12</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-0)"
+       d="M 51.439163,-93.177081 4.6547385,-98.025876"
+       id="path116-6-9-4-2-1-8-5-7-9-4-6-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-2-1)"
+       d="M 74.931585,-92.973456 24.859146,-98.395994"
+       id="path116-6-9-4-2-1-8-5-7-9-4-6-9-0"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="2.3113627"
+       y="-150.35428"
+       id="text43-2-7-4-7-0-4-1-0-6-1-1-0-4-1-7-9-1-0-2-4-3-4-09-04"><tspan
+         sodipodi:role="line"
+         id="tspan43-5-8-8-1-8-4-8-5-2-5-9-93-7-1-5-2-9-4-6-8-2-3-35-6"
+         style="fill:#800000;stroke:none;stroke-width:0.264583"
+         x="2.3113627"
+         y="-150.35428">Camila cookie house computer Olivia forwarded <tspan
+   style="fill:#800080"
+   id="tspan52">was the in a beside the by</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="1.7936342"
+       y="-153.13762"
+       id="text44-7-8-7-9-9-9-8-4-7-0-9-8-6-3-5-8-5-2-4-6-0-0-0-2"><tspan
+         sodipodi:role="line"
+         id="tspan44-4-8-2-7-6-6-6-7-2-7-3-7-8-6-7-1-6-9-1-4-2-2-9-6"
+         style="stroke-width:0.264583;fill:#800000"
+         x="1.7936342"
+         y="-153.13762">           0          4          7              10       12                  2      1     3  5 6           8    9 11</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="62.157558"
+       y="-146.10147"
+       id="text71-5-9-2-0-8-9-7-9-8-7-8-6-0-8-0-4-1-1-7"><tspan
+         sodipodi:role="line"
+         id="tspan71-7-7-8-2-0-4-5-2-1-5-0-2-4-6-7-1-3-77-5"
+         style="fill:#800000;stroke-width:0.264583"
+         x="62.157558"
+         y="-146.10147">forward</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="50.370743"
+       y="-142.11356"
+       id="text74-4-7-9-7-4-3-9-0-2-3-2-6-0-2-0-7-3-4-6"><tspan
+         sodipodi:role="line"
+         id="tspan74-1-6-3-6-2-5-2-6-9-8-1-7-9-4-1-1-3-1-9"
+         style="stroke-width:0.264583"
+         x="50.370743"
+         y="-142.11356">(stemmed verb)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="23.742607"
+       y="-117.81031"
+       id="text43-2-7-4-7-0-4-1-0-6-1-1-8-2-8-3-8-0-5-1-7-0-1-8-1-8"><tspan
+         sodipodi:role="line"
+         id="tspan43-5-8-8-1-8-4-8-5-2-5-9-9-8-9-9-3-5-6-9-9-1-1-5-91-7"
+         style="fill:#800000;stroke:none;stroke-width:0.264583"
+         x="23.742607"
+         y="-117.81031">Camila cookie <tspan
+   style="fill:#1a1a1a"
+   id="tspan39">Olivia</tspan> </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="23.224892"
+       y="-120.59377"
+       id="text44-7-8-7-9-9-9-8-4-7-0-9-3-7-6-8-9-8-2-4-8-2-0-7-4-2"><tspan
+         sodipodi:role="line"
+         id="tspan44-4-8-2-7-6-6-6-7-2-7-3-8-3-4-5-6-5-8-4-3-6-8-6-9-8"
+         style="fill:#800000;stroke-width:0.264583"
+         x="23.224892"
+         y="-120.59377">           0          <tspan
+   style="fill:#ff0000"
+   id="tspan34">4</tspan>       <tspan
+   style="fill:#1a1a1a"
+   id="tspan40">12</tspan> </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="2.125129"
+       y="-160.27859"
+       id="text2-6-2-5-2-1-5-1-7-3-8-9-1-2-5-9-3-4-0-6-9-2-2-0-9-2"><tspan
+         sodipodi:role="line"
+         id="tspan2-1-3-0-0-0-6-5-5-0-0-6-7-9-0-6-3-6-2-0-1-9-1-4-3-9"
+         style="fill:#800000;stroke-width:0.264583"
+         x="2.125129"
+         y="-160.27859">Camila was forwarded the cookie in a house beside the computer by Olivia | Camila ( 0 ) ; * cookie ( 4 ) ; house ( 7 ) ; * computer ( 10 ) ; Olivia ( 12 ) ; forward ( 2 ) AND </tspan><tspan
+         sodipodi:role="line"
+         style="fill:#800000;stroke-width:0.264583"
+         x="2.125129"
+         y="-156.30984"
+         id="tspan1-96">                                                                                                                                          recipient ( 2 , 0 ) AND theme ( 2 , <tspan
+   style="fill:#ff0000"
+   id="tspan26">_</tspan>	</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="1.7936342"
+       y="-163.45633"
+       id="text5-8-9-3-9-9-9-0-8-2-6-4-1-4-1-6-8-4-1-3-7-1-8-9-23-0"><tspan
+         sodipodi:role="line"
+         id="tspan5-7-2-2-5-1-3-4-8-5-6-2-4-7-7-1-8-7-5-5-4-0-1-3-8-27"
+         style="stroke-width:0.264583"
+         x="1.7936342"
+         y="-163.45633">           0     1                  2     3          4  5  6         7           8     9             10  11       12</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="2.4078364"
+       y="-135.47977"
+       id="text87-2-9-4-7-5-7-4-9-7-9-0-6-5-8-6"><tspan
+         sodipodi:role="line"
+         id="tspan87-0-4-5-2-9-7-0-1-4-3-4-4-6-5-1"
+         style="fill:#1a1a1a;stroke-width:0.264583"
+         x="2.4078364"
+         y="-135.47977">v_dat_pp_p4 ( index <tspan
+   style="fill:#800000"
+   id="tspan90-5-2-3-6-4-4-2-9-1-7-7-3-9-8-2">2</tspan> ) template:</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="2.4078364"
+         y="-131.51102"
+         id="tspan248-3-1"><tspan
+   style="fill:#800000"
+   id="tspan92-6-6-1-8-3-9-1-4-0-6-7-9-6-5">recipient ( 2 ,  0 ) </tspan> <tspan
+   id="tspan221-9-0-6-8-0-9-0-7-99"
+   style="fill:#800000">AND</tspan><tspan
+   style="fill:#1a1a1a"
+   id="tspan89-2-4-1-0-1-0-0-7-9-1-9-7-7-8-1"> </tspan><tspan
+   id="tspan33"
+   style="fill:#800000">theme ( 2 ,</tspan><tspan
+   id="tspan32"
+   style="fill:#000000"> <tspan
+   style="fill:#ff0000"
+   id="tspan35">4</tspan> ) AND agent ( 2 , 12 )</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#ff0000;stroke-width:0.264583"
+       x="114.95399"
+       y="-126.43108"
+       id="text232-3-3-0-0-0-87"><tspan
+         sodipodi:role="line"
+         id="tspan232-4-3-8-6-3-0"
+         style="font-size:12.7px;stroke-width:0.264583;fill:#ff0000"
+         x="114.95399"
+         y="-126.43108">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="123.66965"
+       y="-125.97734"
+       id="text233-9-8-5-5-72-4"><tspan
+         sodipodi:role="line"
+         id="tspan233-0-3-3-0-35-80"
+         style="stroke-width:0.264583;fill:#ff0000"
+         x="123.66965"
+         y="-125.97734">number of relationships in output matches template size for matched verb-centered grammar pattern?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#800000;stroke-width:0.264583"
+       x="115.21227"
+       y="-144.51973"
+       id="text232-0-2-7-9-8-1-4"><tspan
+         sodipodi:role="line"
+         id="tspan232-6-0-9-4-1-7-2"
+         style="font-size:12.7px;stroke-width:0.264583"
+         x="115.21227"
+         y="-144.51973">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="124.13811"
+       y="-144.06612"
+       id="text233-8-1-3-1-2-8-9"><tspan
+         sodipodi:role="line"
+         id="tspan233-79-9-7-5-2-9-6"
+         style="stroke-width:0.264583"
+         x="124.13811"
+         y="-144.06612">number of nouns,verbs in output matches input?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#1a1a1a;stroke-width:0.264583"
+       x="115.15771"
+       y="-90.809013"
+       id="text232-8-6-8-4-6-4-1"><tspan
+         sodipodi:role="line"
+         id="tspan232-0-2-7-1-9-1-0"
+         style="font-size:12.7px;fill:#1a1a1a;stroke-width:0.264583"
+         x="115.15771"
+         y="-90.809013">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke-width:0.264583"
+       x="124.93172"
+       y="-90.884453"
+       id="text233-4-1-4-5-1-6-4"><tspan
+         sodipodi:role="line"
+         id="tspan233-7-2-1-5-0-4-2"
+         style="fill:#1a1a1a;stroke-width:0.264583"
+         x="124.93172"
+         y="-90.884453">number of nmods in output matches number of prepositions in input?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="0.94043982"
+       y="-87.625626"
+       id="text234-0-9-4-4-3-2"><tspan
+         sodipodi:role="line"
+         id="tspan234-7-0-9-2-5-2"
+         style="fill:#000000;stroke-width:0.264583"
+         x="0.94043982"
+         y="-87.625626">Camila was forwarded the <tspan
+   style="fill:#0000ff"
+   id="tspan6-0">cookie</tspan> <tspan
+   style="fill:#ff00ff"
+   id="tspan25">in</tspan> a <tspan
+   style="fill:#0000ff"
+   id="tspan22">house</tspan> <tspan
+   style="fill:#ff00ff"
+   id="tspan24">beside</tspan> the <tspan
+   style="fill:#0000ff"
+   id="tspan23">computer</tspan> by Olivia</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="1.0330454"
+       y="-99.819595"
+       id="text236-9-5-5-3-5-0"><tspan
+         sodipodi:role="line"
+         id="tspan236-0-8-2-2-0-2"
+         style="fill:#800000;stroke-width:0.264583"
+         x="1.0330454"
+         y="-99.819595">i<tspan
+   style="fill:#000000"
+   id="tspan21">n ( 4 , 7 ) beside ( 7 , 10 )</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke-width:0.264583"
+       x="144.23763"
+       y="-96.268852"
+       id="text249-1-8"><tspan
+         sodipodi:role="line"
+         id="tspan249-4-3"
+         style="stroke-width:0.264583;fill:#1a1a1a"
+         x="144.23763"
+         y="-96.268852">nmod handling phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="141.22363"
+       y="-131.59515"
+       id="text249-7-5-8"><tspan
+         sodipodi:role="line"
+         id="tspan249-0-7-0"
+         style="stroke-width:0.264583;fill:#ff0000"
+         x="141.22363"
+         y="-131.59515">verb relationship phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="135.408"
+       y="-149.85162"
+       id="text249-7-9-0-4"><tspan
+         sodipodi:role="line"
+         id="tspan249-0-2-7-0"
+         style="stroke-width:0.264583"
+         x="135.408"
+         y="-149.85162">noun and verb introduction phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="0.47042364"
+       y="-108.7168"
+       id="text111-2-8-9"><tspan
+         sodipodi:role="line"
+         id="tspan111-0-9-1"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.47042364"
+         y="-108.7168"><tspan
+   style="fill:#0000ff"
+   id="tspan10-9">Camila</tspan> was forwarded the <tspan
+   style="fill:#0000ff"
+   id="tspan11-6">cookie</tspan> in a <tspan
+   style="fill:#0000ff"
+   id="tspan13-2">house</tspan> beside the <tspan
+   style="fill:#0000ff"
+   id="tspan14-5">computer</tspan> by <tspan
+   style="fill:#0000ff"
+   id="tspan12-4">Olivia</tspan></tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-5-8-60-3)"
+       d="m 13.118687,-111.63589 13.37411,-5.004"
+       id="path7-3-5-0-6-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-9-2-1-8)"
+       d="m 41.84655,-111.71102 -2.372332,-4.57477"
+       id="path7-3-4-8-4-99"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-48-9-0-5)"
+       d="m 103.09211,-112.4642 -53.714544,-3.7642"
+       id="path7-3-86-3-5-3"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.417227;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 51.615857,-109.55209 46.340399,-0.077"
+       id="path7-3-86-9-8-5-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#1a1a1a;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+       d="M 1.7913543,-170.25939 H 300.65411"
+       id="path270-0" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.11667px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="50.790382"
+       y="-105.95744"
+       id="text2-4-5"><tspan
+         sodipodi:role="line"
+         id="tspan2-00-0"
+         style="font-size:2.11667px;stroke-width:0.264583"
+         x="50.790382"
+         y="-105.95744">nouns preceded by preposition</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.11667px;stroke-width:0.264583"
+         x="50.790382"
+         y="-103.31161"
+         id="tspan3-6-2">ignored in this phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="0.20596537"
+       y="-90.302284"
+       id="text5-8-9-3-9-9-9-0-8-2-6-4-1-4-1-6-8-4-1-3-7-1-8-9-23-6-9"><tspan
+         sodipodi:role="line"
+         id="tspan5-7-2-2-5-1-3-4-8-5-6-2-4-7-7-1-8-7-5-5-4-0-1-3-8-2-4"
+         style="fill:#1a1a1a;stroke-width:0.264583"
+         x="0.20596537"
+         y="-90.302284">           0     1                  2     3          4  5  6         7           8     9             10  11       12</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-1)"
+       d="M 51.157327,-178.24989 4.372893,-183.09868"
+       id="path116-6-9-4-2-1-8-5-7-9-4-6-2"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8-2-3)"
+       d="M 74.649749,-178.04626 24.57731,-183.4688"
+       id="path116-6-9-4-2-1-8-5-7-9-4-6-9-8"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="2.0295181"
+       y="-235.42703"
+       id="text43-2-7-4-7-0-4-1-0-6-1-1-0-4-1-7-9-1-0-2-4-3-4-09-8"><tspan
+         sodipodi:role="line"
+         id="tspan43-5-8-8-1-8-4-8-5-2-5-9-93-7-1-5-2-9-4-6-8-2-3-35-9"
+         style="fill:#800000;stroke:none;stroke-width:0.264583"
+         x="2.0295181"
+         y="-235.42703">Camila cookie <tspan
+   style="fill:#000000"
+   id="tspan44">house computer Olivia forwarded </tspan><tspan
+   id="tspan51"
+   style="fill:#800080">was the in a beside the by</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="1.5117912"
+       y="-238.21037"
+       id="text44-7-8-7-9-9-9-8-4-7-0-9-8-6-3-5-8-5-2-4-6-0-0-0-28"><tspan
+         sodipodi:role="line"
+         id="tspan44-4-8-2-7-6-6-6-7-2-7-3-7-8-6-7-1-6-9-1-4-2-2-9-88"
+         style="stroke-width:0.264583"
+         x="1.5117912"
+         y="-238.21037">           <tspan
+   style="fill:#800000"
+   id="tspan45">0</tspan>          <tspan
+   style="fill:#ff0000"
+   id="tspan43">4</tspan>          7              10       12                  2      1     3  5 6           8    9 11</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="61.875702"
+       y="-231.17422"
+       id="text71-5-9-2-0-8-9-7-9-8-7-8-6-0-8-0-4-1-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan71-7-7-8-2-0-4-5-2-1-5-0-2-4-6-7-1-3-77-8"
+         style="fill:#1a1a1a;stroke-width:0.264583"
+         x="61.875702"
+         y="-231.17422">forward</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="50.088886"
+       y="-227.18631"
+       id="text74-4-7-9-7-4-3-9-0-2-3-2-6-0-2-0-7-3-4-3"><tspan
+         sodipodi:role="line"
+         id="tspan74-1-6-3-6-2-5-2-6-9-8-1-7-9-4-1-1-3-1-8"
+         style="stroke-width:0.264583"
+         x="50.088886"
+         y="-227.18631">(stemmed verb)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="23.460754"
+       y="-202.88309"
+       id="text43-2-7-4-7-0-4-1-0-6-1-1-8-2-8-3-8-0-5-1-7-0-1-8-1-3"><tspan
+         sodipodi:role="line"
+         id="tspan43-5-8-8-1-8-4-8-5-2-5-9-9-8-9-9-3-5-6-9-9-1-1-5-91-3"
+         style="fill:#800000;stroke:none;stroke-width:0.264583"
+         x="23.460754"
+         y="-202.88309">Camila cookie Olivia </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#1a1a1a;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="22.943039"
+       y="-205.66653"
+       id="text44-7-8-7-9-9-9-8-4-7-0-9-3-7-6-8-9-8-2-4-8-2-0-7-4-38"><tspan
+         sodipodi:role="line"
+         id="tspan44-4-8-2-7-6-6-6-7-2-7-3-8-3-4-5-6-5-8-4-3-6-8-6-9-04"
+         style="fill:#800000;stroke-width:0.264583"
+         x="22.943039"
+         y="-205.66653">           0          4       12 </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="1.8432846"
+       y="-245.35135"
+       id="text2-6-2-5-2-1-5-1-7-3-8-9-1-2-5-9-3-4-0-6-9-2-2-0-9-7"><tspan
+         sodipodi:role="line"
+         style="fill:#800000;stroke-width:0.264583"
+         x="1.8432846"
+         y="-245.35135"
+         id="tspan1-8">Camila was forwarded the cookie in a house beside the computer by Olivia | Camila ( 0 ) ; * cookie ( <tspan
+   style="fill:#ff0000"
+   id="tspan41">_</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="1.5117912"
+       y="-248.52908"
+       id="text5-8-9-3-9-9-9-0-8-2-6-4-1-4-1-6-8-4-1-3-7-1-8-9-23-9"><tspan
+         sodipodi:role="line"
+         id="tspan5-7-2-2-5-1-3-4-8-5-6-2-4-7-7-1-8-7-5-5-4-0-1-3-8-0"
+         style="stroke-width:0.264583"
+         x="1.5117912"
+         y="-248.52908">           0     1                  2     3          4  5  6         7           8     9             10  11       12</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="2.1259918"
+       y="-220.55252"
+       id="text87-2-9-4-7-5-7-4-9-7-9-0-6-5-8-68"><tspan
+         sodipodi:role="line"
+         id="tspan87-0-4-5-2-9-7-0-1-4-3-4-4-6-5-7"
+         style="stroke-width:0.264583"
+         x="2.1259918"
+         y="-220.55252"><tspan
+           style="fill:#1a1a1a"
+           id="tspan88-5-2-0-2-8-6-6-4-3-5-6-6-5-2-9">v_dat_pp_p4 ( index <tspan
+   style="fill:#800000"
+   id="tspan90-5-2-3-6-4-4-2-9-1-7-7-3-9-8-0">2</tspan> ) template:</tspan></tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="2.1259918"
+         y="-216.58377"
+         id="tspan248-3-3"><tspan
+   style="fill:#800000"
+   id="tspan92-6-6-1-8-3-9-1-4-0-6-7-9-6-3">recipient ( 2 ,  0 ) </tspan> <tspan
+   id="tspan221-9-0-6-8-0-9-0-7-3"
+   style="fill:#800000">AND</tspan><tspan
+   style="fill:#1a1a1a"
+   id="tspan89-2-4-1-0-1-0-0-7-9-1-9-7-7-8-7"> <tspan
+   style="fill:#800000"
+   id="tspan2-3">theme ( 2 , 4 )</tspan> <tspan
+   style="fill:#800000"
+   id="tspan220-1-8-2-9-5-9-3-2-2">AND</tspan> </tspan><tspan
+   id="tspan4-6"
+   style="fill:#800000">agent ( 2 , 12 )</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#000000;stroke-width:0.264583"
+       x="114.67214"
+       y="-211.50386"
+       id="text232-3-3-0-0-0-5"><tspan
+         sodipodi:role="line"
+         id="tspan232-4-3-8-6-3-8"
+         style="font-size:12.7px;stroke-width:0.264583;fill:#000000"
+         x="114.67214"
+         y="-211.50386">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="123.38781"
+       y="-211.05013"
+       id="text233-9-8-5-5-72-7"><tspan
+         sodipodi:role="line"
+         id="tspan233-0-3-3-0-35-9"
+         style="stroke-width:0.264583;fill:#000000"
+         x="123.38781"
+         y="-211.05013">number of relationships in output matches template size for matched verb-centered grammar pattern?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#ff0000;stroke-width:0.264583"
+       x="114.93042"
+       y="-229.59248"
+       id="text232-0-2-7-9-8-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan232-6-0-9-4-1-7-0"
+         style="font-size:12.7px;stroke-width:0.264583;fill:#ff0000"
+         x="114.93042"
+         y="-229.59248">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="123.85627"
+       y="-229.13887"
+       id="text233-8-1-3-1-2-8-4"><tspan
+         sodipodi:role="line"
+         id="tspan233-79-9-7-5-2-9-1"
+         style="stroke-width:0.264583;fill:#ff0000"
+         x="123.85627"
+         y="-229.13887">number of nouns,verbs in output matches input?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;fill:#000000;stroke-width:0.264583"
+       x="114.87587"
+       y="-175.88179"
+       id="text232-8-6-8-4-6-4-04"><tspan
+         sodipodi:role="line"
+         id="tspan232-0-2-7-1-9-1-8"
+         style="font-size:12.7px;fill:#000000;stroke-width:0.264583"
+         x="114.87587"
+         y="-175.88179">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="124.64991"
+       y="-175.95723"
+       id="text233-4-1-4-5-1-6-7"><tspan
+         sodipodi:role="line"
+         id="tspan233-7-2-1-5-0-4-08"
+         style="fill:#000000;stroke-width:0.264583"
+         x="124.64991"
+         y="-175.95723">number of nmods in output matches number of prepositions in input?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800000;stroke-width:0.264583"
+       x="0.65859604"
+       y="-172.69841"
+       id="text234-0-9-4-4-3-6"><tspan
+         sodipodi:role="line"
+         id="tspan234-7-0-9-2-5-24"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.65859604"
+         y="-172.69841">Camila was forwarded the <tspan
+   style="fill:#0000ff"
+   id="tspan6-7">cookie</tspan> <tspan
+   style="fill:#ff00ff"
+   id="tspan5-9">in</tspan> a <tspan
+   style="fill:#0000ff"
+   id="tspan7-3">house</tspan> <tspan
+   style="fill:#ff00ff"
+   id="tspan8-9">beside</tspan> the <tspan
+   style="fill:#0000ff"
+   id="tspan9-2">computer</tspan> by Olivia</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke-width:0.264583"
+       x="0.75119877"
+       y="-184.89238"
+       id="text236-9-5-5-3-5-8"><tspan
+         sodipodi:role="line"
+         id="tspan236-0-8-2-2-0-3"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.75119877"
+         y="-184.89238">in ( 4 , 7 ) beside ( 7 , 10 )</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="143.9557"
+       y="-181.34163"
+       id="text249-1-0"><tspan
+         sodipodi:role="line"
+         id="tspan249-4-1"
+         style="stroke-width:0.264583;fill:#000000"
+         x="143.9557"
+         y="-181.34163">nmod handling phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="140.94173"
+       y="-216.66792"
+       id="text249-7-5-7"><tspan
+         sodipodi:role="line"
+         id="tspan249-0-7-89"
+         style="stroke-width:0.264583;fill:#000000"
+         x="140.94173"
+         y="-216.66792">verb relationship phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#ff0000;stroke-width:0.264583"
+       x="135.12607"
+       y="-234.92438"
+       id="text249-7-9-0-1"><tspan
+         sodipodi:role="line"
+         id="tspan249-0-2-7-5"
+         style="stroke-width:0.264583;fill:#ff0000"
+         x="135.12607"
+         y="-234.92438">noun and verb introduction phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#800080;stroke:none;stroke-width:0.264583;stroke-opacity:1"
+       x="0.18857855"
+       y="-193.78958"
+       id="text111-2-8-4"><tspan
+         sodipodi:role="line"
+         id="tspan111-0-9-9"
+         style="fill:#800000;stroke-width:0.264583"
+         x="0.18857855"
+         y="-193.78958"><tspan
+   style="fill:#0000ff"
+   id="tspan10-2">Camila</tspan> was forwarded the <tspan
+   style="fill:#0000ff"
+   id="tspan11-5">cookie</tspan> in a <tspan
+   style="fill:#0000ff"
+   id="tspan13-7">house</tspan> beside the <tspan
+   style="fill:#0000ff"
+   id="tspan14-4">computer</tspan> by <tspan
+   style="fill:#0000ff"
+   id="tspan12-9">Olivia</tspan></tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-5-8-60-9)"
+       d="m 12.836851,-196.70869 13.37411,-5.004"
+       id="path7-3-5-0-6-9"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-9-2-1-2)"
+       d="m 41.564714,-196.78382 -2.372332,-4.57477"
+       id="path7-3-4-8-4-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-22-48-9-0-6)"
+       d="m 102.81027,-197.537 -53.71454,-3.7642"
+       id="path7-3-86-3-5-5"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.417227;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 51.334021,-194.6249 46.34039,-0.077"
+       id="path7-3-86-9-8-5-9"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#1a1a1a;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+       d="M 1.5095082,-255.33219 H 300.37227"
+       id="path270-3" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.11667px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="50.508526"
+       y="-191.03023"
+       id="text2-4-57"><tspan
+         sodipodi:role="line"
+         id="tspan2-00-08"
+         style="font-size:2.11667px;stroke-width:0.264583"
+         x="50.508526"
+         y="-191.03023">nouns preceded by preposition</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.11667px;stroke-width:0.264583"
+         x="50.508526"
+         y="-188.38438"
+         id="tspan3-6-19">ignored in this phase</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.175px;fill:#000000;stroke-width:0.264583"
+       x="-0.075881325"
+       y="-175.37506"
+       id="text5-8-9-3-9-9-9-0-8-2-6-4-1-4-1-6-8-4-1-3-7-1-8-9-23-6-97"><tspan
+         sodipodi:role="line"
+         id="tspan5-7-2-2-5-1-3-4-8-5-6-2-4-7-7-1-8-7-5-5-4-0-1-3-8-2-8"
+         style="fill:#800000;stroke-width:0.264583"
+         x="-0.075881325"
+         y="-175.37506">           0     1                  2     3          4  5  6         7           8     9             10  11       12</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;fill:#1a1a1a;stroke-width:0.264583"
+       x="216.27451"
+       y="-246.50154"
+       id="text46"><tspan
+         sodipodi:role="line"
+         id="tspan46"
+         style="font-size:8.46667px;stroke-width:0.264583"
+         x="216.27451"
+         y="-246.50154">RASP-for-ReCOGS</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:8.46667px;stroke-width:0.264583"
+         x="216.27451"
+         y="-235.9182"
+         id="tspan47">Decoder loop</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:8.46667px;stroke-width:0.264583"
+         x="216.27451"
+         y="-225.33487"
+         id="tspan48">unrolling pp depth 2</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1)"
+       d="m 31.897206,-208.37014 -7.107526,-6.08854"
+       id="path115-5-5-0-9-3-0-6-8-7-7-6-6-0-5"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1)"
+       d="m 43.471402,-208.41246 9.212653,-6.18323"
+       id="path116-6-9-4-2-1-4-4-2-8-0-1-2-7-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1)"
+       d="m 52.778692,-208.2653 28.026104,-6.52037"
+       id="path117-9-4-4-5-1-8-1-5-5-6-5-97-5-77"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-6)"
+       d="m 31.950685,-123.41307 -7.107526,-6.08854"
+       id="path115-5-5-0-9-3-0-6-8-7-7-6-6-0-5-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-6)"
+       d="m 43.524881,-123.4554 9.212653,-6.18322"
+       id="path116-6-9-4-2-1-4-4-2-8-0-1-2-7-6-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-6)"
+       d="m 52.832171,-123.30823 28.026104,-6.52037"
+       id="path117-9-4-4-5-1-8-1-5-5-6-5-97-5-77-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-9)"
+       d="m 31.966239,-37.462546 -7.107526,-6.08854"
+       id="path115-5-5-0-9-3-0-6-8-7-7-6-6-0-5-7"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-9)"
+       d="m 43.540435,-37.504866 9.212653,-6.18323"
+       id="path116-6-9-4-2-1-4-4-2-8-0-1-2-7-6-0"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-9)"
+       d="m 52.847725,-37.357706 28.026104,-6.52037"
+       id="path117-9-4-4-5-1-8-1-5-5-6-5-97-5-77-1"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-3)"
+       d="m 31.938991,46.964094 -7.107527,-6.08854"
+       id="path115-5-5-0-9-3-0-6-8-7-7-6-6-0-5-2"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-3)"
+       d="m 43.513187,46.921774 9.212653,-6.18323"
+       id="path116-6-9-4-2-1-4-4-2-8-0-1-2-7-6-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-4-2-7-4-0-3-1-6-1-3)"
+       d="m 52.820477,47.068934 28.026104,-6.52037"
+       id="path117-9-4-4-5-1-8-1-5-5-6-5-97-5-77-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.11667px;fill:#800080;stroke-width:0.264583"
+       x="2.0411806"
+       y="-231.84479"
+       id="text54"><tspan
+         sodipodi:role="line"
+         id="tspan54"
+         style="stroke-width:0.264583"
+         x="2.0411806"
+         y="-231.84479">(words sorted: nouns, verbs, then other)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.11667px;fill:#800080;stroke-width:0.264583"
+       x="2.090477"
+       y="-146.23851"
+       id="text54-2"><tspan
+         sodipodi:role="line"
+         id="tspan54-9"
+         style="stroke-width:0.264583"
+         x="2.090477"
+         y="-146.23851">(words sorted: nouns, verbs, then other)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.11667px;fill:#800080;stroke-width:0.264583"
+       x="1.9561186"
+       y="-60.224834"
+       id="text54-2-4"><tspan
+         sodipodi:role="line"
+         id="tspan54-9-5"
+         style="stroke-width:0.264583"
+         x="1.9561186"
+         y="-60.224834">(words sorted: nouns, verbs, then other)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.11667px;fill:#800080;stroke-width:0.264583"
+       x="2.1235585"
+       y="24.150982"
+       id="text54-2-7"><tspan
+         sodipodi:role="line"
+         id="tspan54-9-8"
+         style="stroke-width:0.264583"
+         x="2.1235585"
+         y="24.150982">(words sorted: nouns, verbs, then other)</tspan></text>
+  </g>
+</svg>

@@ -51,6 +51,8 @@ New difficult generalization split v_dat_p2 recipient pp modification predicted 
 
 ![](new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.svg)
 
+![](rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder.svg)
+
 ### References
 
 [See paper](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf) for bibliography.
