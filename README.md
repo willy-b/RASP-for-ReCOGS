@@ -51,7 +51,14 @@ New difficult generalization split v_dat_p2 recipient pp modification predicted 
 
 ![](new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.svg)
 
+Details on how the Decoder loop works:
 ![](rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder.png)
+
+Including how the Decoder loop unrolls the logical forms for the recursive aspects of the grammar (prepositional phrase recursion (pp recursion) and sentential complement recursion (cp recursion)):
+
+![](rasp-for-recogs-decoder-loop-supplementary-figure_pp_depth_2.png)
+
+![](rasp-for-recogs-decoder-loop-supplementary-figure_cp_depth_2.png)
 
 ### References
 
