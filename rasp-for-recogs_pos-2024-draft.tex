@@ -296,7 +296,7 @@ To handle prepositional phrases in a flat solution, we find it necessary on the 
 % used 20922/21000 = 99.63% and Clopper-Pearson confidence interval
 \hline
 \end{tabular}
-\caption{\begin{small}ReCOGS\_pos test set performance (n=3000) and out-of-distribution generalization split performance for \textbf{Restricted Access Sequence Processing (RASP) Encoder-Decoder Transformer-compatible model} (n=1000 per gen split).\end{small}}
+\caption{\begin{small}ReCOGS\_pos test set performance (n=3000) and out-of-distribution generalization split performance (n=1000 per gen split) for \textbf{Restricted Access Sequence Processing (RASP) Encoder-Decoder Transformer-compatible model}. Model is deterministic, so Clopper-Pearson confidence intervals are used. (Model developed on training data or examples which are identical to training examples after embedding words to part of speech and verb type sequences, which is the input to the model.)\end{small}}
 \label{results-table}
 \end{table}
 
@@ -306,7 +306,7 @@ To handle prepositional phrases in a flat solution, we find it necessary on the 
 \hline
 \begin{tiny}\textbf{ReCOGS\_pos Split}\end{tiny} & \begin{tiny}\textbf{Semantic Exact Match \% (95\% CI)}\end{tiny} \\
 \hline
-\begin{tiny}Structural generalization splits (held out, out-of-distribution) (below)\end{tiny} & \\
+\begin{tiny}Structural generalization splits (held out, out-of-distribution)\end{tiny} & \\
 \hline
 \begin{tiny}obj\_pp\_to\_subj\_pp\end{tiny} & \begin{tiny} 19.70\% (17.0-22.4\%)\end{tiny} \\
 \begin{tiny}pp\_recursion\end{tiny} & \begin{tiny} 40.18\% (36.13-44.24\%)\end{tiny} \\
@@ -315,7 +315,7 @@ To handle prepositional phrases in a flat solution, we find it necessary on the 
 %\begin{tiny}all gen splits (21K examples, aggregate)\end{tiny} & \begin{tiny} 88.55\% (87.73-89.37\%)\end{tiny} \\
 \hline
 \end{tabular}
-\caption{\begin{small}Out-of-distribution structural generalization split performance for \textbf{\citep{Wu2023} baseline Encoder-Decoder Transformer trained from scratch} (n=1000 per gen split). Mean is of n=20 Encoder-Decoder Transformer models trained from scratch on random permutations of data with randomly initialized weights. 95\% confidence interval is +/-1.96 standard error of the mean.\end{small}}
+\caption{\begin{small}Out-of-distribution structural generalization split performance (n=1000 per gen split) for \textbf{\citep{Wu2023} baseline Encoder-Decoder Transformer trained from scratch}. Mean is of n=20 Encoder-Decoder Transformer models trained from scratch on random permutations of data with randomly initialized weights. 95\% confidence interval is +/-1.96 standard error of the mean.\end{small}}
 \label{wu2023-results-table}
 \end{table}
 
