@@ -658,7 +658,7 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \clearpage
 
 \begin{figure}
-\includegraphics[scale=0.45]{./image_pdfs/rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-patterns-vertical-layout.pdf}
+\includegraphics[scale=0.425]{./image_pdfs/rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-patterns-vertical-layout.pdf}
 \caption{\begin{small}Example of the RASP-for-ReCOGS model decoding a ReCOGS training example to logical form, for the pattern np v\_dat\_p2 np np.\end{small} \\
 }
 \label{rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-vertical}
@@ -682,7 +682,7 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \clearpage
 
 \begin{figure}
-\includegraphics[scale=0.45]{./image_pdfs/rasp-for-recogs-decoder-loop-supplementary-figure_cp_depth_2.pdf}
+\includegraphics[scale=0.425]{./image_pdfs/rasp-for-recogs-decoder-loop-supplementary-figure_cp_depth_2.pdf}
 \caption{\begin{small}Example of the RASP-for-ReCOGS model decoding a ReCOGS training example with sentential complement (cp) recursion depth 2 to ReCOGS logical form.\end{small} \\
 }
 \label{rasp-for-recogs-decoder-loop-supplementary-figure_cp_depth_2}
@@ -2178,7 +2178,7 @@ See Table \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-co
 \begin{small}the girl noticed that a boy painted the girl\end{small} & \begin{small}det common\_noun v\_cp\_taking that det common\_noun v\_trans\_omissible\_p2 det common\_noun\end{small} & \begin{small}A girl said that a crocodile ate the rose .\end{small} \\
 \hline
 \end{tabular}
-\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to COGS/ReCOGS training examples. Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific sentential complement example we gave by modifying one of our existing examples with a sentential complement ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes sentential complement examples are demonstrated earlier, e.g. within 55 examples in default ordering). Note the prepositional phrase and sentential complements are masked during pattern matching against 19 templates for noun-verb relationship extraction and so do not have their own patterns RASP code (other than e.g. ignore "pp noun").\end{small}}
+\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to COGS/ReCOGS training examples. Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific sentential complement example we gave by modifying one of our existing examples with a sentential complement ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes sentential complement examples are demonstrated earlier, e.g. within 55 examples in default ordering).\end{small}}
 \label{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}
 \end{table}
 \twocolumn
