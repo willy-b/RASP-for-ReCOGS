@@ -107,7 +107,7 @@ Finally, we predict that these "attraction" errors we had to specifically avoid 
 \cite{KimLinzen2020} introduce the COmpositional Generalization Challenge based on Semantic Interpretation (COGS) benchmark\footnote{
 \begin{footnotesize}See Figure \ref{data-and-task-figure}.
 \end{footnotesize}
-} and argue that Transformers have low accuracy on the generalization splits (35\% overall), especially structural generalization splits where near 0\% accuracy is reported, using a 2-layer Encoder-Decoder Transformer (2 layers for Encoder, 2 layers for Decoder). 
+} and argue that Transformers have low accuracy on the generalization splits (35\% overall), especially structural generalization splits where near 0\% accuracy is reported, using a 2-layer Encoder-Decoder Transformer (2 layers for Encoder, 2 layers for Decoder).
 % \cite{KimLinzen2020} also argue a model with a hierarchical/tree-structured inductive bias is likely to be required to do well. \cite{murty2022characterizingintrinsiccompositionalitytransformers} study COGS and other datasets and measure the tree-structuredness of the representations and argue it predicts which training checkpoints exhibit better compositional generalization.
 
 For another example, \cite{lake2023human} use a "meta-learning for compositionality" approach with a 3-layer Encoder-Decoder Transformer architecture and achieve what they call "human-like systematic generalization", achieving high scores on everything in the COGS benchmark (>99\% on lexical generalizations) EXCEPT the structural generalization splits where they also still score 0\% accuracy.
@@ -202,29 +202,160 @@ The resulting 19 matching implemented with attention-head compatible operations 
 %\onecolumn
 \begin{table}
 \centering
-\begin{tabular}{p{0.20\linewidth} p{0.55\linewidth} p{0.15\linewidth}}
+\begin{tabular}{p{0.225\linewidth} p{0.50\linewidth} p{0.15\linewidth}}
 \hline
 \begin{tiny}\textbf{Official COGS/ReCOGS training sentence}\end{tiny} & \begin{tiny}\textbf{POS/verb-type sequence matched}\end{tiny} & \begin{tiny}\textbf{Noun-verb relationship template}\end{tiny}\\
 \hline
-\begin{tiny}The donut was studied .\end{tiny} & \begin{tiny}((det common)|proper) was v\_trans\_omissible\_pp\_p1\end{tiny} & \begin{tiny}theme\end{tiny} \\
+\hline
+\begin{tiny}The donut 
+
+was studied .\end{tiny} & \begin{tiny}((det common)|proper)
+
+was v\_trans\_omissible\_pp\_p1\end{tiny} & \begin{tiny}theme\end{tiny} \\
+\hline
 \begin{tiny}The captain ate .\end{tiny} & \begin{tiny}((det common)|proper) v\_trans\_omissible\_p1\end{tiny} & \begin{tiny}agent\end{tiny} \\
-\begin{tiny}The sailor dusted a boy .\end{tiny} & \begin{tiny}((det common)|proper) v\_trans\_omissible\_p2 ((det common)|proper)\end{tiny} & \begin{tiny} agent, theme \end{tiny} \\
-\begin{tiny}A drink was eaten by a child .\end{tiny} & \begin{tiny}((det common)|proper) was v\_trans\_omissible\_pp\_p2 by ((det common)|proper)\end{tiny} & \begin{tiny}theme , agent\end{tiny} \\
-\begin{tiny}A girl liked the raisin .\end{tiny} & \begin{tiny}((det common)|proper) v\_trans\_not\_omissible ((det common)|proper)\end{tiny} & \begin{tiny}agent , theme\end{tiny} \\
-\begin{tiny}The pen was helped .\end{tiny} & \begin{tiny}((det common)|proper) was v\_trans\_not\_omissible\_pp\_p1\end{tiny} & \begin{tiny}theme\end{tiny} \\
-\begin{tiny}A rose was helped by a dog .\end{tiny} & \begin{tiny}((det common)|proper) was v\_trans\_not\_omissible\_pp\_p2 by ((det common)|proper)\end{tiny} & \begin{tiny}theme , agent\end{tiny} \\
-\begin{tiny}A cat disintegrated a girl .\end{tiny} & \begin{tiny}((det common)|proper) v\_unacc\_p1 ((det common)|proper)\end{tiny} & \begin{tiny}agent , theme\end{tiny} \\
+\hline
+\begin{tiny}The sailor 
+
+dusted a boy .\end{tiny} & \begin{tiny}((det common)|proper)
+
+v\_trans\_omissible\_p2 ((det common)|proper)\end{tiny} & \begin{tiny} agent,
+
+theme \end{tiny} \\
+\hline
+\begin{tiny}A drink 
+
+was eaten by 
+
+a child .\end{tiny} & \begin{tiny}((det common)|proper)
+
+was v\_trans\_omissible\_pp\_p2 by 
+
+((det common)|proper)\end{tiny} & \begin{tiny}theme,
+
+agent\end{tiny} \\
+\hline
+\begin{tiny}A girl 
+
+liked the raisin .\end{tiny} & \begin{tiny}((det common)|proper)
+
+v\_trans\_not\_omissible ((det common)|proper)\end{tiny} & \begin{tiny}agent,
+
+theme\end{tiny} \\
+\hline
+\begin{tiny}The pen 
+
+was helped .\end{tiny} & \begin{tiny}((det common)|proper)
+
+was v\_trans\_not\_omissible\_pp\_p1\end{tiny} & \begin{tiny}theme\end{tiny} \\
+\hline
+\begin{tiny}A rose 
+
+was helped by
+
+a dog .\end{tiny} & \begin{tiny}((det common)|proper)
+
+was v\_trans\_not\_omissible\_pp\_p2 by 
+
+((det common)|proper)\end{tiny} & \begin{tiny}theme,
+
+agent\end{tiny} \\
+\hline
+\begin{tiny}A cat 
+
+disintegrated a girl .\end{tiny} & \begin{tiny}((det common)|proper)
+
+v\_unacc\_p1 ((det common)|proper)\end{tiny} & \begin{tiny}agent,
+
+theme\end{tiny} \\
+\hline
 \begin{tiny}A box was inflated .\end{tiny} & \begin{tiny}((det common)|proper) was v\_unacc\_pp\_p1\end{tiny} & \begin{tiny}theme\end{tiny} \\
-\begin{tiny}The cake was frozen by the giraffe .\end{tiny} & \begin{tiny}((det common)|proper) was v\_unacc\_pp\_p2 by ((det common)|proper)\end{tiny} & \begin{tiny}theme , agent\end{tiny} \\
-\begin{tiny}The girl needed to cook .\end{tiny} & \begin{tiny}((det common)|proper) v\_inf\_taking to v\_inf\end{tiny} & \begin{tiny} agent \end{tiny} \\
+\hline
+\begin{tiny}The cake was frozen 
+
+by the giraffe .\end{tiny} & \begin{tiny}((det common)|proper) was v\_unacc\_pp\_p2 
+
+by ((det common)|proper)\end{tiny} & \begin{tiny}theme,
+
+agent\end{tiny} \\
+\hline
+\begin{tiny}The girl needed to cook .\end{tiny} & \begin{tiny}((det common)|proper) v\_inf\_taking to v\_inf\end{tiny} & \begin{tiny}agent\end{tiny} \\
+\hline
 \begin{tiny}The sailor laughed .\end{tiny} & \begin{tiny}((det common)|proper) v\_unerg\end{tiny} & \begin{tiny}agent\end{tiny} \\
-\begin{tiny}A cake rolled .\end{tiny} & \begin{tiny}((det common)|proper) v\_unacc\_p2\end{tiny} & \begin{tiny}theme\end{tiny} \\
-\begin{tiny}Emma passed a cake to the girl .\end{tiny} & \begin{tiny}((det common)|proper) v\_dat\_p1 ((det common)|proper) to ((det common)|proper)\end{tiny} & \begin{tiny}agent , theme, recipient\end{tiny} \\
-\begin{tiny}Liam forwarded the girl the donut .\end{tiny} & \begin{tiny}((det common)|proper) v\_dat\_p2 ((det common)|proper) ((det common)|proper)\end{tiny} & \begin{tiny}agent , recipient , theme\end{tiny} \\
-\begin{tiny}A girl was sold the cake .\end{tiny} & \begin{tiny}((det common)|proper) was v\_dat\_pp\_p3 ((det common)|proper)\end{tiny} & \begin{tiny}recipient , theme\end{tiny} \\
-\begin{tiny}The girl was lended the balloon by Harper .\end{tiny} & \begin{tiny}((det common)|proper) was v\_dat\_pp\_p4 ((det common)|proper) by ((det common)|proper)\end{tiny} & \begin{tiny}recipient , theme , agent\end{tiny} \\
-\begin{tiny}The pen was offered to the girl by Emma .\end{tiny} & \begin{tiny}((det common)|proper) was v\_dat\_pp\_p2 to ((det common)|proper) by ((det common)|proper)\end{tiny} & \begin{tiny}theme , recipient , agent\end{tiny} \\
-\begin{tiny}The melon was lended to a girl .\end{tiny} & \begin{tiny}((det common)|proper) was v\_dat\_pp\_p1 to ((det common)|proper)\end{tiny} & \begin{tiny}theme , recipient\end{tiny} \\
+\hline
+\begin{tiny}A cake rolled .\end{tiny} & \begin{tiny}((det common)|proper)
+
+v\_unacc\_p2\end{tiny} & \begin{tiny}theme\end{tiny} \\
+\hline
+\begin{tiny}Emma 
+
+passed a cake to 
+
+the girl .\end{tiny} & \begin{tiny}((det common)|proper)
+
+v\_dat\_p1 ((det common)|proper) to 
+
+((det common)|proper)\end{tiny} & \begin{tiny}agent,
+
+theme,
+
+recipient\end{tiny} \\
+\hline
+\begin{tiny}Liam 
+
+forwarded the girl 
+
+the donut .\end{tiny} & \begin{tiny}((det common)|proper)
+
+v\_dat\_p2 ((det common)|proper) 
+
+((det common)|proper)\end{tiny} & \begin{tiny}agent,
+
+recipient,
+
+theme\end{tiny} \\
+\hline
+\begin{tiny}A girl 
+
+was sold the cake .\end{tiny} & \begin{tiny}((det common)|proper)
+
+was v\_dat\_pp\_p3 ((det common)|proper)\end{tiny} & \begin{tiny}recipient,
+
+theme\end{tiny} \\
+\hline
+\begin{tiny}The girl was lended 
+
+the balloon 
+
+by Harper .\end{tiny} & \begin{tiny}((det common)|proper) was v\_dat\_pp\_p4 
+
+((det common)|proper)
+
+by ((det common)|proper)\end{tiny} & \begin{tiny}recipient,
+
+theme,
+
+agent\end{tiny} \\
+\hline
+\begin{tiny}The pen was offered
+
+to the girl 
+
+by Emma .\end{tiny} & \begin{tiny}((det common)|proper) was v\_dat\_pp\_p2 
+
+to ((det common)|proper) 
+
+by ((det common)|proper)\end{tiny} & \begin{tiny}theme,
+
+recipient,
+
+agent\end{tiny} \\
+\hline
+\begin{tiny}The melon was lended to a girl .\end{tiny} & \begin{tiny}((det common)|proper)
+
+was v\_dat\_pp\_p1 to ((det common)|proper)\end{tiny} & \begin{tiny}theme,
+
+recipient\end{tiny} \\
 \hline
 %\begin{small}Center embedded PP masking training example\end{small}& & \\
 %\begin{small}Isabella forwarded a box on a tree to Emma .\end{small} & \begin{tiny}((det common)|proper) v\_dat\_p1 ((det common)|proper) \_(masked pp det common\_noun)\_ to ((det common)|proper)\end{tiny} & \begin{small}agent , theme, recipient\end{small} \\
@@ -252,12 +383,12 @@ The resulting 19 matching implemented with attention-head compatible operations 
 \hline
 \begin{tiny}ReCOGS\_pos test set (held out, in-distribution)\end{tiny} & \begin{tiny} 100.00\% (99.88-100.00\%)\end{tiny} \\
 \hline
-\begin{tiny}Generalization splits (held out, out-of-distribution) (below)\end{tiny} & \\
+\begin{tiny}Generalization splits (held out, out-of-distribution)\end{tiny} & \\
 \hline
 \begin{tiny}active\_to\_passive\end{tiny} & \begin{tiny}100.00\% (99.63-100.00\%)\end{tiny} \\
 \begin{tiny}do\_dative\_to\_pp\_dative\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
 \begin{tiny}obj\_omitted\_transitive\_to\_transitive\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
-\begin{tiny}obj\_pp\_to\_subj\_pp\end{tiny} & \begin{tiny} 92.20\% (90.36-93.79\%)\end{tiny} \\
+\begin{tiny}obj\_pp\_to\_subj\_pp\end{tiny} & \begin{tiny}  92.20\% (90.36- 93.79\%)\end{tiny} \\
 \begin{tiny}obj\_to\_subj\_common\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
 \begin{tiny}obj\_to\_subj\_proper\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
 \begin{tiny}only\_seen\_as\_transitive\_subj\_as\_unacc\_subj\end{tiny} & \begin{tiny} 100.00\% (99.63-100.00\%)\end{tiny} \\
@@ -278,30 +409,38 @@ The resulting 19 matching implemented with attention-head compatible operations 
 \hline
 % added in the 2 recursive generalization splits to this same table (originally separated)
 % 19 non-recursive generalization splits (1000 examples each), 2 recursive generalization splits (1000 examples each)
-\begin{tiny}all gen splits (21K examples, aggregate)\end{tiny} & \begin{tiny} 99.63\% (99.54-99.71\%)\end{tiny} \\
+\begin{tiny}all gen splits (21K examples, aggregate)\end{tiny} & \begin{tiny}99.63\% (99.54-99.71\%)\end{tiny} \\
 % used 20922/21000 = 99.63% and Clopper-Pearson confidence interval
 \hline
 \end{tabular}
-\caption{\begin{small}ReCOGS\_pos test set performance (n=3000) and out-of-distribution generalization split performance (n=1000 per gen split) for \textbf{Restricted Access Sequence Processing (RASP) Encoder-Decoder Transformer-compatible model}. Model is deterministic, so Clopper-Pearson confidence intervals are used. (Model was developed on training data or examples which are identical to training examples after embedding words to part of speech and verb type sequences, which is the first step in the model, see Tables \ref{RASP-model-flat-patterns-after-masking-to-nv-relationships-table} , \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}).\end{small}}
+\caption{\begin{small}ReCOGS\_pos test set (n=3000) and out-of-distribution generalization split performance (n=1000 per gen split) for \textbf{Restricted Access Sequence Processing (RASP) Encoder-Decoder Transformer-compatible model}. Model is deterministic, so Clopper-Pearson CIs are used. (Model was developed on training data or examples identical to training examples after embedding words to part of speech and verb type sequences, the first step in the model, see Tables \ref{RASP-model-flat-patterns-after-masking-to-nv-relationships-table} , \ref{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}). 100.00\% (CI 99.63-100.00\%) string exact match was also attained for recursion splits.
+\end{small}}
 \label{results-table}
 \end{table}
 
 \begin{table}
 \centering
-\begin{tabular}{p{0.6\linewidth} p{0.3\linewidth}}
+\begin{tabular}{p{0.55\linewidth} p{0.20\linewidth} p{0.15\linewidth}}
 \hline
-\begin{tiny}\textbf{ReCOGS\_pos Split}\end{tiny} & \begin{tiny}\textbf{Semantic Exact Match \% (95\% CI of sample mean n=20)}\end{tiny} \\
+\begin{tiny}\textbf{ReCOGS\_pos Split}\end{tiny} & \begin{tiny}\textbf{Semantic Exact Match \%}
+
++/- sample std
+
+(n=20)\end{tiny} & \begin{tiny} 95\% CI
+
+(of sample mean, n=20))\end{tiny} \\
 \hline
-\begin{tiny}Structural generalization splits (held out, out-of-distribution)\end{tiny} & \\
+\begin{tiny}Structural generalization splits (held out, o.o.d.)\end{tiny} & \\
 \hline
-\begin{tiny}obj\_pp\_to\_subj\_pp\end{tiny} & \begin{tiny} 19.7 \% (17.0-22.4\%)\end{tiny} \\
-\begin{tiny}pp\_recursion (up to depth 12 vs depths 0-2 in training)\end{tiny} & \begin{tiny} 40.18\% (36.13-44.24\%)\end{tiny} \\
-\begin{tiny}cp\_recursion (up to depth 12 vs depths 0-2 in training)\end{tiny} & \begin{tiny} 52.40\% (51.80-53.01\%)\end{tiny} \\
+\begin{tiny}obj\_pp\_to\_subj\_pp\end{tiny} & \begin{tiny} 19.7\% +/- 6.1\% \end{tiny} & \begin{tiny}17.0-22.4\%\end{tiny} \\
+\begin{tiny}pp\_recursion\end{tiny} & \begin{tiny} 40.2\% +/- 2.1\% \end{tiny} & \begin{tiny}36.1-44.2\%\end{tiny} \\
+\begin{tiny}cp\_recursion\end{tiny} & \begin{tiny} 52.4\% +/- 1.4\% \end{tiny} & \begin{tiny}51.8-53.0\%\end{tiny} \\
 %\hline
 %\begin{tiny}all gen splits (21K examples, aggregate)\end{tiny} & \begin{tiny} 88.55\% (87.73-89.37\%)\end{tiny} \\
 \hline
 \end{tabular}
-\caption{\begin{small}Out-of-distribution structural generalization split performance (n=1000 per gen split) for \textbf{\citep{Wu2023} baseline Encoder-Decoder Transformer trained from scratch}. Mean is of n=20 Encoder-Decoder Transformer models trained from scratch on random permutations of data with randomly initialized weights. 95\% confidence interval is +/-1.96 standard error of the mean.\end{small}}
+\caption{\begin{small}Out-of-distribution (o.o.d.) ReCOGS\_pos structural generalization split performance (n=1000 per gen split) for n=20 \textbf{\citep{Wu2023} baseline Encoder-Decoder Transformer models trained from scratch} on random permutations of training set with random weight init. For pp/cp recursion, training set contains depths 0-2 but up to depth 12 are presented in the pp\_recursion/cp\_recursion gen splits. Results are consistent with \citep{Wu2023}'s Figure 5.
+\end{small}}
 \label{wu2023-results-table}
 \end{table}
 
