@@ -27,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showguides="true"
-     inkscape:zoom="0.93203303"
-     inkscape:cx="375.52317"
-     inkscape:cy="615.858"
+     inkscape:zoom="3.9865634"
+     inkscape:cx="94.065981"
+     inkscape:cy="50.544787"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -410,6 +410,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0.8648864,-104.24576)">
+    <rect
+       style="fill:#ffffff;stroke-width:0.264583"
+       id="rect1"
+       width="300"
+       height="531"
+       x="-0.8648864"
+       y="104.24576" />
     <text
        xml:space="preserve"
        style="font-size:8.46667px;fill:#000000;stroke:none;stroke-width:0.264583"
@@ -704,15 +711,15 @@
        transform="translate(13.563666,-2.0420285)"><tspan
          x="2.7376132"
          y="147.19084"
-         id="tspan3"><tspan
+         id="tspan13"><tspan
            style="font-size:3.175px"
-           id="tspan1">appreciate ( 2 ) AND agent ( 2 , 1 ) AND ccomp ( 2 , 5 ) AND  
+           id="tspan2">appreciate ( 2 ) AND agent ( 2 , 1 ) AND ccomp ( 2 , 5 ) AND  
 </tspan></tspan><tspan
          x="2.7376132"
          y="152.48249"
-         id="tspan8"><tspan
+         id="tspan15"><tspan
            style="font-size:3.175px"
-           id="tspan4">value ( 5 ) AND agent ( 5 , 4 ) AND ccomp ( 5 , 10 )</tspan></tspan></text>
+           id="tspan14">value ( 5 ) AND agent ( 5 , 4 ) AND ccomp ( 5 , 10 )</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
@@ -1258,21 +1265,21 @@
        transform="translate(13.0345,130.68188)"><tspan
          x="2.7376132"
          y="147.19084"
-         id="tspan17"><tspan
+         id="tspan29"><tspan
            style="font-size:3.175px;fill:#800000"
-           id="tspan9">appreciate ( 2 ) AND agent ( 2 ,</tspan><tspan
+           id="tspan18">appreciate ( 2 ) AND agent ( 2 ,</tspan><tspan
            style="font-size:3.175px"
-           id="tspan10"> </tspan><tspan
+           id="tspan19"> </tspan><tspan
            style="font-size:3.175px;fill:#ff0000"
-           id="tspan11">1</tspan><tspan
+           id="tspan22">1</tspan><tspan
            style="font-size:3.175px"
-           id="tspan12"> ) AND ccomp ( 2 , 5 ) AND  
+           id="tspan23"> ) AND ccomp ( 2 , 5 ) AND  
 </tspan></tspan><tspan
          x="2.7376132"
          y="152.48249"
-         id="tspan60"><tspan
+         id="tspan37"><tspan
            style="font-size:3.175px"
-           id="tspan59">value ( 5 ) AND agent ( 5 , 4 ) AND ccomp ( 5 , 10 )</tspan></tspan></text>
+           id="tspan33">value ( 5 ) AND agent ( 5 , 4 ) AND ccomp ( 5 , 10 )</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
@@ -1826,15 +1833,15 @@
        transform="translate(12.96548,264.56109)"><tspan
          x="2.7376132"
          y="147.19084"
-         id="tspan62"><tspan
+         id="tspan39"><tspan
            style="font-size:3.175px"
-           id="tspan61">appreciate ( 2 ) AND agent ( 2 , 1 ) AND ccomp ( 2 , 5 ) AND  
+           id="tspan38">appreciate ( 2 ) AND agent ( 2 , 1 ) AND ccomp ( 2 , 5 ) AND  
 </tspan></tspan><tspan
          x="2.7376132"
          y="152.48249"
-         id="tspan64"><tspan
+         id="tspan58"><tspan
            style="font-size:3.175px"
-           id="tspan63">value ( 5 ) AND agent ( 5 , 4 ) AND ccomp ( 5 , 10 )</tspan></tspan></text>
+           id="tspan57">value ( 5 ) AND agent ( 5 , 4 ) AND ccomp ( 5 , 10 )</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
@@ -2381,15 +2388,15 @@
        transform="translate(13.034498,398.96934)"><tspan
          x="2.7376132"
          y="147.19084"
-         id="tspan66"><tspan
+         id="tspan60"><tspan
            style="font-size:3.175px"
-           id="tspan65">appreciate ( 2 ) AND agent ( 2 , 1 ) AND ccomp ( 2 , 5 ) AND  
+           id="tspan59">appreciate ( 2 ) AND agent ( 2 , 1 ) AND ccomp ( 2 , 5 ) AND  
 </tspan></tspan><tspan
          x="2.7376132"
          y="152.48249"
-         id="tspan68"><tspan
+         id="tspan62"><tspan
            style="font-size:3.175px"
-           id="tspan67">value ( 5 ) AND agent ( 5 , 4 ) AND ccomp ( 5 , 10 )</tspan></tspan></text>
+           id="tspan61">value ( 5 ) AND agent ( 5 , 4 ) AND ccomp ( 5 , 10 )</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:3.175px;fill:#000000;stroke:none;stroke-width:0.264583"
