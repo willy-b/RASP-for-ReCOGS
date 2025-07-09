@@ -40,7 +40,7 @@ Results preview (read [paper](https://raw.githubusercontent.com/willy-b/RASP-for
 
 ![](RASP-for-ReCOGS-paper-main-results-page.png)
 
-(Image above uses the new results table layout from https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/5a1b73a97da525492bc2c565725f6b778cbf8457/rasp-for-recogs_pos-2024-draft.pdf not yet in the main branch version of the paper which relies more on text and also does not highlight a center embedded pp training example which is a change motivated by answering reviewer feedback.)
+(Image above uses the new results table layout from https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/8b59ec667df3ad8baccbb01963998b504b9043ba/rasp-for-recogs_pos-2024-draft.pdf ; Table 1 and Table 3 shown in image above are not yet in the main branch version of the paper which relies more on text and also does not highlight a center embedded pp training example which was a change motivated by answering reviewer feedback.)
 
 ### References
 
