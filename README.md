@@ -4,7 +4,7 @@
 
 This repo contains a [paper in progress](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf)
 
-describing a Restricted Access Sequence Processing language model which performs the ReCOGS_pos task (see Wu et al 2023, "ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation", https://arxiv.org/abs/2303.13716 for task description) of translating sentences in a limited subset of English grammar into logical forms (equivalent to a semantic graph, see ReCOGS and COGS papers). This work is an attempt to prove-by-construction that a Transformer can learn to perform the ReCOGS_pos task in a compositional, systematic, length generalizing way and try to understand why some of the specific errors discussed by Wu et al 2023 are observed. We achieve 100% test set Semantic Exact Match accuracy using a flat, non-tree Transformer compatible RASP model. It uses 19 Transformer attention-head compatible grammar pattern recognizers plus some general attention-head compatible prepositional phrase/complement phrase handling rules (which handle phrase recursion using the decoder loop), and also gets high scores on the generalization splits [(see paper)](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf). We predict some details of errors made by Wu et al 2023's Transformer on the previously reported most difficult split obj-pp-to-subj-pp, and successfully predict a new generalization split that is as hard as the obj-pp-to-subj-pp split.
+describing a Restricted Access Sequence Processing language model which performs the ReCOGS_pos task (see Wu et al 2023, "ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation", https://arxiv.org/abs/2303.13716 for task description) of translating sentences in a limited subset of English grammar into logical forms (equivalent to a semantic graph, see ReCOGS and COGS papers). This work is an attempt to prove-by-construction that a Transformer can learn to perform the ReCOGS_pos task in a compositional, systematic, length generalizing way and try to understand why some of the specific errors discussed by Wu et al 2023 are observed. We achieve 100% test set Semantic Exact Match accuracy using a flat, non-tree Transformer compatible RASP model. It uses 19 Transformer attention-head compatible grammar pattern recognizers plus some general attention-head compatible prepositional phrase/complement phrase handling rules (which handle phrase recursion using the decoder loop), and also gets high scores on the generalization splits [(see paper)](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf). We predict some details of errors made by Wu et al 2023's Transformer on the previously reported most difficult split obj-pp-to-subj-pp, and successfully predict a new generalization split that is as hard as the obj-pp-to-subj-pp split based on the hypothesis that any center embedded prepositional phrase in a new position will be hard for a non-tree structured/non-hierarchical/non-recursive model that has not learned the alternate strategy of pp masking during noun-verb extraction (added to our RASP-for-ReCOGS model and argued potentially learnable from sparse center embedded pp training examples).
 
 What is Restricted Access Sequence Processing (RASP)? It is a language that can be compiled to Transformer weights, designed to help one in "Thinking Like Transformers" (title of Weiss et al 2021 paper, https://arxiv.org/abs/2106.06981 ,  which introduced it).
 
@@ -29,27 +29,18 @@ The difficulty with the `np v\_dat\_p2 np\_det pp np np` modification and the pr
 
 Implementing our task in Restricted Access Sequence Processing immediately helped us discover additional related failure modes of the baseline Encoder-Decoder Transformer, predict the details of the errors in the logical forms (what the mismatched index in the agent when the agent is on the left of the verb would be, 96% of the time) generated for the previously reported most difficult split, and may help us reason about why a model like (Wu 2023) works with 2 layers for the ReCOGS task (compared with e.g. use of 24-layer BERT for NLP tasks in (Tenney et al 2019)).
 
-Example RASP model flat grammar pattern matching case (np v_dat_p2 np np):
-
-(noting that this is showing the Bidirectional Encoder of an Encoder-Decoder Transformer equivalent model, 
-so it is not causal, unlike the Decoder)
-
-![](example_rasp_for_recogs_flat_pattern_match.svg)
-
-Example RASP model flat grammar pattern matching case despite pp modification of middle recipient noun (np v_dat_p2 np np):
-
-![](example_rasp_for_recogs_flat_pattern_match_with_pp_modification.svg)
-
-Example RASP model same flat grammar pattern non-matching case:
-
-(noting that this is showing the Bidirectional Encoder of an Encoder-Decoder Transformer equivalent model, 
-so it is not causal, unlike the Decoder)
-
-![](example_rasp_for_recogs_flat_pattern_no_match.svg)
+Example RASP model flat grammar pattern matching case (np v_dat_p2 np np) to determine the template for mapping nouns to noun verb relationships (full Encoder-Decoder illustration):
+![](rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-patterns-vertical-layout.png)
 
 New difficult generalization split v_dat_p2 recipient pp modification predicted and confirmed as difficult as previously reported most difficult generalization split for baseline Encoder-Decoder Transformers trained from scratch:
 
 ![](new_difficult_generalization_v_dat_p2_recipient_pp_modification_predicted_and_confirmed_for_transformers_trained_from_scratch.svg)
+
+Results preview (read [paper](https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/main/rasp-for-recogs_pos-wbruns-2024-draft.pdf) for details):
+
+![](RASP-for-ReCOGS-paper-main-results-page.png)
+
+(Image above uses the new results table layout from https://raw.githubusercontent.com/willy-b/RASP-for-ReCOGS/8b59ec667df3ad8baccbb01963998b504b9043ba/rasp-for-recogs_pos-2024-draft.pdf ; Table 1 and Table 3 shown in image above are not yet in the main branch version of the paper which relies more on text and also does not highlight a center embedded pp training example which was a change motivated by answering reviewer feedback.)
 
 ### References
 
