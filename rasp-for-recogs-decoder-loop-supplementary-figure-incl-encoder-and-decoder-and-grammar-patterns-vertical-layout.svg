@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
-   sodipodi:docname="rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder.svg"
+   sodipodi:docname="rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-patterns-vertical-layout.svg"
    inkscape:export-filename="rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.40055349"
-     inkscape:cx="-154.78582"
-     inkscape:cy="582.94336"
+     inkscape:zoom="0.947452"
+     inkscape:cx="199.4824"
+     inkscape:cy="249.61687"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -2022,6 +2022,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,165.03642)">
+    <rect
+       style="fill:#ffffff;stroke-width:0.264583"
+       id="rect2"
+       width="325"
+       height="529"
+       x="0"
+       y="-165.03642" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4)"
        d="M 59.25448,83.22918 14.38325,77.76361"
@@ -3642,7 +3649,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-2-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan40">1</tspan></text>
+           id="tspan166">1</tspan></text>
     </g>
     <rect
        style="fill:none;fill-opacity:1;stroke:#ff00f3;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -3869,7 +3876,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan41">1</tspan></text>
+           id="tspan167">1</tspan></text>
     </g>
     <g
        id="g28-7"
@@ -3888,7 +3895,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan42">7</tspan></text>
+           id="tspan168">7</tspan></text>
     </g>
     <g
        id="g28-7-9"
@@ -3907,7 +3914,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan48">18</tspan></text>
+           id="tspan169">18</tspan></text>
     </g>
     <g
        id="g28-7-8"
@@ -3926,7 +3933,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan49">1</tspan></text>
+           id="tspan170">1</tspan></text>
     </g>
     <g
        id="g28-7-1"
@@ -3945,7 +3952,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan50">7</tspan></text>
+           id="tspan171">7</tspan></text>
     </g>
     <g
        id="g28-7-0"
@@ -3964,7 +3971,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan51">1</tspan></text>
+           id="tspan172">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -3980,7 +3987,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan52">7</tspan></text>
+         id="tspan173">7</tspan></text>
     <g
        id="g28-3"
        transform="matrix(0.26458333,0,0,0.26458333,77.989205,-118.54986)">
@@ -3998,7 +4005,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan53">1</tspan></text>
+           id="tspan174">1</tspan></text>
     </g>
     <g
        id="g28-7-6"
@@ -4017,7 +4024,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan54">7</tspan></text>
+           id="tspan175">7</tspan></text>
     </g>
     <g
        id="g28-7-9-8"
@@ -4036,7 +4043,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan55">18</tspan></text>
+           id="tspan176">18</tspan></text>
     </g>
     <g
        id="g28-7-8-4"
@@ -4055,7 +4062,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan56">1</tspan></text>
+           id="tspan177">1</tspan></text>
     </g>
     <g
        id="g28-7-1-9"
@@ -4074,7 +4081,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan57">7</tspan></text>
+           id="tspan178">7</tspan></text>
     </g>
     <g
        id="g28-7-0-3"
@@ -4093,7 +4100,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan58">1</tspan></text>
+           id="tspan179">1</tspan></text>
     </g>
     <g
        id="g29"
@@ -4112,7 +4119,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan59">7</tspan></text>
+           id="tspan180">7</tspan></text>
     </g>
     <g
        id="g28-3-1"
@@ -4131,7 +4138,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan64">1</tspan></text>
+           id="tspan181">1</tspan></text>
     </g>
     <g
        id="g28-7-6-6"
@@ -4150,7 +4157,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-02);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan68">7</tspan></text>
+           id="tspan182">7</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#002eff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -4166,7 +4173,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-9);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan69">18</tspan></text>
+         id="tspan183">18</tspan></text>
     <g
        id="g28-7-8-4-9"
        transform="matrix(0.26458333,0,0,0.26458333,51.84252,-119.56766)">
@@ -4184,7 +4191,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan71">1</tspan></text>
+           id="tspan184">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#003cff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -4200,7 +4207,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38-7-9);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan72">7</tspan></text>
+         id="tspan185">7</tspan></text>
     <g
        id="g28-7-0-3-9"
        transform="matrix(0.26458333,0,0,0.26458333,60.309184,-119.56766)">
@@ -4218,7 +4225,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan73">1</tspan></text>
+           id="tspan186">1</tspan></text>
     </g>
     <g
        id="g29-4"
@@ -4237,7 +4244,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31-3-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan75">7</tspan></text>
+           id="tspan187">7</tspan></text>
     </g>
     <g
        id="g28-3-0"
@@ -4256,7 +4263,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan76">1</tspan></text>
+           id="tspan188">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -4272,7 +4279,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan77">7</tspan></text>
+         id="tspan189">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,89.246369,-121.28624)"
@@ -4280,7 +4287,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5);display:inline;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan78">18</tspan></text>
+         id="tspan190">18</tspan></text>
     <g
        id="g28-7-8-4-2"
        transform="matrix(0.26458333,0,0,0.26458333,91.000846,-124.85932)">
@@ -4298,7 +4305,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan79">1</tspan></text>
+           id="tspan191">1</tspan></text>
     </g>
     <g
        id="g28-7-0-3-1"
@@ -4317,7 +4324,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan80">1</tspan></text>
+           id="tspan192">1</tspan></text>
     </g>
     <text
        xml:space="preserve"
@@ -4326,71 +4333,71 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect53);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="217.92383"
          y="244.33232"
-         id="tspan81">np_det_seq                = [0, 1, 0, 0, 1, 0, 1]
+         id="tspan193">np_det_seq                = [0, 1, 0, 0, 1, 0, 1]
 </tspan><tspan
          x="217.92383"
          y="257.66569"
-         id="tspan82">np_prop_seq             =  [0, 0, 0, 0, 0, 0, 0]
+         id="tspan194">np_prop_seq             =  [0, 0, 0, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="270.99907"
-         id="tspan83">v_dat_seq                   = [0, 0, 1, 0, 0, 0, 0]
+         id="tspan195">v_dat_seq                   = [0, 0, 1, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="284.33244"
-         id="tspan84">np_det_left_seq        = [1, 0, 0, 1, 0, 1, 0]
+         id="tspan196">np_det_left_seq        = [1, 0, 0, 1, 0, 1, 0]
 </tspan><tspan
          x="217.92383"
          y="297.66582"
-         id="tspan85">np_two_before_seq = [0, 1, 0, 1, 0, 0, 0]
+         id="tspan197">np_two_before_seq = [0, 1, 0, 1, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="310.99919"
-         id="tspan86">np_before_seq          = [0, 0, 1, 0, 1, 0, 0]
+         id="tspan198">np_before_seq          = [0, 0, 1, 0, 1, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="324.33256"
-         id="tspan87">np_after_seq              = [0, 0, 1, 0, 0, 1, 0]
+         id="tspan199">np_after_seq              = [0, 0, 1, 0, 0, 1, 0]
 </tspan><tspan
          x="217.92383"
          y="337.66594"
-         id="tspan88">
+         id="tspan200">
 </tspan><tspan
          x="217.92383"
          y="350.99931"
-         id="tspan89">(A) = (np_det_left_seq &amp; np_two_before_seq) = [0, 0, 0, 1, 0, 0, 0]
+         id="tspan201">(A) = (np_det_left_seq &amp; np_two_before_seq) = [0, 0, 0, 1, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="364.33269"
-         id="tspan90">(B) = (np_prop_seq &amp; np_before_seq) = [0, 0, 0, 0, 0, 0, 0]
+         id="tspan202">(B) = (np_prop_seq &amp; np_before_seq) = [0, 0, 0, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="377.66606"
-         id="tspan91">np_np_seq     = (A or B) = [0, 0, 0, 1, 0, 0, 0]
+         id="tspan203">np_np_seq     = (A or B) = [0, 0, 0, 1, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="390.99943"
-         id="tspan92">np_np_any_before_seq = [1, 1, 1, 0, 0, 0, 0]
+         id="tspan204">np_np_any_before_seq = [1, 1, 1, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="404.33281"
-         id="tspan93">np_v_dat_p_np_np = np_after_seq &amp; v_dat_seq
+         id="tspan205">np_v_dat_p_np_np = np_after_seq &amp; v_dat_seq
 </tspan><tspan
          x="217.92383"
          y="417.66618"
-         id="tspan94">&amp; np_before_seq &amp; np_np_any_before_seq
+         id="tspan206">&amp; np_before_seq &amp; np_np_any_before_seq
 </tspan><tspan
          x="217.92383"
          y="430.99956"
-         id="tspan95">                                  = [0, 0, 1, 0, 0, 0, 0]
+         id="tspan207">                                  = [0, 0, 1, 0, 0, 0, 0]
 </tspan><tspan
          x="217.92383"
          y="444.33293"
-         id="tspan96">
+         id="tspan208">
 </tspan><tspan
          x="217.92383"
          y="457.6663"
-         id="tspan97">
+         id="tspan209">
 </tspan></text>
     <text
        xml:space="preserve"
@@ -4424,7 +4431,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan98">7</tspan></text>
+         id="tspan210">7</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2"
@@ -4439,7 +4446,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan99">7</tspan></text>
+         id="tspan211">7</tspan></text>
     <rect
        style="fill:none;stroke:#0037ff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-1-6-2"
@@ -4454,7 +4461,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-8);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan100">1</tspan></text>
+         id="tspan212">1</tspan></text>
     <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-3"
@@ -4469,7 +4476,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan101">7</tspan></text>
+         id="tspan213">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,129.99219,-115.97467)"
@@ -4477,7 +4484,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan102">18</tspan></text>
+         id="tspan214">18</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-8-8-4-1"
@@ -4492,7 +4499,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-8);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan103">1</tspan></text>
+         id="tspan215">1</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-44-0-3-0"
@@ -4507,7 +4514,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-2);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan104">1</tspan></text>
+         id="tspan216">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8-8"
@@ -4529,7 +4536,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan105">7</tspan></text>
+         id="tspan217">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-8"
@@ -4544,7 +4551,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan106">7</tspan></text>
+         id="tspan218">7</tspan></text>
     <g
        id="g28-3-0-2"
        transform="matrix(0.26458333,0,0,0.26458333,77.460055,-132.56692)">
@@ -4562,7 +4569,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan107">1</tspan></text>
+           id="tspan219">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -4578,7 +4585,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-10);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan108">7</tspan></text>
+         id="tspan220">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,88.981799,-128.95917)"
@@ -4586,7 +4593,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-4);display:inline;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan109">18</tspan></text>
+         id="tspan221">18</tspan></text>
     <g
        id="g28-7-8-4-2-0"
        transform="matrix(0.26458333,0,0,0.26458333,90.736266,-132.53225)">
@@ -4604,7 +4611,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan110">1</tspan></text>
+           id="tspan222">1</tspan></text>
     </g>
     <g
        id="g28-7-0-3-1-2"
@@ -4623,7 +4630,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-22);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan111">1</tspan></text>
+           id="tspan223">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#ff0000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -4646,7 +4653,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan112">7</tspan></text>
+         id="tspan224">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-0"
@@ -4661,7 +4668,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan113">7</tspan></text>
+         id="tspan225">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-1-6-9-0"
@@ -4676,7 +4683,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-6-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan114">1</tspan></text>
+         id="tspan226">1</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,84.951929,-140.62527)"
@@ -4684,7 +4691,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-10-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan115">7</tspan></text>
+         id="tspan227">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,88.452609,-140.60083)"
@@ -4692,7 +4699,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-4-3);display:inline;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan116">18</tspan></text>
+         id="tspan228">18</tspan></text>
     <g
        id="g28-7-0-3-1-2-8"
        transform="matrix(0.26458333,0,0,0.26458333,98.673713,-144.1739)">
@@ -4710,7 +4717,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-22-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan117">1</tspan></text>
+           id="tspan229">1</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -4726,7 +4733,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-0-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan118">7</tspan></text>
+         id="tspan230">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-0-7"
@@ -4741,7 +4748,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-5-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan119">7</tspan></text>
+         id="tspan231">7</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#RoundedArrow-22-4)"
        d="m 119.97114,-92.861247 7.89395,2.393966"
@@ -4780,7 +4787,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-8-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan120">1</tspan></text>
+         id="tspan232">1</tspan></text>
     <rect
        style="fill:#ffffff;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-3-3"
@@ -4795,7 +4802,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-7-2);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan121">7</tspan></text>
+         id="tspan233">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,129.7276,-126.97586)"
@@ -4803,7 +4810,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-2-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan124">18</tspan></text>
+         id="tspan234">18</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-8-8-4-1-6"
@@ -4818,7 +4825,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-8-4);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan125">1</tspan></text>
+         id="tspan235">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-44-0-3-0-6"
@@ -4833,7 +4840,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-2-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan126">1</tspan></text>
+         id="tspan236">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8-8-9"
@@ -4855,7 +4862,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-9-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan127">7</tspan></text>
+         id="tspan289">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-8-3"
@@ -4870,7 +4877,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-9-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan129">7</tspan></text>
+         id="tspan290">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-1-6-2-8-0"
@@ -4885,7 +4892,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-8-2-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan130">1</tspan></text>
+         id="tspan291">1</tspan></text>
     <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-3-3-0"
@@ -4900,7 +4907,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-7-2-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan131">7</tspan></text>
+         id="tspan292">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,129.72761,-142.98208)"
@@ -4908,7 +4915,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-2-6-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan132">18</tspan></text>
+         id="tspan293">18</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-8-8-4-1-6-3"
@@ -4923,7 +4930,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-8-4-9);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan133">1</tspan></text>
+         id="tspan294">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-44-0-3-0-6-8"
@@ -4938,7 +4945,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-2-1-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan134">1</tspan></text>
+         id="tspan295">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8-8-9-1"
@@ -4960,7 +4967,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-9-2-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan135">7</tspan></text>
+         id="tspan296">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-8-3-1"
@@ -4975,7 +4982,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-9-8-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan136">7</tspan></text>
+         id="tspan297">7</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-1-6-2-8-0-5"
@@ -4990,7 +4997,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-1-8-2-5-7);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan137">1</tspan></text>
+         id="tspan298">1</tspan></text>
     <rect
        style="fill:#ffffff;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-3-3-0-1"
@@ -5005,7 +5012,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-7-2-8-4);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan138">7</tspan></text>
+         id="tspan299">7</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,129.7276,-151.71332)"
@@ -5013,7 +5020,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-5-2-6-7-9);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan139">18</tspan></text>
+         id="tspan300">18</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-8-8-4-1-6-3-2"
@@ -5028,7 +5035,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-1-8-4-9-9);display:inline;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan140">1</tspan></text>
+         id="tspan301">1</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-44-0-3-0-6-8-4"
@@ -5043,7 +5050,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-0-2-1-6-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan141">1</tspan></text>
+         id="tspan302">1</tspan></text>
     <rect
        style="fill:none;stroke:#001fff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-4-6-8-8-9-1-0"
@@ -5065,7 +5072,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-0-9-2-0-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan142">7</tspan></text>
+         id="tspan303">7</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
        id="rect7-7-43-5-6-2-8-3-1-1"
@@ -5087,7 +5094,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-0-1-04-9-8-4-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan143">7</tspan></text>
+         id="tspan304">7</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.314976px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#ArrowWide-8)"
        d="m 145.53237,-109.04027 -9.53824,-0.0434"
@@ -5113,7 +5120,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect58);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="240.16602"
          y="82.586225"
-         id="tspan144">      &amp;</tspan></text>
+         id="tspan305">      &amp;</tspan></text>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 146.91882,-95.894604 18.3514,-0.47628"
@@ -5193,7 +5200,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan145">1</tspan></text>
+           id="tspan306">1</tspan></text>
     </g>
     <g
        id="g28-7-6-3"
@@ -5212,7 +5219,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan146">7</tspan></text>
+           id="tspan307">7</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#0025ff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -5228,7 +5235,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-8);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan147">18</tspan></text>
+         id="tspan308">18</tspan></text>
     <g
        id="g28-7-8-4-21"
        transform="matrix(0.26458333,0,0,0.26458333,51.8313,-130.41559)">
@@ -5246,7 +5253,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan148">1</tspan></text>
+           id="tspan309">1</tspan></text>
     </g>
     <g
        id="g28-7-1-9-1"
@@ -5265,7 +5272,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38-7-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan149">7</tspan></text>
+           id="tspan310">7</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#002bff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -5281,7 +5288,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-7);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan150">1</tspan></text>
+         id="tspan311">1</tspan></text>
     <g
        id="g29-8"
        transform="matrix(0.26458333,0,0,0.26458333,64.484241,-124.47026)">
@@ -5299,7 +5306,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31-3-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan151">7</tspan></text>
+           id="tspan312">7</tspan></text>
     </g>
     <g
        id="g28-3-8-0"
@@ -5318,7 +5325,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-4-8-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan152">1</tspan></text>
+           id="tspan313">1</tspan></text>
     </g>
     <g
        id="g28-7-6-3-5"
@@ -5337,7 +5344,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-18-5-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan153">7</tspan></text>
+           id="tspan314">7</tspan></text>
     </g>
     <rect
        style="fill:none;fill-opacity:1;stroke:#0025ff;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -5353,7 +5360,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-5-5-8-6);display:inline;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan154">18</tspan></text>
+         id="tspan315">18</tspan></text>
     <g
        id="g28-7-8-4-21-9"
        transform="matrix(0.26458333,0,0,0.26458333,51.84253,-148.40724)">
@@ -5371,7 +5378,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-3-9-4-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan155">1</tspan></text>
+           id="tspan316">1</tspan></text>
     </g>
     <g
        id="g28-7-1-9-1-0"
@@ -5390,7 +5397,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-38-7-3-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan156">7</tspan></text>
+           id="tspan317">7</tspan></text>
     </g>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.235506;stroke-dasharray:none;stroke-opacity:1"
@@ -5406,7 +5413,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-1-5-7-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="32.001953"
          y="106.12529"
-         id="tspan157">1</tspan></text>
+         id="tspan318">1</tspan></text>
     <g
        id="g29-8-5"
        transform="matrix(0.26458333,0,0,0.26458333,64.495471,-142.46192)">
@@ -5424,7 +5431,7 @@
          style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect27-1-31-3-1-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
            x="32.001953"
            y="106.12529"
-           id="tspan158">7</tspan></text>
+           id="tspan319">7</tspan></text>
     </g>
     <text
        xml:space="preserve"
@@ -5548,7 +5555,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect76);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.00157;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="151.76953"
          y="92.594038"
-         id="tspan159">np v_dat_p2 np np</tspan></text>
+         id="tspan320">np v_dat_p2 np np</tspan></text>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#RoundedArrow-5)"
        d="m 87.279989,-96.355004 -5.710957,-3.19945"
@@ -5602,23 +5609,23 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect106);display:inline;fill:#000000"><tspan
          x="471.28516"
          y="11.488569"
-         id="tspan160">In bidirectional Encoder
+         id="tspan321">In bidirectional Encoder
 </tspan><tspan
          x="471.28516"
          y="24.821945"
-         id="tspan161">of 
+         id="tspan322">of 
 </tspan><tspan
          x="471.28516"
          y="38.155321"
-         id="tspan162">Encoder-Decoder
+         id="tspan323">Encoder-Decoder
 </tspan><tspan
          x="471.28516"
          y="51.488699"
-         id="tspan163">Transformer
+         id="tspan324">Transformer
 </tspan><tspan
          x="471.28516"
          y="64.822073"
-         id="tspan164">equivalent model</tspan></text>
+         id="tspan325">equivalent model</tspan></text>
     <g
        id="g3"
        transform="translate(47.36047,-139.14997)">
@@ -6563,7 +6570,7 @@
        style="font-size:10.6667px;white-space:pre;shape-inside:url(#rect57);display:inline;fill:#000000;fill-opacity:1"><tspan
          x="235.69727"
          y="96.812788"
-         id="tspan165">verb</tspan></text>
+         id="tspan326">verb</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:3.52777px;fill:#000000;stroke-width:0.264583"
@@ -6889,203 +6896,203 @@
        style="font-size:16px;white-space:pre;shape-inside:url(#rect39);display:inline;fill:#000000"><tspan
          x="742.57031"
          y="51.080201"
-         id="tspan168"><tspan
+         id="tspan329"><tspan
            style="font-size:23.5675px"
-           id="tspan166"># 19 flat patterns for non-recursive grammar rules</tspan><tspan
+           id="tspan327"># 19 flat patterns for non-recursive grammar rules</tspan><tspan
            style="font-size:19.6396px"
-           id="tspan167">
+           id="tspan328">
 </tspan></tspan><tspan
          x="742.57031"
          y="76.965678"
-         id="tspan170"><tspan
+         id="tspan331"><tspan
            style="font-size:19.6396px"
-           id="tspan169">((det common)|proper) was v_trans_omissible_pp_p1
+           id="tspan330">((det common)|proper) was v_trans_omissible_pp_p1
 </tspan></tspan><tspan
          x="742.57031"
          y="101.51518"
-         id="tspan172"><tspan
+         id="tspan333"><tspan
            style="font-size:19.6396px"
-           id="tspan171">((det common)|proper) v_trans_omissible_p1
+           id="tspan332">((det common)|proper) v_trans_omissible_p1
 </tspan></tspan><tspan
          x="742.57031"
          y="126.06468"
-         id="tspan174"><tspan
+         id="tspan335"><tspan
            style="font-size:19.6396px"
-           id="tspan173">((det common)|proper) v_trans_omissible_p2
+           id="tspan334">((det common)|proper) v_trans_omissible_p2
 </tspan></tspan><tspan
          x="742.57031"
          y="150.61418"
-         id="tspan176"><tspan
+         id="tspan337"><tspan
            style="font-size:19.6396px"
-           id="tspan175">((det common)|proper)
+           id="tspan336">((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="175.16368"
-         id="tspan178"><tspan
+         id="tspan339"><tspan
            style="font-size:19.6396px"
-           id="tspan177">((det common)|proper) was v_trans_omissible_pp_p2
+           id="tspan338">((det common)|proper) was v_trans_omissible_pp_p2
 </tspan></tspan><tspan
          x="742.57031"
          y="199.71318"
-         id="tspan180"><tspan
+         id="tspan341"><tspan
            style="font-size:19.6396px"
-           id="tspan179">by ((det common)|proper)
+           id="tspan340">by ((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="224.26268"
-         id="tspan182"><tspan
+         id="tspan343"><tspan
            style="font-size:19.6396px"
-           id="tspan181">((det common)|proper) v_trans_not_omissible
+           id="tspan342">((det common)|proper) v_trans_not_omissible
 </tspan></tspan><tspan
          x="742.57031"
          y="248.81218"
-         id="tspan184"><tspan
+         id="tspan345"><tspan
            style="font-size:19.6396px"
-           id="tspan183">((det common)|proper)
+           id="tspan344">((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="273.36168"
-         id="tspan186"><tspan
+         id="tspan347"><tspan
            style="font-size:19.6396px"
-           id="tspan185">((det common)|proper) was v_trans_not_omissible_pp_p1
+           id="tspan346">((det common)|proper) was v_trans_not_omissible_pp_p1
 </tspan></tspan><tspan
          x="742.57031"
          y="297.91118"
-         id="tspan188"><tspan
+         id="tspan349"><tspan
            style="font-size:19.6396px"
-           id="tspan187">((det common)|proper) was v_trans_not_omissible_pp_p2
+           id="tspan348">((det common)|proper) was v_trans_not_omissible_pp_p2
 </tspan></tspan><tspan
          x="742.57031"
          y="322.46068"
-         id="tspan190"><tspan
+         id="tspan351"><tspan
            style="font-size:19.6396px"
-           id="tspan189">by ((det common)|proper)
+           id="tspan350">by ((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="347.01018"
-         id="tspan192"><tspan
+         id="tspan353"><tspan
            style="font-size:19.6396px"
-           id="tspan191">((det common)|proper) v_unacc_p1
+           id="tspan352">((det common)|proper) v_unacc_p1
 </tspan></tspan><tspan
          x="742.57031"
          y="371.55968"
-         id="tspan194"><tspan
+         id="tspan355"><tspan
            style="font-size:19.6396px"
-           id="tspan193">((det common)|proper)
+           id="tspan354">((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="396.10918"
-         id="tspan196"><tspan
+         id="tspan357"><tspan
            style="font-size:19.6396px"
-           id="tspan195">((det common)|proper) was v_unacc_pp_p1
+           id="tspan356">((det common)|proper) was v_unacc_pp_p1
 </tspan></tspan><tspan
          x="742.57031"
          y="420.65868"
-         id="tspan198"><tspan
+         id="tspan359"><tspan
            style="font-size:19.6396px"
-           id="tspan197">((det common)|proper) was v_unacc_pp_p2
+           id="tspan358">((det common)|proper) was v_unacc_pp_p2
 </tspan></tspan><tspan
          x="742.57031"
          y="445.20818"
-         id="tspan200"><tspan
+         id="tspan361"><tspan
            style="font-size:19.6396px"
-           id="tspan199">by ((det common)|proper)
+           id="tspan360">by ((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="469.75768"
-         id="tspan202"><tspan
+         id="tspan363"><tspan
            style="font-size:19.6396px"
-           id="tspan201">((det common)|proper) v_inf_taking to v_inf
+           id="tspan362">((det common)|proper) v_inf_taking to v_inf
 </tspan></tspan><tspan
          x="742.57031"
          y="494.30718"
-         id="tspan204"><tspan
+         id="tspan365"><tspan
            style="font-size:19.6396px"
-           id="tspan203">((det common)|proper) v_unerg
+           id="tspan364">((det common)|proper) v_unerg
 </tspan></tspan><tspan
          x="742.57031"
          y="518.85668"
-         id="tspan206"><tspan
+         id="tspan367"><tspan
            style="font-size:19.6396px"
-           id="tspan205">((det common)|proper) v_unacc_p2
+           id="tspan366">((det common)|proper) v_unacc_p2
 </tspan></tspan><tspan
          x="742.57031"
          y="543.40621"
-         id="tspan208"><tspan
+         id="tspan369"><tspan
            style="font-size:19.6396px"
-           id="tspan207">((det common)|proper) v_dat_p1
+           id="tspan368">((det common)|proper) v_dat_p1
 </tspan></tspan><tspan
          x="742.57031"
          y="567.95571"
-         id="tspan210"><tspan
+         id="tspan371"><tspan
            style="font-size:19.6396px"
-           id="tspan209">((det common)|proper) to ((det common)|proper)
+           id="tspan370">((det common)|proper) to ((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="592.50521"
-         id="tspan212"><tspan
+         id="tspan373"><tspan
            style="font-size:19.6396px"
-           id="tspan211">((det common)|proper) v_dat_p2
+           id="tspan372">((det common)|proper) v_dat_p2
 </tspan></tspan><tspan
          x="742.57031"
          y="617.0547"
-         id="tspan214"><tspan
+         id="tspan375"><tspan
            style="font-size:19.6396px"
-           id="tspan213">((det common)|proper) ((det common)|proper)
+           id="tspan374">((det common)|proper) ((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="641.6042"
-         id="tspan216"><tspan
+         id="tspan377"><tspan
            style="font-size:19.6396px"
-           id="tspan215">((det common)|proper) was v_dat_pp_p3
+           id="tspan376">((det common)|proper) was v_dat_pp_p3
 </tspan></tspan><tspan
          x="742.57031"
          y="666.1537"
-         id="tspan218"><tspan
+         id="tspan379"><tspan
            style="font-size:19.6396px"
-           id="tspan217">((det common)|proper)
+           id="tspan378">((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="690.7032"
-         id="tspan220"><tspan
+         id="tspan381"><tspan
            style="font-size:19.6396px"
-           id="tspan219">((det common)|proper) was v_dat_pp_p4
+           id="tspan380">((det common)|proper) was v_dat_pp_p4
 </tspan></tspan><tspan
          x="742.57031"
          y="715.2527"
-         id="tspan222"><tspan
+         id="tspan383"><tspan
            style="font-size:19.6396px"
-           id="tspan221">((det common)|proper)
+           id="tspan382">((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="739.8022"
-         id="tspan224"><tspan
+         id="tspan385"><tspan
            style="font-size:19.6396px"
-           id="tspan223">by ((det common)|proper)
+           id="tspan384">by ((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="764.3517"
-         id="tspan226"><tspan
+         id="tspan387"><tspan
            style="font-size:19.6396px"
-           id="tspan225">((det common)|proper) was v_dat_pp_p2
+           id="tspan386">((det common)|proper) was v_dat_pp_p2
 </tspan></tspan><tspan
          x="742.57031"
          y="788.9012"
-         id="tspan228"><tspan
+         id="tspan389"><tspan
            style="font-size:19.6396px"
-           id="tspan227">to ((det common)|proper) by ((det common)|proper)
+           id="tspan388">to ((det common)|proper) by ((det common)|proper)
 </tspan></tspan><tspan
          x="742.57031"
          y="813.4507"
-         id="tspan230"><tspan
+         id="tspan391"><tspan
            style="font-size:19.6396px"
-           id="tspan229">((det common)|proper) was v_dat_pp_p1
+           id="tspan390">((det common)|proper) was v_dat_pp_p1
 </tspan></tspan><tspan
          x="742.57031"
          y="838.0002"
-         id="tspan232"><tspan
+         id="tspan393"><tspan
    style="font-size:19.6396px"
-   id="tspan231">to ((det common)|proper)</tspan>
+   id="tspan392">to ((det common)|proper)</tspan>
 </tspan></text>
     <text
        xml:space="preserve"
@@ -7094,16 +7101,16 @@
        style="font-size:16px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect42);display:inline;fill:#000000;stroke-width:0.944882;stroke-dasharray:none"><tspan
          x="646.69727"
          y="221.44082"
-         id="tspan233">Encoder attempts 19 flat </tspan><tspan
+         id="tspan394">Encoder attempts 19 flat </tspan><tspan
          x="646.69727"
          y="241.44082"
-         id="tspan234">pattern matches at once
+         id="tspan395">pattern matches at once
 </tspan><tspan
          x="646.69727"
          y="261.44082"
-         id="tspan236"><tspan
+         id="tspan397"><tspan
            style="font-size:12px"
-           id="tspan235">(matching v_dat_p2 shown here)</tspan></tspan></text>
+           id="tspan396">(matching v_dat_p2 shown here)</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,0,-165.03642)"

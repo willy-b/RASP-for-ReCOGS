@@ -27,8 +27,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.6665394"
-     inkscape:cx="439.58391"
-     inkscape:cy="522.09967"
+     inkscape:cx="438.08363"
+     inkscape:cy="422.33062"
      inkscape:window-width="1536"
      inkscape:window-height="888"
      inkscape:window-x="0"
@@ -547,6 +547,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0.07588132,255.46448)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+       id="rect1"
+       width="300"
+       height="340"
+       x="-0.075881317"
+       y="-255.46448" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#RoundedArrow-9-4-9-7-5-6-3-7-3-4-8)"
        d="M 51.233195,77.21459 4.4487645,72.365795"
