@@ -31,6 +31,9 @@ Implementing our task in Restricted Access Sequence Processing immediately helpe
 
 Example RASP model flat grammar pattern matching case (np v_dat_p2 np np) to determine the template for mapping nouns to noun verb relationships (full Encoder-Decoder illustration):
 ![](rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-patterns-vertical-layout.png)
+![](Fig7Caption.png)
+
+(Image above uses a new caption and figure coming to the main branch paper soon)
 
 New difficult generalization split v_dat_p2 recipient pp modification predicted and confirmed as difficult as previously reported most difficult generalization split for baseline Encoder-Decoder Transformers trained from scratch:
 
