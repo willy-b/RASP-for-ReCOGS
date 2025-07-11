@@ -821,12 +821,16 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 \end{figure}
 \clearpage
 
+\onecolumn
 \begin{figure}
 \includegraphics[scale=0.425]{./image_pdfs/rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-patterns-vertical-layout.pdf}
-\caption{\begin{small}Example of the RASP-for-ReCOGS model decoding a ReCOGS training example to logical form, for the pattern np v\_dat\_p2 np np.\end{small} \\
+\caption{\begin{small}RASP-for-ReCOGS model decoding a ReCOGS training example to logical form, for the pattern np v\_dat\_p2 np np. 
+(a) The acausal Transformer-Encoder flat matches (fixed Transformer depth indep. of input length) determining the noun-verb relationship template (b) (also Table \ref{RASP-model-flat-patterns-after-masking-to-nv-relationships-table}) for the main verb. The Decoder loop (c) autoregressively generates the logical form c(iv) in phases: c(i) noun-verb introductions, c(ii) verb relationships, and c(iii) pp nmods are shown. See also Figures \ref{rasp-for-recogs-decoder-loop-supplementary-figure_pp_depth_2}, \ref{rasp-for-recogs-decoder-loop-supplementary-figure_cp_depth_2}.
+\end{small} \\
 }
 \label{rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-vertical}
 \end{figure}
+\twocolumn
 \clearpage
 
 %\begin{figure}
@@ -837,20 +841,24 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 %\end{figure}
 %\clearpage
 
+\onecolumn
 \begin{figure}
 \includegraphics[scale=0.50]{./image_pdfs/rasp-for-recogs-decoder-loop-supplementary-figure_pp_depth_2.pdf}
 \caption{\begin{small}Example of the RASP-for-ReCOGS model decoding a ReCOGS training example with center-embedded prepositional phrase recursion depth 2 to logical form.\end{small} \\
 }
 \label{rasp-for-recogs-decoder-loop-supplementary-figure_pp_depth_2}
 \end{figure}
+\twocolumn
 \clearpage
 
+\onecolumn
 \begin{figure}
 \includegraphics[scale=0.425]{./image_pdfs/rasp-for-recogs-decoder-loop-supplementary-figure_cp_depth_2.pdf}
 \caption{\begin{small}Example of the RASP-for-ReCOGS model decoding a ReCOGS training example with sentential complement (cp) recursion depth 2 to ReCOGS logical form.\end{small} \\
 }
 \label{rasp-for-recogs-decoder-loop-supplementary-figure_cp_depth_2}
 \end{figure}
+\twocolumn
 \clearpage
 
 \textbf{These patterns are not causal because their use/input/output is masked to the input section of the sequence, so would take part in the Encoder of the Encoder-Decoder only} (\textbf{all operations outside the input mask in the word-level token RASP solution used in this paper are directly or indirectly causally masked} and we built symbol by symbol in a causal autoregressive way). \textbf{We could have added an explicit causal mask to each operation but for efficiency and simplicity of the code omitted it when we are doing it implicitly by taking only the last sequence position (we also acausally aggregate so that all sequence positions have the same value as the last sequence position to make it easier to read the output -- RASP interpreter will just print it as one position if they are all equal and we only take one position).}
