@@ -1140,7 +1140,8 @@ or tokens=="xcomp"));
 agent_theme_recipient_xcomp_output_count = \
 selector_width(select(atrx_in_output_sequence, 1, ==));
 after_intro_idx = \
-  (nv_in_output_count - nv_in_input_count + (1 if any_v_inf_taking == 1 else 0) \
+  (nv_in_output_count - nv_in_input_count + \
+   (1 if any_v_inf_taking == 1 else 0) \
    + agent_theme_recipient_xcomp_output_count) \
    if nv_in_output_count + (1 if any_v_inf_taking == 1 else 0) \
    >= nv_in_input_count else 0;
@@ -2353,7 +2354,7 @@ See Tables \ref{RASP-model-flat-patterns-after-masking-to-nv-relationships-table
 \centering
 \begin{tabular}{p{0.2\linewidth} p{0.52\linewidth} p{0.2\linewidth}}
 \hline
-\begin{small}\textbf{RASP-for-(Re)COGS grammar pattern example}\end{small} & \begin{small}\textbf{Actual part-of-speech/verb-type sequence used in RASP model}\end{small} & \begin{small}\textbf{(Re)COGS official input training example}\end{small}\\
+\begin{small}\textbf{RASP-for-(Re)COGS grammar example}\end{small} & \begin{small}\textbf{Actual part-of-speech/verb-type sequence used in RASP model}\end{small} & \begin{small}\textbf{(Re)COGS official input training example}\end{small}\\
 \hline
 \begin{small}\end{small} & \begin{small}\end{small} & \begin{small}\end{small} \\
 \begin{small}the girl was painted\end{small} & \begin{small}det common\_noun was v\_trans\_omissible\_pp\_p1 \end{small} & \begin{small}The donut was studied .\end{small} \\
@@ -2383,7 +2384,7 @@ See Tables \ref{RASP-model-flat-patterns-after-masking-to-nv-relationships-table
 \begin{small}the girl noticed that a boy painted the girl\end{small} & \begin{small}det common\_noun v\_cp\_taking that det common\_noun v\_trans\_omissible\_p2 det common\_noun\end{small} & \begin{small}A girl said that a crocodile ate the rose .\end{small} \\
 \hline
 \end{tabular}
-\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to equivalent (Re)COGS training examples (only official example equivalent sequences were actually used in the model, but as a human author these in-training-vocab sentence representations were considered and occur in the comments only). Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific sentential complement example we gave by modifying one of our existing examples with a sentential complement ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes sentential complement examples are demonstrated earlier, e.g. within 55 examples in default ordering).\end{small}}
+\caption{\begin{small}Additional justification of the specific examples we generated and used for our RASP model design by matching them to equivalent (Re)COGS training examples (only official example equivalent sequences were actually used in the model, but as a human author these in-training-vocab sentence representations were considered and occur in the comments only). Note that our RASP model collapses "a" and "the" to "det" (coded as 1) so we do as well here. All but the last example are from the first 119 training examples. Ignoring lexical differences, full coverage of the grammar occurs by training example 55 in the PCFG sense (see "Appendix: Computing Grammar Coverage" (\ref{computing_grammar_coverage})) when read in order but the specific sentences we used (one of multiple ways to cover the grammar) occur by example 119 in the order given in the train.tsv file, except for the specific sentential complement example we gave by modifying one of our existing examples with a sentential complement (cp) ("the girl noticed that a boy painted the girl") which does not have an exactly matching counterpart until the 4,186th example (other equivalent-for-these-purposes sentential comp ex. are demonstrated earlier, e.g. within 55 examples in default order).\end{small}}
 \label{specific-grammar-pattern-examples-mapped-to-part-of-speech-and-cogs-in-distribution-training-examples}
 \end{table}
 \twocolumn
