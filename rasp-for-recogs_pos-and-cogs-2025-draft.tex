@@ -1313,11 +1313,13 @@ For outputting prepositional relationships ("nmod . in", "nmod . on", "nmod . be
 \begin{verbatim}
 pps_in_input_sequence = INPUT_MASK*(indicator(pos_tokens == 2));
 pps_in_input_count = selector_width(select(pps_in_input_sequence, 1, ==));
-pps_index = pps_in_input_sequence*selector_width(select(pps_in_input_sequence, 1, ==) \
+pps_index = \
+  pps_in_input_sequence*selector_width(select(pps_in_input_sequence, 1, ==) \
 and select(indices,indices, <=));
 
 nmods_and_pps_in_output_sequence = \
-  OUTPUT_MASK*(indicator(tokens == "nmod . in" or tokens == "nmod . beside" or tokens=="nmod . on"));
+  OUTPUT_MASK*(indicator(tokens == "nmod . in" or \
+  tokens == "nmod . beside" or tokens=="nmod . on"));
 nmods_and_pps_in_output_count = \
   selector_width(select(nmods_and_pps_in_output_sequence, 1, ==));
 \end{verbatim}
