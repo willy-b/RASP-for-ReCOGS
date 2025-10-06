@@ -109,7 +109,7 @@ were used in designing our RASP solution and analyzing the ways in which this ta
 \section{Model}
 \label{model}
 Figures \ref{rasp-model-flat-pattern-match-example} ((Re)COGS shared encoder), \ref{rasp-for-recogs-decoder-loop-supplementary-figure-incl-encoder-and-decoder-and-grammar-vertical} (ReCOGS EncDec) , \ref{rasp-for-cogs-encoder-decoder-with-grammar-patterns} (COGS EncDec).
-Model code is available: \href{https://anonymous.4open.science/r/RASP-for-COGS-102F/}{RASP-for-COGS} and \href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/}{RASP-for-ReCOGS}\footnote{\href{https://anonymous.4open.science/r/RASP-for-COGS-102F/}{https://anonymous.4open.science/r/RASP-for-COGS-102F/} and \begin{footnotesize}\href{https://anonymous.4open.science/r/learning-rasp-F7C2/}{https://anonymous.4open.science/r/learning-rasp-F7C2/}
+Model code is available: \href{https://anonymous.4open.science/r/RASP-for-COGS-102F/}{RASP-for-COGS} and \href{https://anonymous.4open.science/r/learning-rasp-F7C2/}{RASP-for-ReCOGS}\footnote{\href{https://anonymous.4open.science/r/RASP-for-COGS-102F/}{https://anonymous.4open.science/r/RASP-for-COGS-102F/} and \begin{footnotesize}\href{https://anonymous.4open.science/r/learning-rasp-F7C2/}{https://anonymous.4open.science/r/learning-rasp-F7C2/}
 \end{footnotesize}
 }. We used the RASP interpreter of \cite{Weiss2021}. For RASP model design and details see Appendix \ref{rasp-word-level-model-design}. We use word-level tokens for all RASP model results in this paper,\footnote{\begin{footnotesize}We believe any solution at the word-level can be converted to a character-level token solution (see Appendix \ref{rasp_character_level_model_notes} for proof of concept details on a character level solution not used here).
 \end{footnotesize}
@@ -495,9 +495,7 @@ We report that for all (n=22) single logical form part errors observed (n=10 mod
 \cite{Wu2023}'s baseline EncDec Transformer was trained with default data (ReCOGS\_pos train.tsv) but with additionally the same modified v\_dat\_p2 pp training examples used for the "v\_dat\_p2\_pp\_moved\_to\_recipient" split (non-subject recipient modified with prepositional phrase, so nonoverlapping with subj\_pp, Figure \ref{baseline_transformer_standard_training_cannot_do_v_dat_p2_generalization} (b) and (d)) above on which it performed poorly, then tested on the standard prepositional modification generalization split "obj\_pp\_to\_subj\_pp", after which it achieved 22\% +/- 6.7\% Semantic Exact Match (sample mean +/- std, n=10) with 95\% sample mean CI of 17.9\% to 26.1\% (not significantly different than \cite{Wu2023}'s baseline by one-tailed Welch's unequal variances t-test).
 
 \section{Analysis} 
-% TODO report COGS, not just ReCOGS here
 Our RASP model of a Transformer Encoder-Decoder (EncDec), without tree-based or recursive aspects attains near perfect scores on the (Re)COGS generalization splits, even the structural generalizations (Tables \ref{results-table} and \ref{rasp-for-cogs-results-table}). This includes prepositional phrase recursion and sentential complement recursion generalization splits up to depth 12 based on rules that can be derived from the depth 2 training examples, without any hardcoded prepositional phrase or sentential complement expansion shortcuts added\footnote{\begin{footnotesize}a single rule applies to all depths; the only limit on length generalization is the RASP interpreter and a simple to extend positional encoding which only handles sentences up to a limit\end{footnotesize}}. 
-%The RASP program only made errors on the ReCOGS obj\_pp\_to\_subj\_pp where it attained 92.20\% Semantic Exact Match (95\% CI (Clopper-Pearson): 90.36\% to 93.79\%) Semantic Exact Match, much better than \cite{Wu2023} baseline EncDec Transformers which scored 19.7\% +/- 6.1\% Semantic Exact Match (sample mean +/- std) with 95\% CI of the sample mean of 17.0\% to 22.4\% (n=20, random initial weights and train data order; each of n=20 models eval on n=1000 examples). 
 
 \textbf{Thus, we demonstrated by construction using the Restricted Access Sequence Processing language which can be compiled to concrete Transformer weights that theoretically a Transformer EncDec can solve the COGS input to COGS/ReCOGS\_pos logical form translation in a systematic, compositional, and length generalizing way.}
 
@@ -1475,7 +1473,7 @@ Those values could then be looked up in a dictionary like in the completed word-
 \clearpage
 \subsection{Model Detail}
 \label{model_detail}
-Model code is available: \href{https://anonymous.4open.science/r/RASP-for-COGS-102F/}{RASP-for-COGS} and \href{https://anonymous.4open.science/r/RASP-for-ReCOGS-16B9/}{RASP-for-ReCOGS}\footnote{\href{https://anonymous.4open.science/r/RASP-for-COGS-102F/}{https://anonymous.4open.science/r/RASP-for-COGS-102F/} and \begin{footnotesize}\href{https://anonymous.4open.science/r/learning-rasp-F7C2/}{https://anonymous.4open.science/r/learning-rasp-F7C2/}
+Model code is available: \href{https://anonymous.4open.science/r/RASP-for-COGS-102F/}{RASP-for-COGS} and \href{https://anonymous.4open.science/r/learning-rasp-F7C2/}{RASP-for-ReCOGS}\footnote{\href{https://anonymous.4open.science/r/RASP-for-COGS-102F/}{https://anonymous.4open.science/r/RASP-for-COGS-102F/} and \begin{footnotesize}\href{https://anonymous.4open.science/r/learning-rasp-F7C2/}{https://anonymous.4open.science/r/learning-rasp-F7C2/}
 \end{footnotesize}
 }.
 
