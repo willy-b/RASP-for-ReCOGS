@@ -868,8 +868,11 @@ np_v_unerg = aggregate(np_after_mask and v_unerg_mask, 1);
 
 \begin{figure}
 \includegraphics[scale=0.40]{./image_pdfs/rasp-for-cogs-decoder-loop-figure-incl-encoder-and-decoder-with-grammar-patterns.pdf}
-\caption{\begin{small}Encoder-Decoder RASP model for COGS\end{small}}
+\onecolumn
+\caption{\begin{small}RASP-for-COGS model decoding a COGS training example to logical form, for the pattern np v\_dat\_p2 np np. (a) The acausal Transformer-Encoder flat matches (fixed Transformer depth indep. of input length) determining the noun-verb relationship template (b) (also Table \ref{RASP-model-flat-patterns-after-masking-to-nv-relationships-table}) for the main verb. The Decoder loop (c) autoregressively generates the logical form c(iv) in phases: c(i) noun introductions, c(ii) verb relationships, and c(iii) pp nmods are shown. See also Figures \ref{rasp-for-cogs-decoder-loop-figure_pp_depth_2}, \ref{rasp-for-cogs-decoder-loop_cp_depth_2}.
+\end{small}}
 \label{rasp-for-cogs-encoder-decoder-with-grammar-patterns}
+\twocolumn
 \end{figure}
 \clearpage
 
@@ -1794,8 +1797,10 @@ The "attraction" errors we report here where attractor/distractor prepositional 
 \clearpage
 \begin{figure}
 \includegraphics[scale=1]{./image_pdfs/attraction_error_example.pdf}
+\onecolumn
 \caption{\begin{small}Non-hierarchical/non-tree structured linear grammar pattern matching without explicitly ignoring prepositional phrase nouns is expected to give rise to attraction errors, which we confirmed are contributing to the high error rate of the baseline \cite{Wu2023} Transformer on the obj-pp-to-subj-pp generalization split. Our RASP model avoids these errors by ignoring "pp det common\_noun" and "pp proper\_noun" when matching for agent/theme/recipient relationships (a behavior added based on non-subj-pp examples in training behavior but shown here to generalize to those examples). Note that we also predict such errors for the non-subj-pp case of pp-modifying the right-of-verb recipient noun in "np v\_dat\_p2 np np" and confirmed (see Figure \ref{baseline_transformer_standard_training_cannot_do_v_dat_p2_generalization}) that such a generalization is as hard as the previously reported hardest obj-pp-to-subj-pp generalization.\end{small} \\
 }
+\twocolumn
 \label{attraction_errors_figure}
 \end{figure}
 \clearpage
