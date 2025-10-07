@@ -15,7 +15,7 @@ The code for the project that this paper describes the results of is available M
 Figure 1 from paper (vector graphics used in paper, raster above).
 The task we solve is to extract the meaning (c) written in format (iii) of sentences (i). Full description of Figure (in higher quality vector graphics as well) is in the paper.
 
-### Full Abstract
+### Full Abstract for ReCOGS_pos portion
 
 Humans rapidly generalize from a few observed examples and understand new combinations of words encountered if they are combinations of words recognized from different contexts, an ability called Compositional Generalization. Some observations contradict that Transformers learn systematic, compositional solutions to problems that generalize. The COGS benchmark (Kim and Linzen 2020) reports zero percent accuracy for Transformer models on some structural generalization tasks.
 
