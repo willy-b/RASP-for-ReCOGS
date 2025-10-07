@@ -1,0 +1,378 @@
+\begin{thebibliography}{43}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ahuja et~al.(2024)Ahuja, Balachandran, Panwar, He, Smith, Goyal, and
+  Tsvetkov]{10.1162/tacl_a_00733}
+Kabir Ahuja, Vidhisha Balachandran, Madhur Panwar, Tianxing He, Noah~A. Smith,
+  Navin Goyal, and Yulia Tsvetkov.
+\newblock Learning syntax without planting trees: Understanding hierarchical
+  generalization in transformers.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  13:\penalty0 121--141, 02 2024.
+\newblock ISSN 2307-387X.
+\newblock \doi{10.1162/tacl_a_00733}.
+\newblock URL \url{https://doi.org/10.1162/tacl\_a\_00733}.
+
+\bibitem[Bengio et~al.(2009)Bengio, Louradour, Collobert, and
+  Weston]{10.1145/1553374.1553380}
+Yoshua Bengio, J\'{e}r\^{o}me Louradour, Ronan Collobert, and Jason Weston.
+\newblock Curriculum learning.
+\newblock In \emph{Proceedings of the 26th Annual International Conference on
+  Machine Learning}, ICML '09, page 41–48, New York, NY, USA, 2009.
+  Association for Computing Machinery.
+\newblock ISBN 9781605585161.
+\newblock \doi{10.1145/1553374.1553380}.
+\newblock URL \url{https://doi.org/10.1145/1553374.1553380}.
+
+\bibitem[Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal,
+  Neelakantan, Shyam, Sastry, Askell, Agarwal, Herbert-Voss, Krueger, Henighan,
+  Child, Ramesh, Ziegler, Wu, Winter, Hesse, Chen, Sigler, Litwin, Gray, Chess,
+  Clark, Berner, McCandlish, Radford, Sutskever, and Amodei]{Brown2020}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan,
+  Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda
+  Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan,
+  Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter,
+  Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray,
+  Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford,
+  Ilya Sutskever, and Dario Amodei.
+\newblock Language models are few-shot learners, 2020.
+\newblock URL \url{https://arxiv.org/abs/2005.14165}.
+
+\bibitem[Chiang and Cholak(2022)]{Chiang2022}
+David Chiang and Peter Cholak.
+\newblock Overcoming a theoretical limitation of self-attention, 2022.
+\newblock URL \url{https://arxiv.org/abs/2202.12172}.
+
+\bibitem[Clark et~al.(2020)Clark, Tafjord, and Richardson]{Clark2020}
+Peter Clark, Oyvind Tafjord, and Kyle Richardson.
+\newblock Transformers as soft reasoners over language, 2020.
+\newblock URL \url{https://arxiv.org/abs/2002.05867}.
+
+\bibitem[Csord{\'a}s et~al.(2021)Csord{\'a}s, Irie, and
+  Schmidhuber]{Csordas2021}
+R{\'o}bert Csord{\'a}s, Kazuki Irie, and Juergen Schmidhuber.
+\newblock The devil is in the detail: Simple tricks improve systematic
+  generalization of transformers.
+\newblock In Marie-Francine Moens, Xuanjing Huang, Lucia Specia, and Scott
+  Wen-tau Yih, editors, \emph{Proceedings of the 2021 Conference on Empirical
+  Methods in Natural Language Processing}, pages 619--634, Online and Punta
+  Cana, Dominican Republic, November 2021. Association for Computational
+  Linguistics.
+\newblock \doi{10.18653/v1/2021.emnlp-main.49}.
+\newblock URL \url{https://aclanthology.org/2021.emnlp-main.49}.
+
+\bibitem[Csordás et~al.(2022)Csordás, Irie, and Schmidhuber]{Csordas2022}
+Róbert Csordás, Kazuki Irie, and Jürgen Schmidhuber.
+\newblock The neural data router: Adaptive control flow in transformers
+  improves systematic generalization, 2022.
+\newblock URL \url{https://arxiv.org/abs/2110.07732}.
+
+\bibitem[Dehghani et~al.(2019)Dehghani, Gouws, Vinyals, Uszkoreit, and Łukasz
+  Kaiser]{Dehghani2019}
+Mostafa Dehghani, Stephan Gouws, Oriol Vinyals, Jakob Uszkoreit, and Łukasz
+  Kaiser.
+\newblock Universal transformers, 2019.
+\newblock URL \url{https://arxiv.org/abs/1807.03819}.
+
+\bibitem[Delétang et~al.(2023)Delétang, Ruoss, Grau-Moya, Genewein, Wenliang,
+  Catt, Cundy, Hutter, Legg, Veness, and
+  Ortega]{delétang2023neuralnetworkschomskyhierarchy}
+Grégoire Delétang, Anian Ruoss, Jordi Grau-Moya, Tim Genewein, Li~Kevin
+  Wenliang, Elliot Catt, Chris Cundy, Marcus Hutter, Shane Legg, Joel Veness,
+  and Pedro~A. Ortega.
+\newblock Neural networks and the chomsky hierarchy, 2023.
+\newblock URL \url{https://arxiv.org/abs/2207.02098}.
+
+\bibitem[Fodor and Pylyshyn(1988)]{FodorPylyshyn1988}
+Jerry~A. Fodor and Zenon~W. Pylyshyn.
+\newblock Connectionism and cognitive architecture: A critical analysis.
+\newblock \emph{Cognition}, 28\penalty0 (1):\penalty0 3--71, 1988.
+\newblock ISSN 0010-0277.
+\newblock \doi{https://doi.org/10.1016/0010-0277(88)90031-5}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/0010027788900315}.
+
+\bibitem[Franck et~al.(2006)Franck, Lassi, Frauenfelder, and
+  Rizzi]{FRANCK2006173}
+Julie Franck, Glenda Lassi, Ulrich~H. Frauenfelder, and Luigi Rizzi.
+\newblock Agreement and movement: A syntactic analysis of attraction.
+\newblock \emph{Cognition}, 101\penalty0 (1):\penalty0 173--216, 2006.
+\newblock ISSN 0010-0277.
+\newblock \doi{https://doi.org/10.1016/j.cognition.2005.10.003}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0010027705001861}.
+
+\bibitem[Friedman et~al.(2025)Friedman, Panigrahi, and
+  Chen]{friedmanrepresentingrulebasedchatbotstransformers}
+Dan Friedman, Abhishek Panigrahi, and Danqi Chen.
+\newblock Representing rule-based chatbots with transformers.
+\newblock In Luis Chiruzzo, Alan Ritter, and Lu~Wang, editors,
+  \emph{Proceedings of the 2025 Conference of the Nations of the Americas
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies (Volume 1: Long Papers)}, pages 3155--3180, Albuquerque, New
+  Mexico, April 2025. Association for Computational Linguistics.
+\newblock ISBN 979-8-89176-189-6.
+\newblock \doi{10.18653/v1/2025.naacl-long.163}.
+\newblock URL \url{https://aclanthology.org/2025.naacl-long.163/}.
+
+\bibitem[Goldberg(2019)]{goldberg2019assessingbertssyntacticabilities}
+Yoav Goldberg.
+\newblock Assessing bert's syntactic abilities, 2019.
+\newblock URL \url{https://arxiv.org/abs/1901.05287}.
+
+\bibitem[Hewitt and Manning(2019)]{hewitt-manning-2019-structural}
+John Hewitt and Christopher~D. Manning.
+\newblock {A} structural probe for finding syntax in word representations.
+\newblock In Jill Burstein, Christy Doran, and Thamar Solorio, editors,
+  \emph{Proceedings of the 2019 Conference of the North {A}merican Chapter of
+  the Association for Computational Linguistics: Human Language Technologies,
+  Volume 1 (Long and Short Papers)}, pages 4129--4138, Minneapolis, Minnesota,
+  June 2019. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/N19-1419}.
+\newblock URL \url{https://aclanthology.org/N19-1419/}.
+
+\bibitem[Jespersen(1954)]{jespersen1913modernenglishgrammar1954reprint}
+O.~Jespersen.
+\newblock \emph{A Modern English Grammar on Historical Principles: Volume 2,
+  Syntax (first volume)}.
+\newblock Otto Jespersen. Bradford and Dickens, 1954.
+
+\bibitem[Kim and Linzen(2020)]{KimLinzen2020}
+Najoung Kim and Tal Linzen.
+\newblock {COGS}: A compositional generalization challenge based on semantic
+  interpretation.
+\newblock In Bonnie Webber, Trevor Cohn, Yulan He, and Yang Liu, editors,
+  \emph{Proceedings of the 2020 Conference on Empirical Methods in Natural
+  Language Processing (EMNLP)}, pages 9087--9105, Online, November 2020.
+  Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2020.emnlp-main.731}.
+\newblock URL \url{https://aclanthology.org/2020.emnlp-main.731}.
+
+\bibitem[Klinger et~al.(2024)Klinger, Liu, Dan, Crouse, Ram, and
+  Gray]{klinger2024compositionalprogramgenerationfewshot}
+Tim Klinger, Luke Liu, Soham Dan, Maxwell Crouse, Parikshit Ram, and Alexander
+  Gray.
+\newblock Compositional program generation for few-shot systematic
+  generalization, 2024.
+\newblock URL \url{https://arxiv.org/abs/2309.16467}.
+
+\bibitem[Lake and Baroni(2023)]{lake2023human}
+Brenden~M Lake and Marco Baroni.
+\newblock Human-like systematic generalization through a meta-learning neural
+  network.
+\newblock \emph{Nature}, 623\penalty0 (7985):\penalty0 115--121, 2023.
+
+\bibitem[Li et~al.(2023)Li, Donatelli, Koller, Linzen, Yao, and
+  Kim]{li2023slogstructuralgeneralizationbenchmark}
+Bingzhi Li, Lucia Donatelli, Alexander Koller, Tal Linzen, Yuekun Yao, and
+  Najoung Kim.
+\newblock Slog: A structural generalization benchmark for semantic parsing,
+  2023.
+\newblock URL \url{https://arxiv.org/abs/2310.15040}.
+
+\bibitem[Linzen et~al.(2016)Linzen, Dupoux, and Goldberg]{linzen2016assessing}
+Tal Linzen, Emmanuel Dupoux, and Yoav Goldberg.
+\newblock Assessing the ability of lstms to learn syntax-sensitive
+  dependencies.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  4:\penalty0 521--535, 2016.
+
+\bibitem[Liu et~al.(2021)Liu, An, Lin, Liu, Chen, Lou, Wen, Zheng, and
+  Zhang]{liu-etal-2021-learning-algebraic}
+Chenyao Liu, Shengnan An, Zeqi Lin, Qian Liu, Bei Chen, Jian-Guang Lou, Lijie
+  Wen, Nanning Zheng, and Dongmei Zhang.
+\newblock Learning algebraic recombination for compositional generalization.
+\newblock In Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli, editors,
+  \emph{Findings of the Association for Computational Linguistics: ACL-IJCNLP
+  2021}, pages 1129--1144, Online, August 2021. Association for Computational
+  Linguistics.
+\newblock \doi{10.18653/v1/2021.findings-acl.97}.
+\newblock URL \url{https://aclanthology.org/2021.findings-acl.97/}.
+
+\bibitem[Merrill and
+  Sabharwal(2024)]{merrill2024expressivepowertransformerschain}
+William Merrill and Ashish Sabharwal.
+\newblock The expressive power of transformers with chain of thought, 2024.
+\newblock URL \url{https://arxiv.org/abs/2310.07923}.
+
+\bibitem[Murty et~al.(2022)Murty, Sharma, Andreas, and
+  Manning]{murty2022characterizingintrinsiccompositionalitytransformers}
+Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher~D. Manning.
+\newblock Characterizing intrinsic compositionality in transformers with tree
+  projections, 2022.
+\newblock URL \url{https://arxiv.org/abs/2211.01288}.
+
+\bibitem[Murty et~al.(2023)Murty, Sharma, Andreas, and
+  Manning]{murty2023grokkinghierarchicalstructurevanilla}
+Shikhar Murty, Pratyusha Sharma, Jacob Andreas, and Christopher~D. Manning.
+\newblock Grokking of hierarchical structure in vanilla transformers, 2023.
+\newblock URL \url{https://arxiv.org/abs/2305.18741}.
+
+\bibitem[Ontanon et~al.(2022)Ontanon, Ainslie, Fisher, and
+  Cvicek]{ontanon-etal-2022-making}
+Santiago Ontanon, Joshua Ainslie, Zachary Fisher, and Vaclav Cvicek.
+\newblock Making transformers solve compositional tasks.
+\newblock In Smaranda Muresan, Preslav Nakov, and Aline Villavicencio, editors,
+  \emph{Proceedings of the 60th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 3591--3607.
+  Association for Computational Linguistics, May 2022.
+\newblock \doi{10.18653/v1/2022.acl-long.251}.
+\newblock URL \url{https://aclanthology.org/2022.acl-long.251/}.
+
+\bibitem[Pennington et~al.(2014)Pennington, Socher, and
+  Manning]{pennington-etal-2014-glove}
+Jeffrey Pennington, Richard Socher, and Christopher Manning.
+\newblock {G}lo{V}e: Global vectors for word representation.
+\newblock In Alessandro Moschitti, Bo~Pang, and Walter Daelemans, editors,
+  \emph{Proceedings of the 2014 Conference on Empirical Methods in Natural
+  Language Processing ({EMNLP})}, pages 1532--1543, Doha, Qatar, October 2014.
+  Association for Computational Linguistics.
+\newblock \doi{10.3115/v1/D14-1162}.
+\newblock URL \url{https://aclanthology.org/D14-1162/}.
+
+\bibitem[Petty and Frank(2021)]{petty2021transformersgeneralizelinearly}
+Jackson Petty and Robert Frank.
+\newblock Transformers generalize linearly, 2021.
+\newblock URL \url{https://arxiv.org/abs/2109.12036}.
+
+\bibitem[Petty et~al.(2024)Petty, van Steenkiste, Dasgupta, Sha, Garrette, and
+  Linzen]{petty2024impactdepthcompositionalgeneralization}
+Jackson Petty, Sjoerd van Steenkiste, Ishita Dasgupta, Fei Sha, Dan Garrette,
+  and Tal Linzen.
+\newblock The impact of depth on compositional generalization in transformer
+  language models, 2024.
+\newblock URL \url{https://arxiv.org/abs/2310.19956}.
+
+\bibitem[Qiu et~al.(2022)Qiu, Shaw, Pasupat, Nowak, Linzen, Sha, and
+  Toutanova]{qiu-etal-2022-improving}
+Linlu Qiu, Peter Shaw, Panupong Pasupat, Pawel Nowak, Tal Linzen, Fei Sha, and
+  Kristina Toutanova.
+\newblock Improving compositional generalization with latent structure and data
+  augmentation.
+\newblock In Marine Carpuat, Marie-Catherine de~Marneffe, and Ivan~Vladimir
+  Meza~Ruiz, editors, \emph{Proceedings of the 2022 Conference of the North
+  American Chapter of the Association for Computational Linguistics: Human
+  Language Technologies}, pages 4341--4362, Seattle, United States, July 2022.
+  Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2022.naacl-main.323}.
+\newblock URL \url{https://aclanthology.org/2022.naacl-main.323/}.
+
+\bibitem[Ranzato et~al.(2016)Ranzato, Chopra, Auli, and Zaremba]{Ranzato2015}
+Marc'Aurelio Ranzato, Sumit Chopra, Michael Auli, and Wojciech Zaremba.
+\newblock Sequence level training with recurrent neural networks, 2016.
+\newblock URL \url{https://arxiv.org/abs/1511.06732}.
+
+\bibitem[Rumelhart et~al.(1988)Rumelhart, Hinton, and
+  Williams]{10.7551/mitpress/4943.003.0128}
+David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
+\newblock (1986) d. e. rumelhart, g. e. hinton, and r. j. williams, "learning
+  internal representations by error propagation," parallel distributed
+  processing: Explorations in the microstructures of cognition, vol. i, d. e.
+  rumelhart and j. l. mcclelland (eds.) cambridge, ma: Mit press, pp. 318-362.
+\newblock In \emph{Neurocomputing, Volume 1: Foundations of Research}. The MIT
+  Press, 04 1988.
+\newblock ISBN 9780262267137.
+\newblock \doi{10.7551/mitpress/4943.003.0128}.
+\newblock URL \url{https://doi.org/10.7551/mitpress/4943.003.0128}.
+
+\bibitem[Strobl et~al.(2024)Strobl, Merrill, Weiss, Chiang, and
+  Angluin]{Strobl2024}
+Lena Strobl, William Merrill, Gail Weiss, David Chiang, and Dana Angluin.
+\newblock What formal languages can transformers express? a survey.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  12:\penalty0 543–561, 2024.
+\newblock ISSN 2307-387X.
+\newblock \doi{10.1162/tacl_a_00663}.
+\newblock URL \url{http://dx.doi.org/10.1162/tacl_a_00663}.
+
+\bibitem[Tenney et~al.(2019)Tenney, Das, and
+  Pavlick]{tenney2019bertrediscoversclassicalnlp}
+Ian Tenney, Dipanjan Das, and Ellie Pavlick.
+\newblock Bert rediscovers the classical nlp pipeline, 2019.
+\newblock URL \url{https://arxiv.org/abs/1905.05950}.
+
+\bibitem[van Schijndel et~al.(2019)van Schijndel, Mueller, and
+  Linzen]{vanschijndel2019quantitydoesntbuyquality}
+Marten van Schijndel, Aaron Mueller, and Tal Linzen.
+\newblock Quantity doesn't buy quality syntax with neural language models,
+  2019.
+\newblock URL \url{https://arxiv.org/abs/1909.00111}.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock \emph{Advances in neural information processing systems}, 30, 2017.
+
+\bibitem[Vigliocco and Nicol(1998)]{VIGLIOCCO1998B13}
+Gabriella Vigliocco and Janet Nicol.
+\newblock Separating hierarchical relations and word order in language
+  production: is proximity concord syntactic or linear?
+\newblock \emph{Cognition}, 68\penalty0 (1):\penalty0 B13--B29, 1998.
+\newblock ISSN 0010-0277.
+\newblock \doi{https://doi.org/10.1016/S0010-0277(98)00041-9}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0010027798000419}.
+
+\bibitem[Weiss et~al.(2021)Weiss, Goldberg, and Yahav]{Weiss2021}
+Gail Weiss, Yoav Goldberg, and Eran Yahav.
+\newblock Thinking like transformers, 2021.
+\newblock URL \url{https://arxiv.org/abs/2106.06981}.
+
+\bibitem[Wei{\ss}enhorn et~al.(2022)Wei{\ss}enhorn, Donatelli, and
+  Koller]{weissenhorn-etal-2022-compositional}
+Pia Wei{\ss}enhorn, Lucia Donatelli, and Alexander Koller.
+\newblock Compositional generalization with a broad-coverage semantic parser.
+\newblock In Vivi Nastase, Ellie Pavlick, Mohammad~Taher Pilehvar, Jose
+  Camacho-Collados, and Alessandro Raganato, editors, \emph{Proceedings of the
+  11th Joint Conference on Lexical and Computational Semantics}, pages 44--54,
+  Seattle, Washington, July 2022. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2022.starsem-1.4}.
+\newblock URL \url{https://aclanthology.org/2022.starsem-1.4/}.
+
+\bibitem[Wu et~al.(2024)Wu, Manning, and Potts]{Wu2023}
+Zhengxuan Wu, Christopher~D. Manning, and Christopher Potts.
+\newblock Recogs: How incidental details of a logical form overshadow an
+  evaluation of semantic interpretation, 2024.
+\newblock URL \url{https://arxiv.org/abs/2303.13716}.
+
+\bibitem[Yao and Koller(2022)]{yao-koller-2022-structural}
+Yuekun Yao and Alexander Koller.
+\newblock Structural generalization is hard for sequence-to-sequence models.
+\newblock In Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang, editors,
+  \emph{Proceedings of the 2022 Conference on Empirical Methods in Natural
+  Language Processing}, pages 5048--5062, Abu Dhabi, United Arab Emirates,
+  December 2022. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2022.emnlp-main.337}.
+\newblock URL \url{https://aclanthology.org/2022.emnlp-main.337/}.
+
+\bibitem[Zeller et~al.(2023)Zeller, Gopinath, B{\"o}hme, Fraser, and
+  Holler]{fuzzingbook2023:GrammarCoverageFuzzer}
+Andreas Zeller, Rahul Gopinath, Marcel B{\"o}hme, Gordon Fraser, and Christian
+  Holler.
+\newblock Grammar coverage.
+\newblock In \emph{The Fuzzing Book}. CISPA Helmholtz Center for Information
+  Security, 2023.
+\newblock URL
+  \url{https://www.fuzzingbook.org/html/GrammarCoverageFuzzer.html}.
+\newblock Retrieved 2023-11-11 18:18:06+01:00.
+
+\bibitem[Zhou et~al.(2023)Zhou, Bradley, Littwin, Razin, Saremi, Susskind,
+  Bengio, and Nakkiran]{Zhou2024}
+Hattie Zhou, Arwen Bradley, Etai Littwin, Noam Razin, Omid Saremi, Josh
+  Susskind, Samy Bengio, and Preetum Nakkiran.
+\newblock What algorithms can transformers learn? a study in length
+  generalization, 2023.
+\newblock URL \url{https://arxiv.org/abs/2310.16028}.
+
+\bibitem[Zwicky(2008)]{agreementwithnearestlanguagelog}
+Arnold Zwicky.
+\newblock Agreement with nearest, 2008.
+\newblock URL \url{https://languagelog.ldc.upenn.edu/nll/?p=839}.
+
+\end{thebibliography}
