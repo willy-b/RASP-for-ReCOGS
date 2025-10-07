@@ -6,24 +6,34 @@
   year={2017}
 }
 
-@misc{Brown2020,
-      title={Language Models are Few-Shot Learners}, 
-      author={Tom B. Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and Sandhini Agarwal and Ariel Herbert-Voss and Gretchen Krueger and Tom Henighan and Rewon Child and Aditya Ramesh and Daniel M. Ziegler and Jeffrey Wu and Clemens Winter and Christopher Hesse and Mark Chen and Eric Sigler and Mateusz Litwin and Scott Gray and Benjamin Chess and Jack Clark and Christopher Berner and Sam McCandlish and Alec Radford and Ilya Sutskever and Dario Amodei},
-      year={2020},
-      eprint={2005.14165},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2005.14165}, 
+@inproceedings{Brown2020,
+ author = {Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and Herbert-Voss, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel and Wu, Jeffrey and Winter, Clemens and Hesse, Chris and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {H. Larochelle and M. Ranzato and R. Hadsell and M.F. Balcan and H. Lin},
+ pages = {1877--1901},
+ publisher = {Curran Associates, Inc.},
+ title = {Language Models are Few-Shot Learners},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf},
+ volume = {33},
+ year = {2020}
 }
 
-@misc{Chiang2022,
-      title={Overcoming a Theoretical Limitation of Self-Attention}, 
-      author={David Chiang and Peter Cholak},
-      year={2022},
-      eprint={2202.12172},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2202.12172}, 
+@inproceedings{Chiang2022,
+    title = "Overcoming a Theoretical Limitation of Self-Attention",
+    author = "Chiang, David  and
+      Cholak, Peter",
+    editor = "Muresan, Smaranda  and
+      Nakov, Preslav  and
+      Villavicencio, Aline",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.acl-long.527/",
+    doi = "10.18653/v1/2022.acl-long.527",
+    pages = "7654--7664",
+    abstract = "Although transformers are remarkably effective for many tasks, there are some surprisingly easy-looking regular languages that they struggle with. Hahn shows that for languages where acceptance depends on a single input symbol, a transformer`s classification decisions get closer and closer to random guessing (that is, a cross-entropy of 1) as input strings get longer and longer. We examine this limitation using two languages: PARITY, the language of bit strings with an odd number of 1s, and FIRST, the language of bit strings starting with a 1. We demonstrate three ways of overcoming the limitation implied by Hahn`s lemma. First, we settle an open question by constructing a transformer that recognizes PARITY with perfect accuracy, and similarly for FIRST. Second, we use layer normalization to bring the cross-entropy of both models arbitrarily close to zero. Third, when transformers need to focus on a single position, as for FIRST, we find that they can fail to generalize to longer strings; we offer a simple remedy to this problem that also improves length generalization in machine translation."
 }
 
 @incollection{10.7551/mitpress/4943.003.0128,
@@ -39,14 +49,19 @@
     eprint = {https://direct.mit.edu/book/chapter-pdf/2299556/c018389\_9780262267137.pdf},
 }
 
-@misc{Clark2020,
-      title={Transformers as Soft Reasoners over Language}, 
-      author={Peter Clark and Oyvind Tafjord and Kyle Richardson},
-      year={2020},
-      eprint={2002.05867},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2002.05867}, 
+@inproceedings{Clark2020,
+  title     = {Transformers as Soft Reasoners over Language},
+  author    = {Clark, Peter and Tafjord, Oyvind and Richardson, Kyle},
+  booktitle = {Proceedings of the Twenty-Ninth International Joint Conference on
+               Artificial Intelligence, {IJCAI-20}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {Christian Bessiere},
+  pages     = {3882--3890},
+  year      = {2020},
+  month     = {7},
+  note      = {Main track},
+  doi       = {10.24963/ijcai.2020/537},
+  url       = {https://doi.org/10.24963/ijcai.2020/537},
 }
 
 @inproceedings{Csordas2021,
@@ -88,25 +103,20 @@
     pages = "3591--3607",
 }
 
-@misc{Csordas2022,
-      title={The Neural Data Router: Adaptive Control Flow in Transformers Improves Systematic Generalization}, 
-      author={Róbert Csordás and Kazuki Irie and Jürgen Schmidhuber},
-      year={2022},
-      eprint={2110.07732},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2110.07732}, 
+@inproceedings{Csordas2022,
+title={The Neural Data Router: Adaptive Control Flow in Transformers Improves Systematic Generalization},
+author={R{\'o}bert Csord{\'a}s and Kazuki Irie and J{\"u}rgen Schmidhuber},
+booktitle={International Conference on Learning Representations},
+year={2022},
+url={https://openreview.net/forum?id=KBQP4A_J1K}
 }
 
-%"Universal Transformers", Dehghani et al 2019 % https://arxiv.org/pdf/1807.03819
-@misc{Dehghani2019,
-      title={Universal Transformers}, 
-      author={Mostafa Dehghani and Stephan Gouws and Oriol Vinyals and Jakob Uszkoreit and Łukasz Kaiser},
-      year={2019},
-      eprint={1807.03819},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/1807.03819}, 
+@inproceedings{Dehghani2019,
+title={Universal Transformers},
+author={Mostafa Dehghani and Stephan Gouws and Oriol Vinyals and Jakob Uszkoreit and Lukasz Kaiser},
+booktitle={International Conference on Learning Representations},
+year={2019},
+url={https://openreview.net/forum?id=HyzdRiR9Y7},
 }
 
 @article{FodorPylyshyn1988,
@@ -173,14 +183,21 @@ Cet articleétudie les différences entre modèles connectionistes et modèles c
     abstract = "Natural language is characterized by compositionality: the meaning of a complex expression is constructed from the meanings of its constituent parts. To facilitate the evaluation of the compositional abilities of language processing architectures, we introduce COGS, a semantic parsing dataset based on a fragment of English. The evaluation portion of COGS contains multiple systematic gaps that can only be addressed by compositional generalization; these include new combinations of familiar syntactic structures, or new combinations of familiar words and familiar structures. In experiments with Transformers and LSTMs, we found that in-distribution accuracy on the COGS test set was near-perfect (96{--}99{\%}), but generalization accuracy was substantially lower (16{--}35{\%}) and showed high sensitivity to random seed (+-6{--}8{\%}). These findings indicate that contemporary standard NLP models are limited in their compositional generalization capacity, and position COGS as a good way to measure progress.",
 }
 
-@misc{Ranzato2015,
-      title={Sequence Level Training with Recurrent Neural Networks}, 
-      author={Marc'Aurelio Ranzato and Sumit Chopra and Michael Auli and Wojciech Zaremba},
-      year={2016},
-      eprint={1511.06732},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/1511.06732}, 
+@inproceedings{Ranzato2015,
+  author       = {Marc'Aurelio Ranzato and
+                  Sumit Chopra and
+                  Michael Auli and
+                  Wojciech Zaremba},
+  editor       = {Yoshua Bengio and
+                  Yann LeCun},
+  title        = {Sequence Level Training with Recurrent Neural Networks},
+  booktitle    = {4th International Conference on Learning Representations, {ICLR} 2016,
+                  San Juan, Puerto Rico, May 2-4, 2016, Conference Track Proceedings},
+  year         = {2016},
+  url          = {http://arxiv.org/abs/1511.06732},
+  timestamp    = {Thu, 25 Jul 2019 14:25:39 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/RanzatoCAZ15.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 
 @inproceedings{10.1145/1553374.1553380,
@@ -232,14 +249,20 @@ series = {ICML '09}
    year={2024},
    pages={543–561} }
 
-@misc{Weiss2021,
-      title={Thinking Like Transformers}, 
-      author={Gail Weiss and Yoav Goldberg and Eran Yahav},
-      year={2021},
-      eprint={2106.06981},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2106.06981}, 
+@InProceedings{Weiss2021,
+  title = 	 {Thinking Like Transformers},
+  author =       {Weiss, Gail and Goldberg, Yoav and Yahav, Eran},
+  booktitle = 	 {Proceedings of the 38th International Conference on Machine Learning},
+  pages = 	 {11080--11090},
+  year = 	 {2021},
+  editor = 	 {Meila, Marina and Zhang, Tong},
+  volume = 	 {139},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {18--24 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v139/weiss21a/weiss21a.pdf},
+  url = 	 {https://proceedings.mlr.press/v139/weiss21a.html},
+  abstract = 	 {What is the computational model behind a Transformer? Where recurrent neural networks have direct parallels in finite state machines, allowing clear discussion and thought around architecture variants or trained models, Transformers have no such familiar parallel. In this paper we aim to change that, proposing a computational model for the transformer-encoder in the form of a programming language. We map the basic components of a transformer-encoder—attention and feed-forward computation—into simple primitives, around which we form a programming language: the Restricted Access Sequence Processing Language (RASP). We show how RASP can be used to program solutions to tasks that could conceivably be learned by a Transformer, and how a Transformer can be trained to mimic a RASP solution. In particular, we provide RASP programs for histograms, sorting, and Dyck-languages. We further use our model to relate their difficulty in terms of the number of required layers and attention heads: analyzing a RASP program implies a maximum number of heads and layers necessary to encode a task in a transformer. Finally, we see how insights gained from our abstraction might be used to explain phenomena seen in recent works.}
 }
 
 @misc{Zaremba2016,
@@ -252,24 +275,28 @@ series = {ICML '09}
       url={https://arxiv.org/abs/1505.00521}, 
 }
 
-@misc{Wu2023,
-      title={ReCOGS: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation}, 
-      author={Zhengxuan Wu and Christopher D. Manning and Christopher Potts},
-      year={2024},
-      eprint={2303.13716},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2303.13716}, 
+@article{Wu2023,
+    title = "{R}e{COGS}: How Incidental Details of a Logical Form Overshadow an Evaluation of Semantic Interpretation",
+    author = "Wu, Zhengxuan  and
+      Manning, Christopher D.  and
+      Potts, Christopher",
+    journal = "Transactions of the Association for Computational Linguistics",
+    volume = "11",
+    year = "2023",
+    address = "Cambridge, MA",
+    publisher = "MIT Press",
+    url = "https://aclanthology.org/2023.tacl-1.96/",
+    doi = "10.1162/tacl_a_00623",
+    pages = "1719--1733",
+    abstract = "Compositional generalization benchmarks for semantic parsing seek to assess whether models can accurately compute meanings for novel sentences, but operationalize this in terms of logical form (LF) prediction. This raises the concern that semantically irrelevant details of the chosen LFs could shape model performance. We argue that this concern is realized for the COGS benchmark (Kim and Linzen, 2020). COGS poses generalization splits that appear impossible for present-day models, which could be taken as an indictment of those models. However, we show that the negative results trace to incidental features of COGS LFs. Converting these LFs to semantically equivalent ones and factoring out capabilities unrelated to semantic interpretation, we find that even baseline models get traction. A recent variable-free translation of COGS LFs suggests similar conclusions, but we observe this format is not semantically equivalent; it is incapable of accurately representing some COGS meanings. These findings inform our proposal for ReCOGS, a modified version of COGS that comes closer to assessing the target semantic capabilities while remaining very challenging. Overall, our results reaffirm the importance of compositional generalization and careful benchmark task design."
 }
 
-@misc{Zhou2024,
-      title={What Algorithms can Transformers Learn? A Study in Length Generalization}, 
-      author={Hattie Zhou and Arwen Bradley and Etai Littwin and Noam Razin and Omid Saremi and Josh Susskind and Samy Bengio and Preetum Nakkiran},
-      year={2023},
-      eprint={2310.16028},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2310.16028}, 
+@inproceedings{Zhou2024,
+title={What Algorithms can Transformers Learn? A Study in Length Generalization},
+author={Hattie Zhou and Arwen Bradley and Etai Littwin and Noam Razin and Omid Saremi and Joshua M. Susskind and Samy Bengio and Preetum Nakkiran},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=AssIuHnmHX}
 }
 
 @article{newell1956logic,
@@ -290,15 +317,14 @@ series = {ICML '09}
   publisher={London}
 }
 
-@misc{delétang2023neuralnetworkschomskyhierarchy,
-      title={Neural Networks and the Chomsky Hierarchy}, 
-      author={Grégoire Delétang and Anian Ruoss and Jordi Grau-Moya and Tim Genewein and Li Kevin Wenliang and Elliot Catt and Chris Cundy and Marcus Hutter and Shane Legg and Joel Veness and Pedro A. Ortega},
-      year={2023},
-      eprint={2207.02098},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2207.02098}, 
+@inproceedings{delétang2023neuralnetworkschomskyhierarchy,
+title={Neural Networks and the Chomsky Hierarchy},
+author={Gregoire Deletang and Anian Ruoss and Jordi Grau-Moya and Tim Genewein and Li Kevin Wenliang and Elliot Catt and Chris Cundy and Marcus Hutter and Shane Legg and Joel Veness and Pedro A Ortega},
+booktitle={The Eleventh International Conference on Learning Representations },
+year={2023},
+url={https://openreview.net/forum?id=WbxHAzkeQcn}
 }
+
 @article{Perez2021,
   author  = {Jorge Pérez and Pablo Barceló and Javier Marinkovic},
   title   = {Attention is Turing-Complete},
@@ -310,24 +336,20 @@ series = {ICML '09}
   url     = {http://jmlr.org/papers/v22/20-302.html}
 }
 
-@misc{merrill2024expressivepowertransformerschain,
-      title={The Expressive Power of Transformers with Chain of Thought}, 
-      author={William Merrill and Ashish Sabharwal},
-      year={2024},
-      eprint={2310.07923},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2310.07923}, 
+@inproceedings{merrill2024expressivepowertransformerschain,
+title={The Expressive Power of Transformers with Chain of Thought},
+author={William Merrill and Ashish Sabharwal},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=NjNGlPh8Wh}
 }
 
-@misc{lindner2023tracrcompiledtransformerslaboratory,
-      title={Tracr: Compiled Transformers as a Laboratory for Interpretability}, 
-      author={David Lindner and János Kramár and Sebastian Farquhar and Matthew Rahtz and Thomas McGrath and Vladimir Mikulik},
-      year={2023},
-      eprint={2301.05062},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2301.05062}, 
+@inproceedings{lindner2023tracrcompiledtransformerslaboratory,
+title={Tracr: Compiled Transformers as a Laboratory for Interpretability},
+author={David Lindner and Janos Kramar and Sebastian Farquhar and Matthew Rahtz and Thomas McGrath and Vladimir Mikulik},
+booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+year={2023},
+url={https://openreview.net/forum?id=tbbId8u7nP}
 }
 
 @incollection{fuzzingbook2023:GrammarCoverageFuzzer,
@@ -352,14 +374,23 @@ series = {ICML '09}
       url={https://arxiv.org/abs/2309.16467}, 
 }
 
-@misc{tenney2019bertrediscoversclassicalnlp,
-      title={BERT Rediscovers the Classical NLP Pipeline}, 
-      author={Ian Tenney and Dipanjan Das and Ellie Pavlick},
-      year={2019},
-      eprint={1905.05950},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/1905.05950}, 
+@inproceedings{tenney2019bertrediscoversclassicalnlp,
+    title = "{BERT} Rediscovers the Classical {NLP} Pipeline",
+    author = "Tenney, Ian  and
+      Das, Dipanjan  and
+      Pavlick, Ellie",
+    editor = "Korhonen, Anna  and
+      Traum, David  and
+      M{\`a}rquez, Llu{\'i}s",
+    booktitle = "Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2019",
+    address = "Florence, Italy",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/P19-1452/",
+    doi = "10.18653/v1/P19-1452",
+    pages = "4593--4601",
+    abstract = "Pre-trained text encoders have rapidly advanced the state of the art on many NLP tasks. We focus on one such model, BERT, and aim to quantify where linguistic information is captured within the network. We find that the model represents the steps of the traditional NLP pipeline in an interpretable and localizable way, and that the regions responsible for each step appear in the expected sequence: POS tagging, parsing, NER, semantic roles, then coreference. Qualitative analysis reveals that the model can and often does adjust this pipeline dynamically, revising lower-level decisions on the basis of disambiguating information from higher-level representations."
 }
 
 @article{lake2023human,
@@ -399,24 +430,46 @@ series = {ICML '09}
       url={https://languagelog.ldc.upenn.edu/nll/?p=839}, 
 }
 
-@misc{petty2024impactdepthcompositionalgeneralization,
-      title={The Impact of Depth on Compositional Generalization in Transformer Language Models}, 
-      author={Jackson Petty and Sjoerd van Steenkiste and Ishita Dasgupta and Fei Sha and Dan Garrette and Tal Linzen},
-      year={2024},
-      eprint={2310.19956},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2310.19956}, 
+@inproceedings{petty2024impactdepthcompositionalgeneralization,
+    title = "The Impact of Depth on Compositional Generalization in Transformer Language Models",
+    author = "Petty, Jackson  and
+      Steenkiste, Sjoerd  and
+      Dasgupta, Ishita  and
+      Sha, Fei  and
+      Garrette, Dan  and
+      Linzen, Tal",
+    editor = "Duh, Kevin  and
+      Gomez, Helena  and
+      Bethard, Steven",
+    booktitle = "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+    month = jun,
+    year = "2024",
+    address = "Mexico City, Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.naacl-long.402/",
+    doi = "10.18653/v1/2024.naacl-long.402",
+    pages = "7239--7252",
+    abstract = "To process novel sentences, language models (LMs) must generalize compositionally{---}combine familiar elements in new ways. What aspects of a model`s structure promote compositional generalization? Focusing on transformers, we test the hypothesis, motivated by theoretical and empirical work, that deeper transformers generalize more compositionally. Simply adding layers increases the total number of parameters; to address this confound between depth and size, we construct three classes of models which trade off depth for width such that the total number of parameters is kept constant (41M, 134M and 374M parameters). We pretrain all models as LMs and fine-tune them on tasks that test for compositional generalization. We report three main conclusions: (1) after fine-tuning, deeper models generalize more compositionally than shallower models do, but the benefit of additional layers diminishes rapidly; (2) within each family, deeper models show better language modeling performance, but returns are similarly diminishing; (3) the benefits of depth for compositional generalization cannot be attributed solely to better performance on language modeling. Because model latency is approximately linear in the number of layers, these results lead us to the recommendation that, with a given total parameter budget, transformers can be made shallower than is typical without sacrificing performance."
 }
 
-@misc{vanschijndel2019quantitydoesntbuyquality,
-      title={Quantity doesn't buy quality syntax with neural language models}, 
-      author={Marten van Schijndel and Aaron Mueller and Tal Linzen},
-      year={2019},
-      eprint={1909.00111},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/1909.00111}, 
+@inproceedings{vanschijndel2019quantitydoesntbuyquality,
+    title = "Quantity doesn`t buy quality syntax with neural language models",
+    author = "van Schijndel, Marten  and
+      Mueller, Aaron  and
+      Linzen, Tal",
+    editor = "Inui, Kentaro  and
+      Jiang, Jing  and
+      Ng, Vincent  and
+      Wan, Xiaojun",
+    booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)",
+    month = nov,
+    year = "2019",
+    address = "Hong Kong, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/D19-1592/",
+    doi = "10.18653/v1/D19-1592",
+    pages = "5831--5837",
+    abstract = "Recurrent neural networks can learn to predict upcoming words remarkably well on average; in syntactically complex contexts, however, they often assign unexpectedly high probabilities to ungrammatical words. We investigate to what extent these shortcomings can be mitigated by increasing the size of the network and the corpus on which it is trained. We find that gains from increasing network size are minimal beyond a certain point. Likewise, expanding the training corpus yields diminishing returns; we estimate that the training corpus would need to be unrealistically large for the models to match human performance. A comparison to GPT and BERT, Transformer-based models trained on billions of words, reveals that these models perform even more poorly than our LSTMs in some constructions. Our results make the case for more data efficient architectures."
 }
 
 @misc{goldberg2019assessingbertssyntacticabilities,
@@ -429,14 +482,26 @@ series = {ICML '09}
       url={https://arxiv.org/abs/1901.05287}, 
 }
 
-@misc{li2023slogstructuralgeneralizationbenchmark,
-      title={SLOG: A Structural Generalization Benchmark for Semantic Parsing}, 
-      author={Bingzhi Li and Lucia Donatelli and Alexander Koller and Tal Linzen and Yuekun Yao and Najoung Kim},
-      year={2023},
-      eprint={2310.15040},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2310.15040}, 
+@inproceedings{li2023slogstructuralgeneralizationbenchmark,
+    title = "{SLOG}: A Structural Generalization Benchmark for Semantic Parsing",
+    author = "Li, Bingzhi  and
+      Donatelli, Lucia  and
+      Koller, Alexander  and
+      Linzen, Tal  and
+      Yao, Yuekun  and
+      Kim, Najoung",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.194/",
+    doi = "10.18653/v1/2023.emnlp-main.194",
+    pages = "3213--3232",
+    abstract = "The goal of compositional generalization benchmarks is to evaluate how well models generalize to new complex linguistic expressions. Existing benchmarks often focus on lexical generalization, the interpretation of novel lexical items in syntactic structures familiar from training; structural generalization tasks, where a model needs to interpret syntactic structures that are themselves unfamiliar from training, are often underrepresented, resulting in overly optimistic perceptions of how well models can generalize. We introduce SLOG, a semantic parsing dataset that extends COGS (Kim and Linzen, 2020) with 17 structural generalization cases. In our experiments, the generalization accuracy of Transformer models, including pretrained ones, only reaches 40.6{\%}, while a structure-aware parser only achieves 70.8{\%}. These results are far from the near-perfect accuracy existing models achieve on COGS, demonstrating the role of SLOG in foregrounding the large discrepancy between models' lexical and structural generalization capacities."
 }
 
 @inproceedings{hewitt-manning-2019-structural,
@@ -496,24 +561,34 @@ keywords = {Agreement errors, Grammatical encoding, Language production}
       url={https://arxiv.org/abs/2109.12036}, 
 }
 
-@misc{murty2023grokkinghierarchicalstructurevanilla,
-      title={Grokking of Hierarchical Structure in Vanilla Transformers}, 
-      author={Shikhar Murty and Pratyusha Sharma and Jacob Andreas and Christopher D. Manning},
-      year={2023},
-      eprint={2305.18741},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2305.18741}, 
+@inproceedings{murty2023grokkinghierarchicalstructurevanilla,
+    title = "Grokking of Hierarchical Structure in Vanilla Transformers",
+    author = "Murty, Shikhar  and
+      Sharma, Pratyusha  and
+      Andreas, Jacob  and
+      Manning, Christopher",
+    editor = "Rogers, Anna  and
+      Boyd-Graber, Jordan  and
+      Okazaki, Naoaki",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.acl-short.38/",
+    doi = "10.18653/v1/2023.acl-short.38",
+    pages = "439--448",
+    abstract = "For humans, language production and comprehension is sensitive to the hierarchical structure of sentences. In natural language processing, past work has questioned how effectively neural sequence models like transformers capture this hierarchical structure when generalizing to structurally novel inputs. We show that transformer language models can learn to generalize hierarchically after training for extremely long periods{---}far beyond the point when in-domain accuracy has saturated. We call this phenomenon structural grokking. On multiple datasets, structural grokking exhibits inverted U-shaped scaling in model depth: intermediate-depth models generalize better than both very deep and very shallow transformers. When analyzing the relationship between model-internal properties and grokking, we find that optimal depth for grokking can be identified using the tree-structuredness metric of CITATION. Overall, our work provides strong evidence that, with extended training, vanilla transformers discover and use hierarchical structure."
 }
-@misc{murty2022characterizingintrinsiccompositionalitytransformers,
-      title={Characterizing Intrinsic Compositionality in Transformers with Tree Projections}, 
-      author={Shikhar Murty and Pratyusha Sharma and Jacob Andreas and Christopher D. Manning},
-      year={2022},
-      eprint={2211.01288},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2211.01288}, 
+
+@inproceedings{murty2022characterizingintrinsiccompositionalitytransformers,
+title={Characterizing intrinsic compositionality in transformers with Tree Projections},
+author={Shikhar Murty and Pratyusha Sharma and Jacob Andreas and Christopher D Manning},
+booktitle={The Eleventh International Conference on Learning Representations },
+year={2023},
+url={https://openreview.net/forum?id=sAOOeI878Ns}
 }
+
 @article{10.1162/tacl_a_00733,
     author = {Ahuja, Kabir and Balachandran, Vidhisha and Panwar, Madhur and He, Tianxing and Smith, Noah A. and Goyal, Navin and Tsvetkov, Yulia},
     title = {Learning Syntax Without Planting Trees: Understanding Hierarchical Generalization in Transformers},
